@@ -1,0 +1,18 @@
+  <html>
+  <head>
+    <title>A Dataset and Benchmark for Automatically Answering and Generating Machine Learning Final Exams</title>
+    <script type="dataset">
+    {
+      "@context":"https://github.com/idrori/mlfinalsQ",
+      "@type":"Dataset",
+      "name":"A Dataset and Benchmark for Automatically Answering and Generating Machine Learning Final Exams, by Zhang et al., 2022",
+      "description":"A Dataset and Benchmark for Automatically Answering and Generating Machine Learning Final Exams",
+      "url":"https://github.com/idrori/mlfinalsQ",
+      "license" : "https://github.com/idrori/mlfinalsQ/blob/main/LICENSE",
+      "isAccessibleForFree" : true
+    }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
