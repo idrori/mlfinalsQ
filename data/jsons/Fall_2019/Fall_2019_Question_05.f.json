@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2019",
+       "Question Number": "5",
+       "Part": "f",
+       "Points": 3.0,
+       "Topic": "MDPs",
+       "Type": "Image",
+       "Question": "Consider the following simple MDP: Positive Reward\nFirst consider the case where the MDP has positive reward. In this scenario, there is only one action $($ next $)$; we name this decision policy $\\pi_{A}$ with $\\pi_{A}(s)=n e x t$ for all $s$. The reward is $R(s, n e x t)=0$ for all states $s$, except for state $s_{k}$ where reward is $R\\left(s_{k}\\right.$, next $)=10$. We always start at state $s_{1}$ and each arrow indicates a deterministic transition probability $p=1$. There is no transition out of the end state $E N D$, and 0 reward for any action from the end state.\nNow consider the case where this MDP has negative reward. In this scenario, the reward is $R(s, n e x t)=-1$ for all states, except for state $s_{k}$ where the reward is $R\\left(s_{k}, n e x t\\right)=0$. Again, there is only one action, next, and the decision policy remains $\\pi_{A}(s)=n e x t$ for all s. We always start at state $s_{1}$ and each arrow has a deterministic transition probsbility $p=1$. There is no transition out of the end state $E N D$, and zero reward for any action from the end state, i.e., $R(E N D$, next $)=0$.\nDerive a formula for $V_{\\pi}\\left(s_{1}\\right)$ that works for any value of (is expressed as a function of) $k$ and $\\gamma$ for this negative reward MDP with infinite horizon. Recall that $\\sum_{i=0}^{n} \\gamma^{i}=\\frac{\\left(1-\\gamma^{n+1}\\right)}{(1-\\gamma)}$.",
+       "Solution": "At every step, we receive a reward of $-1$, except for the $h^{\\text {th }}$ step, where we receive a reward of 0 . Therefore, the summation is\n$$\n\\sum_{i=0}^{k-1}-1 * \\gamma^{i}+0 * \\gamma^{k-1}=-1 * \\gamma^{0}-1 * \\gamma^{1}-1 * \\gamma^{2}+\\ldots-1 * \\gamma^{k-2}+0 * \\gamma^{k-1}=-\\frac{1-\\gamma^{k-1}}{1-\\gamma}\n$$"
+}

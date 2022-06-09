@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2019",
+       "Question Number": "5",
+       "Part": "d",
+       "Points": 2.0,
+       "Topic": "MDPs",
+       "Type": "Image",
+       "Question": "Consider the following deterministic Markow Decision Process (MDP), describing a simple robot grid world. Notice that the values of the irnmediate rewards $r$ for two transitions are written next to thern; the other transitions, with no value written next to them, have an immedinte reward of $r=0$. Assume the discount factor $\\gamma$ is $0.8$.\nGive a value for $\\gamma$ (constrained by $0<\\gamma<1$ ) that results in a different optirnal policy, and describe the resulting policy by indicating which $\\pi^{*}(s)$ values (i.e., which policy actions) change.",
+       "Solution": "A small $\\gamma=0.001$ will make it not worthwhile to defer gains for very long. In this problem, if $\\gamma^{2} 100<50$, then it will be better to directly take the 50 rewrard. So valid answers here are $0<\\gamma<\\frac{\\sqrt{2}}{2}$.\nNow $\\pi^{*}\\left(s^{2}\\right)$ is to go right (east)."
+}

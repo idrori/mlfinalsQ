@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2021",
+       "Question Number": "13",
+       "Part": "c",
+       "Points": 3.0,
+       "Topic": "Neural Networks",
+       "Type": "Image",
+       "Question": "Sam wants to build a neural network that takes in a scalar value $x$ in the range $[0,1]$ and generates a one-hot output vector $y$ of dimension $K$, where, for $k \\in\\{0,1, \\ldots, K-1\\}$, $y k=1$ if and only if $k / K<x \\leq(k+1) / K$; that is, it discretizes the interval into $K$ equally sized sequential ranges. Plesse don't worry about precisely what the output is at the boundaries of the intervals.\n\nThey choose an architecture with a single linear layer with weights $W$ and $W_{0}$ and a softmax activation function, so that the output\n$$\na=\\operatorname{softmax}(z)\n$$\nwhere\n$$\nz=W^{T} x+W_{0}\n$$\nAssume that, for prediction purposes, we are going to take the output of the network, $a$, and convert it into a $K$-dimensional one-hot vector $\\left(y_{0}, \\ldots, y_{k-1}\\right)$ where\n$$\ny_{i}= \\begin{cases}1 & \\text { if } i=\\arg \\max _{j} a_{j} \\\\ 0 & \\text { otherwise }\\end{cases}\n$$\nThat is, it has a value of 1 at the index corresponding to the maximal element of $a$ and value 0 everywhere else. \nProvide a set of weight values that will discretize the unit interval into 3 equal parts, with output predictions $y=[1,0,0]$ for $x \\in[0,1 / 3], y=[0,1,0]$ for $x \\in[1 / 3,2 / 3]$, and $x=[0,0,1]$ for $x \\in[2 / 3,1]$. Please don't worry about exactly what happens at the boundaries!!!",
+       "Solution": "$$\nW_{0}=[1 / 3,0,-2 / 3]^{T}\n$$\n$$\nW=[-1,0,1]^{T}\n$$"
+}

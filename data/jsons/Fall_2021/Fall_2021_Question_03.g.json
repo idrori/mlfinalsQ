@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2021",
+       "Question Number": "3",
+       "Part": "g",
+       "Points": 2.0,
+       "Topic": "Decision Trees",
+       "Type": "Image",
+       "Question": "We seek to learn a classifier on the data set shown on the left with 13 data points labeled $+1$ or $-1$. For your convenience, we include some helpful calculations in the table to the right. \nSuppose we give as new features $x_{i}^{3}$, using these in addition to the original features $x_{i}$. Draw the new depth-2 tree that would be learned. Assume the features are organized $x_{1}, x_{2}, x_{1}^{3}, x_{2}^{3}$ and if two features are equally good for the split according to the entropy criterion, then we choose the first one in this order. As in part (b), assume min_samples_split=2.",
+       "Solution": "Image filling"
+}

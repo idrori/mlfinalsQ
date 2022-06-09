@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2021",
+       "Question Number": "6",
+       "Part": "a",
+       "Points": 3.0,
+       "Topic": "Neural Networks",
+       "Type": "Text",
+       "Question": "A neural network takes in an input x = (x1, x2) and outputs $\\hat{y}$ = a * x1 + b * x2.  The loss function is given as L(\\hat{y}, y) = \\left(y-\\hat{y}\\right)^2. Suppose $a_0$ and $b_0$ are the initial values of the weights, and $a_k$ and $b_k$ are the weights at iteration $k$.  Give equations for the updated weights $a_{k+1}$, $b_{k+1}$ in terms of current iteration's weights $a_{k}$, $b_{k}$, the step size parameter $\\eta$, and the inputs $x_1$, $x_2$.",
+       "Solution": "a_{k+1} = a_k \u2212 \u03b7*dL/da = a_k \u2212 2\u03b7*[(a_k \u2212 1)*x^2_1 + (b_k \u2212 1)x_1*x_2]\nb_{k+1} = b_k \u2212 \u03b7*dL/db = b_k \u2212 2\u03b7*[(b_k \u2212 1)*x^2_1 + (a_k \u2212 1)x_1*x_2]\n"
+}

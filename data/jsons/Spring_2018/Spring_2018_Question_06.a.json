@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2018",
+       "Question Number": "6",
+       "Part": "a",
+       "Points": 3.0,
+       "Topic": "Reinforcement Learning",
+       "Type": "Image",
+       "Question": "We will be performing Q-learning in an MDP with states so through sk, and actions $a_{1}$ and $a_{2}$. Let the discount factor $\\gamma=0.8$ and learning rate $\\alpha=1$.\n\nNote: do not assume anything more about the MDP from which this experience was generated. It is not necessarily the same as the one from question $5 .$\n(a) The Q-learning algorithm begins with $Q(s, a)=0$ for all $s$ and $a$. It receives the following experience, in order. Each tuple represents a state, action, reward, and next state.\n$$\n\\begin{array}{r}\n\\left(s_{\\mathrm{D}}, a_{2}, 0, s_{2}\\right) \\\\\n\\left(s_{2}, a_{1}, 0, s_{3}\\right) \\\\\n\\left(s_{3}, a_{1}, 0, s_{1}\\right) \\\\\n\\left(s_{1}, a_{1}, 10, s_{\\mathrm{D}}\\right) \\\\\n\\left(s_{\\mathrm{D}}, a_{1}, 0, s_{\\mathrm{K}}\\right) \\\\\n\\left(s_{\\mathrm{K}}, a_{1}, 0, s_{4}\\right) \\\\\n\\left(s_{4}, a_{1}, 5_{1}, s_{\\mathrm{D}}\\right)\n\\end{array}\n$$\nFill in the resulting $Q$ values in the following table:\n\\begin{tabular}{l|l|l|l|l|l|l|} \n& $s_{0}$ & $s_{1}$ & $s_{2}$ & $s_{3}$ & $s_{4}$ & $s_{5}$ \\\\\n\\hline$a_{1}$ & 0 & & & & & \\\\\n\\hline & & 10 & 0 & 0 & 5 & 0 \\\\\n$a_{2}$ & 0 & 0 & 0 & 0 & 0 & 0 \\\\\n\\hline\n\\end{tabular}",
+       "Solution": "\\begin{tabular}{l|l|l|l|l|l|l|} \n& $s_{0}$ & $s_{1}$ & $s_{2}$ & $s_{3}$ & $s_{4}$ & $s_{5}$ \\\\\n\\hline$a_{1}$ & 0 & & & & & \\\\\n\\hline & & 10 & 0 & 0 & 5 & 0 \\\\\n$a_{2}$ & 0 & 0 & 0 & 0 & 0 & 0 \\\\\n\\hline\n\\end{tabular}"
+}

@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2021",
+       "Question Number": "4",
+       "Part": "d",
+       "Points": 2.0,
+       "Topic": "Classifiers",
+       "Type": "Image",
+       "Question": "This question asks about learning nearest neighbor (NN) classifiers. Assume that we are using Euclidean distance squared as the distance metric, i.e. $d\\left(x, x^{\\prime}\\right)=\\left\\|x-x^{\\prime}\\right\\|^{2}$. \n Suppose we now use the following feature transformation, $\\phi\\left(x_{1}, x_{2}\\right)=x_{1} x_{2}$, and seek to learn a nearest neighbor classifier in the transformed space. This is equivalent to using a different distance metric, $d\\left(x, x^{n}\\right)=\\left\\|\\phi(x)-\\Phi\\left(x^{r}\\right)\\right\\|^{2}$. What is the average leave-one-out cross-validation error of a 3-NN classifier using this new distance metric? Which points would be misclassified (specified using their $\\left(x_{1}, x_{2}\\right)$ coordinates)?",
+       "Solution": "3-NN:\n$1 / 13$ Misclassified points:\n$(-1,1)$"
+}

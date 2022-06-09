@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2022",
+       "Question Number": "3",
+       "Part": "a",
+       "Points": 2.0,
+       "Topic": "Classifiers",
+       "Type": "Image",
+       "Question": "Consider the following data. Clearly, the points are not linearly separable, so we will try three alternative approaches to solving the problem.\nApproach 1: Nested linear classifiers\nLet $w=\\left[\\begin{array}{l}+1 \\\\ -1\\end{array}\\right]$ and\n$$\n\\begin{aligned}\na_{1} &=\\operatorname{sign}\\left(w^{T} x+4\\right) \\\\\na_{2} &=\\operatorname{sign}\\left(w^{T} x-4\\right) \\\\\nh\\left(x ; v_{0}, v_{1}, v_{2}\\right) &=\\operatorname{sign}\\left(v_{1} a_{1}+v_{2} a_{2}+v_{0}\\right)\n\\end{aligned}\n$$\nwhere\n$$\n\\operatorname{sign}(x)= \\begin{cases}+1 & \\text { if } x>0 \\\\ -1 & \\text { otherwise }\\end{cases}\n$$ Draw the classifiers corresponding to $a_{1}$ and $a_{2}$ on the axes above. Label them clearly, including their normal vectors.",
+       "Solution": "Image filling"
+}

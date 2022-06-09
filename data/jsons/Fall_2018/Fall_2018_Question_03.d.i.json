@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2018",
+       "Question Number": "3",
+       "Part": "d.i",
+       "Points": 1.666666667,
+       "Topic": "CNNs",
+       "Type": "Text",
+       "Question": "Dana has an idea for a new kind of network called a ModConv NN. If the network is n\u21e5n, we will use a filter of size n/k (assume k evenly divides n). To compute entry (a, b) of the resulting image, we apply this filter to the \u201csubimage\u201d of pixels (i, j) from the original image, where i mod k = a and j mod k = b. Could we train the weights of a ModConvNN using gradient descent? Explain why or why not.",
+       "Solution": "Sure. Just another parametric model"
+}

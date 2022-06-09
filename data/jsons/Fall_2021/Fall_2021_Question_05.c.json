@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2021",
+       "Question Number": "5",
+       "Part": "c",
+       "Points": 2.0,
+       "Topic": "MDPs",
+       "Type": "Text",
+       "Question": "Ena can be in one of three states: fit, partially fit, or injured. Ena can choose 3 actions: play, train or break. When Ena is fully fit and decides to play the reward is +100. When Ena is fully fit and decides to trainthe reward is -10. When Ena is fully fit and decides to break there is no reward. When Ena is partially fit and decides to play the reward is +20. When Ena is partially fit and decides to train the reward is -10. When Ena is partially fit and decides to break the reward is -20.  When Ena is injured and decides to play the reward is -60. When Ena is injured and decides to train the reward is -30. When Ena is injured and decides to break the reward is 0. When Ena is fully fit and decides to play there is an 80% chance of remaining fully fit and 20% chance of getting injured. When Ena is fully fit and decides to train there is an 90% chance of remaining fully fit and a 10% chance of getting injured. When Ena is fully fit and decides to break there is an 50% chance of remaining fully fit and 50% chance of being partially fit. When Ena is partially fit and decided to play there is a 50% chance of remaining partially fit and 50% chance of getting injured. When Ena is partially fit and decided to train there is a 40% chance of remaining partially fit and 60% chance of getting fully fit. When Ena is partially fit and decided to break there is a 100% chance of remaining partially fit. When Ena is injured and decides to play there is a 100% chance of remaining injured. When Ena is injured and decides to train there is a 100% chance of reamining injured. When Ena is injured and decides to break there is a 50% chance of remaining injured and 50% chance of being partially fit. When the horizon is 2 and Ena is partially fit what is the expected reward for taking the best action with a discount factor of .5?",
+       "Solution": "Play, 25"
+}

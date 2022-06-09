@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2018",
+       "Question Number": "7",
+       "Part": "a",
+       "Points": 2.0,
+       "Topic": "RNNs",
+       "Type": "Text",
+       "Question": "Recall the specification of a standard recurrent neural network (RNN): input $x_{t}$ of dimension $\\ell \\times 1$, state $s_{t}$ of dimension $m \\times 1$, and output $y_{t}$ of dimension $v \\times 1$. The weights in the network, then, are\n$$\n\\begin{aligned}\n&W^{s x}: m \\times \\ell \\\\\n&W^{s s}: m \\times m \\\\\n&W^{O}: v \\times m\n\\end{aligned}\n$$\nwith activation functions $f_{1}$ and $f_{2}$. Throughout this problem, for simplicity, we will treat all offsets as equal to 0 . Finally, the operation of the RNN is described by\n$$\n\\begin{aligned}\n&s_{t}=f_{1}\\left(W^{s x} x_{t}+W^{s s} s_{t-1}\\right) \\\\\n&y_{t}=f_{2}\\left(W^{o} s_{t}\\right)\n\\end{aligned}\n$$\n\nConsider an RNN defined by $\\ell=1, m=2, v=1, f_{1}=f_{2}=$ the identity function, and\n$$\nW^{s x}=\\left[\\begin{array}{l}\n5 \\\\\n6\n\\end{array}\\right] \\quad W^{s s}=\\left[\\begin{array}{ll}\n1 & 2 \\\\\n3 & 4\n\\end{array}\\right] \\quad W^{O}=\\left[\\begin{array}{ll}\n-3 & -2\n\\end{array}\\right]\n$$\nAssuming the initial state is all 0 , and the input sequence is $[[1],[-1]]$, what is the output sequence?",
+       "Solution": "$$\n\\begin{aligned}\ns 1 &=[5,6]^{T} \\\\\ny 1 &=-15-12=-27 \\\\\ns 2 &=[-5,-6]^{T}+[5+12,15+24]^{T}=[12,33]^{T} \\\\\ny 2 &=-36-66=-102\n\\end{aligned}\n$$\nSo answer is $[[-27],[-102]]$. Don't worry about transpose."
+}

@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2019",
+       "Question Number": "3",
+       "Part": "d",
+       "Points": 2.0,
+       "Topic": "Regression",
+       "Type": "Text",
+       "Question": "Mitch Mitdiddle has kept track of ratings of three items from three different users\nof his new e-commerce website. These items are essential, and so each user has purchased and rated all three of the items. However, Mitch has lost one of the ratings, r: The (almost) complete ratings matrix is here:\n$$\nY=\\left[\\begin{array}{ccc}\n6 & 8 & 10 \\\\\n9 & 12 & r \\\\\n3 & 4 & 5\n\\end{array}\\right]\n$$\nNote, users $a$ and items $i$ are indexed from 1 , i.e., the first row of $Y$ corresponds to user $1(a=1)$, and the first column of $Y$ corresponds to item $1(i=1)$.\nAn e-commerce expert explains to you that users only care about one particular feature when it comes to rating products, and provides you with the value of this feature for each item, which we set as $V$:\n$$\nV=\\left[\\begin{array}{c}\n6 \\\\\n8 \\\\\n10\n\\end{array}\\right]\n$$\nMitch remembers that we can use the alternating least squares method to solve for $U$, minimizing:\n$$\nJ(U, V)=\\frac{1}{2} \\sum_{(a, i) \\epsilon D}\\left(U^{(a)} \\cdot V^{(i)}-Y_{a, i}\\right)^{2}\n$$\nwhere $D$ is the set of all user $a$ item $i$ rating pairs $(a, i)$. Here $U^{(a)}$ is the $a^{t h}$ row of $U$, and $V^{(i)}$ is the $i^{t h}$ row of $V$. Note that offsets are fixed at $b_{U}=0$ and $b_{V}=0$ in this problem.\nMark all that are true for our U, V , and Y above:\nA. There are in\fnitely many settings of U and V that minimize J.\nB. For any constant (non-zero) V , J(U) has a unique global minimum.\nC. For any constant (non-zero) V , there exists a U such that J(U; V ) = 0.\nD. For any m x n matrix Y of rank 1, there exist matrices U and V of\nsizes m x 1 and n x 1 such that J(U, V ) = 0. ",
+       "Solution": "A, B, D true; C false"
+}

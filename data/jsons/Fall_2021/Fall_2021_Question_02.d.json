@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2021",
+       "Question Number": "2",
+       "Part": "d",
+       "Points": 1.0,
+       "Topic": "Clustering",
+       "Type": "Image",
+       "Question": "Assume that the number of clusters $k=2$ for all of the following questions. \nWhat is the numerical value of the $k$-means objective for the clustering found in (c), after the algorithm has finished running?",
+       "Solution": "$4 \\cdot\\left(2^{2}\\right)+4 \\cdot\\left(3^{2}\\right)=16+36=52$."
+}

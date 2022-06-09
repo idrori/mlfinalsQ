@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2018",
+       "Question Number": "2",
+       "Part": "b",
+       "Points": 3.0,
+       "Topic": "Decision Trees",
+       "Type": "Image",
+       "Question": "We will continue the example from the previous question. For the dataset indicated below, construct a decision tree (using the algorithm from class, based on weighted entropy) with features from $\\phi(x)$. If there is a tie in the choice of split, first prefer features that appear earlier in the $\\phi(x)$ vector and then smaller thresholds. Use tests of the form $f<v$. You do not need to provide numerical values of the weighted entropy.\n$$\n\\phi(x)=\\left[1, x_{1}, x_{2}, x_{1} x_{2}, x_{1}^{2}, x_{2}^{2}\\right]^{T}\n$$\nClassic XOR: positive: $(0,1),(1,0)$ and negative: $(0,0),(1,1)$.",
+       "Solution": "$x_{-} 1 x_{-} 2<0.5$\nT: $x_{-} 1<0.5$\nT: $x_{-} 2<0.5$\nT: $-1$\nF: $+1$\nF: $+1$\nF: $-1$"
+}

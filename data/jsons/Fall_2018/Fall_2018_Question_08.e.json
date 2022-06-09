@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2018",
+       "Question Number": "8",
+       "Part": "e",
+       "Points": 4.0,
+       "Topic": "Decision Trees",
+       "Type": "Text",
+       "Question": "There are different strategies for pruning decision trees. We assume that we grow \na decision tree until there is one or a small number of elements in each leaf. Then, we \nprune by deleting individual leaves of the tree until the score of the tree starts to get worse.\nThe question is how to score each possible pruning of the tree.\n Here is a definition of the score: The score is the percentage correct of the tree, computed on the training set, minus a\rconstant C times the number of nodes in the tree.\rC is chosen in advance by running cross-validation trials of this algorithm (grow a\rlarge tree then prune in order to maximize percent correct minus C times number of\rnodes) for many di\u2000erent values of C, and choosing the value of C that minimizes\rcross-validation error. Explain whether or not it would be a good \nidea and give a reason why or why not.",
+       "Solution": "A good idea when we don\u2019t have enough data to hold out a validation set. Choosing\rC by cross-validation will hopefully give us an e\u2000ective general way of penalizing for\rcomplexity of the tree (for this type of data)."
+}

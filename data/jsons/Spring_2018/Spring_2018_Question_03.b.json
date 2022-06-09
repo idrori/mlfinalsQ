@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2018",
+       "Question Number": "3",
+       "Part": "b",
+       "Points": 2.0,
+       "Topic": "Neural Networks",
+       "Type": "Image",
+       "Question": "Consider these training and test curves as a function of training dataset size. These are for two models: one simple and one complex. Which is which? Explain your choice.\nLeft: $\\sqrt{\\text { simple } O \\text { complex } \\quad \\text { Right: } O \\text { simple } \\sqrt{\\text { complex}}$",
+       "Solution": "The complex model more easily overfits, so test error is initially worse (and training error better), but with sufficient data (to prevent overfitting) the more complex model performs better."
+}

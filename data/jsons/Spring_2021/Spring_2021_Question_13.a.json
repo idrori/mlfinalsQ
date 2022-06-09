@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2021",
+       "Question Number": "13",
+       "Part": "a",
+       "Points": 1.0,
+       "Topic": "Neural Networks",
+       "Type": "Text",
+       "Question": "Sam wants to build a neural network that takes in a scalar value $x$ in the range $[0, 1]$ and generates a one-hot output vector $y$ of dimension $K$, where, for $k \\in \\{0, 1, \\ldots, K-1\\}$,  $y_k = 1$ if and only if $k/K < x \\leq (k+1)/K$;  that is, it discretizes the interval into $K$ equally sized sequential ranges. They choose an architecture with a single linear layer with weights $W$ and $W_0$ and a softmax activation function, so that the output  \n\\[a = \\text{softmax}(z)\\]\nwhere \n\\[z = W^T x + W_0\\;\\;.\\]\nAssume that, for prediction purposes,  we are going to take the output of the network, $a$, and convert it into a $K$-dimensional one-hot vector $(y_0, \\ldots, y_{k-1})$ where\n\\begin{align*}\n    y_i = \\begin{cases} 1 & \\text{if $i = \\text{arg} \\max_j a_j$}\\\\\n    0 & \\text{otherwise}\n    \\end{cases}\n\\end{align*}. That is, it has a value of $1$ at the index corresponding to the maximal element of $a$ and value $0$ everywhere else. How many trainable weights does this network have when $K = 10$?",
+       "Solution": "20"
+}

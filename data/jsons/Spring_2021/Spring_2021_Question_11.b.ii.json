@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2021",
+       "Question Number": "11",
+       "Part": "b.ii",
+       "Points": 0.5,
+       "Topic": "RNNs",
+       "Type": "Text",
+       "Question": "Ronnie makes a simple RNN with state dimension 1 and a {\\em step} function for $f_1$, so that \\[s_t = \\text{step}( w_1 x_t + w_2 s_{t-1} + b) \\] where $\\text{step}(z) = 1$ if $z > 0.0$ and equals $0$ otherwise, and where the output  \\[y_t = s_t\\;\\;.\\]. Assuming $s_0 = 1$, we want to generate output sequence   \\[[1, 1, 1, 0, 0, 0, 1, 1]\\] given input sequence \\[ [0, 0, 0, 1, 0, 0, 1, 0]\\]. What is the value of s_t for x_t = 0 and s_{t-1} = 1?",
+       "Solution": "1"
+}

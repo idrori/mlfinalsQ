@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2021",
+       "Question Number": "9",
+       "Part": "b",
+       "Points": 1.0,
+       "Topic": "Reinforcement Learning",
+       "Type": "Image",
+       "Question": "Kim is running $Q$ learning on a simple $2 D$ grid-world problem and visualizes the current $Q$ value estimates and greedy policy with respect to the current $Q$ value estimates at each location. States correspond to squares in the grid, actions are north, south, east, and west, and there is a single state with non-zero reward. Assume the transition model is deterministic and action north moves you one square up, etc., except at the boundaries of the domain. Diagonal moves are not possible. \nKim sees the situation below while their algorithm is running. The numbers in the boxes correspond to the estimated $\\hat{V}$ values for the states neighboring state $s$, and the arrow indicates the greedy action with respect to $\\hat{Q}$ for state $s$. All of the states shown have 0 reward values.\nExplain briefly why this situation might be concerning.",
+       "Solution": "The situation is potentially concerning because the greedy action is to move north, but the neighboring state with the highest estimated value is to the south."
+}

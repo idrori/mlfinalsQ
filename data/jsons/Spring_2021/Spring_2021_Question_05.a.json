@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2021",
+       "Question Number": "5",
+       "Part": "a",
+       "Points": 1.0,
+       "Topic": "Loss Functions",
+       "Type": "Image",
+       "Question": "We have looked at many machine-learning algorithms with hyper-parameters. Varying each of them has an effect on the loss on both the training data and on unseen testing data. What plot would describe the most typical behavior for the testing error dependency on the weight on the regularization term in logistic regression: monotonically decreasing function, convex parabola, monotonically increasing function, monotonically decreasing step function, monotonically increasing step function? If none of them is appropriate, explain.",
+       "Solution": "convex parabola"
+}

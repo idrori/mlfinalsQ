@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2019",
+       "Question Number": "8",
+       "Part": "c.i",
+       "Points": 0.5,
+       "Topic": "Regression",
+       "Type": "Text",
+       "Question": "We previously examined ridge regression, where a regularizer term $R_{\\lambda}(\\theta)$ is added to a sum of squares loss to form the $J_{1}$ objective function as below. Throughout this problem, we will assume zero offset $\\theta_{0}=0$ and linear models of output $y$ as a function of input $x$. $$ \\begin{aligned} J_{1}(\\theta) &=\\frac{1}{2} \\sum_{i=1}^{n}\\left(y_{i}-\\theta \\cdot x_{i}\\right)^{2}+R_{\\lambda}(\\theta) \\\\ &=\\frac{1}{2} \\sum_{i=1}^{n}\\left(y_{i}-\\theta \\cdot x_{i}\\right)^{2}+\\frac{\\lambda}{2}\\|\\theta\\|^{2} \\end{aligned} $$ Laz Zo prefers an alternative approach (called \"lasso\" regularization), where a different regularizer $R_{\\alpha}(\\theta)$ is added to the sum of squares loss: $$ \\begin{aligned} J_{2}(\\theta) &=\\frac{1}{2} \\sum_{i=1}^{n}\\left(y_{i}-\\theta \\cdot x_{i}\\right)^{2}+R_{\\alpha}(\\theta) \\\\ &=\\frac{1}{2} \\sum_{i=1}^{n}\\left(y_{i}-\\theta \\cdot x_{i}\\right)^{2}+\\alpha \\sum_{j=1}^{k}\\left|\\theta_{j}\\right| \\end{aligned} $$ Consider the two-dimensional case, $k=2$, so that our vector $\\theta$ has just two components, $\\theta_{1}$ and $\\theta_{2}$. Suppose also that $\\theta_{1}>\\theta_{2}$ and both are positive $\\left(\\theta_{1}, \\theta_{2}>0\\right)$. We are interested in the behavior of $R_{\\alpha}(\\theta)$ and $R_{\\lambda}(\\theta)$. Assume both $\\lambda$ and $\\alpha$ are positive. Rega Lizer is interested in the behavior of these two regularizers, when used to fit a linear model by minimizing $J_{1}$ and $J_{2}$. We compare the ridge regularizer $R_{\\lambda}$ and the lasso regularizer $R_{\\alpha}$, for general $k$. Assume $\\alpha$ and $\\lambda$ are positive. Indicate True or False about the following $R_{\\lambda}$ when minimizing $J_{1}$ (with sum of squares loss and $R_{\\lambda}(\\theta)$ terms): $R_{\\lambda}$ pushes $\\theta$ to have smaller magnitude $\\theta_{i}$ ",
+       "Solution": "TRUE"
+}

@@ -1,0 +1,502 @@
+Semester,Question Number,Part,Points,Topic,Type,Question,Solution
+Spring 2021,1,a,1,Name,Image,Write down your name,Write down your name
+Spring 2021,2,a,4,Features,Image,"For each of the datasets below, find a transformation from the original data into a single new feature $\phi\left(\left(x_{1}, x_{2}\right)\right)$ such that the data is linearly separable in the new space, and specify the parameters $\theta$ and $\theta_{0}$ of the separator in the transformed space.
+(image here)","$\phi\left(\left(x_{1}, x_{2}\right)\right)=x_{1}^{2}+x_{2}^{2}$
+$\theta=[-1]$
+$\theta_{0}=-4$ (or any value between $-2$ and $-8$ )"
+Spring 2021,2,b,4,Features,Image,"For each of the datssets below, find a transformation from the original data into a single new feature $\phi\left(\left(x_{1}, x_{2}\right)\right)$ such that the data is linearly separable in the new space, and specify the parameters $\theta$ and $\theta_{0}$ of the separator in the transformed space.
+(image here)","$\phi\left(\left(x_{1}, x_{2}\right)\right)=\left(x_{1}-x_{2}\right)^{2}$
+$\theta=[-1]$
+$\theta_{0}=-2$ (or any value between 0 and $-4$ )"
+Spring 2021,3,a,2,Features,Text,"You are trying to predict whether start-up companies will succeed or fail, based on the name of the company. You have the following dataset in the format (x, y): (Aardvarkia, +1), (Fro, +1), (Rodotopo, -1), (Whoodo, -1).  You have a one hot encoding for each of the names (Aardvarkia, Fro, Rodotopo, Whoodo). You consider two different encodings of the features:
+• One-hot encoding, with the first feature corresponding to “Aardvarkia,” the second to “Fro,” third to “Rodotopo,” and fourth to “Whoodo.”
+• Numerical encoding, using the numerical place of the first letter of the name in the English alphabet (so ’A’ is 0 and ’Z’ is 25).
+Provide parameters of a 0-error linear separator using one-hot encoding.","All that matters is that the first two components of θ are positive and
+the last two are negative. "
+Spring 2021,3,b,2,Features,Text,"You are trying to predict whether start-up companies will succeed or fail, based on the name of the company. You have the following dataset in the format (x, y): (Aardvarkia, +1), (Fro, +1), (Rodotopo, -1), (Whoodo, -1).  You have a one hot encoding for each of the names (Aardvarkia, Fro, Rodotopo, Whoodo). You consider two different encodings of the features:
+• One-hot encoding, with the first feature corresponding to “Aardvarkia,” the second to “Fro,” third to “Rodotopo,” and fourth to “Whoodo.”
+• Numerical encoding, using the numerical place of the first letter of the name in the English alphabet (so ’A’ is 0 and ’Z’ is 25). Provide parameters of a 0-error linear separator using the numerical encoding.",θ = [−1]T and θ0 = a for a > 5
+Spring 2021,3,c,2,Features,Text,"You are trying to predict whether start-up companies will succeed or fail, based on the name of the company. You have the following dataset in the format (x, y): (Aardvarkia, +1), (Fro, +1), (Rodotopo, -1), (Whoodo, -1).  You have a one hot encoding for each of the names (Aardvarkia, Fro, Rodotopo, Whoodo). You consider two different encodings of the features:
+• One-hot encoding, with the first feature corresponding to “Aardvarkia,” the second to “Fro,” third to “Rodotopo,” and fourth to “Whoodo.”
+• Numerical encoding, using the numerical place of the first letter of the name in the English alphabet (so ’A’ is 0 and ’Z’ is 25).You add a new company with name “Zzyyzygy” and class +1. If you extend the one-hot encoding to add another feature corresponding to this company name, will this new data set be linearly separable using the one-hot encoding? Explain briefly.","Yes. With the one hot encoding, there’s a dimension for each point x(i), y(i), with y (i) ∈ {−1, 1}, so we can always pick θ = [y
+(0), ..., y(n)] and θ0 = 0"
+Spring 2021,3,d,2,Features,Text,"You are trying to predict whether start-up companies will succeed or fail, based on the name of the company. You have the following dataset in the format (x, y): (Aardvarkia, +1), (Fro, +1), (Rodotopo, -1), (Whoodo, -1).  You have a one hot encoding for each of the names (Aardvarkia, Fro, Rodotopo, Whoodo). You consider two different encodings of the features:
+• One-hot encoding, with the first feature corresponding to “Aardvarkia,” the second to “Fro,” third to “Rodotopo,” and fourth to “Whoodo.”
+• Numerical encoding, using the numerical place of the first letter of the name in the English alphabet (so ’A’ is 0 and ’Z’ is 25). 
+If you add the company ""Zzyyzygy"" to your data set but use the numeric encoding, is the new data set linearly separable? Explain briefly","No. The encoding remains one dimensional and now the data is not linearly separable, there are positive points on both sides of negative points."
+Spring 2021,4,a,0.5,Logistic Regression,Text,"It is common in classification problems for the cost of a false positive (predicting positive when the true answer is negative) to be different from the cost of a false negative (predicting negative when the true answer is positive). This might happen, for example, when the task is to predict the presence of a serious disease.
+Let’s say that the cost of a correct classification is 0, the cost of a false positive is 1, and the
+cost of a false negative (that is, you predict 0 when the correct answer was +1) is α. Recall that the usual logistic regression loss is: \begin{equation*} 
+\mathcal{L}_\text{nll}(g, y) = 
+-\left(y \cdot \log g + (1 - y)\cdot\log (1 -
+ g)\right) \;\;.
+\end{equation*}
+What is the usual loss, as a function of guess g, when the true label y = 0?","Lnll(g, y = 0) = − log(1 − g)"
+Spring 2021,4,b,0.5,Logistic Regression,Text,"It is common in classification problems for the cost of a false positive (predicting positive when the true answer is negative) to be different from the cost of a false negative (predicting negative when the true answer is positive). This might happen, for example, when the task is to predict the presence of a serious disease.
+Let’s say that the cost of a correct classification is 0, the cost of a false positive is 1, and the
+cost of a false negative (that is, you predict 0 when the correct answer was +1) is α. Recall that the usual logistic regression loss is: \begin{equation*} 
+\mathcal{L}_\text{nll}(g, y) = 
+-\left(y \cdot \log g + (1 - y)\cdot\log (1 -
+ g)\right) \;\;.
+\end{equation*}
+What is the usual loss, as a function of guess g, when the true label y = 1?","Lnll(g, y = 1) = − log(g)"
+Spring 2021,4,c,1,Logistic Regression,Text,"It is common in classification problems for the cost of a false positive (predicting positive when the true answer is negative) to be different from the cost of a false negative (predicting negative when the true answer is positive). This might happen, for example, when the task is to predict the presence of a serious disease.
+Let’s say that the cost of a correct classification is 0, the cost of a false positive is 1, and the
+cost of a false negative (that is, you predict 0 when the correct answer was +1) is α. Recall that the usual logistic regression loss is: \begin{equation*} 
+\mathcal{L}_\text{nll}(g, y) = 
+-\left(y \cdot \log g + (1 - y)\cdot\log (1 -
+ g)\right) \;\;.
+\end{equation*}
+Write down a loss function that penalizes false negatives α times more than false positives.","Lnll(g, y) = −(αy log(g) + (1 − y) log(1 − g))"
+Spring 2021,4,d,2,Logistic Regression,Text,"It is common in classification problems for the cost of a false positive (predicting positive when the true answer is negative) to be different from the cost of a false negative (predicting negative when the true answer is positive). This might happen, for example, when the task is to predict the presence of a serious disease.
+Let’s say that the cost of a correct classification is 0, the cost of a false positive is 1, and the
+cost of a false negative (that is, you predict 0 when the correct answer was +1) is α. Recall that the usual logistic regression loss is: \begin{equation*} 
+\mathcal{L}_\text{nll}(g, y) = 
+-\left(y \cdot \log g + (1 - y)\cdot\log (1 -
+ g)\right) \;\;.
+\end{equation*}
+Jun proposes that we can find a classifier that optimizes the classification cost without changing our logistic regression loss function, by rebalancing the training data, that is, adding multiple copies of each of the points in one of the classes. For α = 3, explain briefly how you would change the data.","For each data point with a true label which is positive, i.e. y = 1, add the
+point two more times. This means that each data point with positive label is present
+three times in the dataset."
+Spring 2021,4,e,2,Logistic Regression,Text,"It is common in classification problems for the cost of a false positive (predicting positive when the true answer is negative) to be different from the cost of a false negative (predicting negative when the true answer is positive). This might happen, for example, when the task is to predict the presence of a serious disease.
+Let’s say that the cost of a correct classification is 0, the cost of a false positive is 1, and the
+cost of a false negative (that is, you predict 0 when the correct answer was +1) is α. Recall that the usual logistic regression loss is: \begin{equation*} 
+\mathcal{L}_\text{nll}(g, y) = 
+-\left(y \cdot \log g + (1 - y)\cdot\log (1 -
+ g)\right) \;\;.
+\end{equation*}
+Jun proposes that we can find a classifier that optimizes the classification cost without changing our logistic regression loss function, by rebalancing the training data, that is, adding multiple copies of each of the points in one of the classes. Would Jun’s approach result in a classifier that optimizes the classification cost when using the Perceptron algorithm when the data are linearly separable? Explain briefly why or why not.
+","For the separable case, repeating existing data points will keep the dataset
+separable (for the perceptron). The classification error should remain at 0. This should
+be similar to Jun’s approach."
+Spring 2021,4,f,2,Logistic Regression,Text,"It is common in classification problems for the cost of a false positive (predicting positive when the true answer is negative) to be different from the cost of a false negative (predicting negative when the true answer is positive). This might happen, for example, when the task is to predict the presence of a serious disease.
+Let’s say that the cost of a correct classification is 0, the cost of a false positive is 1, and the
+cost of a false negative (that is, you predict 0 when the correct answer was +1) is α. Recall that the usual logistic regression loss is: \begin{equation*} 
+\mathcal{L}_\text{nll}(g, y) = 
+-\left(y \cdot \log g + (1 - y)\cdot\log (1 -
+ g)\right) \;\;.
+\end{equation*}
+Jun proposes that we can find a classifier that optimizes the classification cost without changing our logistic regression loss function, by rebalancing the training data, that is, adding multiple copies of each of the points in one of the classes. Would Jun’s approach result in a classifier that optimizes the classification cost when using the Perceptron algorithm when the data are linearly separable? Would Jun’s approach result in a classifier that optimizes the classification cost when using the Perceptron algorithm when the data are not linearly separable?","For the non-separable case, the answer depends on how long we let the
+perceptron run (because it will never converge). But roughly, since there are three
+times more points of one label, the perceptron’s separator should have a similar effect
+compared to Jun’s approach (but they may not always match exactly, depending on
+the order of iteration and number of iterations)."
+Spring 2021,4,g,1,Logistic Regression,Text,"It is common in classification problems for the cost of a false positive (predicting positive when the true answer is negative) to be different from the cost of a false negative (predicting negative when the true answer is positive). This might happen, for example, when the task is to predict the presence of a serious disease.
+Let’s say that the cost of a correct classification is 0, the cost of a false positive is 1, and the
+cost of a false negative (that is, you predict 0 when the correct answer was +1) is α. Recall that the usual logistic regression loss is: \begin{equation*} 
+\mathcal{L}_\text{nll}(g, y) = 
+-\left(y \cdot \log g + (1 - y)\cdot\log (1 -
+ g)\right) \;\;.
+\end{equation*}
+Usually, in logistic regression, we predict class +1 when a > 0.5 and -1 otherwise. Jin proposes that we can use the standard logistic regression loss function and the same data set, but change the threshold of 0.5 that we use to select a prediction. Would you increase or decrease the threshold when α = 3? ",decrease
+Spring 2021,4,h,1,Logistic Regression,Text,"It is common in classification problems for the cost of a false positive (predicting positive when the true answer is negative) to be different from the cost of a false negative (predicting negative when the true answer is positive). This might happen, for example, when the task is to predict the presence of a serious disease.
+Let’s say that the cost of a correct classification is 0, the cost of a false positive is 1, and the
+cost of a false negative (that is, you predict 0 when the correct answer was +1) is α. Recall that the usual logistic regression loss is: \begin{equation*} 
+\mathcal{L}_\text{nll}(g, y) = 
+-\left(y \cdot \log g + (1 - y)\cdot\log (1 -
+ g)\right) \;\;.
+\end{equation*}
+Suggest a strategy that Jin can use for picking a new threshold that minimizes our average asymmetric cost of classification.",Try several values and and find the one that minimizes the training loss.
+Spring 2021,5,a,1,Loss Functions,Image,"We have looked at many machine-learning algorithms with hyper-parameters. Varying each of them has an effect on the loss on both the training data and on unseen testing data. What plot would describe the most typical behavior for the training error dependency on the weight on the regularization term in logistic regression: monotonically decreasing function, convex parabola, monotonically increasing function, monotonically decreasing step function, monotonically increasing step function? If none of them is appropriate, explain.","monotonically increasing, monotonically increasing step"
+Spring 2021,5,a,1,Loss Functions,Image,"We have looked at many machine-learning algorithms with hyper-parameters. Varying each of them has an effect on the loss on both the training data and on unseen testing data. What plot would describe the most typical behavior for the testing error dependency on the weight on the regularization term in logistic regression: monotonically decreasing function, convex parabola, monotonically increasing function, monotonically decreasing step function, monotonically increasing step function? If none of them is appropriate, explain.",convex parabola
+Spring 2021,5,b,1,Loss Functions,Image,"We have looked at many machine-learning algorithms with hyper-parameters. Varying each of them has an effect on the loss on both the training data and on unseen testing data. What plot would describe the most typical behavior for the training error dependency on the step-size in gradient descent for neural networks (assuming a  fixed number of 
+iterations): monotonically decreasing function, convex parabola, monotonically increasing function, monotonically decreasing step function, monotonically increasing step function? If none of them is appropriate, explain.",convex parabola
+Spring 2021,5,b,1,Loss Functions,Image,"We have looked at many machine-learning algorithms with hyper-parameters. Varying each of them has an effect on the loss on both the training data and on unseen testing data. What plot would describe the most typical behavior for the testing error dependency on the step-size in gradient descent for neural networks (assuming a  fixed number of 
+iterations): monotonically decreasing function, convex parabola, monotonically increasing function, monotonically decreasing step function, monotonically increasing step function? If none of them is appropriate, explain.",convex parabola
+Spring 2021,5,c,1,Loss Functions,Image,"We have looked at many machine-learning algorithms with hyper-parameters. Varying each of them has an effect on the loss on both the training data and on unseen testing data. What plot would describe the most typical behavior for the training error dependency on the maximum depth of a decision tree: monotonically decreasing function, convex parabola, monotonically increasing function, monotonically decreasing step function, monotonically increasing step function? If none of them is appropriate, explain.",monotonically decreasing
+Spring 2021,5,c,1,Loss Functions,Image,"We have looked at many machine-learning algorithms with hyper-parameters. Varying each of them has an effect on the loss on both the training data and on unseen testing data. What plot would describe the most typical behavior for the testing error dependency on the maximum depth of a decision tree: monotonically decreasing function, convex parabola, monotonically increasing function, monotonically decreasing step function, monotonically increasing step function? If none of them is appropriate, explain.",convex parabola
+Spring 2021,5,d,1,Loss Functions,Image,"We have looked at many machine-learning algorithms with hyper-parameters. Varying each of them has an effect on the loss on both the training data and on unseen testing data. What plot would describe the most typical behavior for the training error dependency on the number of neighbors in nearest-neighbor classification: monotonically decreasing function, convex parabola, monotonically increasing function, monotonically decreasing step function, monotonically increasing step function? If none of them is appropriate, explain.","monotonically increasing, monotonically increasing step"
+Spring 2021,5,d,1,Loss Functions,Image,"We have looked at many machine-learning algorithms with hyper-parameters. Varying each of them has an effect on the loss on both the training data and on unseen testing data. What plot would describe the most typical behavior for the testing error dependency on the number of neighbors in nearest-neighbor classification: monotonically decreasing function, convex parabola, monotonically increasing function, monotonically decreasing step function, monotonically increasing step function? If none of them is appropriate, explain.",convex parabola
+Spring 2021,5,e,1,Loss Functions,Image,"We have looked at many machine-learning algorithms with hyper-parameters. Varying each of them has an effect on the loss on both the training data and on unseen testing data. What plot would describe the most typical behavior for the training error dependency on the number of epochs of gradient-descent to perform: monotonically decreasing function, convex parabola, monotonically increasing function, monotonically decreasing step function, monotonically increasing step function? If none of them is appropriate, explain.",monotonically decreasing
+Spring 2021,5,e,1,Loss Functions,Image,"We have looked at many machine-learning algorithms with hyper-parameters. Varying each of them has an effect on the loss on both the training data and on unseen testing data. What plot would describe the most typical behavior for the testing error dependency on the number of epochs of gradient-descent to perform: monotonically decreasing function, convex parabola, monotonically increasing function, monotonically decreasing step function, monotonically increasing step function? If none of them is appropriate, explain.",convex parabola
+Spring 2021,6,a,1,CNNs,Text,"PairNet definition: The PairNet is parameterized by (a) the weights $W$ of a small network $\textrm{NN}$ and (b) one more scalar $w_0$. If there are a total of $d$ features in the input, it has the final form of:
+\[y = \sigma(w_0 + \sum_{j \in \{1, \ldots, d\}, k \in \{1, \ldots, d\}, j \neq k} \textrm{NN}([x_j, x_k]; W))\]
+The small neural network, parameterized by weights $W$, takes a two-dimensional vector as input and generates a scalar output.   We write it as $\text{NN}([x_i, x_j]; W)$.   If this smaller neural network has multiple layers, then $W$ includes all the weights of all the layers, including offsets.  We apply PairNet to an image by letting $x_i$ and $x_j$ be pairs of pixel values drawn from throughout the input image, and $d$ is the total number of pixels.
+HairNet definition:  A hairnet has hairy layers and max pooling layers.  A hairy layer is a lot like a convolutional layer, but it uses a different set of weights on each image patch.
+Define the local 3 x 3 region of the (zero-padded) input image $I$ around pixel $i, j$:
+    \begin{align*}
+    R(I,i,j) = (&I_{i-1, j-1}, I_{i-1, j}, I_{i-1, j+1}, \\
+                 &I_{i, j-1}, I_{i, j}, I_{i, j+1}, \\
+                 &I_{i+1, j-1}, I_{i+1, j}, I_{i+1, j+1})
+    \end{align*}
+where $I_{i,j}$ is the pixel $i, j$ of $I$.
+Pixel $i,j$ of the output image is computed as the dot product of $R(I,i,j)$ and a weight vector and offset for each image location, $W^{i,j}$ and $W^{i,j}_0$.  So output pixel $O_{i,j} = {W^{i,j}}^T  R(I, i, j) + W^{i,j}_0$.
+Consider the number of parameters in a HairNet. Is it bigger or smaller than a fully connected network on an image of size 100 x 100? Explain briefly.",Smaller. A fully connected network has N params per output pixel while a HairNet has 9 params per output pixel.
+Spring 2021,6,b,1,CNNs,Text,"PairNet definition: The PairNet is parameterized by (a) the weights $W$ of a small network $\textrm{NN}$ and (b) one more scalar $w_0$. If there are a total of $d$ features in the input, it has the final form of:
+\[y = \sigma(w_0 + \sum_{j \in \{1, \ldots, d\}, k \in \{1, \ldots, d\}, j \neq k} \textrm{NN}([x_j, x_k]; W))\]
+The small neural network, parameterized by weights $W$, takes a two-dimensional vector as input and generates a scalar output.   We write it as $\text{NN}([x_i, x_j]; W)$.   If this smaller neural network has multiple layers, then $W$ includes all the weights of all the layers, including offsets.  We apply PairNet to an image by letting $x_i$ and $x_j$ be pairs of pixel values drawn from throughout the input image, and $d$ is the total number of pixels.
+HairNet definition:  A hairnet has hairy layers and max pooling layers.  A hairy layer is a lot like a convolutional layer, but it uses a different set of weights on each image patch.
+Define the local 3 x 3 region of the (zero-padded) input image $I$ around pixel $i, j$:
+    \begin{align*}
+    R(I,i,j) = (&I_{i-1, j-1}, I_{i-1, j}, I_{i-1, j+1}, \\
+                 &I_{i, j-1}, I_{i, j}, I_{i, j+1}, \\
+                 &I_{i+1, j-1}, I_{i+1, j}, I_{i+1, j+1})
+    \end{align*}
+where $I_{i,j}$ is the pixel $i, j$ of $I$.
+Pixel $i,j$ of the output image is computed as the dot product of $R(I,i,j)$ and a weight vector and offset for each image location, $W^{i,j}$ and $W^{i,j}_0$.  So output pixel $O_{i,j} = {W^{i,j}}^T  R(I, i, j) + W^{i,j}_0$.
+For a 100 x 100 image, is the number of parameters in a HairNet bigger or smaller than a CNN with a single convolutional layer with a 3 x 3 filter? Explain briefly.","Bigger.
+A CNN with a single convolutional layer (3x3 filter) has 9 params in total while HairNet has 9 params per output pixel."
+Spring 2021,6,c,1,CNNs,Text,"PairNet definition: The PairNet is parameterized by (a) the weights $W$ of a small network $\textrm{NN}$ and (b) one more scalar $w_0$. If there are a total of $d$ features in the input, it has the final form of:
+\[y = \sigma(w_0 + \sum_{j \in \{1, \ldots, d\}, k \in \{1, \ldots, d\}, j \neq k} \textrm{NN}([x_j, x_k]; W))\]
+The small neural network, parameterized by weights $W$, takes a two-dimensional vector as input and generates a scalar output.   We write it as $\text{NN}([x_i, x_j]; W)$.   If this smaller neural network has multiple layers, then $W$ includes all the weights of all the layers, including offsets.  We apply PairNet to an image by letting $x_i$ and $x_j$ be pairs of pixel values drawn from throughout the input image, and $d$ is the total number of pixels.
+HairNet definition:  A hairnet has hairy layers and max pooling layers.  A hairy layer is a lot like a convolutional layer, but it uses a different set of weights on each image patch.
+Define the local 3 x 3 region of the (zero-padded) input image $I$ around pixel $i, j$:
+    \begin{align*}
+    R(I,i,j) = (&I_{i-1, j-1}, I_{i-1, j}, I_{i-1, j+1}, \\
+                 &I_{i, j-1}, I_{i, j}, I_{i, j+1}, \\
+                 &I_{i+1, j-1}, I_{i+1, j}, I_{i+1, j+1})
+    \end{align*}
+where $I_{i,j}$ is the pixel $i, j$ of $I$.
+Pixel $i,j$ of the output image is computed as the dot product of $R(I,i,j)$ and a weight vector and offset for each image location, $W^{i,j}$ and $W^{i,j}_0$.  So output pixel $O_{i,j} = {W^{i,j}}^T  R(I, i, j) + W^{i,j}_0$.
+CNNs are often described as exploiting spatial locality and translation invariance. Does Pairnet explot spatial locality, translation invariance, both, or neither?",Translation Invariance
+Spring 2021,6,d,1,CNNs,Text,"PairNet definition: The PairNet is parameterized by (a) the weights $W$ of a small network $\textrm{NN}$ and (b) one more scalar $w_0$. If there are a total of $d$ features in the input, it has the final form of:
+\[y = \sigma(w_0 + \sum_{j \in \{1, \ldots, d\}, k \in \{1, \ldots, d\}, j \neq k} \textrm{NN}([x_j, x_k]; W))\]
+The small neural network, parameterized by weights $W$, takes a two-dimensional vector as input and generates a scalar output.   We write it as $\text{NN}([x_i, x_j]; W)$.   If this smaller neural network has multiple layers, then $W$ includes all the weights of all the layers, including offsets.  We apply PairNet to an image by letting $x_i$ and $x_j$ be pairs of pixel values drawn from throughout the input image, and $d$ is the total number of pixels.
+HairNet definition:  A hairnet has hairy layers and max pooling layers.  A hairy layer is a lot like a convolutional layer, but it uses a different set of weights on each image patch.
+Define the local 3 x 3 region of the (zero-padded) input image $I$ around pixel $i, j$:
+    \begin{align*}
+    R(I,i,j) = (&I_{i-1, j-1}, I_{i-1, j}, I_{i-1, j+1}, \\
+                 &I_{i, j-1}, I_{i, j}, I_{i, j+1}, \\
+                 &I_{i+1, j-1}, I_{i+1, j}, I_{i+1, j+1})
+    \end{align*}
+where $I_{i,j}$ is the pixel $i, j$ of $I$.
+Pixel $i,j$ of the output image is computed as the dot product of $R(I,i,j)$ and a weight vector and offset for each image location, $W^{i,j}$ and $W^{i,j}_0$.  So output pixel $O_{i,j} = {W^{i,j}}^T  R(I, i, j) + W^{i,j}_0$.. CNNs are often described as exploiting spatial locality and translation invariance. Does Hairnet explot spatial locality, translation invariance, both or neither?",Spatial locality
+Spring 2021,6,e,1,CNNs,Text,"PairNet definition: The PairNet is parameterized by (a) the weights $W$ of a small network $\textrm{NN}$ and (b) one more scalar $w_0$. If there are a total of $d$ features in the input, it has the final form of:
+\[y = \sigma(w_0 + \sum_{j \in \{1, \ldots, d\}, k \in \{1, \ldots, d\}, j \neq k} \textrm{NN}([x_j, x_k]; W))\]
+The small neural network, parameterized by weights $W$, takes a two-dimensional vector as input and generates a scalar output.   We write it as $\text{NN}([x_i, x_j]; W)$.   If this smaller neural network has multiple layers, then $W$ includes all the weights of all the layers, including offsets.  We apply PairNet to an image by letting $x_i$ and $x_j$ be pairs of pixel values drawn from throughout the input image, and $d$ is the total number of pixels.
+HairNet definition:  A hairnet has hairy layers and max pooling layers.  A hairy layer is a lot like a convolutional layer, but it uses a different set of weights on each image patch.
+Define the local 3 x 3 region of the (zero-padded) input image $I$ around pixel $i, j$:
+    \begin{align*}
+    R(I,i,j) = (&I_{i-1, j-1}, I_{i-1, j}, I_{i-1, j+1}, \\
+                 &I_{i, j-1}, I_{i, j}, I_{i, j+1}, \\
+                 &I_{i+1, j-1}, I_{i+1, j}, I_{i+1, j+1})
+    \end{align*}
+where $I_{i,j}$ is the pixel $i, j$ of $I$.
+Pixel $i,j$ of the output image is computed as the dot product of $R(I,i,j)$ and a weight vector and offset for each image location, $W^{i,j}$ and $W^{i,j}_0$.  So output pixel $O_{i,j} = {W^{i,j}}^T  R(I, i, j) + W^{i,j}_0$.
+The parameters of a CNN trained on images of one size can often be applied successfully to images of another size. Is this true of PairNet?","Yes and no:
+• Yes: because the same weights are applied to every pair of inputs, that part of
+the network is insensitive to the total number of inputs and can be applied to
+images of different sizes.
+• No: the threshold at the last ”layer” might need to vary depending on the total
+number of outputs of the pair network being combined.
+PairNet only depends on pairs of pixels. Images of another size simply control the
+number of pairs and not the count of pairs.
+"
+Spring 2021,6,f,1,CNNs,Text,"PairNet definition: The PairNet is parameterized by (a) the weights $W$ of a small network $\textrm{NN}$ and (b) one more scalar $w_0$. If there are a total of $d$ features in the input, it has the final form of:
+\[y = \sigma(w_0 + \sum_{j \in \{1, \ldots, d\}, k \in \{1, \ldots, d\}, j \neq k} \textrm{NN}([x_j, x_k]; W))\]
+The small neural network, parameterized by weights $W$, takes a two-dimensional vector as input and generates a scalar output.   We write it as $\text{NN}([x_i, x_j]; W)$.   If this smaller neural network has multiple layers, then $W$ includes all the weights of all the layers, including offsets.  We apply PairNet to an image by letting $x_i$ and $x_j$ be pairs of pixel values drawn from throughout the input image, and $d$ is the total number of pixels.
+HairNet definition:  A hairnet has hairy layers and max pooling layers.  A hairy layer is a lot like a convolutional layer, but it uses a different set of weights on each image patch.
+Define the local 3 x 3 region of the (zero-padded) input image $I$ around pixel $i, j$:
+    \begin{align*}
+    R(I,i,j) = (&I_{i-1, j-1}, I_{i-1, j}, I_{i-1, j+1}, \\
+                 &I_{i, j-1}, I_{i, j}, I_{i, j+1}, \\
+                 &I_{i+1, j-1}, I_{i+1, j}, I_{i+1, j+1})
+    \end{align*}
+where $I_{i,j}$ is the pixel $i, j$ of $I$.
+Pixel $i,j$ of the output image is computed as the dot product of $R(I,i,j)$ and a weight vector and offset for each image location, $W^{i,j}$ and $W^{i,j}_0$.  So output pixel $O_{i,j} = {W^{i,j}}^T  R(I, i, j) + W^{i,j}_0$.
+The parameters of a CNN trained on images of one size can often be applied successfully to images of another size. Is this true of HairNet?",No.  A HairNet’s params are dependent on the size of the image.
+Spring 2021,7,a.i,0.2,MDPs,Text,"You are moving up a 1-dimensional track with squares s(1), s(2), s(4), s(5), s(7).
+The following transitions happen with 100% probability:
+s(3) to s(5)
+s(9) to s(1)
+s(8) to s(1)
+s(6) to s(2)
+You have two actions: climb and quit. If you climb from state s(i) then with probability 0.5 you go up one square, and with probability 0.5 you go up two squares. So, for example, in our case, if you start in state s(5) and climb there is a .5 chance you'll end up in square s(2) (because you move up one but transition to s(2) and a .5 chance you'll end up in square s(7). If you climb from s(7) then you will go back to square s(1) with probability 1.0. If you quit then the game is over and you get to take no further actions. Each new episode starts in state s(1). The reward for choosing climb in any state is 0. The reward for choosing quit in state s(i) is i.
+What is the optimal horizon 1 policy in s(1) climb or quit?",quit
+Spring 2021,7,a.ii,0.2,MDPs,Text,"You are moving up a 1-dimensional track with squares s(1), s(2), s(4), s(5), s(7).
+The following transitions happen with 100% probability:
+s(3) to s(5)
+s(9) to s(1)
+s(8) to s(1)
+s(6) to s(2)
+You have two actions: climb and quit. If you climb from state s(i) then with probability 0.5 you go up one square, and with probability 0.5 you go up two squares. So, for example, in our case, if you start in state s(5) and climb there is a .5 chance you'll end up in square s(2) (because you move up one but transition to s(2) and a .5 chance you'll end up in square s(7). If you climb from s(7) then you will go back to square s(1) with probability 1.0. If you quit then the game is over and you get to take no further actions. Each new episode starts in state s(1). The reward for choosing climb in any state is 0. The reward for choosing quit in state s(i) is i.
+What is the optimal horizon 1 policy in s(2) climb or quit?",quit
+Spring 2021,7,a.iii,0.2,MDPs,Text,"You are moving up a 1-dimensional track with squares s(1), s(2), s(4), s(5), s(7).
+The following transitions happen with 100% probability:
+s(3) to s(5)
+s(9) to s(1)
+s(8) to s(1)
+s(6) to s(2)
+You have two actions: climb and quit. If you climb from state s(i) then with probability 0.5 you go up one square, and with probability 0.5 you go up two squares. So, for example, in our case, if you start in state s(5) and climb there is a .5 chance you'll end up in square s(2) (because you move up one but transition to s(2) and a .5 chance you'll end up in square s(7). If you climb from s(7) then you will go back to square s(1) with probability 1.0. If you quit then the game is over and you get to take no further actions. Each new episode starts in state s(1). The reward for choosing climb in any state is 0. The reward for choosing quit in state s(i) is i.
+What is the optimal horizon 1 policy in s(4) climb or quit?",quit
+Spring 2021,7,a.iv,0.2,MDPs,Text,"You are moving up a 1-dimensional track with squares s(1), s(2), s(4), s(5), s(7).
+The following transitions happen with 100% probability:
+s(3) to s(5)
+s(9) to s(1)
+s(8) to s(1)
+s(6) to s(2)
+You have two actions: climb and quit. If you climb from state s(i) then with probability 0.5 you go up one square, and with probability 0.5 you go up two squares. So, for example, in our case, if you start in state s(5) and climb there is a .5 chance you'll end up in square s(2) (because you move up one but transition to s(2) and a .5 chance you'll end up in square s(7). If you climb from s(7) then you will go back to square s(1) with probability 1.0. If you quit then the game is over and you get to take no further actions. Each new episode starts in state s(1). The reward for choosing climb in any state is 0. The reward for choosing quit in state s(i) is i.
+What is the optimal horizon 1 policy in s(5) climb or quit?",quit
+Spring 2021,7,a.v,0.2,MDPs,Text,"You are moving up a 1-dimensional track with squares s(1), s(2), s(4), s(5), s(7).
+The following transitions happen with 100% probability:
+s(3) to s(5)
+s(9) to s(1)
+s(8) to s(1)
+s(6) to s(2)
+You have two actions: climb and quit. If you climb from state s(i) then with probability 0.5 you go up one square, and with probability 0.5 you go up two squares. So, for example, in our case, if you start in state s(5) and climb there is a .5 chance you'll end up in square s(2) (because you move up one but transition to s(2) and a .5 chance you'll end up in square s(7). If you climb from s(7) then you will go back to square s(1) with probability 1.0. If you quit then the game is over and you get to take no further actions. Each new episode starts in state s(1). The reward for choosing climb in any state is 0. The reward for choosing quit in state s(i) is i.
+What is the optimal horizon 1 policy in s(7) climb or quit?",quit
+Spring 2021,7,b,2,MDPs,Text,"You are moving up a 1-dimensional track with squares s(1), s(2), s(4), s(5), s(7).
+The following transitions happen with 100% probability:
+s(3) to s(5)
+s(9) to s(1)
+s(8) to s(1)
+s(6) to s(2)
+You have two actions: climb and quit. If you climb from state s(i) then with probability 0.5 you go up one square, and with probability 0.5 you go up two squares. So, for example, in our case, if you start in state s(5) and climb there is a .5 chance you'll end up in square s(2) (because you move up one but transition to s(2) and a .5 chance you'll end up in square s(7). If you climb from s(7) then you will go back to square s(1) with probability 1.0. If you quit then the game is over and you get to take no further actions. Each new episode starts in state s(1). The reward for choosing climb in any state is 0. The reward for choosing quit in state s(i) is i. If you initialize the Q values of all the states to 0, and do one iteration of undiscounted (γ = 1) value iteration, what is the resulting Q value function?","Q(s, quit) = 1, 2, 4, 5, 7
+Q(s, climb) = 0, 0, 0, 0, 0"
+Spring 2021,7,c.i,0.4,MDPs,Text,"You are moving up a 1-dimensional track with squares s(1), s(2), s(4), s(5), s(7).
+The following transitions happen with 100% probability:
+s(3) to s(5)
+s(9) to s(1)
+s(8) to s(1)
+s(6) to s(2)
+You have two actions: climb and quit. If you climb from state s(i) then with probability 0.5 you go up one square, and with probability 0.5 you go up two squares. So, for example, in our case, if you start in state s(5) and climb there is a .5 chance you'll end up in square s(2) (because you move up one but transition to s(2) and a .5 chance you'll end up in square s(7). If you climb from s(7) then you will go back to square s(1) with probability 1.0. If you quit then the game is over and you get to take no further actions. Each new episode starts in state s(1). The reward for choosing climb in any state is 0. The reward for choosing quit in state s(i) is i. What is the optimal infinite horizon policy in s(1) with no discounting climb or quit?",climb
+Spring 2021,7,c.ii,0.4,MDPs,Text,"You are moving up a 1-dimensional track with squares s(1), s(2), s(4), s(5), s(7).
+The following transitions happen with 100% probability:
+s(3) to s(5)
+s(9) to s(1)
+s(8) to s(1)
+s(6) to s(2)
+You have two actions: climb and quit. If you climb from state s(i) then with probability 0.5 you go up one square, and with probability 0.5 you go up two squares. So, for example, in our case, if you start in state s(5) and climb there is a .5 chance you'll end up in square s(2) (because you move up one but transition to s(2) and a .5 chance you'll end up in square s(7). If you climb from s(7) then you will go back to square s(1) with probability 1.0. If you quit then the game is over and you get to take no further actions. Each new episode starts in state s(1). The reward for choosing climb in any state is 0. The reward for choosing quit in state s(i) is i. What is the optimal horizon 1 policy in s(2) climb or quit?",climb
+Spring 2021,7,c.iii,0.4,MDPs,Text,"You are moving up a 1-dimensional track with squares s(1), s(2), s(4), s(5), s(7).
+The following transitions happen with 100% probability:
+s(3) to s(5)
+s(9) to s(1)
+s(8) to s(1)
+s(6) to s(2)
+You have two actions: climb and quit. If you climb from state s(i) then with probability 0.5 you go up one square, and with probability 0.5 you go up two squares. So, for example, in our case, if you start in state s(5) and climb there is a .5 chance you'll end up in square s(2) (because you move up one but transition to s(2) and a .5 chance you'll end up in square s(7). If you climb from s(7) then you will go back to square s(1) with probability 1.0. If you quit then the game is over and you get to take no further actions. Each new episode starts in state s(1). The reward for choosing climb in any state is 0. The reward for choosing quit in state s(i) is i. What is the optimal infinite horizon policy in s(4) with no discounting climb or quit?",climb
+Spring 2021,7,c.iv,0.4,MDPs,Text,"You are moving up a 1-dimensional track with squares s(1), s(2), s(4), s(5), s(7).
+The following transitions happen with 100% probability:
+s(3) to s(5)
+s(9) to s(1)
+s(8) to s(1)
+s(6) to s(2)
+You have two actions: climb and quit. If you climb from state s(i) then with probability 0.5 you go up one square, and with probability 0.5 you go up two squares. So, for example, in our case, if you start in state s(5) and climb there is a .5 chance you'll end up in square s(2) (because you move up one but transition to s(2) and a .5 chance you'll end up in square s(7). If you climb from s(7) then you will go back to square s(1) with probability 1.0. If you quit then the game is over and you get to take no further actions. Each new episode starts in state s(1). The reward for choosing climb in any state is 0. The reward for choosing quit in state s(i) is i. What is the optimal infinite horizon policy in s(5) with no discounting climb or quit?",climb
+Spring 2021,7,c.v,0.4,MDPs,Text,"You are moving up a 1-dimensional track with squares s(1), s(2), s(4), s(5), s(7).
+The following transitions happen with 100% probability:
+s(3) to s(5)
+s(9) to s(1)
+s(8) to s(1)
+s(6) to s(2)
+You have two actions: climb and quit. If you climb from state s(i) then with probability 0.5 you go up one square, and with probability 0.5 you go up two squares. So, for example, in our case, if you start in state s(5) and climb there is a .5 chance you'll end up in square s(2) (because you move up one but transition to s(2) and a .5 chance you'll end up in square s(7). If you climb from s(7) then you will go back to square s(1) with probability 1.0. If you quit then the game is over and you get to take no further actions. Each new episode starts in state s(1). The reward for choosing climb in any state is 0. The reward for choosing quit in state s(i) is i. What is the optimal infinite horizon policy in s(5) with no discounting climb or quit?",climb
+Spring 2021,7,d,3,MDPs,Text,"You are moving up a 1-dimensional track with squares s(1), s(2), s(4), s(5), s(7).
+The following transitions happen with 100% probability:
+s(3) to s(5)
+s(9) to s(1)
+s(8) to s(1)
+s(6) to s(2)
+You have two actions: climb and quit. If you climb from state s(i) then with probability 0.5 you go up one square, and with probability 0.5 you go up two squares. So, for example, in our case, if you start in state s(5) and climb there is a .5 chance you'll end up in square s(2) (because you move up one but transition to s(2) and a .5 chance you'll end up in square s(7). If you climb from s(7) then you will go back to square s(1) with probability 1.0. If you quit then the game is over and you get to take no further actions. Each new episode starts in state s(1). The reward for choosing climb in any state is 0. The reward for choosing quit in state s(i) is i. Now let’s consider discounting. State an inequality involving numeric values, γ, Q(s2, climb), and Q(s7, climb), specifying the condition under which the optimal action in s5 is to quit.","\[ 5 > \frac{1}{2}\gamma Q(s_2, \textbf{climb}) + \frac{7}{2}\gamma\;\;.\]"
+Spring 2021,8,a,1,Reinforcement Learning,Text,"You are moving up a 1-dimensional track with squares s(1), s(2), s(4), s(5), s(7).
+The following transitions happen with 100% probability:
+s(3) to s(5)
+s(9) to s(1)
+s(8) to s(1)
+s(6) to s(2)
+You have two actions: climb and quit. If you climb from state s(i) then with probability 0.5 you go up one square, and with probability 0.5 you go up two squares. So, for example, in our case, if you start in state s(5) and climb there is a .5 chance you'll end up in square s(2) (because you move up one but transition to s(2) and a .5 chance you'll end up in square s(7). If you climb from s(7) then you will go back to square s(1) with probability 1.0. If you quit then the game is over and you get to take no further actions. Each new episode starts in state s(1). The reward for choosing climb in any state is 0. The reward for choosing quit in state s(i) is i. Assume we know the rewards, but not the transition model. During learning, after executing the quit action and getting a reward, a new learning episode is initialized, after we go back to square 1. We will use a discount factor of γ = 1. 
+Why is value iteration not a good choice of algorithm for this problem?",Because we don’t know the transition model!
+Spring 2021,8,b,1,Reinforcement Learning,Text,"You are moving up a 1-dimensional track with squares s(1), s(2), s(4), s(5), s(7).
+The following transitions happen with 100% probability:
+s(3) to s(5)
+s(9) to s(1)
+s(8) to s(1)
+s(6) to s(2)
+You have two actions: climb and quit. If you climb from state s(i) then with probability 0.5 you go up one square, and with probability 0.5 you go up two squares. So, for example, in our case, if you start in state s(5) and climb there is a .5 chance you'll end up in square s(2) (because you move up one but transition to s(2) and a .5 chance you'll end up in square s(7). If you climb from s(7) then you will go back to square s(1) with probability 1.0. If you quit then the game is over and you get to take no further actions. Each new episode starts in state s(1). The reward for choosing climb in any state is 0. The reward for choosing quit in state s(i) is i. Assume we know the rewards, but not the transition model. During learning, after executing the quit action and getting a reward, a new learning episode is initialized, after we go back to square 1. We will use a discount factor of γ = 1. 
+If we do purely greedy action selection during Q-learning (that is $\epsilon = 0$), starting from all 0’s in our Q table and where ties are broken in favor of the climb action, what (roughly) will the Q function be after 1000 steps?",0
+Spring 2021,8,c,1,Reinforcement Learning,Text,"You are moving up a 1-dimensional track with squares s(1), s(2), s(4), s(5), s(7).
+The following transitions happen with 100% probability:
+s(3) to s(5)
+s(9) to s(1)
+s(8) to s(1)
+s(6) to s(2)
+You have two actions: climb and quit. If you climb from state s(i) then with probability 0.5 you go up one square, and with probability 0.5 you go up two squares. So, for example, in our case, if you start in state s(5) and climb there is a .5 chance you'll end up in square s(2) (because you move up one but transition to s(2) and a .5 chance you'll end up in square s(7). If you climb from s(7) then you will go back to square s(1) with probability 1.0. If you quit then the game is over and you get to take no further actions. Each new episode starts in state s(1). The reward for choosing climb in any state is 0. The reward for choosing quit in state s(i) is i. Assume we know the rewards, but not the transition model. During learning, after executing the quit action and getting a reward, a new learning episode is initialized, after we go back to square 1. We will use a discount factor of γ = 1. If we do purely greedy action selection during Q-learning (that is $\epsilon = 0$), starting from all 0’s in our Q table and where ties are broken in favor of the quit action, what (roughly) will the Q function be after 1000 steps?","It will be all 0 except Q(s1, quit) = 1"
+Spring 2021,8,d.i,1.666666667,Reinforcement Learning,Text,"You are moving up a 1-dimensional track with squares s(1), s(2), s(4), s(5), s(7).
+The following transitions happen with 100% probability:
+s(3) to s(5)
+s(9) to s(1)
+s(8) to s(1)
+s(6) to s(2)
+You have two actions: climb and quit. If you climb from state s(i) then with probability 0.5 you go up one square, and with probability 0.5 you go up two squares. So, for example, in our case, if you start in state s(5) and climb there is a .5 chance you'll end up in square s(2) (because you move up one but transition to s(2) and a .5 chance you'll end up in square s(7). If you climb from s(7) then you will go back to square s(1) with probability 1.0. If you quit then the game is over and you get to take no further actions. Each new episode starts in state s(1). The reward for choosing climb in any state is 0. The reward for choosing quit in state s(i) is i. Assume we know the rewards, but not the transition model. During learning, after executing the quit action and getting a reward, a new learning episode is initialized, after we go back to square 1. We will use a discount factor of γ = 1. 
+Assume we start with a tabular Q function on states s1, s2, s4, s5 and s7, initialized to all 0’s. Then we get the following experience, consisting of three trajectories, shown below as (state, action, reward) tuples. 
+Using learning rate α = 0.5, what is the Q function after each of these trajectories? (You only need to fill in the non-zero entries). Trajectory: ((s(1), climb, 0),(s(2), climb, 0),(s(5), climb, 0),(s(7), quit, 7))","Q(s(7), quit) = 3.5"
+Spring 2021,8,d.ii,1.666666667,Reinforcement Learning,Text,"You are moving up a 1-dimensional track with squares s(1), s(2), s(4), s(5), s(7).
+The following transitions happen with 100% probability:
+s(3) to s(5)
+s(9) to s(1)
+s(8) to s(1)
+s(6) to s(2)
+You have two actions: climb and quit. If you climb from state s(i) then with probability 0.5 you go up one square, and with probability 0.5 you go up two squares. So, for example, in our case, if you start in state s(5) and climb there is a .5 chance you'll end up in square s(2) (because you move up one but transition to s(2) and a .5 chance you'll end up in square s(7). If you climb from s(7) then you will go back to square s(1) with probability 1.0. If you quit then the game is over and you get to take no further actions. Each new episode starts in state s(1). The reward for choosing climb in any state is 0. The reward for choosing quit in state s(i) is i. Assume we know the rewards, but not the transition model. During learning, after executing the quit action and getting a reward, a new learning episode is initialized, after we go back to square 1. We will use a discount factor of γ = 1. 
+Assume we start with a tabular Q function on states s1, s2, s4, s5 and s7, initialized to all 0’s. Then we get the following experience, consisting of three trajectories, shown below as (state, action, reward) tuples. 
+Using learning rate α = 0.5, what is the Q function after each of these trajectories? (You only need to fill in the non-zero entries). Trajectory: ((s(1), quit, 1)","Q(s(1), quit) = 0.5, Q(s(17, quit) = 3.5"
+Spring 2021,8,d.iii,1.666666667,Reinforcement Learning,Text,"You are moving up a 1-dimensional track with squares s(1), s(2), s(4), s(5), s(7).
+The following transitions happen with 100% probability:
+s(3) to s(5)
+s(9) to s(1)
+s(8) to s(1)
+s(6) to s(2)
+You have two actions: climb and quit. If you climb from state s(i) then with probability 0.5 you go up one square, and with probability 0.5 you go up two squares. So, for example, in our case, if you start in state s(5) and climb there is a .5 chance you'll end up in square s(2) (because you move up one but transition to s(2) and a .5 chance you'll end up in square s(7). If you climb from s(7) then you will go back to square s(1) with probability 1.0. If you quit then the game is over and you get to take no further actions. Each new episode starts in state s(1). The reward for choosing climb in any state is 0. The reward for choosing quit in state s(i) is i. Assume we know the rewards, but not the transition model. During learning, after executing the quit action and getting a reward, a new learning episode is initialized, after we go back to square 1. We will use a discount factor of γ = 1. 
+Assume we start with a tabular Q function on states s1, s2, s4, s5 and s7, initialized to all 0’s. Then we get the following experience, consisting of three trajectories, shown below as (state, action, reward) tuples. 
+Using learning rate α = 0.5, what is the Q function after each of these trajectories? (You only need to fill in the non-zero entries). Trajectory: ((s(1), climb, 0),(s(2), climb, 0),(s(5), climb, 0),(s(7), quit, 7))","Q(s(1), quit) = 0.5, Q(s(7), quit) = 5.25, Q(s(5), climb) = 1.75"
+Spring 2021,9,a.i,1,Reinforcement Learning,Text,"Kim is running Q learning on a simple 2D grid-world problem and visualizes the current Q value estimates and greedy policy with respect to the current Q value estimates at each location. States correspond to squares in the grid, actions are north, south, east, and west, and there is a single state with non-zero reward. Assume the transition model is deterministic and action north moves you one square up, etc., except at the boundaries of the domain. Diagonal moves are not possible. 
+Define the following in terms of the current estimated action-value function, Q: The greedy policy with respect to Q for state s.","greedy = argmax_aQ(s, a)"
+Spring 2021,9,a.ii,1,Reinforcement Learning,Text,"Kim is running Q learning on a simple 2D grid-world problem and visualizes the current Q value estimates and greedy policy with respect to the current Q value estimates at each location. States correspond to squares in the grid, actions are north, south, east, and west, and there is a single state with non-zero reward. Assume the transition model is deterministic and action north moves you one square up, etc., except at the boundaries of the domain. Diagonal moves are not possible. 
+Define the following in terms of the current estimated action-value function, Q: The estimated value of state s.","value = max_a Q(s, a)"
+Spring 2021,9,b,1,Reinforcement Learning,Image,"Kim is running $Q$ learning on a simple $2 D$ grid-world problem and visualizes the current $Q$ value estimates and greedy policy with respect to the current $Q$ value estimates at each location. States correspond to squares in the grid, actions are north, south, east, and west, and there is a single state with non-zero reward. Assume the transition model is deterministic and action north moves you one square up, etc., except at the boundaries of the domain. Diagonal moves are not possible. 
+Kim sees the situation below while their algorithm is running. The numbers in the boxes correspond to the estimated $\hat{V}$ values for the states neighboring state $s$, and the arrow indicates the greedy action with respect to $\hat{Q}$ for state $s$. All of the states shown have 0 reward values.
+Explain briefly why this situation might be concerning.","The situation is potentially concerning because the greedy action is to move north, but the neighboring state with the highest estimated value is to the south."
+Spring 2021,9,c,2,Reinforcement Learning,Image,"Kim is running $Q$ learning on a simple $2 D$ grid-world problem and visualizes the current $Q$ value estimates and greedy policy with respect to the current $Q$ value estimates at each location. States correspond to squares in the grid, actions are north, south, east, and west, and there is a single state with non-zero reward. Assume the transition model is deterministic and action north moves you one square up, etc., except at the boundaries of the domain. Diagonal moves are not possible. 
+Does this situstion mean that there is a bug in Kim's Q-learning implementation? Explain briefly why or why not.","This is not necessarily a bug. The value of the state to the north, $s_{\text {north }}$ depends on the values $Q\left(s_{\text {north }}, a\right)$ and the policy at $s$ depends on the values $Q(s, a)$. During learning, before convergence, it is entirely possible for them to disagree in this way."
+Spring 2021,10,a,2,Classifiers,Text,"Given a set of data $\mathcal{D}_\text{train} = \{(\ex{x}{i}, \ex{y}{i})\}$, a weighted nearest neighbor regressor  has the form 
+\[h(x , \theta) = \frac{\sum_{(\ex{x}{i}, \ex{y}{i}) \in \mathcal{D}_\text{train}} f(x, \ex{x}{i} , \theta) \ex{y}{i}}
+{\sum_{(\ex{x}{i}, \ex{y}{i}) \in \mathcal{D}_\text{train}} f(x, \ex{x}{i} , \theta) }
+\,\,.\]
+A typical choice for $f$ is
+\[f(x, x', \theta) = e^{-\theta \|x - x'\|^2}
+\]
+where $\theta$ is a scalar and $\|x-x'\|^2 = \sum_{j=1}^d (x_j - x'_j)^2$. Assume our training data $\mathcal{D}_\text{train} = ((1, 1), (2, 2), (3, 6))$. What is $h(10, 0)$?  That is, letting $\theta=0$, what is our prediction for $x = 10$?",3
+Spring 2021,10,b,2,Classifiers,Text,"Given a set of data $\mathcal{D}_\text{train} = \{(\ex{x}{i}, \ex{y}{i})\}$, a weighted nearest neighbor regressor  has the form 
+\[h(x , \theta) = \frac{\sum_{(\ex{x}{i}, \ex{y}{i}) \in \mathcal{D}_\text{train}} f(x, \ex{x}{i} , \theta) \ex{y}{i}}
+{\sum_{(\ex{x}{i}, \ex{y}{i}) \in \mathcal{D}_\text{train}} f(x, \ex{x}{i} , \theta) }
+\,\,.\]
+A typical choice for $f$ is
+\[f(x, x', \theta) = e^{-\theta \|x - x'\|^2}
+\]
+where $\theta$ is a scalar and $\|x-x'\|^2 = \sum_{j=1}^d (x_j - x'_j)^2$. Assume our training data $\mathcal{D}_\text{train} = ((1, 1), (2, 2), (3, 6))$. Approximately what is $h(10, 1)$? 
+",Approximately 6
+Spring 2021,10,c,2,Classifiers,Text,"Given a set of data $\mathcal{D}_\text{train} = \{(\ex{x}{i}, \ex{y}{i})\}$, a weighted nearest neighbor regressor  has the form 
+\[h(x , \theta) = \frac{\sum_{(\ex{x}{i}, \ex{y}{i}) \in \mathcal{D}_\text{train}} f(x, \ex{x}{i} , \theta) \ex{y}{i}}
+{\sum_{(\ex{x}{i}, \ex{y}{i}) \in \mathcal{D}_\text{train}} f(x, \ex{x}{i} , \theta) }
+\,\,.\]
+A typical choice for $f$ is
+\[f(x, x', \theta) = e^{-\theta \|x - x'\|^2}
+\]
+where $\theta$ is a scalar and $\|x-x'\|^2 = \sum_{j=1}^d (x_j - x'_j)^2$.
+How does a weighted nearest neighbor approach compare to linear regression for the same data? Why might we prefer one over the other?
+","A linear regression model would fit a straight line through the training data and allow extrapolation. It would predict h(10) to be much larger because that is the trend in the training data (y is becoming larger as x is becoming large).
+The Heavy Neighbor approach will keep the predictions within the limits of the training data labels (it is a weighted average of the training data points). This would be preferred if we do not want to extrapolate beyond the training data."
+Spring 2021,10,d,2,Classifiers,Text,"Given a set of data $\mathcal{D}_\text{train} = \{(\ex{x}{i}, \ex{y}{i})\}$, a weighted nearest neighbor regressor  has the form 
+\[h(x , \theta) = \frac{\sum_{(\ex{x}{i}, \ex{y}{i}) \in \mathcal{D}_\text{train}} f(x, \ex{x}{i} , \theta) \ex{y}{i}}
+{\sum_{(\ex{x}{i}, \ex{y}{i}) \in \mathcal{D}_\text{train}} f(x, \ex{x}{i} , \theta) }
+\,\,.\]
+A typical choice for $f$ is
+\[f(x, x', \theta) = e^{-\theta \|x - x'\|^2}
+\]
+where $\theta$ is a scalar and $\|x-x'\|^2 = \sum_{j=1}^d (x_j - x'_j)^2$.
+How does a wieghted nearest neighbor approach compare to linear regression for the same data? Why might we prefer one over the other? If we were only ever going to have to make predictions on the training data, what value of $\theta$ would tend to minimize our prediction error?",Use a very large theta
+Spring 2021,10,e,2,Classifiers,Text,"Given a set of data $\mathcal{D}_\text{train} = \{(\ex{x}{i}, \ex{y}{i})\}$, a weighted nearest neighbor regressor  has the form 
+\[h(x , \theta) = \frac{\sum_{(\ex{x}{i}, \ex{y}{i}) \in \mathcal{D}_\text{train}} f(x, \ex{x}{i} , \theta) \ex{y}{i}}
+{\sum_{(\ex{x}{i}, \ex{y}{i}) \in \mathcal{D}_\text{train}} f(x, \ex{x}{i} , \theta) }
+\,\,.\]
+A typical choice for $f$ is
+\[f(x, x', \theta) = e^{-\theta \|x - x'\|^2}
+\]
+where $\theta$ is a scalar and $\|x-x'\|^2 = \sum_{j=1}^d (x_j - x'_j)^2$. How does a wieghted nearest neighbor approach compare to linear regression for the same data? Why might we prefer one over the other? If we were only ever going to have to make predictions on the training data, what value of $\theta$ would tend to minimize our prediction error? Dino thinks the denominator in the definition of h is not useful and it would be fine to remove it. Is Dino right?","No. The denominator is needed for normalization (to keep the prediction
+in the same range of y’s as the training data)."
+Spring 2021,11,a,3,RNNs,Text,"Ronnie makes a simple RNN with state dimension 1 and a {\em step} function for $f_1$, so that  \[s_t = \text{step}( w_1 x_t + w_2 s_{t-1} + b) \] where $\text{step}(z) = 1$ if $z > 0.0$ and equals $0$ otherwise, and where the output  \[y_t = s_t\,\,.\]. Assuming $s_0 = 0$, what values of $w_1$, $w_2$ and $b$ would generate output sequence  \[[0, 0, 0,  1, 1, 1, 1]\] given input sequence \[ [0, 0, 0, 1, 0, 1, 0]\] ","Since xt = 1 and st = 0 produces st = 1, we have that w1 + b > 0, for example w1 = 1 if b = 0
+Since xt = 0 and st = 1 produces st = 1, we have that w2 + b > 0, for example w2 = 1 if b = 0
+Since xt = 0 and st = 0 produces st = 0, we have that b ≤ 0."
+Spring 2021,11,b.i,0.5,RNNs,Text,"Ronnie makes a simple RNN with state dimension 1 and a {\em step} function for $f_1$, so that \[s_t = \text{step}( w_1 x_t + w_2 s_{t-1} + b) \] where $\text{step}(z) = 1$ if $z > 0.0$ and equals $0$ otherwise, and where the output  \[y_t = s_t\;\;.\]. Assuming $s_0 = 1$, we want to generate output sequence  \[[1, 1, 1, 0, 0, 0, 1, 1]\] given input sequence \[ [0, 0, 0, 1, 0, 0, 1, 0]\]. What is the value of s_t for x_t = 0 and s_{t-1} = 0?",0
+Spring 2021,11,b.ii,0.5,RNNs,Text,"Ronnie makes a simple RNN with state dimension 1 and a {\em step} function for $f_1$, so that \[s_t = \text{step}( w_1 x_t + w_2 s_{t-1} + b) \] where $\text{step}(z) = 1$ if $z > 0.0$ and equals $0$ otherwise, and where the output  \[y_t = s_t\;\;.\]. Assuming $s_0 = 1$, we want to generate output sequence   \[[1, 1, 1, 0, 0, 0, 1, 1]\] given input sequence \[ [0, 0, 0, 1, 0, 0, 1, 0]\]. What is the value of s_t for x_t = 0 and s_{t-1} = 1?",1
+Spring 2021,11,b.iii,0.5,RNNs,Text,"Ronnie makes a simple RNN with state dimension 1 and a {\em step} function for $f_1$, so that  \[s_t = \text{step}( w_1 x_t + w_2 s_{t-1} + b) \] where $\text{step}(z) = 1$ if $z > 0.0$ and equals $0$ otherwise, and where the output \[y_t = s_t\;\;.\]. Assuming $s_0 = 1$, we want to generate output sequence  \[[1, 1, 1, 0, 0, 0, 1, 1]\] given input sequence \[ [0, 0, 0, 1, 0, 0, 1, 0]\]. What is the value of s_t for x_t = 1 and s_{t-1} = 0?",1
+Spring 2021,11,b.iv,0.5,RNNs,Text,"Ronnie makes a simple RNN with state dimension 1 and a {\em step} function for $f_1$, so that \[s_t = \text{step}( w_1 x_t + w_2 s_{t-1} + b) \] where $\text{step}(z) = 1$ if $z > 0.0$ and equals $0$ otherwise, and where the output \[y_t = s_t\;\;.\] Assuming $s_0 = 1$, we want to generate output sequence  \[[1, 1, 1, 0, 0, 0, 1, 1]\] given input sequence \[ [0, 0, 0, 1, 0, 0, 1, 0]\]. What is the value of s_t for x_t = 1 and s_{t-1} = 1?",0
+Spring 2021,11,c,3,RNNs,Text,"Ronnie makes a simple RNN with state dimension 1 and a {\em step} function for $f_1$, so that \[s_t = \text{step}( w_1 x_t + w_2 s_{t-1} + b) \] where $\text{step}(z) = 1$ if $z > 0.0$ and equals $0$ otherwise, and where the output \[y_t = s_t\;\;.\] Assuming $s_0 = 1$, we want to generate output sequence  \[[1, 1, 1, 0, 0, 0, 1, 1]\] given input sequence \[ [0, 0, 0, 1, 0, 0, 1, 0]\]. Rennie thinks this is not possible using Ronnie’s architecture. Rennie makes an argument based on the relationships in the table above. Is Rennie right?",Rennie is right
+Spring 2021,12,a,1,Decision Trees,Image,"Here is a standard regression tree of a fixed size. It has 5 scalar parameters $\left(s_{1}, s_{2}, v_{1}, v_{2}, v_{3}\right)$ and two discrete choices of feature to split on, denoted by integers $j$ and $k$.
+We are given a training data set $\mathcal{D}_{\operatorname{train}}=\left\{\left(x^{(j)}, y^{(j)}\right)\right\}$ where the dimension of $x^{(j)}$ is $d$. 
+Explain briefly why we cannot use gradient descent on a squared loss to optimize all the parameters of this predictor.",The gradients are are zero or do not exist.
+Spring 2021,12,b,7,Decision Trees,Image,"Here is a standard regression tree of a fixed size. It has 5 scalar parameters $\left(s_{1}, s_{2}, v_{1}, v_{2}, v_{3}\right)$ and two discrete choices of feature to split on, denoted by integers $j$ and $k$.
+We are given a training data set $\mathcal{D}_{\operatorname{train}}=\left\{\left(x^{(j)}, y^{(j)}\right)\right\}$ where the dimension of $x^{(j)}$ is $d$.
+Terry would like to make a ""smoother"" tree by replacing the tests at the nodes with neuralnetwork logistic classifiers and by combining predictions from the branches, so that we can think of the tree as a parametric model and optimize the parameters using gradient descent. More concretely, at each internal node, the test will be replaced by $\mathrm{NN}(x ; \theta)$, a neural network that takes an entire input vector $x$, of dimension $d$, as input and generates an output in the range $[0,1]$ by using a sigmoid unit on the output.
+You can think of any node $T_{i}$ of a tree as producing an output value as follows:
+- If $T_{\mathrm{i}}$ is a leaf, then the output on input $x, T_{\mathrm{i}}(x)$, is a constant $v_{\mathrm{i}}$. (corresponding to ""yes"" branch), then the output on input $x$ is
+$$
+T_{i}(x)=\left(1-\mathrm{NN}\left(x ; \theta^{(i)}\right)\right) T_{\mathrm{na}}(x)+\mathrm{NN}\left(x ; \theta^{(i)}\right) T_{\mathrm{yas}}(x) .
+$$
+That is, it is a weighted combination of the results of the children, where the neural network at the parent node, with parameters $\theta^{(i)}$, modulates the combination of the results of the children.
+
+We will consider the specific case where NN is a single unit with a sigmoidal activation function, so that
+$$
+\mathrm{NN}\left(x ; W^{(i)}, W_{0}^{(\mathrm{i})}\right)=\sigma\left(W^{(i)^{T}} x+W_{0}^{(i)}\right)
+$$
+where $W^{(i)}$ is a vector of length $d$ and $W_{0}^{(i)}$ is a scalar and $\sigma$ is the sigmoid function.
+
+Consider the dataset shown in the plot below right, where $d=2$. Each integer value on the plot (one of $5,-2$, or 8 ) corresponds to a datapoint whose input $x$ features are the coordinates of the point on the plot and whose output $y$ value is the printed number.
+Provide the parameters of a tree-predictor, corresponding to the model shown above left, that make accurate predictions on the dataset.","$W^{(1)}=[100,100]^{T}$
+$W_{0}^{(1)}=0$
+$W^{(2)}=[-100,100]^{T}$, or $W^{(2)}=[100,-100]^{T}$
+ $W_{0}^{(2)}=100^{T}$, or $W_{0}^{(2)}=-100$ (should match with the answer above).
+$v_{1}=-2$, or $v_{1}=5$ (depends on the answer above).
+ $v_{2}=5$ or $v_{2}--2$ (depends on the answer above).
+$v_{3}=8$"
+Spring 2021,12,c,3,Decision Trees,Image,"Here is a standard regression tree of a fixed size. It has 5 scalar parameters $\left(s_{1}, s_{2}, v_{1}, v_{2}, v_{3}\right)$ and two discrete choices of feature to split on, denoted by integers $j$ and $k$.
+We are given a training data set $\mathcal{D}_{\operatorname{train}}=\left\{\left(x^{(j)}, y^{(j)}\right)\right\}$ where the dimension of $x^{(j)}$ is $d$.
+Terry would like to make a ""smoother"" tree by replacing the tests at the nodes with neuralnetwork logistic classifiers and by combining predictions from the branches, so that we can think of the tree as a parametric model and optimize the parameters using gradient descent. More concretely, at each internal node, the test will be replaced by $\mathrm{NN}(x ; \theta)$, a neural network that takes an entire input vector $x$, of dimension $d$, as input and generates an output in the range $[0,1]$ by using a sigmoid unit on the output.
+You can think of any node $T_{i}$ of a tree as producing an output value as follows:
+- If $T_{\mathrm{i}}$ is a leaf, then the output on input $x, T_{\mathrm{i}}(x)$, is a constant $v_{\mathrm{i}}$. (corresponding to ""yes"" branch), then the output on input $x$ is
+$$
+T_{i}(x)=\left(1-\mathrm{NN}\left(x ; \theta^{(i)}\right)\right) T_{\mathrm{na}}(x)+\mathrm{NN}\left(x ; \theta^{(i)}\right) T_{\mathrm{yas}}(x) .
+$$
+That is, it is a weighted combination of the results of the children, where the neural network at the parent node, with parameters $\theta^{(i)}$, modulates the combination of the results of the children.
+
+We will consider the specific case where NN is a single unit with a sigmoidal activation function, so that
+$$
+\mathrm{NN}\left(x ; W^{(i)}, W_{0}^{(\mathrm{i})}\right)=\sigma\left(W^{(i)^{T}} x+W_{0}^{(i)}\right)
+$$
+where $W^{(i)}$ is a vector of length $d$ and $W_{0}^{(i)}$ is a scalar and $\sigma$ is the sigmoid function.
+What is $\partial T_{1}(x) / \partial W^{(1)}$ in this particular model? Please use the following shorthand:
+- $T=T_{1}(x)$
+- $O=\mathrm{NN}\left(x ; W^{(1)}, W_{0}^{(1)}\right)$
+- $T_{\text {no }}=$ the output of the ""no"" branch of $T_{1}$
+- $T_{\text {yes }}=$ the output of the ""yes"" branch of $T_{1}$
+Express your answer in terms of these quantities, $x$, and parameters $\left(W^{(1)}, W^{(2)}, W_{0}^{(1)}, W_{0}^{(2)}, v_{1}, v_{2}, v_{3}\right)$, as needed, but do not leave any derivatives in it.","Using shorthands:
+$$
+T=(1-O) T_{\text {no }}+O T_{\text {yas }}
+$$
+Only $O$ is a function of $W^{(1)}$. Also recall that the derivative of the sigmoid can be simplified as: $\sigma^{\prime}(g(w))=\sigma(g(w))(1-\sigma(g(w))) g^{\prime}(w)$. Therefore, (more Latex here)"
+Spring 2021,12,d,1,Decision Trees,Image,"Here is a standard regression tree of a fixed size. It has 5 scalar parameters $\left(s_{1}, s_{2}, v_{1}, v_{2}, v_{3}\right)$ and two discrete choices of feature to split on, denoted by integers $j$ and $k$.
+We are given a training data set $\mathcal{D}_{\operatorname{train}}=\left\{\left(x^{(j)}, y^{(j)}\right)\right\}$ where the dimension of $x^{(j)}$ is $d$. 
+Tori thinks that since regression trees have repeated structure, similar to a CNN, that we should use the same weight vector $W$ and offset $W_{0}$ at all the internsl nodes. Explain the hypothesis class that results.","This is still a regression tree, but with a single linear split."
+Spring 2021,13,a,1,Neural Networks,Text,"Sam wants to build a neural network that takes in a scalar value $x$ in the range $[0, 1]$ and generates a one-hot output vector $y$ of dimension $K$, where, for $k \in \{0, 1, \ldots, K-1\}$,  $y_k = 1$ if and only if $k/K < x \leq (k+1)/K$;  that is, it discretizes the interval into $K$ equally sized sequential ranges. They choose an architecture with a single linear layer with weights $W$ and $W_0$ and a softmax activation function, so that the output  
+\[a = \text{softmax}(z)\]
+where 
+\[z = W^T x + W_0\;\;.\]
+Assume that, for prediction purposes,  we are going to take the output of the network, $a$, and convert it into a $K$-dimensional one-hot vector $(y_0, \ldots, y_{k-1})$ where
+\begin{align*}
+    y_i = \begin{cases} 1 & \text{if $i = \text{arg} \max_j a_j$}\\
+    0 & \text{otherwise}
+    \end{cases}
+\end{align*}. That is, it has a value of $1$ at the index corresponding to the maximal element of $a$ and value $0$ everywhere else. How many trainable weights does this network have when $K = 10$?",20
+Spring 2021,13,b,2,Neural Networks,Image,"Sam wants to build a neural network that takes in a scalar value $x$ in the range $[0,1]$ and generates a one-hot output vector $y$ of dimension $K$, where, for $k \in\{0,1, \ldots, K-1\}$, $y k=1$ if and only if $k / K<x \leq(k+1) / K$; that is, it discretizes the interval into $K$ equally sized sequential ranges. Plesse don't worry about precisely what the output is at the boundaries of the intervals.
+
+They choose an architecture with a single linear layer with weights $W$ and $W_{0}$ and a softmax activation function, so that the output
+$$
+a=\operatorname{softmax}(z)
+$$
+where
+$$
+z=W^{T} x+W_{0}
+$$
+Assume that, for prediction purposes, we are going to take the output of the network, $a$, and convert it into a $K$-dimensional one-hot vector $\left(y_{0}, \ldots, y_{k-1}\right)$ where
+$$
+y_{i}= \begin{cases}1 & \text { if } i=\arg \max _{j} a_{j} \\ 0 & \text { otherwise }\end{cases}
+$$
+That is, it has a value of 1 at the index corresponding to the maximal element of $a$ and value 0 everywhere else. 
+Let's consider the case of $K=3$. On the axes below, draw the three components of the $z$ vector, $z_{0}, z_{1}$, and $z_{2}$, as a function of $x$ so that the resulting $y$ will provide a correct discretization of the interval into three equal regions. (There are many correct solutions.)",Drawing image
+Spring 2021,13,c,3,Neural Networks,Image,"Sam wants to build a neural network that takes in a scalar value $x$ in the range $[0,1]$ and generates a one-hot output vector $y$ of dimension $K$, where, for $k \in\{0,1, \ldots, K-1\}$, $y k=1$ if and only if $k / K<x \leq(k+1) / K$; that is, it discretizes the interval into $K$ equally sized sequential ranges. Plesse don't worry about precisely what the output is at the boundaries of the intervals.
+
+They choose an architecture with a single linear layer with weights $W$ and $W_{0}$ and a softmax activation function, so that the output
+$$
+a=\operatorname{softmax}(z)
+$$
+where
+$$
+z=W^{T} x+W_{0}
+$$
+Assume that, for prediction purposes, we are going to take the output of the network, $a$, and convert it into a $K$-dimensional one-hot vector $\left(y_{0}, \ldots, y_{k-1}\right)$ where
+$$
+y_{i}= \begin{cases}1 & \text { if } i=\arg \max _{j} a_{j} \\ 0 & \text { otherwise }\end{cases}
+$$
+That is, it has a value of 1 at the index corresponding to the maximal element of $a$ and value 0 everywhere else. 
+Provide a set of weight values that will discretize the unit interval into 3 equal parts, with output predictions $y=[1,0,0]$ for $x \in[0,1 / 3], y=[0,1,0]$ for $x \in[1 / 3,2 / 3]$, and $x=[0,0,1]$ for $x \in[2 / 3,1]$. Please don't worry about exactly what happens at the boundaries!!!","$$
+W_{0}=[1 / 3,0,-2 / 3]^{T}
+$$
+$$
+W=[-1,0,1]^{T}
+$$"

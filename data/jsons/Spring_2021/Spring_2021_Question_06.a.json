@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2021",
+       "Question Number": "6",
+       "Part": "a",
+       "Points": 1.0,
+       "Topic": "CNNs",
+       "Type": "Text",
+       "Question": "PairNet definition: The PairNet is parameterized by (a) the weights $W$ of a small network $\\textrm{NN}$ and (b) one more scalar $w_0$. If there are a total of $d$ features in the input, it has the final form of:\n\\[y = \\sigma(w_0 + \\sum_{j \\in \\{1, \\ldots, d\\}, k \\in \\{1, \\ldots, d\\}, j \\neq k} \\textrm{NN}([x_j, x_k]; W))\\]\nThe small neural network, parameterized by weights $W$, takes a two-dimensional vector as input and generates a scalar output.   We write it as $\\text{NN}([x_i, x_j]; W)$.   If this smaller neural network has multiple layers, then $W$ includes all the weights of all the layers, including offsets.  We apply PairNet to an image by letting $x_i$ and $x_j$ be pairs of pixel values drawn from throughout the input image, and $d$ is the total number of pixels.\nHairNet definition:  A hairnet has hairy layers and max pooling layers.  A hairy layer is a lot like a convolutional layer, but it uses a different set of weights on each image patch.\nDefine the local 3 x 3 region of the (zero-padded) input image $I$ around pixel $i, j$:\n    \\begin{align*}\n    R(I,i,j) = (&I_{i-1, j-1}, I_{i-1, j}, I_{i-1, j+1}, \\\\\n                 &I_{i, j-1}, I_{i, j}, I_{i, j+1}, \\\\\n                 &I_{i+1, j-1}, I_{i+1, j}, I_{i+1, j+1})\n    \\end{align*}\nwhere $I_{i,j}$ is the pixel $i, j$ of $I$.\nPixel $i,j$ of the output image is computed as the dot product of $R(I,i,j)$ and a weight vector and offset for each image location, $W^{i,j}$ and $W^{i,j}_0$.  So output pixel $O_{i,j} = {W^{i,j}}^T  R(I, i, j) + W^{i,j}_0$.\nConsider the number of parameters in a HairNet. Is it bigger or smaller than a fully connected network on an image of size 100 x 100? Explain briefly.",
+       "Solution": "Smaller. A fully connected network has N params per output pixel while a HairNet has 9 params per output pixel."
+}

@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2021",
+       "Question Number": "8",
+       "Part": "a.iv",
+       "Points": 0.166666667,
+       "Topic": "CNNs",
+       "Type": "Text",
+       "Question": "MIT grad student Rec Urrent would like to submit an entry to win this year\u2019s\nGrand ML Tetris Competition, which gives awards to the smallest neural networks which can identify tetris pieces with the highest accuracy. Rec seeks to make a convolutional neural network that can accurately classify single-channel 3 \u00d7 3 images of 2D tetris pieces as being either a line-shaped piece, or a corner-shaped piece, using just one 2 \u00d7 2 filter. Let\u2019s help Rec win this competition.\nWhat are the dimensions of the output image if a 2x2 filter is convolved with a 3x3 image for padding of 0 and stride of 2?",
+       "Solution": "1x1"
+}

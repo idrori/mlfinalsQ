@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2018",
+       "Question Number": "5",
+       "Part": "b",
+       "Points": 3.0,
+       "Topic": "MDPs",
+       "Type": "Image",
+       "Question": "Consider the following Markov decision process:\nAssume:\n- Reward is 0 in all states, except $+10$ in s6 and $+5$ in s5; the reward is received when exiting the state.\n- Transitions out of s0 are deterministic, and depend on the choice of action (A or B). Still assuming that all transitions are deterministic, but letting horizon $=5$ and discount factor $\\gamma=1$, provide values for:\ni. $Q\\left(s_{\\mathrm{D}}, A\\right)$\nii. $Q(s \\mathrm{D}, B)$",
+       "Solution": "i. 10\nii. 5"
+}

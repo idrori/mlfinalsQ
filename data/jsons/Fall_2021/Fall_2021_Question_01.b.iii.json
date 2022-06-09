@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2021",
+       "Question Number": "1",
+       "Part": "b.iii",
+       "Points": 0.333333333,
+       "Topic": "Neural Networks",
+       "Type": "Text",
+       "Question": "Mac O\u2019Larnin is considering selling an app on Frugal Play. You have a friend with inside info at Frugal, and they\u2019re able to share data on how previous apps have performed on the store. Mac decides that he will learn a neural network with no hidden layer (i.e., consisting only of the output layer). He needs help in figuring out the precise formulation for machine learning.\nMac wants to predict the sales volume (how many times someone will purchase the app each month) for his new app. The sales volume can be negative if many people returned the app for a refund in a given month. What should Mac choose for the loss function? Choose from either negative log likelihood or quadratic.",
+       "Solution": "Quadratic"
+}

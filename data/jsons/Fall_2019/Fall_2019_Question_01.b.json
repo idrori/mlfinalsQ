@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2019",
+       "Question Number": "1",
+       "Part": "b",
+       "Points": 2.0,
+       "Topic": "Classifiers",
+       "Type": "Image",
+       "Question": "The store gives the General data from the past year of sales, which she splits into three distinct parts: training data, validation data, and test data. While training the neural network classifier, the General gets the following learning curves. This graph indicates that she should use the classifier resulting from training after fewer than 80 iterations. Unfortunately, she forgot to put the legend in, but luckily you can fix it! Fill in the legend with the appropriate two among training_time, training_loss, validation_loss.",
+       "Solution": "Solid line = validation_loss; Dashed line $=$ training_loss"
+}

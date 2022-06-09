@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2019",
+       "Question Number": "1",
+       "Part": "a.ii",
+       "Points": 2.0,
+       "Topic": "Classifiers",
+       "Type": "Text",
+       "Question": "General Ization is consulting for a shop that sells shoes, and the General is building a model to predict what color of sneakers a given customer will buy, given information about their age and the color of the shoes they're wearing when they enter the store. The shoe shop asks for a classifier, as well as an indication of how well the classifier will perform once deployed.\nThere are several sneaker colors that customers might wear or buy. The General wishes to train a neural network classifier. What kind of output layer should the General use?",
+       "Solution": "Softmax is most appropriate for multiclass classification output."
+}

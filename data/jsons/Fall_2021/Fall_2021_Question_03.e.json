@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2021",
+       "Question Number": "3",
+       "Part": "e",
+       "Points": 2.0,
+       "Topic": "Decision Trees",
+       "Type": "Image",
+       "Question": "We seek to learn a classifier on the data set shown on the left with 13 data points labeled $+1$ or $-1$. For your convenience, we include some helpful calculations in the table to the right. \nWhat is the training error of the trees learned in parts (b) and (c)?",
+       "Solution": "Tree (b): 1/13.\nTree (c): 4/13."
+}

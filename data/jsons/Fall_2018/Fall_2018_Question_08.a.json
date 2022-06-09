@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2018",
+       "Question Number": "8",
+       "Part": "a",
+       "Points": 4.0,
+       "Topic": "Decision Trees",
+       "Type": "Text",
+       "Question": "There are different strategies for pruning decision trees. We assume that we grow \na decision tree until there is one or a small number of elements in each leaf. Then, we \nprune by deleting individual leaves of the tree until the score of the tree starts to get worse.\nThe question is how to score each possible pruning of the tree.\n Here is a definition of the score: The score is the percentage correct of the tree on the training set. Explain whether or not it would be a good \nidea and give a reason why or why not.",
+       "Solution": "Not a good idea. The original tree was constructed to maximize performance on the training set. Pruning any part of the tree will reduce performance on the training set."
+}

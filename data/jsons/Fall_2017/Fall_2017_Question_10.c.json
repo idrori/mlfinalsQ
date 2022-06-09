@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2017",
+       "Question Number": "10",
+       "Part": "c",
+       "Points": 4.0,
+       "Topic": "Classifiers",
+       "Type": "Image",
+       "Question": "Consider the following data. Clearly, the points are not linearly separable, so we will try three alternative approaches to solving the problem.\nApproach 1: Nested linear classifiers\nLet $w=\\left[\\begin{array}{l}+1 \\\\ -1\\end{array}\\right]$ and $a=\\left[\\begin{array}{l}a_{1} \\\\ a_{2}\\end{array}\\right]$ where\n$$\n\\begin{aligned}\na_{1} &=\\operatorname{sign}\\left(w^{T} x+4\\right) \\\\\na_{2} &=\\operatorname{sign}\\left(w^{T} x-4\\right) \\\\\ny_{\\text {predicted }} &=\\operatorname{sign}\\left(v_{1} a_{1}+v_{2} a_{2}+v_{0}\\right)\n\\end{aligned}\n$$\n\nWe can classify the points correctly if $f$ is tanh. Assume that\n$w_{11}=w_{12}=+1$ and\n$w_{21}=w_{22}=-1$.\nProvide the rest of the weights so this network will correctly classify the given points.\ni. $v_{1}$\nii. $v_{2} \niii. $v_{0}$\niv. $w_{01}$\nV. $w_{02}$",
+       "Solution": "i. -1\nii. 1\niii. .5\niv. 4\nv. -4"
+}

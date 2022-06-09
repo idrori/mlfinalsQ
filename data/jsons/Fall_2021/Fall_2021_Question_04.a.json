@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2021",
+       "Question Number": "4",
+       "Part": "a",
+       "Points": 3.0,
+       "Topic": "Classifiers",
+       "Type": "Image",
+       "Question": "This question asks about learning nearest neighbor (NN) classifiers. Assume that we are using Euclidean distance squared as the distance metric, i.e. $d\\left(x, x^{\\prime}\\right)=\\left\\|x-x^{\\prime}\\right\\|^{2}$. \nDraw on the below figure the decision boundary for a 1-NN classifier on this data set. In each region, denote whether the classification of any point (any point, not just the training data) in that region would be $+1$ or $-1$. (Note, all data points are assumed to be on integer coordinates.)",
+       "Solution": "Image filling"
+}

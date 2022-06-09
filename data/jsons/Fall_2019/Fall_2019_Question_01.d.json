@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2019",
+       "Question Number": "1",
+       "Part": "d",
+       "Points": 2.0,
+       "Topic": "Classifiers",
+       "Type": "Text",
+       "Question": "General Ization is consulting for a shop that sells shoes, and the General is building a model to predict what color of sneakers a given customer will buy, given information about their age and the color of the shoes they're wearing when they enter the store. The shoe shop asks for a classifier, as well as an indication of how well the classifier will perform once deployed.\nThe General made a grave mistake. It turns out that though she thought she had split the data into three parts, she had only split it into two and used both those splits in training and selecting her classifier. Now, she needs to collect the third split in order to indicate how well her classifier will perform when deployed. Which of the following would be the best to use? Provide a short justification for your choice.\n1. Go to a nearby school and ask the students what color sneakers they used to own and note what color sneakers they are currently wearing.\n2. Go to a nearby construction site and ask the workers what color shoes they used to own and note what color shoes they are currently wearing.\n3. Ask the shoe store to give her more data in two months.\n4. Ask a different shoe store for their data.",
+       "Solution": "Either 3 or 4 would be best. 3 would better mirror the distribution they would see in that store (though there is risk of covariate shift over time), but if the store is in a rush to deploy the model, then the delay might not be possible. 4 would be faster but might not match the distribution of the original store as well."
+}

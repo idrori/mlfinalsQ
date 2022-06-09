@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2018",
+       "Question Number": "7",
+       "Part": "c.i",
+       "Points": 2.0,
+       "Topic": "RNNs",
+       "Type": "Text",
+       "Question": "Recall the specification of a standard recurrent neural network (RNN): input $x_{t}$ of dimension $\\ell \\times 1$, state $s_{t}$ of dimension $m \\times 1$, and output $y_{t}$ of dimension $v \\times 1$. The weights in the network, then, are\n$$\n\\begin{aligned}\n&W^{s x}: m \\times \\ell \\\\\n&W^{s s}: m \\times m \\\\\n&W^{O}: v \\times m\n\\end{aligned}\n$$\nPat thinks a different RNN model would be good. Its operation is defined by\n$$\n\\begin{aligned}\ns_{t}^{(i)} &=f_{1}\\left(W_{i}^{s x} x_{t}^{(i)}+W_{i}^{s s} s_{t-1}^{(i)}\\right) \\\\\ny_{t} &=f_{2}\\left(W^{O} s_{t}\\right)\n\\end{aligned}\n$$\nwhere the dimension of the state, $m=k \\cdot \\ell$, so there are $k$ state dimensions for each input dimension, $s^{(i)}$ is the ith group of $k$ dimensions in the state vector, $x^{(i)}$ is the ith entry in the input vector, $W_{i}^{s x}$ is $k \\times 1$ and $W_{i}^{s s}$ is $k \\times k$.\nwith activation functions $f_{1}$ and $f_{2}$. Throughout this problem, for simplicity, we will treat all offsets as equal to 0 . Finally, the operation of the RNN is described by\n$$\n\\begin{aligned}\n&s_{t}=f_{1}\\left(W^{s x} x_{t}+W^{s s} s_{t-1}\\right) \\\\\n&y_{t}=f_{2}\\left(W^{o} s_{t}\\right)\n\\end{aligned}\n$$\nCan this model represent the same set of state machines as a regular RNN?\n",
+       "Solution": "No"
+}

@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2022",
+       "Question Number": "1",
+       "Part": "c",
+       "Points": 2.0,
+       "Topic": "Neural Networks",
+       "Type": "Text",
+       "Question": "Consider the simplest of all neural networks, consisting of a single unit with a sigmoid activation function: $h(x;w = \\sigma(w_0 + w_1x)$ where $\\sigma(z) = (1 + exp(-z))^{-1}$ Let\u2019s start with a classifier defined by $w_0 = -1$ and $w_1 = 1$. Which range of input values x are classified as positive? Which as negative?",
+       "Solution": "Positive if x > 1; negative otherwise."
+}

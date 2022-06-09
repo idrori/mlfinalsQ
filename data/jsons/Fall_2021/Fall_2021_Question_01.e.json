@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2021",
+       "Question Number": "1",
+       "Part": "e",
+       "Points": 1.0,
+       "Topic": "Neural Networks",
+       "Type": "Image",
+       "Question": "Mac found and fixed the error. Now, to choose the regularization constant $\\lambda$, Mac tried values of $1,10,100$, and 1000 , creating the below plot. Unfortunately, he forgot to label the legend! Help Mach by filling in the legend using two of the following: 'Training error', 'Validation error', 'Training time'.",
+       "Solution": "Image filling"
+}

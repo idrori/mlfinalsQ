@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2021",
+       "Question Number": "9",
+       "Part": "c",
+       "Points": 2.0,
+       "Topic": "Reinforcement Learning",
+       "Type": "Image",
+       "Question": "Kim is running $Q$ learning on a simple $2 D$ grid-world problem and visualizes the current $Q$ value estimates and greedy policy with respect to the current $Q$ value estimates at each location. States correspond to squares in the grid, actions are north, south, east, and west, and there is a single state with non-zero reward. Assume the transition model is deterministic and action north moves you one square up, etc., except at the boundaries of the domain. Diagonal moves are not possible. \nDoes this situstion mean that there is a bug in Kim's Q-learning implementation? Explain briefly why or why not.",
+       "Solution": "This is not necessarily a bug. The value of the state to the north, $s_{\\text {north }}$ depends on the values $Q\\left(s_{\\text {north }}, a\\right)$ and the policy at $s$ depends on the values $Q(s, a)$. During learning, before convergence, it is entirely possible for them to disagree in this way."
+}

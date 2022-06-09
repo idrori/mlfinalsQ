@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2021",
+       "Question Number": "2",
+       "Part": "h",
+       "Points": 2.0,
+       "Topic": "Clustering",
+       "Type": "Image",
+       "Question": "Assume that the number of clusters $k=2$ for all of the following questions. \nEach of the following five data sets has two ground truth clusters, whose points are denoted as '\u5341' and ' $o$ '. For which of these would the clustering with the smallest $k$-means objective value not recover the ground truth? Assurne $k=2$. (Select all that apply.)",
+       "Solution": " $\\mathrm{O}$ (I) $\\sqrt{\\text { (II) } \\quad \\sqrt{(\\mathrm{II})} \\sqrt{(\\mathrm{IV})} \\sqrt{(\\mathrm{V})}$\n(I)\n(II)\n(III)\n(IV)\n$(\\mathrm{V})$"
+}

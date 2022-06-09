@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2018",
+       "Question Number": "7",
+       "Part": "b.i",
+       "Points": 2.0,
+       "Topic": "RNNs",
+       "Type": "Text",
+       "Question": "Recall the specification of a standard recurrent neural network (RNN): input $x_{t}$ of dimension $\\ell \\times 1$, state $s_{t}$ of dimension $m \\times 1$, and output $y_{t}$ of dimension $v \\times 1$. The weights in the network, then, are\n$$\n\\begin{aligned}\n&W^{s x}: m \\times \\ell \\\\\n&W^{s s}: m \\times m \\\\\n&W^{O}: v \\times m\n\\end{aligned}\n$$\nwith activation functions $f_{1}$ and $f_{2}$. Throughout this problem, for simplicity, we will treat all offsets as equal to 0 . Finally, the operation of the RNN is described by\n$$\n\\begin{aligned}\n&s_{t}=f_{1}\\left(W^{s x} x_{t}+W^{s s} s_{t-1}\\right) \\\\\n&y_{t}=f_{2}\\left(W^{o} s_{t}\\right)\n\\end{aligned}\n$$\nWe can think of the RNN as mapping input sequences to output sequences. Jody thinks that if we remove $f_{1}$ and $f_{2}$ then the mapping from input sequence to output sequence can be achieved by a hypothesis of the form $Y=W X$. In the case of a length 3 sequence, assuming inputs and outputs are 1-dimensional, $s_{0}=[0], X=\\left[x_{1}, x_{2}, x_{3}\\right]^{T}, Y=\\left[y_{1}, y_{2}, y_{3}\\right]^{T}$, and $W$ is $3 \\times 3$.\nIs Jody right? \n\n\n\n\n",
+       "Solution": "Yes"
+}

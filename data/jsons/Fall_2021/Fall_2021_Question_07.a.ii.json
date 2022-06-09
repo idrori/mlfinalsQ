@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2021",
+       "Question Number": "7",
+       "Part": "a.ii",
+       "Points": 1.0,
+       "Topic": "Neural Networks",
+       "Type": "Text",
+       "Question": "A neural network is given as Z1 = X * W1, A1 = f1(Z1), Z2 = W2 * A1, \\hat{y} = f2(Z2). Specifically, the input $X$ is a $4 \\times 1$ column vector, $\\hat{y}$ is a $1\\times 1$ scalar. $W^2$ is a $3 \\times 1$ vector. We also know that, $Z^1 = (W^1)^T X$ and $Z^2 = (W^2)^T A^1$. What are the dimensions of $Z^2$?",
+       "Solution": "1x1"
+}

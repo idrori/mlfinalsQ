@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2018",
+       "Question Number": "3",
+       "Part": "d.ii",
+       "Points": 2.0,
+       "Topic": "Neural Networks",
+       "Type": "Text",
+       "Question": "In some cases, we will have a validation set in addition to training and test sets. Assume the validation set is approximately the same size as the test set. This validation set is often used to tune hyperparameters such as $\\lambda$. Imagine we have trained a classifier using regularization, with \u03bb$\\lambda$ chosen based on performance on the training set. Which will have the lowest accuracy the training set, the validation set or the test set?",
+       "Solution": "test set"
+}

@@ -1,0 +1,744 @@
+Semester,Question Number,Part,Points,Topic,Type,Question,Solution
+Fall 2019,1,a.i,2,Features,Text,"General Ization is consulting for a shop that sells shoes, and the General is building a model to predict what color of sneakers a given customer will buy, given information about their age and the color of the shoes they're wearing when they enter the store. The shoe shop asks for a classifier, as well as an indication of how well the classifier will perform once deployed.
+There are several sneaker colors that customers might wear or buy. The General wishes to train a neural network classifier. What representation is best for the input (the color of shoes a customer is wearing when they enter the store)?",One-hot encoding of shoe color or RGB encoding of color.
+Fall 2019,1,a.ii,2,Classifiers,Text,"General Ization is consulting for a shop that sells shoes, and the General is building a model to predict what color of sneakers a given customer will buy, given information about their age and the color of the shoes they're wearing when they enter the store. The shoe shop asks for a classifier, as well as an indication of how well the classifier will perform once deployed.
+There are several sneaker colors that customers might wear or buy. The General wishes to train a neural network classifier. What kind of output layer should the General use?",Softmax is most appropriate for multiclass classification output.
+Fall 2019,1,b,2,Classifiers,Image,"The store gives the General data from the past year of sales, which she splits into three distinct parts: training data, validation data, and test data. While training the neural network classifier, the General gets the following learning curves. This graph indicates that she should use the classifier resulting from training after fewer than 80 iterations. Unfortunately, she forgot to put the legend in, but luckily you can fix it! Fill in the legend with the appropriate two among training_time, training_loss, validation_loss.",Solid line = validation_loss; Dashed line $=$ training_loss
+Fall 2019,1,c,2,Classifiers,Text,"General Ization is consulting for a shop that sells shoes, and the General is building a model to predict what color of sneakers a given customer will buy, given information about their age and the color of the shoes they're wearing when they enter the store. The shoe shop asks for a classifier, as well as an indication of how well the classifier will perform once deployed.
+Around how many iterations should the General use to train the classifier she delivers to the shoe shop? Explain why.","Around 40 , as this is when the validation loss starts to increase."
+Fall 2019,1,d,2,Classifiers,Text,"General Ization is consulting for a shop that sells shoes, and the General is building a model to predict what color of sneakers a given customer will buy, given information about their age and the color of the shoes they're wearing when they enter the store. The shoe shop asks for a classifier, as well as an indication of how well the classifier will perform once deployed.
+The General made a grave mistake. It turns out that though she thought she had split the data into three parts, she had only split it into two and used both those splits in training and selecting her classifier. Now, she needs to collect the third split in order to indicate how well her classifier will perform when deployed. Which of the following would be the best to use? Provide a short justification for your choice.
+1. Go to a nearby school and ask the students what color sneakers they used to own and note what color sneakers they are currently wearing.
+2. Go to a nearby construction site and ask the workers what color shoes they used to own and note what color shoes they are currently wearing.
+3. Ask the shoe store to give her more data in two months.
+4. Ask a different shoe store for their data.","Either 3 or 4 would be best. 3 would better mirror the distribution they would see in that store (though there is risk of covariate shift over time), but if the store is in a rush to deploy the model, then the delay might not be possible. 4 would be faster but might not match the distribution of the original store as well."
+Fall 2019,1,e,2,Classifiers,Text,"General Ization is consulting for a shop that sells shoes, and the General is building a model to predict what color of sneakers a given customer will buy, given information about their age and the color of the shoes they're wearing when they enter the store. The shoe shop asks for a classifier, as well as an indication of how well the classifier will perform once deployed.
+The store goes back to the General and says they've discovered a new feature they think might be useful: the color of shoes that a famous celebrity, Keslie Laelbling, is wearing that day. (Due to social media, both the customer and the store know exactly what color of shoes Keslie is wearing each day.) Unfortunately, the General is close to her deadline: she has time to train a new linear model, but not to train another deep neural network like she did before. How might the General produce an augmented model that incorporates this new feature?","Train a linear classifier that uses the neural network plus the color of Keslie's shoes as input, and produces a new prediction for what color of shoes the customer will buy."
+Fall 2019,2,a,3.6,Reinforcement Learning,Image,"You have designed a robot curling stone to enter a modified curling contest. 1 In an attempt to get your robot stone to perform well, you have designed a state and action space, a reward structure, and a transition model. The goal of the robot stone is to slide upwards on an ioe sheet and stop in a target region. Your robot stone likes to show off; after each state transition, it displays the reward it receives. In addition to your robot stone, there will be a number of opponent stones on the ice, as shown below. For simplicity's salke, we will consider the opponent stones to be fixed.
+(image here)
+Your model for the state and action spaces is as follows:
+$$
+\begin{aligned}
+&S \in\{t, 0,1,2,3\} \\
+&a \in\{\text { ""go"", ""stop"" }\}
+\end{aligned}
+$$
+where the states refer to the robot stone being in either a terminal state (denoted as $t$ ) or within one of the four regions below: (image here)
+
+
+You design the following reward function and (deterministic) transition model for your robot stone: (table here is an image)
+and all other transition probsbilities are 0 . Here * indicates any state. Note that once the robot stone enters state $t$ the game ends: there is no transition and zero reward out of state $t$ (and hence no action to decide once in state $t$.) Together with this reward function and transition model, you specify a discount factor $\gamma=1$. 
+In order to enable decision making by your robot stone, you need to give it the optimal policy $\pi^{*}(s)$. For your reward and transition structure and discount factor $\gamma=1$, what are the optimal Q-values, $Q^{*}(s, a)$ ? What is the optimal policy $\pi^{*}(s)$ ? Fill in the following two tables.
+(table here)",Image filling
+Fall 2019,2,b,3.6,Reinforcement Learning,Image,"You have designed a robot curling stone to enter a modified curling contest. 1 In an attempt to get your robot stone to perform well, you have designed a state and action space, a reward structure, and a transition model. The goal of the robot stone is to slide upwards on an ioe sheet and stop in a target region. Your robot stone likes to show off; after each state transition, it displays the reward it receives. In addition to your robot stone, there will be a number of opponent stones on the ice, as shown below. For simplicity's salke, we will consider the opponent stones to be fixed.
+(image here)
+Your model for the state and action spaces is as follows:
+$$
+\begin{aligned}
+&S \in\{t, 0,1,2,3\} \\
+&a \in\{\text { ""go"", ""stop"" }\}
+\end{aligned}
+$$
+where the states refer to the robot stone being in either a terminal state (denoted as $t$ ) or within one of the four regions below: (image here)
+
+
+You design the following reward function and (deterministic) transition model for your robot stone: (table here is an image)
+and all other transition probsbilities are 0 . Here * indicates any state. Note that once the robot stone enters state $t$ the game ends: there is no transition and zero reward out of state $t$ (and hence no action to decide once in state $t$.) Together with this reward function and transition model, you specify a discount factor $\gamma=1$.
+c
+Your competitor runs their robot through a first game, exhibiting the following experience:
+\begin{tabular}{c|c|c|c|c} 
+step # & $s$ & $a$ & $r$ & $s^{\prime}$ \\
+\hline 1 & 0 & ""go"" & 1 & 1 \\
+2 & 1 & ""stop"" & 0 & $\mathrm{t}$
+\end{tabular}
+You perform Q-learning updates based on the experience above. After observing steps 1 and 2 (the first game), what is the learned $Q(0$, ""go"" $)$ ?
+
+Solution: We know $Q(s, a):=\alpha Q(0, a)+\alpha\left(r+\gamma \max _{a^{4}} Q\left(0, a_{i}\right)\right.$ So step #1 causes the following update:
+$$
+Q(0, "" \mathrm{go} "")=0.5 \cdot 0+0.5(1+1 \cdot 0)=0.5
+$$
+What is the learned $Q(1$, ""stop"" $)$ ?","$$
+Q(1, \text { ""stop"" })=0.5 \cdot 0+0.5(0+1 \cdot 0)=0
+$$"
+Fall 2019,2,c,3.6,Reinforcement Learning,Image,"You have designed a robot curling stone to enter a modified curling contest. 1 In an attempt to get your robot stone to perform well, you have designed a state and action space, a reward structure, and a transition model. The goal of the robot stone is to slide upwards on an ioe sheet and stop in a target region. Your robot stone likes to show off; after each state transition, it displays the reward it receives. In addition to your robot stone, there will be a number of opponent stones on the ice, as shown below. For simplicity's salke, we will consider the opponent stones to be fixed.
+(image here)
+Your model for the state and action spaces is as follows:
+$$
+\begin{aligned}
+&S \in\{t, 0,1,2,3\} \\
+&a \in\{\text { ""go"", ""stop"" }\}
+\end{aligned}
+$$
+where the states refer to the robot stone being in either a terminal state (denoted as $t$ ) or within one of the four regions below: (image here)
+
+
+You design the following reward function and (deterministic) transition model for your robot stone: (table here is an image)
+and all other transition probsbilities are 0 . Here * indicates any state. Note that once the robot stone enters state $t$ the game ends: there is no transition and zero reward out of state $t$ (and hence no action to decide once in state $t$.) Together with this reward function and transition model, you specify a discount factor $\gamma=1$.
+Unfortunately, your competitor has also designed a robot stone. You do not know your competitor's reward structure $R(s, a)$ or transition model $T\left(s, a, s^{\prime}\right)$; however, you do know they use the same state and actions spaces. Instead, you decide to use Q-learning to observe their robot stone and learn from it! For your Q-learning, use discount factor $\gamma=1$ and learning rate $\alpha=0.5$, with a $\mathrm{Q}$ table initialized to zero for all $(s, a)$ pairs.
+Your competitor runs their robot through a second game, exhibiting the following additional experience:
+\begin{tabular}{c|c|c|c|c} 
+step # & $s$ & $a$ & $r$ & $s^{\prime}$ \\
+\hline 3 & 0 & ""go"" & 1 & 1 \\
+4 & 1 & “go"" & 1 & 2 \\
+5 & 2 & ""go"" & 1 & 3 \\
+6 & 3 & ""stop"" & 2 & $t$
+\end{tabular}
+You perform additional Q-learning updates based on this additional experience. After completion of both games (all six steps), what are the full set of $Q$ values you have learned for their robot? Fill in the following table.
+(image here)
+",Image filling
+Fall 2019,2,d,3.6,Reinforcement Learning,Image,"You have designed a robot curling stone to enter a modified curling contest. 1 In an attempt to get your robot stone to perform well, you have designed a state and action space, a reward structure, and a transition model. The goal of the robot stone is to slide upwards on an ioe sheet and stop in a target region. Your robot stone likes to show off; after each state transition, it displays the reward it receives. In addition to your robot stone, there will be a number of opponent stones on the ice, as shown below. For simplicity's salke, we will consider the opponent stones to be fixed.
+(image here)
+Your model for the state and action spaces is as follows:
+$$
+\begin{aligned}
+&S \in\{t, 0,1,2,3\} \\
+&a \in\{\text { ""go"", ""stop"" }\}
+\end{aligned}
+$$
+where the states refer to the robot stone being in either a terminal state (denoted as $t$ ) or within one of the four regions below: (image here)
+
+
+You design the following reward function and (deterministic) transition model for your robot stone: (table here is an image)
+and all other transition probsbilities are 0 . Here * indicates any state. Note that once the robot stone enters state $t$ the game ends: there is no transition and zero reward out of state $t$ (and hence no action to decide once in state $t$.) Together with this reward function and transition model, you specify a discount factor $\gamma=1$.
+Unfortunately, your competitor has also designed a robot stone. You do not know your competitor's reward structure $R(s, a)$ or transition model $T\left(s, a, s^{\prime}\right)$; however, you do know they use the same state and actions spaces. Instead, you decide to use Q-learning to observe their robot stone and learn from it! For your Q-learning, use discount factor $\gamma=1$ and learning rate $\alpha=0.5$, with a $\mathrm{Q}$ table initialized to zero for all $(s, a)$ pairs.
+We can think of learning the Q-value function for a given action as a regression problem with each state $s$ mapped to a one-hot feature vector $x=\phi_{A}(s)$, where $x=\left[\begin{array}{lll}1 & 0 & 0\end{array}\right.$ state $0, x=\left[\begin{array}{llll}0 & 1 & 0 & 0\end{array}\right]^{T}$ for 1 , etc., and $x=\left[\begin{array}{llll}0 & 0 & 0 & 0\end{array}\right]^{T}$ for state $t$.
+
+We'll focus on the action ""go"". We would like to come up with parameters $\theta, \theta_{0}$ such that $Q\left(s, "" g o^{\prime \prime}\right)=\theta \cdot \phi_{A}(s)+\theta_{0}=\theta \cdot x+\theta_{0}$. Is there in general - for arbitrary values of our $Q(s$, ""go"" $)$ - a setting of $\theta, \theta_{0}$ that enables representation of $Q(s$, ""go"") with perfect accuracy? If so, provide the corresponding $\theta$ and $\theta_{0}$. If not, explain why. (Note that we do not need to model $Q(t, a)$, since the game is over once state $t$ has been reached.)","Yes; $\theta_{i}$ is simply the value for $Q(s=i$, ""go"" $)$ and $\theta_{0}=0$.
+Note: $\theta=\left[\begin{array}{llll}5 & 4 & 3 & 0\end{array}\right]^{T}$ and $\theta_{0}=0$ would work for our optimal $Q^{*}(s, a)$, but we seek a more general $\theta$ corresponding to arbitrary or general $Q(s, a)$."
+Fall 2019,2,e,3.6,Reinforcement Learning,Image,"You have designed a robot curling stone to enter a modified curling contest. 1 In an attempt to get your robot stone to perform well, you have designed a state and action space, a reward structure, and a transition model. The goal of the robot stone is to slide upwards on an ioe sheet and stop in a target region. Your robot stone likes to show off; after each state transition, it displays the reward it receives. In addition to your robot stone, there will be a number of opponent stones on the ice, as shown below. For simplicity's salke, we will consider the opponent stones to be fixed.
+(image here)
+Your model for the state and action spaces is as follows:
+$$
+\begin{aligned}
+&S \in\{t, 0,1,2,3\} \\
+&a \in\{\text { ""go"", ""stop"" }\}
+\end{aligned}
+$$
+where the states refer to the robot stone being in either a terminal state (denoted as $t$ ) or within one of the four regions below: (image here)
+
+
+You design the following reward function and (deterministic) transition model for your robot stone: (table here is an image)
+and all other transition probsbilities are 0 . Here * indicates any state. Note that once the robot stone enters state $t$ the game ends: there is no transition and zero reward out of state $t$ (and hence no action to decide once in state $t$.) Together with this reward function and transition model, you specify a discount factor $\gamma=1$.
+Unfortunately, your competitor has also designed a robot stone. You do not know your competitor's reward structure $R(s, a)$ or transition model $T\left(s, a, s^{\prime}\right)$; however, you do know they use the same state and actions spaces. Instead, you decide to use Q-learning to observe their robot stone and learn from it! For your Q-learning, use discount factor $\gamma=1$ and learning rate $\alpha=0.5$, with a $\mathrm{Q}$ table initialized to zero for all $(s, a)$ pairs.
+Unfortunately, your robot's GPS system suddenly breaks, and it is no longer able to tell which of the four regions it is in. However, the robot has side cameras which can detect the opponent stones as it travels through the center of the ice, encoded as [(number of stones to immediate left) (number of stones to immediate right) $]^{T}$. You decide to use this information as state, giving the following feature transformation $\phi_{B}$ on your original state:
+$$
+\begin{aligned}
+\phi_{B}(3) &=\left[\begin{array}{ll}
+1 & 1
+\end{array}\right]^{T} \\
+\phi_{B}(2) &=\left[\begin{array}{ll}
+0 & 0
+\end{array}\right]^{T} \\
+\phi_{B}(1) &=\left[\begin{array}{ll}
+1 & 0
+\end{array}\right]^{T} \\
+\phi_{B}(0) &=\left[\begin{array}{ll}
+0 & 1
+\end{array}\right]^{T}
+\end{aligned}
+$$
+We would still like to come up with parameters $\theta, \theta_{0}$ such that $Q\left(s, "" g \mathrm{go}^{""}\right)=\theta \cdot \phi_{B}(s)+\theta_{0}$, for general values of $Q\left(s\right.$, ""go"" ). Is there a setting of $\theta, \theta_{0}$ that enables representation of this encoding of $Q\left(s, "" g o^{""}\right)$ with perfect accuracy? If so, provide the corresponding $\theta$ and $\theta_{0}$. If not, explain why this is not possible, and provide a feature transformation $\phi_{C}(\cdot)$ that does enable representation of $Q\left(s, "" g 0^{\prime \prime}\right)=\theta \cdot \phi_{C}\left(\phi_{B}(s)\right)+\theta_{0}$ with perfect accuracy.","No. Let $\left[\begin{array}{ll}x_{1} & x_{2}\end{array}\right]=\phi_{B}(s)$, so $\theta_{1} x_{1}+\theta_{2} x_{2}+\theta_{0}=Q(s$, ""go"" $) . \phi_{B}(2)$ forces $\theta_{0}=Q(2$, ""go"" $) ; \phi_{B}(1)$ forces $\theta_{1} ; \phi_{B}(0)$ forces $\theta_{2}$; and we no longer have the ability to find $\theta$ for $\phi_{B}(3)$.
+
+We can create $\phi_{C}$ as a one-hot encoding of state such that $\phi_{C}\left(\phi_{B}(s)\right)=\phi_{A}(s)$ to uniquely identify our four states (with corresponding $\theta$ and $\theta_{0}$ as in the previous part) to regain perfect representationsl power.
+"
+Fall 2019,3,a,2,Regression,Text,"Mitch Mitdiddle has kept track of ratings of three items from three different users
+of his new e-commerce website. These items are essential, and so each user has purchased and rated all three of the items. However, Mitch has lost one of the ratings, r: The (almost) complete ratings matrix is here:
+$$
+Y=\left[\begin{array}{ccc}
+6 & 8 & 10 \\
+9 & 12 & r \\
+3 & 4 & 5
+\end{array}\right]
+$$
+Note, users $a$ and items $i$ are indexed from 1 , i.e., the first row of $Y$ corresponds to user $1(a=1)$, and the first column of $Y$ corresponds to item $1(i=1)$.
+Treating $r$ as a missing value, is there a rank-1 representation of $Y$ as $U V^{T}$ (i.e., such that $U V^{T}$ produces a matrix that perfectly matches the non-missing elements of $\left.Y\right)$ ? If yes, provide matrices $U$ and $V$ of shape $3 \times 1$ such that $Y=U V^{T}$. If no, explain why not.
+","U = [2; 3; 1], V = [3; 4; 5]. Other solutions exist if student scales $U$ by $s$ and $V$ by 1/s."
+Fall 2019,3,b,2,Regression,Text,"Mitch Mitdiddle has kept track of ratings of three items from three different users
+of his new e-commerce website. These items are essential, and so each user has purchased and rated all three of the items. However, Mitch has lost one of the ratings, r: The (almost) complete ratings matrix is here:
+$$
+Y=\left[\begin{array}{ccc}
+6 & 8 & 10 \\
+9 & 12 & r \\
+3 & 4 & 5
+\end{array}\right]
+$$
+Note, users $a$ and items $i$ are indexed from 1 , i.e., the first row of $Y$ corresponds to user $1(a=1)$, and the first column of $Y$ corresponds to item $1(i=1)$.
+An e-commerce expert explains to you that users only care about one particular feature when it comes to rating products, and provides you with the value of this feature for each item, which we set as $V$:
+$$
+V=\left[\begin{array}{c}
+6 \\
+8 \\
+10
+\end{array}\right]
+$$
+Mitch remembers that we can use the alternating least squares method to solve for $U$, minimizing:
+$$
+J(U, V)=\frac{1}{2} \sum_{(a, i) \epsilon D}\left(U^{(a)} \cdot V^{(i)}-Y_{a, i}\right)^{2}
+$$
+where $D$ is the set of all user $a$ item $i$ rating pairs $(a, i)$. Here $U^{(a)}$ is the $a^{t h}$ row of $U$, and $V^{(i)}$ is the $i^{t h}$ row of $V$. Note that offsets are fixed at $b_{U}=0$ and $b_{V}=0$ in this problem.
+Using the same data matrix $Y$ with missing value $r$ and holding $V$ constant, what is the value of $U^{(2)}$ (the second row of $U$ ) that minimizes $J$ ? Identify what $(a, i)$ pairs and $Y_{a, i}$ values matter in this minimization, remembering that $r$ (value of $Y_{2,3}$ ) is not involved.",U^(2) = 1.5
+Fall 2019,3,c,2,Regression,Text,"Mitch Mitdiddle has kept track of ratings of three items from three different users
+of his new e-commerce website. These items are essential, and so each user has purchased and rated all three of the items. However, Mitch has lost one of the ratings, r: The (almost) complete ratings matrix is here:
+$$
+Y=\left[\begin{array}{ccc}
+6 & 8 & 10 \\
+9 & 12 & r \\
+3 & 4 & 5
+\end{array}\right]
+$$
+Note, users $a$ and items $i$ are indexed from 1 , i.e., the first row of $Y$ corresponds to user $1(a=1)$, and the first column of $Y$ corresponds to item $1(i=1)$.
+An e-commerce expert explains to you that users only care about one particular feature when it comes to rating products, and provides you with the value of this feature for each item, which we set as $V$:
+$$
+V=\left[\begin{array}{c}
+6 \\
+8 \\
+10
+\end{array}\right]
+$$
+Mitch remembers that we can use the alternating least squares method to solve for $U$, minimizing:
+$$
+J(U, V)=\frac{1}{2} \sum_{(a, i) \epsilon D}\left(U^{(a)} \cdot V^{(i)}-Y_{a, i}\right)^{2}
+$$
+where $D$ is the set of all user $a$ item $i$ rating pairs $(a, i)$. Here $U^{(a)}$ is the $a^{t h}$ row of $U$, and $V^{(i)}$ is the $i^{t h}$ row of $V$. Note that offsets are fixed at $b_{U}=0$ and $b_{V}=0$ in this problem.
+What is our prediction for $r$, given the $V$ and $U^{(2)}$ ?",r = 15
+Fall 2019,3,d,2,Regression,Text,"Mitch Mitdiddle has kept track of ratings of three items from three different users
+of his new e-commerce website. These items are essential, and so each user has purchased and rated all three of the items. However, Mitch has lost one of the ratings, r: The (almost) complete ratings matrix is here:
+$$
+Y=\left[\begin{array}{ccc}
+6 & 8 & 10 \\
+9 & 12 & r \\
+3 & 4 & 5
+\end{array}\right]
+$$
+Note, users $a$ and items $i$ are indexed from 1 , i.e., the first row of $Y$ corresponds to user $1(a=1)$, and the first column of $Y$ corresponds to item $1(i=1)$.
+An e-commerce expert explains to you that users only care about one particular feature when it comes to rating products, and provides you with the value of this feature for each item, which we set as $V$:
+$$
+V=\left[\begin{array}{c}
+6 \\
+8 \\
+10
+\end{array}\right]
+$$
+Mitch remembers that we can use the alternating least squares method to solve for $U$, minimizing:
+$$
+J(U, V)=\frac{1}{2} \sum_{(a, i) \epsilon D}\left(U^{(a)} \cdot V^{(i)}-Y_{a, i}\right)^{2}
+$$
+where $D$ is the set of all user $a$ item $i$ rating pairs $(a, i)$. Here $U^{(a)}$ is the $a^{t h}$ row of $U$, and $V^{(i)}$ is the $i^{t h}$ row of $V$. Note that offsets are fixed at $b_{U}=0$ and $b_{V}=0$ in this problem.
+Mark all that are true for our U, V , and Y above:
+A. There are innitely many settings of U and V that minimize J.
+B. For any constant (non-zero) V , J(U) has a unique global minimum.
+C. For any constant (non-zero) V , there exists a U such that J(U; V ) = 0.
+D. For any m x n matrix Y of rank 1, there exist matrices U and V of
+sizes m x 1 and n x 1 such that J(U, V ) = 0. ","A, B, D true; C false"
+Fall 2019,4,a.i,0.5,Neural Networks,Text,"Otto N. Coder is exploring different autoencoder architectures. Consider the following autoencoder with input $x \in \mathbb{R}^{d}$ and output $y^{\text {pred }} \in \mathbb{R}^{d}$. The autoencoder has one hidden layer with $m$ hidden units: $z^{(1)}, a^{(1)} \in \mathbb{R}^{m}$. Assume $x, z^{(2)}$, and $y^{\text {pred }}$ have dimensions $d \times 1$. Also let $z^{(1)}$ and $a^{(1)}$ have dimensions $m \times 1$. What are the dimensions of $W^{(1)}$?",m x d
+Fall 2019,4,a.ii,0.5,Neural Networks,Text,"Otto N. Coder is exploring different autoencoder architectures. Consider the following autoencoder with input $x \in \mathbb{R}^{d}$ and output $y^{\text {pred }} \in \mathbb{R}^{d}$. The autoencoder has one hidden layer with $m$ hidden units: $z^{(1)}, a^{(1)} \in \mathbb{R}^{m}$. Assume $x, z^{(2)}$, and $y^{\text {pred }}$ have dimensions $d \times 1$. Also let $z^{(1)}$ and $a^{(1)}$ have dimensions $m \times 1$. What are the dimensions of $b^{(1)}$?",m x 1
+Fall 2019,4,a.iii,0.5,Neural Networks,Text,"Otto N. Coder is exploring different autoencoder architectures. Consider the following autoencoder with input $x \in \mathbb{R}^{d}$ and output $y^{\text {pred }} \in \mathbb{R}^{d}$. The autoencoder has one hidden layer with $m$ hidden units: $z^{(1)}, a^{(1)} \in \mathbb{R}^{m}$. Assume $x, z^{(2)}$, and $y^{\text {pred }}$ have dimensions $d \times 1$. Also let $z^{(1)}$ and $a^{(1)}$ have dimensions $m \times 1$. What are the dimensions of $W^{(2)}$?",d x m
+Fall 2019,4,a.iv,0.5,Neural Networks,Text,"Otto N. Coder is exploring different autoencoder architectures. Consider the following autoencoder with input $x \in \mathbb{R}^{d}$ and output $y^{\text {pred }} \in \mathbb{R}^{d}$. The autoencoder has one hidden layer with $m$ hidden units: $z^{(1)}, a^{(1)} \in \mathbb{R}^{m}$. Assume $x, z^{(2)}$, and $y^{\text {pred }}$ have dimensions $d \times 1$. Also let $z^{(1)}$ and $a^{(1)}$ have dimensions $m \times 1$. What are the dimensions of $b^{(2)}$?",d x 1
+Fall 2019,4,b,1.5,Neural Networks,Text,"Otto N. Coder is exploring different autoencoder architectures. Consider the following autoencoder with input $x \in \mathbb{R}^{d}$ and output $y^{\text {pred }} \in \mathbb{R}^{d}$. The autoencoder has one hidden layer with $m$ hidden units: $z^{(1)}, a^{(1)} \in \mathbb{R}^{m}$. Assume $x, z^{(2)}$, and $y^{\text {pred }}$ have dimensions $d \times 1$. Also let $z^{(1)}$ and $a^{(1)}$ have dimensions $m \times 1$. 
+Otto trains the autoencoder with back-propagation. The loss for a given datapoint $x, y$ is:
+$$
+J(x, y)=\frac{1}{2}\left\|y^{\text {pred }}-y\right\|^{2}=\frac{1}{2}\left(y^{\text {pred }}-y\right)^{T}\left(y^{\text {pred }}-y\right)
+$$
+Compute the following intermediate partial derivatives. For the following questions, write your answer in terms of $x, y, y^{p r e d}, W^{(1)}, b^{(1)}, W^{(2)}, b^{(2)}, f^{(1)}, f^{(2)}$ and any previously computed or provided partial derivative. Also note that:
+1. Let $\partial f^{(1)} / \partial z^{(1)}$ be an $m \times 1$ matrix, provided to you.
+2. Let $\partial f^{(2)} / \partial z^{(2)}$ be a $d \times 1$ matrix, provided to you.
+3. If $A x=y$ where $A$ is a $m \times n$ matrix and $x$ is $n \times 1$ and $y$ is $m \times 1$, then let $\partial y / \partial A=x$.
+4. In your answers below, we will assume multiplications are matrix multiplication; to indicate element-wise multiplication, use the symbol *.
+Find $\partial J / \partial y^{\text {pred }}$, a $d \times 1$ matrix.",∂J/∂y^{pred}=(y^{pred}-y)
+Fall 2019,4,c,1.5,Neural Networks,Text,"Otto N. Coder is exploring different autoencoder architectures. Consider the following autoencoder with input $x \in \mathbb{R}^{d}$ and output $y^{\text {pred }} \in \mathbb{R}^{d}$. The autoencoder has one hidden layer with $m$ hidden units: $z^{(1)}, a^{(1)} \in \mathbb{R}^{m}$. Assume $x, z^{(2)}$, and $y^{\text {pred }}$ have dimensions $d \times 1$. Also let $z^{(1)}$ and $a^{(1)}$ have dimensions $m \times 1$. 
+Otto trains the autoencoder with back-propagation. The loss for a given datapoint $x, y$ is:
+$$
+J(x, y)=\frac{1}{2}\left\|y^{\text {pred }}-y\right\|^{2}=\frac{1}{2}\left(y^{\text {pred }}-y\right)^{T}\left(y^{\text {pred }}-y\right)
+$$
+Compute the following intermediate partial derivatives. For the following questions, write your answer in terms of $x, y, y^{p r e d}, W^{(1)}, b^{(1)}, W^{(2)}, b^{(2)}, f^{(1)}, f^{(2)}$ and any previously computed or provided partial derivative. Also note that:
+1. Let $\partial f^{(1)} / \partial z^{(1)}$ be an $m \times 1$ matrix, provided to you.
+2. Let $\partial f^{(2)} / \partial z^{(2)}$ be a $d \times 1$ matrix, provided to you.
+3. If $A x=y$ where $A$ is a $m \times n$ matrix and $x$ is $n \times 1$ and $y$ is $m \times 1$, then let $\partial y / \partial A=x$.
+4. In your answers below, we will assume multiplications are matrix multiplication; to indicate element-wise multiplication, use the symbol *.
+Find $\partial J / \partial z^{(2)}$, a $d \times 1$ matrix. You may use $\partial J / \partial y^{\text {pred }}$ and $*$ for element-wise multiplication.",∂J/∂z^{(2)} =∂J/∂y^{pred} * ∂f^{(2)}/∂z^{(2)}
+Fall 2019,4,d,1.5,Neural Networks,Text,"Otto N. Coder is exploring different autoencoder architectures. Consider the following autoencoder with input $x \in \mathbb{R}^{d}$ and output $y^{\text {pred }} \in \mathbb{R}^{d}$. The autoencoder has one hidden layer with $m$ hidden units: $z^{(1)}, a^{(1)} \in \mathbb{R}^{m}$. Assume $x, z^{(2)}$, and $y^{\text {pred }}$ have dimensions $d \times 1$. Also let $z^{(1)}$ and $a^{(1)}$ have dimensions $m \times 1$. 
+Otto trains the autoencoder with back-propagation. The loss for a given datapoint $x, y$ is:
+$$
+J(x, y)=\frac{1}{2}\left\|y^{\text {pred }}-y\right\|^{2}=\frac{1}{2}\left(y^{\text {pred }}-y\right)^{T}\left(y^{\text {pred }}-y\right)
+$$
+Compute the following intermediate partial derivatives. For the following questions, write your answer in terms of $x, y, y^{p r e d}, W^{(1)}, b^{(1)}, W^{(2)}, b^{(2)}, f^{(1)}, f^{(2)}$ and any previously computed or provided partial derivative. Also note that:
+1. Let $\partial f^{(1)} / \partial z^{(1)}$ be an $m \times 1$ matrix, provided to you.
+2. Let $\partial f^{(2)} / \partial z^{(2)}$ be a $d \times 1$ matrix, provided to you.
+3. If $A x=y$ where $A$ is a $m \times n$ matrix and $x$ is $n \times 1$ and $y$ is $m \times 1$, then let $\partial y / \partial A=x$.
+4. In your answers below, we will assume multiplications are matrix multiplication; to indicate element-wise multiplication, use the symbol *.
+Find $\partial J / \partial W^{(2)}$, a $d \times m$ matrix. You may use $\partial J / \partial z^{(2)}$.",∂J/∂W^{(2)} = ∂J/∂z^{(2)}*f^{(1)}*(W^{(1)}x+b^{(1)})^{T}
+Fall 2019,4,e,1.5,Neural Networks,Text,"Otto N. Coder is exploring different autoencoder architectures. Consider the following autoencoder with input $x \in \mathbb{R}^{d}$ and output $y^{\text {pred }} \in \mathbb{R}^{d}$. The autoencoder has one hidden layer with $m$ hidden units: $z^{(1)}, a^{(1)} \in \mathbb{R}^{m}$. Assume $x, z^{(2)}$, and $y^{\text {pred }}$ have dimensions $d \times 1$. Also let $z^{(1)}$ and $a^{(1)}$ have dimensions $m \times 1$. 
+Otto trains the autoencoder with back-propagation. The loss for a given datapoint $x, y$ is:
+$$
+J(x, y)=\frac{1}{2}\left\|y^{\text {pred }}-y\right\|^{2}=\frac{1}{2}\left(y^{\text {pred }}-y\right)^{T}\left(y^{\text {pred }}-y\right)
+$$
+Compute the following intermediate partial derivatives. For the following questions, write your answer in terms of $x, y, y^{p r e d}, W^{(1)}, b^{(1)}, W^{(2)}, b^{(2)}, f^{(1)}, f^{(2)}$ and any previously computed or provided partial derivative. Also note that:
+1. Let $\partial f^{(1)} / \partial z^{(1)}$ be an $m \times 1$ matrix, provided to you.
+2. Let $\partial f^{(2)} / \partial z^{(2)}$ be a $d \times 1$ matrix, provided to you.
+3. If $A x=y$ where $A$ is a $m \times n$ matrix and $x$ is $n \times 1$ and $y$ is $m \times 1$, then let $\partial y / \partial A=x$.
+4. In your answers below, we will assume multiplications are matrix multiplication; to indicate element-wise multiplication, use the symbol *.
+Write the gradient descent update step for just $W^{(2)}$ for one datapoint $(x, y)$ given learning rate $\eta$ and $\partial J / \partial W^{(2)}$.","W^{(2)}:=W^{(2)}-\eta ∂J(x,y)/∂W^{(2)}"
+Fall 2019,4,f,1.5,Neural Networks,Text,"Otto N. Coder is exploring different autoencoder architectures. Consider the following autoencoder with input $x \in \mathbb{R}^{d}$ and output $y^{\text {pred }} \in \mathbb{R}^{d}$. The autoencoder has one hidden layer with $m$ hidden units: $z^{(1)}, a^{(1)} \in \mathbb{R}^{m}$. Assume $x, z^{(2)}$, and $y^{\text {pred }}$ have dimensions $d \times 1$. Also let $z^{(1)}$ and $a^{(1)}$ have dimensions $m \times 1$. 
+Otto trains the autoencoder with back-propagation. The loss for a given datapoint $x, y$ is:
+$$
+J(x, y)=\frac{1}{2}\left\|y^{\text {pred }}-y\right\|^{2}=\frac{1}{2}\left(y^{\text {pred }}-y\right)^{T}\left(y^{\text {pred }}-y\right)
+$$
+Compute the following intermediate partial derivatives. For the following questions, write your answer in terms of $x, y, y^{p r e d}, W^{(1)}, b^{(1)}, W^{(2)}, b^{(2)}, f^{(1)}, f^{(2)}$ and any previously computed or provided partial derivative. Also note that:
+1. Let $\partial f^{(1)} / \partial z^{(1)}$ be an $m \times 1$ matrix, provided to you.
+2. Let $\partial f^{(2)} / \partial z^{(2)}$ be a $d \times 1$ matrix, provided to you.
+3. If $A x=y$ where $A$ is a $m \times n$ matrix and $x$ is $n \times 1$ and $y$ is $m \times 1$, then let $\partial y / \partial A=x$.
+4. In your answers below, we will assume multiplications are matrix multiplication; to indicate element-wise multiplication, use the symbol *.
+Otto's friend Bigsby believes that bigger is better. He takes a look at Otto's neural network and tells Otto that he should make the number of hidden units $m$ in the hidden layer very large: $m=10 d$. (Recall that $z^{(1)}$ has dimensions $m \times 1$.) Is Bigsby correct? What would you expect to see with training and test accuracy using Bigsby's approach?","No; training accuracy might be high, but this would likely be due to overfitting and lead to worse test accuracy."
+Fall 2019,4,g,1.5,Neural Networks,Text,"Otto N. Coder is exploring different autoencoder architectures. Consider the following autoencoder with input $x \in \mathbb{R}^{d}$ and output $y^{\text {pred }} \in \mathbb{R}^{d}$. The autoencoder has one hidden layer with $m$ hidden units: $z^{(1)}, a^{(1)} \in \mathbb{R}^{m}$. Assume $x, z^{(2)}$, and $y^{\text {pred }}$ have dimensions $d \times 1$. Also let $z^{(1)}$ and $a^{(1)}$ have dimensions $m \times 1$. 
+Otto trains the autoencoder with back-propagation. The loss for a given datapoint $x, y$ is:
+$$
+J(x, y)=\frac{1}{2}\left\|y^{\text {pred }}-y\right\|^{2}=\frac{1}{2}\left(y^{\text {pred }}-y\right)^{T}\left(y^{\text {pred }}-y\right)
+$$
+Compute the following intermediate partial derivatives. For the following questions, write your answer in terms of $x, y, y^{p r e d}, W^{(1)}, b^{(1)}, W^{(2)}, b^{(2)}, f^{(1)}, f^{(2)}$ and any previously computed or provided partial derivative. Also note that:
+1. Let $\partial f^{(1)} / \partial z^{(1)}$ be an $m \times 1$ matrix, provided to you.
+2. Let $\partial f^{(2)} / \partial z^{(2)}$ be a $d \times 1$ matrix, provided to you.
+3. If $A x=y$ where $A$ is a $m \times n$ matrix and $x$ is $n \times 1$ and $y$ is $m \times 1$, then let $\partial y / \partial A=x$.
+4. In your answers below, we will assume multiplications are matrix multiplication; to indicate element-wise multiplication, use the symbol *.
+Leila says having more layers is better. Let $m$ be much smaller than d. Leila adds 10 more hidden layers all with linear activation before Otto's current hidden layer (which has sigmoid activation function $f^{(1)}$ ) such that each hidden layer has $m$ units. What would you expect to see with your training and test accuracy, compared to just having one hidden layer with activation $f^{(1)}$ ?","The intermediary hidden layers do not add any expressivity to the network, and we would expect similar training and test accuracy as compared to the single $f^{(1)}$ hidden layer network. This may, however, require different number of training iterations with the same available data, in order to achieve similar accuracy."
+Fall 2019,4,h,1.5,Neural Networks,Text,"Otto N. Coder is exploring different autoencoder architectures. Consider the following autoencoder with input $x \in \mathbb{R}^{d}$ and output $y^{\text {pred }} \in \mathbb{R}^{d}$. The autoencoder has one hidden layer with $m$ hidden units: $z^{(1)}, a^{(1)} \in \mathbb{R}^{m}$. Assume $x, z^{(2)}$, and $y^{\text {pred }}$ have dimensions $d \times 1$. Also let $z^{(1)}$ and $a^{(1)}$ have dimensions $m \times 1$. 
+Otto trains the autoencoder with back-propagation. The loss for a given datapoint $x, y$ is:
+$$
+J(x, y)=\frac{1}{2}\left\|y^{\text {pred }}-y\right\|^{2}=\frac{1}{2}\left(y^{\text {pred }}-y\right)^{T}\left(y^{\text {pred }}-y\right)
+$$
+Compute the following intermediate partial derivatives. For the following questions, write your answer in terms of $x, y, y^{p r e d}, W^{(1)}, b^{(1)}, W^{(2)}, b^{(2)}, f^{(1)}, f^{(2)}$ and any previously computed or provided partial derivative. Also note that:
+1. Let $\partial f^{(1)} / \partial z^{(1)}$ be an $m \times 1$ matrix, provided to you.
+2. Let $\partial f^{(2)} / \partial z^{(2)}$ be a $d \times 1$ matrix, provided to you.
+3. If $A x=y$ where $A$ is a $m \times n$ matrix and $x$ is $n \times 1$ and $y$ is $m \times 1$, then let $\partial y / \partial A=x$.
+4. In your answers below, we will assume multiplications are matrix multiplication; to indicate element-wise multiplication, use the symbol *.
+Otto's other friend Leila says having more layers is better. Let $m$ be much smaller than d. Leila adds 10 more hidden layers all with linear activation before Neil suggests to have several layers with non-linear activation function. He says Otto should regularize the number of active hidden units. Loosely speaking, we consider the average activation of a hidden unit $j$ in our hidden layer 1 (which has sigmoid activation function $\left.f^{(1)}\right)$ to be the average of the activation of $a_{j}^{(1)}$ over the points $x_{i}$ in our training dataset of size $N$ :
+$$
+\hat{p}_{j}=\frac{1}{N} \Sigma_{i=1}^{N} a_{j}^{(1)}\left(x_{i}\right)
+$$
+Assume we would like to enforce the constraint that the average activation for each hidden unit $\hat{p}_{j}$ is close to some hyperparameter $p$. Usually, $p$ is very small (say $p<0.05$ ).
+What is the best format for a regularization penalty given hyperparameter $p$ and the average activation for all our hidden units: $\hat{p}_{j}$ ? Select one of the following:
+A. Hinge loss: $\Sigma_{j} \max \left(0,\left(1-\hat{p}_{j}\right) p\right)$
+B. NLL: $\Sigma_{j}\left(-p \log \frac{p}{\hat{p}_{j}}-(1-p) \log \frac{(1-p)}{\left(1-\hat{p}_{j}\right)}\right)$
+C. Squared loss: $\Sigma_{j}\left(\hat{p}_{j}-p\right)^{2}$
+D. l2 norm: $\Sigma_{j}\left(\hat{p}_{j}\right)^{2}$  ","Either NLL or squared loss should work, encouraging $p$ and $\hat{p}_{j}$ to be close. NLL loss might better handle wide range in the magnitudes of $\hat{p}_{j}$."
+Fall 2019,4,i,1.5,Neural Networks,Text,"Otto N. Coder is exploring different autoencoder architectures. Consider the following autoencoder with input $x \in \mathbb{R}^{d}$ and output $y^{\text {pred }} \in \mathbb{R}^{d}$. The autoencoder has one hidden layer with $m$ hidden units: $z^{(1)}, a^{(1)} \in \mathbb{R}^{m}$. Assume $x, z^{(2)}$, and $y^{\text {pred }}$ have dimensions $d \times 1$. Also let $z^{(1)}$ and $a^{(1)}$ have dimensions $m \times 1$. 
+Otto trains the autoencoder with back-propagation. The loss for a given datapoint $x, y$ is:
+$$
+J(x, y)=\frac{1}{2}\left\|y^{\text {pred }}-y\right\|^{2}=\frac{1}{2}\left(y^{\text {pred }}-y\right)^{T}\left(y^{\text {pred }}-y\right)
+$$
+Compute the following intermediate partial derivatives. For the following questions, write your answer in terms of $x, y, y^{p r e d}, W^{(1)}, b^{(1)}, W^{(2)}, b^{(2)}, f^{(1)}, f^{(2)}$ and any previously computed or provided partial derivative. Also note that:
+1. Let $\partial f^{(1)} / \partial z^{(1)}$ be an $m \times 1$ matrix, provided to you.
+2. Let $\partial f^{(2)} / \partial z^{(2)}$ be a $d \times 1$ matrix, provided to you.
+3. If $A x=y$ where $A$ is a $m \times n$ matrix and $x$ is $n \times 1$ and $y$ is $m \times 1$, then let $\partial y / \partial A=x$.
+4. In your answers below, we will assume multiplications are matrix multiplication; to indicate element-wise multiplication, use the symbol *.
+Which pass should Otto compute $\hat{p}_{j}$ on? Select one of the following:
+1. Forwards pass
+2. Backwards pass
+3. Gradient descent step (weight update) pass  ",Forwards pass
+Fall 2019,5,a,2,MDPs,Image,"Consider the following simple MDP: Positive Reward
+First consider the case where the MDP has positive reward. In this scenario, there is only one action $($ next $)$; we name this decision policy $\pi_{A}$ with $\pi_{A}(s)=n e x t$ for all $s$. The reward is $R(s, n e x t)=0$ for all states $s$, except for state $s_{k}$ where reward is $R\left(s_{k}\right.$, next $)=10$. We always start at state $s_{1}$ and each arrow indicates a deterministic transition probability $p=1$. There is no transition out of the end state $E N D$, and 0 reward for any action from the end state. 
+Calculate $V_{\pi}(s)$ for each state in the finite-horizon case with horizon $h=1, k=4$, and discount factor $\gamma=1$.","$$
+\begin{aligned}
+&V_{\pi}^{1}\left(s_{4}\right)=10 \\
+&V_{\pi}^{1}\left(s_{3}\right)=0 \\
+&V_{\pi}^{1}\left(s_{2}\right)=0 \\
+&V_{\pi}^{1}\left(s_{1}\right)=0
+\end{aligned}
+$$"
+Fall 2019,5,b,2,MDPs,Image,"Consider the following simple MDP: Positive Reward
+First consider the case where the MDP has positive reward. In this scenario, there is only one action $($ next $)$; we name this decision policy $\pi_{A}$ with $\pi_{A}(s)=n e x t$ for all $s$. The reward is $R(s, n e x t)=0$ for all states $s$, except for state $s_{k}$ where reward is $R\left(s_{k}\right.$, next $)=10$. We always start at state $s_{1}$ and each arrow indicates a deterministic transition probability $p=1$. There is no transition out of the end state $E N D$, and 0 reward for any action from the end state. 
+Calculate $V_{\pi}(s)$ for each state in the infinite horizon case with $k=4$ and discount factor $\gamma=0.9$","$$
+\begin{aligned}
+&V_{\pi}\left(s_{4}\right)=10 \\
+&V_{\pi}\left(s_{3}\right)=0+\gamma * 10=0.9 * 10=9 \\
+&V_{\pi}\left(s_{2}\right)=0.9 * 9=8.1 \\
+&V_{\pi}\left(s_{1}\right)=0.9 * 8.1=7.29
+\end{aligned}
+$$"
+Fall 2019,5,c,2,MDPs,Image,"Consider the following simple MDP: Positive Reward
+First consider the case where the MDP has positive reward. In this scenario, there is only one action $($ next $)$; we name this decision policy $\pi_{A}$ with $\pi_{A}(s)=n e x t$ for all $s$. The reward is $R(s, n e x t)=0$ for all states $s$, except for state $s_{k}$ where reward is $R\left(s_{k}\right.$, next $)=10$. We always start at state $s_{1}$ and each arrow indicates a deterministic transition probability $p=1$. There is no transition out of the end state $E N D$, and 0 reward for any action from the end state. 
+Derive a formula for $V_{\pi}\left(s_{1}\right)$ that works for any value of (is expressed as a function of) $k$ and $\gamma$ for the above positive reward MDP, in the infinite horizon case.","At each step, we receive a reward of 0 , except after the $k^{\text {th }}$ step, when we get a reward of 10 . Therefore, the summation is
+$$
+\sum_{i=0}^{k-1} 0 * \gamma^{i}+10 * \gamma^{k-1}=0 * \gamma^{0}+0 * \gamma^{1}+0 * \gamma^{2}+0 * \gamma^{3}+\ldots+10 * \gamma^{k-1}=10 \gamma^{k-1}
+$$"
+Fall 2019,5,d,2,MDPs,Image,"Consider the following simple MDP: Positive Reward
+First consider the case where the MDP has positive reward. In this scenario, there is only one action $($ next $)$; we name this decision policy $\pi_{A}$ with $\pi_{A}(s)=n e x t$ for all $s$. The reward is $R(s, n e x t)=0$ for all states $s$, except for state $s_{k}$ where reward is $R\left(s_{k}\right.$, next $)=10$. We always start at state $s_{1}$ and each arrow indicates a deterministic transition probability $p=1$. There is no transition out of the end state $E N D$, and 0 reward for any action from the end state.
+Now consider the case where this MDP has negative reward. In this scenario, the reward is $R(s, n e x t)=-1$ for all states, except for state $s_{k}$ where the reward is $R\left(s_{k}, n e x t\right)=0$. Again, there is only one action, next, and the decision policy remains $\pi_{A}(s)=n e x t$ for all s. We always start at state $s_{1}$ and each arrow has a deterministic transition probsbility $p=1$. There is no transition out of the end state $E N D$, and zero reward for any action from the end state, i.e., $R(E N D$, next $)=0$.
+Calculate $V_{\pi}(s)$ for each state in the finite-horizon case with horizon $h=1, k=4$, and discount factor $\gamma=1$.","$$
+\begin{aligned}
+&V_{\pi}^{1}\left(s_{4}\right)=0 \\
+&V_{\pi}^{1}\left(s_{3}\right)=-1 \\
+&V_{\pi}^{1}\left(s_{2}\right)=-1 \\
+&V_{\pi}^{1}\left(s_{1}\right)=-1
+\end{aligned}
+$$"
+Fall 2019,5,e,2,MDPs,Image,"Consider the following simple MDP: Positive Reward
+First consider the case where the MDP has positive reward. In this scenario, there is only one action $($ next $)$; we name this decision policy $\pi_{A}$ with $\pi_{A}(s)=n e x t$ for all $s$. The reward is $R(s, n e x t)=0$ for all states $s$, except for state $s_{k}$ where reward is $R\left(s_{k}\right.$, next $)=10$. We always start at state $s_{1}$ and each arrow indicates a deterministic transition probability $p=1$. There is no transition out of the end state $E N D$, and 0 reward for any action from the end state.
+Now consider the case where this MDP has negative reward. In this scenario, the reward is $R(s, n e x t)=-1$ for all states, except for state $s_{k}$ where the reward is $R\left(s_{k}, n e x t\right)=0$. Again, there is only one action, next, and the decision policy remains $\pi_{A}(s)=n e x t$ for all s. We always start at state $s_{1}$ and each arrow has a deterministic transition probsbility $p=1$. There is no transition out of the end state $E N D$, and zero reward for any action from the end state, i.e., $R(E N D$, next $)=0$.
+Calculate $V_{\pi}(s)$ for each state in the infinite horizon case with $k=4$ and discount factor $\gamma=0.9$","$$
+\begin{aligned}
+&V_{\pi}\left(s_{4}\right)=0 \\
+&V_{\pi}\left(s_{3}\right)=-1+\gamma * 0=-1 \\
+&V_{\pi}\left(s_{2}\right)=-1+0.9(-1)=-1.9 \\
+&V_{\pi}\left(s_{1}\right)=-1+0.9(-1.9)=-2.71
+\end{aligned}
+$$"
+Fall 2019,5,f,3,MDPs,Image,"Consider the following simple MDP: Positive Reward
+First consider the case where the MDP has positive reward. In this scenario, there is only one action $($ next $)$; we name this decision policy $\pi_{A}$ with $\pi_{A}(s)=n e x t$ for all $s$. The reward is $R(s, n e x t)=0$ for all states $s$, except for state $s_{k}$ where reward is $R\left(s_{k}\right.$, next $)=10$. We always start at state $s_{1}$ and each arrow indicates a deterministic transition probability $p=1$. There is no transition out of the end state $E N D$, and 0 reward for any action from the end state.
+Now consider the case where this MDP has negative reward. In this scenario, the reward is $R(s, n e x t)=-1$ for all states, except for state $s_{k}$ where the reward is $R\left(s_{k}, n e x t\right)=0$. Again, there is only one action, next, and the decision policy remains $\pi_{A}(s)=n e x t$ for all s. We always start at state $s_{1}$ and each arrow has a deterministic transition probsbility $p=1$. There is no transition out of the end state $E N D$, and zero reward for any action from the end state, i.e., $R(E N D$, next $)=0$.
+Derive a formula for $V_{\pi}\left(s_{1}\right)$ that works for any value of (is expressed as a function of) $k$ and $\gamma$ for this negative reward MDP with infinite horizon. Recall that $\sum_{i=0}^{n} \gamma^{i}=\frac{\left(1-\gamma^{n+1}\right)}{(1-\gamma)}$.","At every step, we receive a reward of $-1$, except for the $h^{\text {th }}$ step, where we receive a reward of 0 . Therefore, the summation is
+$$
+\sum_{i=0}^{k-1}-1 * \gamma^{i}+0 * \gamma^{k-1}=-1 * \gamma^{0}-1 * \gamma^{1}-1 * \gamma^{2}+\ldots-1 * \gamma^{k-2}+0 * \gamma^{k-1}=-\frac{1-\gamma^{k-1}}{1-\gamma}
+$$"
+Fall 2019,5,g,3,MDPs,Image,"Consider the following simple MDP: Positive Reward
+First consider the case where the MDP has positive reward. In this scenario, there is only one action $($ next $)$; we name this decision policy $\pi_{A}$ with $\pi_{A}(s)=n e x t$ for all $s$. The reward is $R(s, n e x t)=0$ for all states $s$, except for state $s_{k}$ where reward is $R\left(s_{k}\right.$, next $)=10$. We always start at state $s_{1}$ and each arrow indicates a deterministic transition probability $p=1$. There is no transition out of the end state $E N D$, and 0 reward for any action from the end state.
+Consider the MDP below with negative rewards for some $R(s, a)$ and positive rewards for others. Now there are two actions, next and stop. The solid arrows show the probabilities of state transitions under action next; the dashed arrows show the probability of state transitions under action stop. (If there is no dashed arrow from a state, that indicates a probability $p=0$ of transitioning out of that state under action stop.) The corresponding rewards $R\left(s_{i}, a\right)$ are also indicated on the figure below. Note that the rewards are $R\left(s_{i}, n e x t\right)=-1$ for all $s_{i}$, except for state $s_{4}$, where the reward is $R\left(s_{4}\right.$, next $)=10$. Finally, under action stop, we have reward $R\left(s_{1}\right.$, stop $)=r$ (some unknown value $r$ ), and $R(s, s t o p)=0$ for all other states. As before, we always start in state $s_{1}$. There is no transition out of the end state $E N D$, and zero reward for any action from the end state, i.e., $R(E N D$, next $)=R(E N D, g o)=0$. Assume discount factor $\gamma$ and infinite horizon.
+We consider two possible policies: $\pi_{A}(s)=n e x t$ for all $s$, and $\pi_{B}(s)=s t o p$ for all $s$. Your goal is to maximize your reward. When you start at $s_{1}$, you have reward 0 before taking any actions. Determine what $r$ should be, so that it is best to run this MDP under policy $\pi_{B}$ rather than policy $\pi_{A}$. Give your answer as an expression for $r$ involving $p$ and $\gamma$.","Under policy $\pi_{A}$ :
+$$
+\begin{aligned}
+&V_{\pi}\left(s_{4}\right)=10 \\
+&V_{\pi}\left(s_{3}\right)=-1+p \gamma V_{\pi}\left(s_{4}\right)+(1-p) \gamma V_{\pi}(\text { end })=-1+p \gamma \cdot 10 \\
+&V_{\pi}\left(s_{2}\right)=-1+p \gamma V_{\pi}\left(s_{3}\right)=-1-p \gamma+(p \gamma)^{2} \cdot 10 \\
+&V_{\pi}\left(s_{1}\right)=-1+p \gamma V_{\pi}\left(s_{2}\right)=-1-p \gamma-(p \gamma)^{2}+(p \gamma)^{3} \cdot 10
+\end{aligned}
+$$
+Under policy $\pi_{B}$, we simply have $V_{\pi}\left(s_{1}\right)=r$. So we should choose policy $\pi_{B}$ when
+$$
+r>-1-p \gamma-(p \gamma)^{2}+(p \gamma)^{3} \cdot 10
+$$
+As an example, for $\gamma=1$ and $p=0.9, r$ is $4.58$."
+Fall 2019,6,a,2,Decision Trees,Text,"Consider the following 2D dataset in the (x,y) format: ((0,1), +1), ((1,1),+1), ((-1,-2),-1), ((0,-1),-1), ((1,-1),+1), ((2,-1),-1). Consider the following splits: Split A: x2 >= 0
+Split B: x1 >= 0:5
+Split C: x1 >=􀀀0:5
+Paul Bunyan works to construct trees using the algorithm discussed in the lecture notes, i.e., a greedy algorithm that recursively minimizes weighted average entropy, considering only combinations of the three splits mentioned above. He wants the output of the tree for any input $\left(x_{1}, x_{2}\right)$ to be the probability that the input is a positive $(+1)$ example.
+Recall that the weighted average entropy $\bar{H}$ of a split into subsets $R_{1}$ and $R_{2}$ is
+$$
+\bar{H}(\text { split })=\left(\text { fraction of points in } R_{1}\right) \cdot H\left(R_{1}\right)+\left(\text { fraction of points in } R_{2}\right) \cdot H\left(R_{2}\right)
+$$
+where the entropy $H\left(R_{m}\right)$ of data in a region $R_{m}$ is given by
+$$
+H\left(R_{m}\right)=-\sum_{k} \hat{P}_{m k} \log _{2} \hat{P}_{m k}
+$$
+Here $\hat{P}_{m k}$ is the empirical probability, which is in this case the fraction of items in region $m$ that are of class $k$.
+Considering the entire data set, Paul finds that the best first split of these three is Split A, with $\bar{H}(A)=0.54$, compared to $\bar{H}(B)=0.92$ and $\bar{H}(C)=0.81$, resulting in a region $R_{A^{+}}$ with all positive examples, and a region $R_{A^{-}}$with mixed positive and negative examples. Given Split A, however, Paul is not sure which is the next split to include in his tree. Calculate the weighted average entropy of Split $\mathrm{B}$ for region $R_{A^{-}}, \bar{H}\left(B \mid R_{A^{-}}\right)$, versus Split $\mathrm{C}$ for the same region, $\bar{H}\left(C \mid R_{A^{-}}\right)$, and identify which of Split B or Split $\mathrm{C}$ Paul should choose for his second split. ",Split B
+Fall 2019,6,b,2,Decision Trees,Image,"Draw the decision tree boundaries represented by this decision tree (with two splits) on the data plot figure below.",Draw on image
+Fall 2019,6,c,1,Decision Trees,Image,"Draw the decision tree corresponding to this tree with two splits. Clearly label the test in each node, which case (yes or no) each branch corresponds to, and the output at a leaf node represented as a probability of having a positive label, +1.",Draw on image
+Fall 2019,6,d,1,Decision Trees,Text,"Consider the following 2D dataset in the (x,y) format: ((0,1), +1), ((1,1),+1), ((-1,-2),-1), ((0,-1),-1), ((1,-1),+1), ((2,-1),-1). Consider the following splits: Split A: x2 >= 0
+Split B: x1 >= 0:5
+Split C: x1 >=􀀀0:5
+Paul Bunyan works to construct trees using the algorithm discussed in the lecture notes, i.e., a greedy algorithm that recursively minimizes weighted average entropy, considering only combinations of the three splits mentioned above. He wants the output of the tree for any input $\left(x_{1}, x_{2}\right)$ to be the probability that the input is a positive $(+1)$ example.
+Recall that the weighted average entropy $\bar{H}$ of a split into subsets $R_{1}$ and $R_{2}$ is
+$$
+\bar{H}(\text { split })=\left(\text { fraction of points in } R_{1}\right) \cdot H\left(R_{1}\right)+\left(\text { fraction of points in } R_{2}\right) \cdot H\left(R_{2}\right)
+$$
+where the entropy $H\left(R_{m}\right)$ of data in a region $R_{m}$ is given by
+$$
+H\left(R_{m}\right)=-\sum_{k} \hat{P}_{m k} \log _{2} \hat{P}_{m k}
+$$
+Here $\hat{P}_{m k}$ is the empirical probability, which is in this case the fraction of items in region $m$ that are of class $k$.
+What probability of being a positive example does Paul's decision tree using Split B return for the new point (-1, 1)?",1
+Fall 2019,6,e,2,Decision Trees,Text,"Consider the following 2D dataset in the (x,y) format: ((0,1), +1), ((1,1),+1), ((-1,-2),-1), ((0,-1),-1), ((1,-1),+1), ((2,-1),-1). Consider the following splits: Split A: x2 >= 0
+Split B: x1 >= 0:5
+Split C: x1 >=􀀀0:5
+Paul Bunyan works to construct trees using the algorithm discussed in the lecture notes, i.e., a greedy algorithm that recursively minimizes weighted average entropy, considering only combinations of the three splits mentioned above. He wants the output of the tree for any input $\left(x_{1}, x_{2}\right)$ to be the probability that the input is a positive $(+1)$ example.
+Recall that the weighted average entropy $\bar{H}$ of a split into subsets $R_{1}$ and $R_{2}$ is
+$$
+\bar{H}(\text { split })=\left(\text { fraction of points in } R_{1}\right) \cdot H\left(R_{1}\right)+\left(\text { fraction of points in } R_{2}\right) \cdot H\left(R_{2}\right)
+$$
+where the entropy $H\left(R_{m}\right)$ of data in a region $R_{m}$ is given by
+$$
+H\left(R_{m}\right)=-\sum_{k} \hat{P}_{m k} \log _{2} \hat{P}_{m k}
+$$
+Here $\hat{P}_{m k}$ is the empirical probability, which is in this case the fraction of items in region $m$ that are of class $k$.
+What probability of being a positive example does Paul's decision tree using Split B return for the new point (1, -2)?",0.5
+Fall 2019,6,f,2,Decision Trees,Text,"Consider the following 2D dataset in the (x,y) format: ((0,1), +1), ((1,1),+1), ((-1,-2),-1), ((0,-1),-1), ((1,-1),+1), ((2,-1),-1). Consider the following splits: Split A: x2 >= 0
+Split B: x1 >= 0:5
+Split C: x1 >=􀀀0:5
+Paul Bunyan works to construct trees using the algorithm discussed in the lecture notes, i.e., a greedy algorithm that recursively minimizes weighted average entropy, considering only combinations of the three splits mentioned above. He wants the output of the tree for any input $\left(x_{1}, x_{2}\right)$ to be the probability that the input is a positive $(+1)$ example.
+Recall that the weighted average entropy $\bar{H}$ of a split into subsets $R_{1}$ and $R_{2}$ is
+$$
+\bar{H}(\text { split })=\left(\text { fraction of points in } R_{1}\right) \cdot H\left(R_{1}\right)+\left(\text { fraction of points in } R_{2}\right) \cdot H\left(R_{2}\right)
+$$
+where the entropy $H\left(R_{m}\right)$ of data in a region $R_{m}$ is given by
+$$
+H\left(R_{m}\right)=-\sum_{k} \hat{P}_{m k} \log _{2} \hat{P}_{m k}
+$$
+Here $\hat{P}_{m k}$ is the empirical probability, which is in this case the fraction of items in region $m$ that are of class $k$.
+Paul decides to consider a particular type of ""random forest,"" which is an ensemble or collection of decision trees, where each tree might only have a subset of split features. Paul restricts his trees to only use Splits A, B, C, or some combination of these splits. The final output of the random forest is the average of the output across the collection of $n$ trees (i.e., with equal weight $1 / n$ for each tree in the random forest). Paul's random forest consists of three trees:
+- The tree consisting of the best single split using feature $x_{2}$ only.
+- The tree consisting of the best single split using feature $x_{1}$ only.
+- The tree consisting of the best two splits (in total) using both features $x_{1}$ and $x_{2}$ (this is the tree from part (a) in this problem).
+For this random forest, what is the output for the probability that an input point at $(-1,1)$ is a positive $(+1)$ example? Note: Paul's calculations in part (a) may be of help.","The first tree corresponds to just Split A on $x_{2}$ from Paul's original tree; this tree gives $p=1.0$ for the point being a positive example. As noted in part (a) the best tree splitting only on $x_{1}$ is Split $\mathrm{C}$, since $\bar{H}(C)=0.81$ is less than $\bar{H}(B)=0.92)$;this tree has $p=0.0$ for the point $(-1,1)$ being a positive example. Finally, the two-split tree as derived in part (a) had $p=1.0$. Thus the aggregate (average) probability is that $(-1,1)$ is a positive example is $p=2 / 3$."
+Fall 2019,6,g,2,Decision Trees,Text,"Consider the following 2D dataset in the (x,y) format: ((0,1), +1), ((1,1),+1), ((-1,-2),-1), ((0,-1),-1), ((1,-1),+1), ((2,-1),-1). Consider the following splits: Split A: x2 >= 0
+Split B: x1 >= 0:5
+Split C: x1 >=􀀀0:5
+Paul Bunyan works to construct trees using the algorithm discussed in the lecture notes, i.e., a greedy algorithm that recursively minimizes weighted average entropy, considering only combinations of the three splits mentioned above. He wants the output of the tree for any input $\left(x_{1}, x_{2}\right)$ to be the probability that the input is a positive $(+1)$ example.
+Recall that the weighted average entropy $\bar{H}$ of a split into subsets $R_{1}$ and $R_{2}$ is
+$$
+\bar{H}(\text { split })=\left(\text { fraction of points in } R_{1}\right) \cdot H\left(R_{1}\right)+\left(\text { fraction of points in } R_{2}\right) \cdot H\left(R_{2}\right)
+$$
+where the entropy $H\left(R_{m}\right)$ of data in a region $R_{m}$ is given by
+$$
+H\left(R_{m}\right)=-\sum_{k} \hat{P}_{m k} \log _{2} \hat{P}_{m k}
+$$
+Here $\hat{P}_{m k}$ is the empirical probability, which is in this case the fraction of items in region $m$ that are of class $k$.
+Would you expect the accuracy for Paul's random forest generated decision to be better, or for the decision made by Paul's single two-split decision tree from part (a) to be better, when evaluated against held-out test data? Explain.","We would expect that the random forest generated decision will generalize better. Using all the features available to us can lead to over-fitting. For random forests, although each individual decision tree can have a higher error rate on the training data, the averaging effect (or majority vote for classification trees) can serve as a filter on noise vs. true signal."
+Fall 2019,7,a,2,RNNs,Text,"We have seen in class recurrent neural networks ( $\mathrm{RNNs}$ ) that are structured as:
+$$
+\begin{aligned}
+z_{t}^{1} &=W^{s s} s_{t-1}+W^{s x} x_{t} \\
+s_{t} &=f_{1}\left(z_{t}^{1}\right) \\
+z_{t}^{2} &=W^{o} s_{t} \\
+p_{t} &=f_{2}\left(z_{t}^{2}\right)
+\end{aligned}
+$$
+where we have set biases to zero. Here $x_{t}$ is the input and $y_{t}$ the actual output for $\left(x_{t}, y_{t}\right)$ sequences used for training, with $p_{t}$ as the RNN output (during or after training).
+Assume our first RNN, call it RNN-A, has $s_{t}, x_{t}, p_{t}$ all being vectors of shape $2 \times 1$. In addition, the activation functions are simply $f_{1}(z)=z$ and $f_{2}(z)=z$.
+For $\mathrm{RNN}-\mathrm{A}$, give dimensions of the weights for W^{s s}, W^{s x}, and W^{0}","W^{s s} is 2x2, W^{s x} is 2x2, and W^{0} is 2x2"
+Fall 2019,7,b,2,RNNs,Text,"We have seen in class recurrent neural networks ( $\mathrm{RNNs}$ ) that are structured as:
+$$
+\begin{aligned}
+z_{t}^{1} &=W^{s s} s_{t-1}+W^{s x} x_{t} \\
+s_{t} &=f_{1}\left(z_{t}^{1}\right) \\
+z_{t}^{2} &=W^{o} s_{t} \\
+p_{t} &=f_{2}\left(z_{t}^{2}\right)
+\end{aligned}
+$$
+where we have set biases to zero. Here $x_{t}$ is the input and $y_{t}$ the actual output for $\left(x_{t}, y_{t}\right)$ sequences used for training, with $p_{t}$ as the RNN output (during or after training).
+Assume our first RNN, call it RNN-A, has $s_{t}, x_{t}, p_{t}$ all being vectors of shape $2 \times 1$. In addition, the activation functions are simply $f_{1}(z)=z$ and $f_{2}(z)=z$.
+We have finished training RNN-A, using some overall loss $J=\sum_{t} \operatorname{Loss}\left(y_{t}, p_{t}\right)$ given the per-element loss function $\operatorname{Loss}\left(y_{t}, p_{t}\right)$. We are now interested in the derivative of the overall loss with respect to $x_{t}$; for example, we might want to know how sensitive the loss is to a particular input (perhaps to identify an outlier input). What is the derivative of overall loss at time $t$ with respect to $x_{t}, \partial J / \partial x_{t}$, with dimensions $2 \times 1$, in terms of the weights $W^{s s}, W^{s x}, W^{0}$ and the input $x_{t}$ ? Assume we have $\partial Loss / \partial z_{t}^{2}$, with dimensions $2 \times 1$. Use $*$ to indicate element-wise multiplication.",\frac{\partial J}{\partial x_{t}}=W^{s x T} W^{o T} \frac{\partial Loss}{\partial z_{t}^{2}}
+Fall 2019,7,c,2,RNNs,Text,"We have seen in class recurrent neural networks (RNNs) that are structured as:
+$$
+\begin{aligned}
+z_{t}^{1} &=W^{s s} s_{t-1}+W^{s x} x_{t} \\
+s_{t} &=f_{1}\left(z_{t}^{1}\right) \\
+z_{t}^{2} &=W^{o} s_{t} \\
+p_{t} &=f_{2}\left(z_{t}^{2}\right)
+\end{aligned}
+$$
+where we have set biases to zero. Here $x_{t}$ is the input and $y_{t}$ the actual output for $\left(x_{t}, y_{t}\right)$ sequences used for training, with $p_{t}$ as the RNN output (during or after training).
+Assume our first RNN, call it RNN-A, has $s_{t}, x_{t}, p_{t}$ all being vectors of shape $2 \times 1$. In addition, the activation functions are simply $f_{1}(z)=z$ and $f_{2}(z)=z$.
+Now consider a modified RNN, call it RNN-B, that does the following:
+$$
+\begin{aligned}
+z_{t}^{1} &=W^{s s x}\left[\begin{array}{c}
+s_{t-1} \\
+x_{t}
+\end{array}\right] \\
+s_{t} &=z_{t}^{1} \\
+z_{t}^{2} &=W^{o x}\left[\begin{array}{l}
+s_{t} \\
+x_{t}
+\end{array}\right] \\
+p_{t} &=f_{2}\left(z_{t}^{2}\right)
+\end{aligned}
+$$
+where $s_{t}, x_{t}, p_{t}$ are all vectors of shape $2 \times 1,\left[\begin{array}{c}s_{t-1} \\ x_{t}\end{array}\right]$ and $\left[\begin{array}{l}s_{t} \\ x_{t}\end{array}\right]$ are vectors of shape $4 \times 1$.
+Now consider a modified $\mathrm{RNN}$, call it $\mathrm{RNN}-\mathrm{B}$, that does the following:
+$$
+\begin{aligned}
+z_{t}^{1} &=W^{s s x}\left[\begin{array}{c}
+s_{t-1} \\
+x_{t}
+\end{array}\right] \\
+s_{t} &=z_{t}^{1} \\
+z_{t}^{2} &=W^{o x}\left[\begin{array}{l}
+s_{t} \\
+x_{t}
+\end{array}\right] \\
+p_{t} &=f_{2}\left(z_{t}^{2}\right)
+\end{aligned}
+$$
+where $s_{t}, x_{t}, p_{t}$ are all vectors of shape $2 \times 1,\left[\begin{array}{c}s_{t-1} \\ x_{t}\end{array}\right]$ and $\left[\begin{array}{l}s_{t} \\ x_{t}\end{array}\right]$ are vectors of shape $4 \times 1$.
+For RNN-B, give dimensions of the weights of W^{s s x} and W^{o x}
+","W^{s s x} is 2x4, W^{o x} is 2x4"
+Fall 2019,7,d,2,RNNs,Text,"We have seen in class recurrent neural networks (RNNs) that are structured as:
+$$
+\begin{aligned}
+z_{t}^{1} &=W^{s s} s_{t-1}+W^{s x} x_{t} \\
+s_{t} &=f_{1}\left(z_{t}^{1}\right) \\
+z_{t}^{2} &=W^{o} s_{t} \\
+p_{t} &=f_{2}\left(z_{t}^{2}\right)
+\end{aligned}
+$$
+where we have set biases to zero. Here $x_{t}$ is the input and $y_{t}$ the actual output for $\left(x_{t}, y_{t}\right)$ sequences used for training, with $p_{t}$ as the RNN output (during or after training).
+Assume our first RNN, call it RNN-A, has $s_{t}, x_{t}, p_{t}$ all being vectors of shape $2 \times 1$. In addition, the activation functions are simply $f_{1}(z)=z$ and $f_{2}(z)=z$.
+Now consider a modified RNN, call it RNN-B, that does the following:
+$$
+\begin{aligned}
+z_{t}^{1} &=W^{s s x}\left[\begin{array}{c}
+s_{t-1} \\
+x_{t}
+\end{array}\right] \\
+s_{t} &=z_{t}^{1} \\
+z_{t}^{2} &=W^{o x}\left[\begin{array}{l}
+s_{t} \\
+x_{t}
+\end{array}\right] \\
+p_{t} &=f_{2}\left(z_{t}^{2}\right)
+\end{aligned}
+$$
+where $s_{t}, x_{t}, p_{t}$ are all vectors of shape $2 \times 1,\left[\begin{array}{c}s_{t-1} \\ x_{t}\end{array}\right]$ and $\left[\begin{array}{l}s_{t} \\ x_{t}\end{array}\right]$ are vectors of shape $4 \times 1$.
+Imagine we are using RNN-B to generate a description sentence given an input word, as in language modeling. The input is a single $2 \times 1$ vector embedding, $x_{1}$, that encodes the input word. The output will be a sequence of words $p_{1}, p_{2}, \ldots, p_{n}$ that provide a description of that word. In this setting, what would be an appropriate activation function $f_{2}$ ?
+",Softmax to select a best next word.
+Fall 2019,7,e,2,RNNs,Text,"We have seen in class recurrent neural networks (RNNs) that are structured as:
+$$
+\begin{aligned}
+z_{t}^{1} &=W^{s s} s_{t-1}+W^{s x} x_{t} \\
+s_{t} &=f_{1}\left(z_{t}^{1}\right) \\
+z_{t}^{2} &=W^{o} s_{t} \\
+p_{t} &=f_{2}\left(z_{t}^{2}\right)
+\end{aligned}
+$$
+where we have set biases to zero. Here $x_{t}$ is the input and $y_{t}$ the actual output for $\left(x_{t}, y_{t}\right)$ sequences used for training, with $p_{t}$ as the RNN output (during or after training).
+Assume our first RNN, call it RNN-A, has $s_{t}, x_{t}, p_{t}$ all being vectors of shape $2 \times 1$. In addition, the activation functions are simply $f_{1}(z)=z$ and $f_{2}(z)=z$.
+Now consider a modified RNN, call it RNN-B, that does the following:
+$$
+\begin{aligned}
+z_{t}^{1} &=W^{s s x}\left[\begin{array}{c}
+s_{t-1} \\
+x_{t}
+\end{array}\right] \\
+s_{t} &=z_{t}^{1} \\
+z_{t}^{2} &=W^{o x}\left[\begin{array}{l}
+s_{t} \\
+x_{t}
+\end{array}\right] \\
+p_{t} &=f_{2}\left(z_{t}^{2}\right)
+\end{aligned}
+$$
+where $s_{t}, x_{t}, p_{t}$ are all vectors of shape $2 \times 1,\left[\begin{array}{c}s_{t-1} \\ x_{t}\end{array}\right]$ and $\left[\begin{array}{l}s_{t} \\ x_{t}\end{array}\right]$ are vectors of shape $4 \times 1$.
+Continuing with RNN-B for one-to-many description generation using our language modeling approach, we calculate $p_1$ in a forward pass. How do we calculate $x_2$ (what is $x_2$ equal to)?
+",$x_2$ = $p_1$
+Fall 2019,7,f.i,0.5,RNNs,Text,"We have seen in class recurrent neural networks (RNNs) that are structured as:
+$$
+\begin{aligned}
+z_{t}^{1} &=W^{s s} s_{t-1}+W^{s x} x_{t} \\
+s_{t} &=f_{1}\left(z_{t}^{1}\right) \\
+z_{t}^{2} &=W^{o} s_{t} \\
+p_{t} &=f_{2}\left(z_{t}^{2}\right)
+\end{aligned}
+$$
+where we have set biases to zero. Here $x_{t}$ is the input and $y_{t}$ the actual output for $\left(x_{t}, y_{t}\right)$ sequences used for training, with $p_{t}$ as the RNN output (during or after training).
+Assume our first RNN, call it RNN-A, has $s_{t}, x_{t}, p_{t}$ all being vectors of shape $2 \times 1$. In addition, the activation functions are simply $f_{1}(z)=z$ and $f_{2}(z)=z$.
+Now consider a modified RNN, call it RNN-B, that does the following:
+$$
+\begin{aligned}
+z_{t}^{1} &=W^{s s x}\left[\begin{array}{c}
+s_{t-1} \\
+x_{t}
+\end{array}\right] \\
+s_{t} &=z_{t}^{1} \\
+z_{t}^{2} &=W^{o x}\left[\begin{array}{l}
+s_{t} \\
+x_{t}
+\end{array}\right] \\
+p_{t} &=f_{2}\left(z_{t}^{2}\right)
+\end{aligned}
+$$
+where $s_{t}, x_{t}, p_{t}$ are all vectors of shape $2 \times 1,\left[\begin{array}{c}s_{t-1} \\ x_{t}\end{array}\right]$ and $\left[\begin{array}{l}s_{t} \\ x_{t}\end{array}\right]$ are vectors of shape $4 \times 1$.
+For RNN-B, we are also interested in the derivative of loss at time $t$ with respect to $x_{t}$, $\partial$ Loss $/ \partial x_{t}$. does $\partial$ Loss $/ \partial x_{t}$ depend on $W^{ox}$? Indicate true or false.
+",TRUE
+Fall 2019,7,f.ii,0.5,RNNs,Text,"We have seen in class recurrent neural networks (RNNs) that are structured as:
+$$
+\begin{aligned}
+z_{t}^{1} &=W^{s s} s_{t-1}+W^{s x} x_{t} \\
+s_{t} &=f_{1}\left(z_{t}^{1}\right) \\
+z_{t}^{2} &=W^{o} s_{t} \\
+p_{t} &=f_{2}\left(z_{t}^{2}\right)
+\end{aligned}
+$$
+where we have set biases to zero. Here $x_{t}$ is the input and $y_{t}$ the actual output for $\left(x_{t}, y_{t}\right)$ sequences used for training, with $p_{t}$ as the RNN output (during or after training).
+Assume our first RNN, call it RNN-A, has $s_{t}, x_{t}, p_{t}$ all being vectors of shape $2 \times 1$. In addition, the activation functions are simply $f_{1}(z)=z$ and $f_{2}(z)=z$.
+Now consider a modified RNN, call it RNN-B, that does the following:
+$$
+\begin{aligned}
+z_{t}^{1} &=W^{s s x}\left[\begin{array}{c}
+s_{t-1} \\
+x_{t}
+\end{array}\right] \\
+s_{t} &=z_{t}^{1} \\
+z_{t}^{2} &=W^{o x}\left[\begin{array}{l}
+s_{t} \\
+x_{t}
+\end{array}\right] \\
+p_{t} &=f_{2}\left(z_{t}^{2}\right)
+\end{aligned}
+$$
+where $s_{t}, x_{t}, p_{t}$ are all vectors of shape $2 \times 1,\left[\begin{array}{c}s_{t-1} \\ x_{t}\end{array}\right]$ and $\left[\begin{array}{l}s_{t} \\ x_{t}\end{array}\right]$ are vectors of shape $4 \times 1$.
+For RNN-B, we are also interested in the derivative of loss at time $t$ with respect to $x_{t}$, $\partial$ Loss $/ \partial x_{t}$. does $\partial$ Loss $/ \partial x_{t}$ depend on all elements $W^{ox}$? Indicate true or false.
+",TRUE
+Fall 2019,7,f.iii,0.5,RNNs,Text,"We have seen in class recurrent neural networks (RNNs) that are structured as:
+$$
+\begin{aligned}
+z_{t}^{1} &=W^{s s} s_{t-1}+W^{s x} x_{t} \\
+s_{t} &=f_{1}\left(z_{t}^{1}\right) \\
+z_{t}^{2} &=W^{o} s_{t} \\
+p_{t} &=f_{2}\left(z_{t}^{2}\right)
+\end{aligned}
+$$
+where we have set biases to zero. Here $x_{t}$ is the input and $y_{t}$ the actual output for $\left(x_{t}, y_{t}\right)$ sequences used for training, with $p_{t}$ as the RNN output (during or after training).
+Assume our first RNN, call it RNN-A, has $s_{t}, x_{t}, p_{t}$ all being vectors of shape $2 \times 1$. In addition, the activation functions are simply $f_{1}(z)=z$ and $f_{2}(z)=z$.
+Now consider a modified RNN, call it RNN-B, that does the following:
+$$
+\begin{aligned}
+z_{t}^{1} &=W^{s s x}\left[\begin{array}{c}
+s_{t-1} \\
+x_{t}
+\end{array}\right] \\
+s_{t} &=z_{t}^{1} \\
+z_{t}^{2} &=W^{o x}\left[\begin{array}{l}
+s_{t} \\
+x_{t}
+\end{array}\right] \\
+p_{t} &=f_{2}\left(z_{t}^{2}\right)
+\end{aligned}
+$$
+where $s_{t}, x_{t}, p_{t}$ are all vectors of shape $2 \times 1,\left[\begin{array}{c}s_{t-1} \\ x_{t}\end{array}\right]$ and $\left[\begin{array}{l}s_{t} \\ x_{t}\end{array}\right]$ are vectors of shape $4 \times 1$.
+For RNN-B, we are also interested in the derivative of loss at time $t$ with respect to $x_{t}$, $\partial$ Loss $/ \partial x_{t}$. Does $\partial$ Loss $/ \partial x_{t}$ depend on $W^{ssx}$? Indicate true or false.
+",TRUE
+Fall 2019,7,f.iv,0.5,RNNs,Text,"We have seen in class recurrent neural networks (RNNs) that are structured as:
+$$
+\begin{aligned}
+z_{t}^{1} &=W^{s s} s_{t-1}+W^{s x} x_{t} \\
+s_{t} &=f_{1}\left(z_{t}^{1}\right) \\
+z_{t}^{2} &=W^{o} s_{t} \\
+p_{t} &=f_{2}\left(z_{t}^{2}\right)
+\end{aligned}
+$$
+where we have set biases to zero. Here $x_{t}$ is the input and $y_{t}$ the actual output for $\left(x_{t}, y_{t}\right)$ sequences used for training, with $p_{t}$ as the RNN output (during or after training).
+Assume our first RNN, call it RNN-A, has $s_{t}, x_{t}, p_{t}$ all being vectors of shape $2 \times 1$. In addition, the activation functions are simply $f_{1}(z)=z$ and $f_{2}(z)=z$.
+Now consider a modified RNN, call it RNN-B, that does the following:
+$$
+\begin{aligned}
+z_{t}^{1} &=W^{s s x}\left[\begin{array}{c}
+s_{t-1} \\
+x_{t}
+\end{array}\right] \\
+s_{t} &=z_{t}^{1} \\
+z_{t}^{2} &=W^{o x}\left[\begin{array}{l}
+s_{t} \\
+x_{t}
+\end{array}\right] \\
+p_{t} &=f_{2}\left(z_{t}^{2}\right)
+\end{aligned}
+$$
+where $s_{t}, x_{t}, p_{t}$ are all vectors of shape $2 \times 1,\left[\begin{array}{c}s_{t-1} \\ x_{t}\end{array}\right]$ and $\left[\begin{array}{l}s_{t} \\ x_{t}\end{array}\right]$ are vectors of shape $4 \times 1$.
+For RNN-B, we are also interested in the derivative of loss at time $t$ with respect to $x_{t}$, $\partial$ Loss $/ \partial x_{t}$. does $\partial$ Loss $/ \partial x_{t}$ depend on all elements $W^{ssx}$? Indicate true or false.
+",FALSE
+Fall 2019,8,a,2,Regression,Text,"We previously examined ridge regression, where a regularizer term $R_{\lambda}(\theta)$ is added to a sum of squares loss to form the $J_{1}$ objective function as below. Throughout this problem, we will assume zero offset $\theta_{0}=0$ and linear models of output $y$ as a function of input $x$. $$ \begin{aligned} J_{1}(\theta) &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+R_{\lambda}(\theta) \\ &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+\frac{\lambda}{2}\|\theta\|^{2} \end{aligned} $$ Laz Zo prefers an alternative approach (called ""lasso"" regularization), where a different regularizer $R_{\alpha}(\theta)$ is added to the sum of squares loss: $$ \begin{aligned} J_{2}(\theta) &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+R_{\alpha}(\theta) \\ &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+\alpha \sum_{j=1}^{k}\left|\theta_{j}\right| \end{aligned} $$ Consider the two-dimensional case, $k=2$, so that our vector $\theta$ has just two components, $\theta_{1}$ and $\theta_{2}$. Suppose also that $\theta_{1}>\theta_{2}$ and both are positive $\left(\theta_{1}, \theta_{2}>0\right)$. We are interested in the behavior of $R_{\alpha}(\theta)$ and $R_{\lambda}(\theta)$. Assume both $\lambda$ and $\alpha$ are positive. First consider the lasso regularizer for this specific case: $$ R_{\alpha}(\theta)=\alpha \sum_{j=1}^{k}\left|\theta_{j}\right|=\alpha\left(\theta_{1}+\theta_{2}\right) $$ where $R_{\alpha}(\theta)=\alpha\left(\theta_{1}+\theta_{2}\right)$ in this case since both $\theta_{1}$ and $\theta_{2}$ are positive. We consider reducing $\theta_{1}$ by a small $\delta$, where $\delta>0$, versus reducing $\theta_{2}$ by $\delta$. (You can assume $\delta$ is smaller than $\theta_{1}$ and $\theta_{2}$.) What is true, if our goal is to minimize $R_{\alpha}(\theta)$? Choose one of the following options:
+It is better to reduce $\theta_{1}$ by $\delta$ 
+It is better to reduce $\theta_{2}$ by $\delta$ 
+It is equally beneficial to reduce $\theta_{1}$ or $\theta_{2}$ by $\delta$.",It is equally beneficial to reduce $\theta_{1}$ or $\theta_{2}$ by $\delta$.
+Fall 2019,8,b,1.5,Regression,Text,"We previously examined ridge regression, where a regularizer term $R_{\lambda}(\theta)$ is added to a sum of squares loss to form the $J_{1}$ objective function as below. Throughout this problem, we will assume zero offset $\theta_{0}=0$ and linear models of output $y$ as a function of input $x$. $$ \begin{aligned} J_{1}(\theta) &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+R_{\lambda}(\theta) \\ &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+\frac{\lambda}{2}\|\theta\|^{2} \end{aligned} $$ Laz Zo prefers an alternative approach (called ""lasso"" regularization), where a different regularizer $R_{\alpha}(\theta)$ is added to the sum of squares loss: $$ \begin{aligned} J_{2}(\theta) &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+R_{\alpha}(\theta) \\ &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+\alpha \sum_{j=1}^{k}\left|\theta_{j}\right| \end{aligned} $$ Consider the two-dimensional case, $k=2$, so that our vector $\theta$ has just two components, $\theta_{1}$ and $\theta_{2}$. Suppose also that $\theta_{1}>\theta_{2}$ and both are positive $\left(\theta_{1}, \theta_{2}>0\right)$. We are interested in the behavior of $R_{\alpha}(\theta)$ and $R_{\lambda}(\theta)$. Assume both $\lambda$ and $\alpha$ are positive. Now we are interested in the behavior of $R_{\lambda}(\theta)$ for this specific case: $$ R_{\lambda}(\theta)=\frac{\lambda}{2}\|\theta\|^{2}=\frac{\lambda}{2}\left(\theta_{1}^{2}+\theta_{2}^{2}\right) . $$ We consider reducing $\theta_{1}$ by a small $\delta$, where $\delta>0$, versus reducing $\theta_{2}$ by $\delta$. (You can assume $\delta$ is smaller than $\theta_{1}$ and $\theta_{2}$.) What is true, if our goal is to minimize $R_{\lambda}(\theta)$ ? Choose one from the following options
+It is better to reduce $\theta_{1}$ by $\delta$ 
+It is better to reduce $\theta_{2}$ by $\delta$
+It is equally beneficial to reduce $\theta_{1}$ or $\theta_{2}$ by $\delta$",It is better to reduce $\theta_{1}$ by $\delta$
+Fall 2019,8,c.i,0.5,Regression,Text,"We previously examined ridge regression, where a regularizer term $R_{\lambda}(\theta)$ is added to a sum of squares loss to form the $J_{1}$ objective function as below. Throughout this problem, we will assume zero offset $\theta_{0}=0$ and linear models of output $y$ as a function of input $x$. $$ \begin{aligned} J_{1}(\theta) &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+R_{\lambda}(\theta) \\ &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+\frac{\lambda}{2}\|\theta\|^{2} \end{aligned} $$ Laz Zo prefers an alternative approach (called ""lasso"" regularization), where a different regularizer $R_{\alpha}(\theta)$ is added to the sum of squares loss: $$ \begin{aligned} J_{2}(\theta) &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+R_{\alpha}(\theta) \\ &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+\alpha \sum_{j=1}^{k}\left|\theta_{j}\right| \end{aligned} $$ Consider the two-dimensional case, $k=2$, so that our vector $\theta$ has just two components, $\theta_{1}$ and $\theta_{2}$. Suppose also that $\theta_{1}>\theta_{2}$ and both are positive $\left(\theta_{1}, \theta_{2}>0\right)$. We are interested in the behavior of $R_{\alpha}(\theta)$ and $R_{\lambda}(\theta)$. Assume both $\lambda$ and $\alpha$ are positive. Rega Lizer is interested in the behavior of these two regularizers, when used to fit a linear model by minimizing $J_{1}$ and $J_{2}$. We compare the ridge regularizer $R_{\lambda}$ and the lasso regularizer $R_{\alpha}$, for general $k$. Assume $\alpha$ and $\lambda$ are positive. Indicate True or False about the following $R_{\lambda}$ when minimizing $J_{1}$ (with sum of squares loss and $R_{\lambda}(\theta)$ terms): $R_{\lambda}$ pushes $\theta$ to have smaller magnitude $\theta_{i}$ ",TRUE
+Fall 2019,8,c.ii,0.5,Regression,Text,"We previously examined ridge regression, where a regularizer term $R_{\lambda}(\theta)$ is added to a sum of squares loss to form the $J_{1}$ objective function as below. Throughout this problem, we will assume zero offset $\theta_{0}=0$ and linear models of output $y$ as a function of input $x$. $$ \begin{aligned} J_{1}(\theta) &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+R_{\lambda}(\theta) \\ &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+\frac{\lambda}{2}\|\theta\|^{2} \end{aligned} $$ Laz Zo prefers an alternative approach (called ""lasso"" regularization), where a different regularizer $R_{\alpha}(\theta)$ is added to the sum of squares loss: $$ \begin{aligned} J_{2}(\theta) &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+R_{\alpha}(\theta) \\ &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+\alpha \sum_{j=1}^{k}\left|\theta_{j}\right| \end{aligned} $$ Consider the two-dimensional case, $k=2$, so that our vector $\theta$ has just two components, $\theta_{1}$ and $\theta_{2}$. Suppose also that $\theta_{1}>\theta_{2}$ and both are positive $\left(\theta_{1}, \theta_{2}>0\right)$. We are interested in the behavior of $R_{\alpha}(\theta)$ and $R_{\lambda}(\theta)$. Assume both $\lambda$ and $\alpha$ are positive. Rega Lizer is interested in the behavior of these two regularizers, when used to fit a linear model by minimizing $J_{1}$ and $J_{2}$. We compare the ridge regularizer $R_{\lambda}$ and the lasso regularizer $R_{\alpha}$, for general $k$. Assume $\alpha$ and $\lambda$ are positive. Indicate True or False about the following $R_{\lambda}$ when minimizing $J_{1}$ (with sum of squares loss and $R_{\lambda}(\theta)$ terms): $R_{\lambda}$ favors reducing the magnitude of the largest magnitude $\theta_{i}$ over reducing the magnitude of smaller magnitude $\theta_{i}$",TRUE
+Fall 2019,8,c.iii,0.5,Regression,Text,"We previously examined ridge regression, where a regularizer term $R_{\lambda}(\theta)$ is added to a sum of squares loss to form the $J_{1}$ objective function as below. Throughout this problem, we will assume zero offset $\theta_{0}=0$ and linear models of output $y$ as a function of input $x$. $$ \begin{aligned} J_{1}(\theta) &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+R_{\lambda}(\theta) \\ &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+\frac{\lambda}{2}\|\theta\|^{2} \end{aligned} $$ Laz Zo prefers an alternative approach (called ""lasso"" regularization), where a different regularizer $R_{\alpha}(\theta)$ is added to the sum of squares loss: $$ \begin{aligned} J_{2}(\theta) &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+R_{\alpha}(\theta) \\ &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+\alpha \sum_{j=1}^{k}\left|\theta_{j}\right| \end{aligned} $$ Consider the two-dimensional case, $k=2$, so that our vector $\theta$ has just two components, $\theta_{1}$ and $\theta_{2}$. Suppose also that $\theta_{1}>\theta_{2}$ and both are positive $\left(\theta_{1}, \theta_{2}>0\right)$. We are interested in the behavior of $R_{\alpha}(\theta)$ and $R_{\lambda}(\theta)$. Assume both $\lambda$ and $\alpha$ are positive. Rega Lizer is interested in the behavior of these two regularizers, when used to fit a linear model by minimizing $J_{1}$ and $J_{2}$. We compare the ridge regularizer $R_{\lambda}$ and the lasso regularizer $R_{\alpha}$, for general $k$. Assume $\alpha$ and $\lambda$ are positive. Indicate True or False about the following $R_{\lambda}$ when minimizing $J_{1}$ (with sum of squares loss and $R_{\lambda}(\theta)$ terms):  $R_{\lambda}$ inhibits sparsity (i.e., disfavors finding $\theta$ such that some $\theta_{i}$ are zero) for $\theta$ with equivalent sum of squares loss",TRUE
+Fall 2019,8,d.i,0.5,Regression,Text,"We previously examined ridge regression, where a regularizer term $R_{\lambda}(\theta)$ is added to a sum of squares loss to form the $J_{1}$ objective function as below. Throughout this problem, we will assume zero offset $\theta_{0}=0$ and linear models of output $y$ as a function of input $x$. $$ \begin{aligned} J_{1}(\theta) &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+R_{\lambda}(\theta) \\ &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+\frac{\lambda}{2}\|\theta\|^{2} \end{aligned} $$ Laz Zo prefers an alternative approach (called ""lasso"" regularization), where a different regularizer $R_{\alpha}(\theta)$ is added to the sum of squares loss: $$ \begin{aligned} J_{2}(\theta) &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+R_{\alpha}(\theta) \\ &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+\alpha \sum_{j=1}^{k}\left|\theta_{j}\right| \end{aligned} $$ Consider the two-dimensional case, $k=2$, so that our vector $\theta$ has just two components, $\theta_{1}$ and $\theta_{2}$. Suppose also that $\theta_{1}>\theta_{2}$ and both are positive $\left(\theta_{1}, \theta_{2}>0\right)$. We are interested in the behavior of $R_{\alpha}(\theta)$ and $R_{\lambda}(\theta)$. Assume both $\lambda$ and $\alpha$ are positive. Rega Lizer is interested in the behavior of these two regularizers, when used to fit a linear model by minimizing $J_{1}$ and $J_{2}$. We compare the ridge regularizer $R_{\lambda}$ and the lasso regularizer $R_{\alpha}$, for general $k$. Assume $\alpha$ and $\lambda$ are positive. Indicate True or False, $R_{\alpha}$ when minimizing $J_{2}$ (with sum of squares loss and $R_{\lalpha}(\theta)$ terms): $R_{\lambda}$ pushes $\theta$ to have smaller magnitude $\theta_{i}$ ",TRUE
+Fall 2019,8,d.ii,0.5,Regression,Text,"We previously examined ridge regression, where a regularizer term $R_{\lambda}(\theta)$ is added to a sum of squares loss to form the $J_{1}$ objective function as below. Throughout this problem, we will assume zero offset $\theta_{0}=0$ and linear models of output $y$ as a function of input $x$. $$ \begin{aligned} J_{1}(\theta) &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+R_{\lambda}(\theta) \\ &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+\frac{\lambda}{2}\|\theta\|^{2} \end{aligned} $$ Laz Zo prefers an alternative approach (called ""lasso"" regularization), where a different regularizer $R_{\alpha}(\theta)$ is added to the sum of squares loss: $$ \begin{aligned} J_{2}(\theta) &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+R_{\alpha}(\theta) \\ &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+\alpha \sum_{j=1}^{k}\left|\theta_{j}\right| \end{aligned} $$ Consider the two-dimensional case, $k=2$, so that our vector $\theta$ has just two components, $\theta_{1}$ and $\theta_{2}$. Suppose also that $\theta_{1}>\theta_{2}$ and both are positive $\left(\theta_{1}, \theta_{2}>0\right)$. We are interested in the behavior of $R_{\alpha}(\theta)$ and $R_{\lambda}(\theta)$. Assume both $\lambda$ and $\alpha$ are positive. Rega Lizer is interested in the behavior of these two regularizers, when used to fit a linear model by minimizing $J_{1}$ and $J_{2}$. We compare the ridge regularizer $R_{\lambda}$ and the lasso regularizer $R_{\alpha}$, for general $k$. Assume $\alpha$ and $\lambda$ are positive. Indicate True or False, $R_{\alpha}$ when minimizing $J_{2}$ (with sum of squares loss and $R_{\lalpha}(\theta)$ terms): $R_{\lambda}$ favors reducing the magnitude of the largest magnitude $\theta_{i}$ over reducing the magnitude of smaller magnitude $\theta_{i}$",FALSE
+Fall 2019,8,d.iii,0.5,Regression,Text,"We previously examined ridge regression, where a regularizer term $R_{\lambda}(\theta)$ is added to a sum of squares loss to form the $J_{1}$ objective function as below. Throughout this problem, we will assume zero offset $\theta_{0}=0$ and linear models of output $y$ as a function of input $x$. $$ \begin{aligned} J_{1}(\theta) &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+R_{\lambda}(\theta) \\ &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+\frac{\lambda}{2}\|\theta\|^{2} \end{aligned} $$ Laz Zo prefers an alternative approach (called ""lasso"" regularization), where a different regularizer $R_{\alpha}(\theta)$ is added to the sum of squares loss: $$ \begin{aligned} J_{2}(\theta) &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+R_{\alpha}(\theta) \\ &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+\alpha \sum_{j=1}^{k}\left|\theta_{j}\right| \end{aligned} $$ Consider the two-dimensional case, $k=2$, so that our vector $\theta$ has just two components, $\theta_{1}$ and $\theta_{2}$. Suppose also that $\theta_{1}>\theta_{2}$ and both are positive $\left(\theta_{1}, \theta_{2}>0\right)$. We are interested in the behavior of $R_{\alpha}(\theta)$ and $R_{\lambda}(\theta)$. Assume both $\lambda$ and $\alpha$ are positive. Rega Lizer is interested in the behavior of these two regularizers, when used to fit a linear model by minimizing $J_{1}$ and $J_{2}$. We compare the ridge regularizer $R_{\lambda}$ and the lasso regularizer $R_{\alpha}$, for general $k$. Assume $\alpha$ and $\lambda$ are positive. Indicate True or False, $R_{\alpha}$ when minimizing $J_{2}$ (with sum of squares loss and $R_{\lalpha}(\theta)$ terms): $R_{\lambda}$ inhibits sparsity (i.e., disfavors finding $\theta$ such that some $\theta_{i}$ are zero) for $\theta$ with equivalent sum of squares loss",FALSE
+Fall 2019,8,e.i,0.5,Regression,Text,"We previously examined ridge regression, where a regularizer term $R_{\lambda}(\theta)$ is added to a sum of squares loss to form the $J_{1}$ objective function as below. Throughout this problem, we will assume zero offset $\theta_{0}=0$ and linear models of output $y$ as a function of input $x$. $$ \begin{aligned} J_{1}(\theta) &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+R_{\lambda}(\theta) \\ &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+\frac{\lambda}{2}\|\theta\|^{2} \end{aligned} $$ Laz Zo prefers an alternative approach (called ""lasso"" regularization), where a different regularizer $R_{\alpha}(\theta)$ is added to the sum of squares loss: $$ \begin{aligned} J_{2}(\theta) &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+R_{\alpha}(\theta) \\ &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+\alpha \sum_{j=1}^{k}\left|\theta_{j}\right| \end{aligned} $$ Consider the two-dimensional case, $k=2$, so that our vector $\theta$ has just two components, $\theta_{1}$ and $\theta_{2}$. Suppose also that $\theta_{1}>\theta_{2}$ and both are positive $\left(\theta_{1}, \theta_{2}>0\right)$. We are interested in the behavior of $R_{\alpha}(\theta)$ and $R_{\lambda}(\theta)$. Assume both $\lambda$ and $\alpha$ are positive. Rega Lizer is interested in the behavior of these two regularizers, when used to fit a linear model by minimizing $J_{1}$ and $J_{2}$. We compare the ridge regularizer $R_{\lambda}$ and the lasso regularizer $R_{\alpha}$, for general $k$. Assume $\alpha$ and $\lambda$ are positive. Rega proposes combining the two regularizers with a sum of squares loss to form the $J_{3}$ objective: $$ \begin{aligned} J_{3}(\theta) &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+R_{\alpha}(\theta)+R_{\lambda}(\theta) \\ &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+\alpha \sum_{j=1}^{k}\left|\theta_{j}\right|+\frac{\lambda}{2}\|\theta\|^{2} \end{aligned} $$ Indicate true of false about using both of these regularizers when minimizing $J_{3}$: This is a bad idea, as the two regularizers will compete against each other. ",FALSE
+Fall 2019,8,e.ii,0.5,Regression,Text,"We previously examined ridge regression, where a regularizer term $R_{\lambda}(\theta)$ is added to a sum of squares loss to form the $J_{1}$ objective function as below. Throughout this problem, we will assume zero offset $\theta_{0}=0$ and linear models of output $y$ as a function of input $x$. $$ \begin{aligned} J_{1}(\theta) &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+R_{\lambda}(\theta) \\ &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+\frac{\lambda}{2}\|\theta\|^{2} \end{aligned} $$ Laz Zo prefers an alternative approach (called ""lasso"" regularization), where a different regularizer $R_{\alpha}(\theta)$ is added to the sum of squares loss: $$ \begin{aligned} J_{2}(\theta) &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+R_{\alpha}(\theta) \\ &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+\alpha \sum_{j=1}^{k}\left|\theta_{j}\right| \end{aligned} $$ Consider the two-dimensional case, $k=2$, so that our vector $\theta$ has just two components, $\theta_{1}$ and $\theta_{2}$. Suppose also that $\theta_{1}>\theta_{2}$ and both are positive $\left(\theta_{1}, \theta_{2}>0\right)$. We are interested in the behavior of $R_{\alpha}(\theta)$ and $R_{\lambda}(\theta)$. Assume both $\lambda$ and $\alpha$ are positive. Rega Lizer is interested in the behavior of these two regularizers, when used to fit a linear model by minimizing $J_{1}$ and $J_{2}$. We compare the ridge regularizer $R_{\lambda}$ and the lasso regularizer $R_{\alpha}$, for general $k$. Assume $\alpha$ and $\lambda$ are positive. Rega proposes combining the two regularizers with a sum of squares loss to form the $J_{3}$ objective: $$ \begin{aligned} J_{3}(\theta) &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+R_{\alpha}(\theta)+R_{\lambda}(\theta) \\ &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+\alpha \sum_{j=1}^{k}\left|\theta_{j}\right|+\frac{\lambda}{2}\|\theta\|^{2} \end{aligned} $$ Indicate true of false about using both of these regularizers when minimizing $J_{3}$: This is a reasonable idea, to achieve some controllable mixture of the behavior of the two regularizers based on the two hyperparameters, $\alpha$ and $\lambda$. ",TRUE
+Fall 2019,8,e.iii,0.5,Regression,Text,"We previously examined ridge regression, where a regularizer term $R_{\lambda}(\theta)$ is added to a sum of squares loss to form the $J_{1}$ objective function as below. Throughout this problem, we will assume zero offset $\theta_{0}=0$ and linear models of output $y$ as a function of input $x$. $$ \begin{aligned} J_{1}(\theta) &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+R_{\lambda}(\theta) \\ &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+\frac{\lambda}{2}\|\theta\|^{2} \end{aligned} $$ Laz Zo prefers an alternative approach (called ""lasso"" regularization), where a different regularizer $R_{\alpha}(\theta)$ is added to the sum of squares loss: $$ \begin{aligned} J_{2}(\theta) &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+R_{\alpha}(\theta) \\ &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+\alpha \sum_{j=1}^{k}\left|\theta_{j}\right| \end{aligned} $$ Consider the two-dimensional case, $k=2$, so that our vector $\theta$ has just two components, $\theta_{1}$ and $\theta_{2}$. Suppose also that $\theta_{1}>\theta_{2}$ and both are positive $\left(\theta_{1}, \theta_{2}>0\right)$. We are interested in the behavior of $R_{\alpha}(\theta)$ and $R_{\lambda}(\theta)$. Assume both $\lambda$ and $\alpha$ are positive. Rega Lizer is interested in the behavior of these two regularizers, when used to fit a linear model by minimizing $J_{1}$ and $J_{2}$. We compare the ridge regularizer $R_{\lambda}$ and the lasso regularizer $R_{\alpha}$, for general $k$. Assume $\alpha$ and $\lambda$ are positive. Rega proposes combining the two regularizers with a sum of squares loss to form the $J_{3}$ objective: $$ \begin{aligned} J_{3}(\theta) &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+R_{\alpha}(\theta)+R_{\lambda}(\theta) \\ &=\frac{1}{2} \sum_{i=1}^{n}\left(y_{i}-\theta \cdot x_{i}\right)^{2}+\alpha \sum_{j=1}^{k}\left|\theta_{j}\right|+\frac{\lambda}{2}\|\theta\|^{2} \end{aligned} $$ Indicate true of false about using both of these regularizers when minimizing $J_{3}$: This is a bad idea, as the two regularizers are redundant, and only add complexity in training because now there are two hyperparameters, $\alpha$ and $\lambda$, that need to be decided.",FALSE

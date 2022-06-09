@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2022",
+       "Question Number": "5",
+       "Part": "d",
+       "Points": 3.0,
+       "Topic": "Features",
+       "Type": "Text",
+       "Question": "Cody decides to use a loss function of the following form\n $$\n \\mathcal{L}_{\\text {cody }}(g, a)= \\begin{cases}\\lambda(g-a)^{2} & \\text { if } g>a \\\\ (g-a)^{2} & \\text { otherwise }\\end{cases}\n $$\n where $g$ is the guessed value and $a$ is the actual value, and $\\lambda$ is an adjustable parameter. We talk to Bodie, who really knows the concert business and says a better model for the total loss is:\n $$\n \\mathcal{L}_{\\text {bodie }}(g, a)=\\alpha g+\\beta \\max (0, a-g) .\n $$\n This loss has two terms. The first part of the loss comes from the cost of renting a venue: if we guess that there will be $g$ attendees, we have to rent a place with $g$ seats, and we assume that such a rental costs $\\alpha$ per seat. The second part of the loss comes from the loss of potential ticket sales: if $a$ people really wanted to attend but we can only seat $g$, then we lose $\\beta$ for each of the $g-a$ people we have to turn away. Note that it is safe to assume that $\\alpha<\\beta$ (otherwise, we should not bother holding the concert!). We would like to train a linear regression model to minimize this loss. Let $g=\\theta^{T} x$ be the prediction given input $x$ and parameters $\\theta$, and let $y$ be the target training value for that $x$. Provide an expression for $\\partial \\mathcal{L}_{\\text {bodie }}(g, y) / \\partial \\theta$.\n Note that this loss is not everywhere differentiable, which we have seen before with ReLU units. Don't worry about the what the value should be at that one point.",
+       "Solution": "$$\n\\begin{gathered}\n\\frac{\\partial \\mathcal{L}_{\\text {bodie }}(g, y)}{\\partial g} \\frac{\\partial g}{\\partial \\theta} \\\\\n\\left(\\alpha+\\beta\\left\\{\\begin{array}{ll}\n0 & \\text { if } y<\\theta^{T} x \\\\\n-1 & \\text { otherwise }\n\\end{array}\\right) x\\right.\n\\end{gathered}\n$$"
+}

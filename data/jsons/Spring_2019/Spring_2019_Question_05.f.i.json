@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2019",
+       "Question Number": "5",
+       "Part": "f.i",
+       "Points": 2.0,
+       "Topic": "MDPs",
+       "Type": "Image",
+       "Question": "Consider the following deterministic Markow Decision Process (MDP), describing a simple robot grid world. Notice that the values of the irnmediate rewards $r$ for two transitions are written next to thern; the other transitions, with no value written next to them, have an immedinte reward of $r=0$. Assume the discount factor $\\gamma$ is $0.8$.\nHow bad does the ice have to get before the robot will prefer to completely avoid the ice? Let us answer the question by giving a value for $p$ for which the optimal policy chooses actions that completely avoid the ice, i.e., choosing the action \"go left\" over \"go up\" when\nthe robot is in the state a6. Approach this in four parts. The answer to each of the flrst three parts ean be a numerical expression; the answer to the last part can be an expression involving numbers and $p$.\ni. What is the value $V$ of going right in state $z 2 ?$",
+       "Solution": "50"
+}

@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2019",
+       "Question Number": "7",
+       "Part": "e",
+       "Points": 1.75,
+       "Topic": "Regression",
+       "Type": "Image",
+       "Question": "In this problem, we consider using linear regression with a regularization term. Assume a datnset of $n$ samples $\\left\\{\\left(x^{(i)}, y^{(i)}\\right)\\right\\}$ with $x^{(i)} \\in \\mathbb{R}^{2}$ and output values $y^{(i)} \\in \\mathbb{R}$. Recall that the ridge regression objective is deflned as follows:\n$$\nJ_{\\text {ridge }}(\\theta)=J_{\\text {data }}(\\theta)+J_{\\text {reg }}(\\theta)=\\frac{1}{n} \\sum_{i=1}^{n}\\left(\\theta^{T} x^{(i)}-y^{(i)}\\right)^{2}+\\left.\\lambda|| \\theta\\right|^{2}\n$$\nwhere $\\theta=\\left[\\theta_{1}, \\theta_{2}\\right]$ and $\\lambda$ is the regularization trude-off parameter.\nChris would like to solve the problem of computing $\\theta$ that minimizes the ridge regression objective. He will exnploy graphical methods to obtrin the solution. When plotting just the data error term, $J_{\\text {data }}(\\theta)$, as a function of $\\theta_{1}$ and $\\theta_{2}$, the following set of isocontour lines (curves connecting sets of $\\theta_{1}, \\theta_{2}$ for which the objective value is constant) is obtained, for his dataset:\nNow we consider regularization. Sketch the isocontour lines for just the regularization term, $J_{\\text {reg }}(\\theta)$. Clearly label the contour line corresponding to the values of $\\theta$ for which this term has value 1 , when $\\lambda=1$.",
+       "Solution": "Image filling"
+}

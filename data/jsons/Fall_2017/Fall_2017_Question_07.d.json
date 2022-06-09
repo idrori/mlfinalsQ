@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2017",
+       "Question Number": "7",
+       "Part": "d",
+       "Points": 2.0,
+       "Topic": "Reinforcement Learning",
+       "Type": "Text",
+       "Question": "Chris wants to use Q-learning to solve a video-game problem in which there is a ball moving on an $\\mathrm{n}$ by $\\mathrm{n}$ pixel screen, similar to the one we studied in class. However, instead of moving a paddle up and down along the right wall, there is a \"\"photon cannon\"\" fixed in the middle of the right-hand side, and the player is allowed to instantaneously set the angle of the cannon and to try to shoot. If the photon beam hits the ball, the ball will reflect backwards. It takes 10 time steps for the cannon to recharge after being fired, however, before it can be fired again. Our goal here is to try to understand how to apply deep Q-learning to this problem.\nThe state of the system is composed of five parts:\n- Ball position x (1 .. n)\n- Ball position y (1 ... n)\n- Ball velocity x $(-1,1)$\n- Ball velocity y $(-1,0,1)$\n- Number of time steps until the cannon is ready to shoot again $(0, \\ldots, 10)$\nThe possible actions at each time step involve both the aim and whether to try to shoot:\n- Cannon angle in degrees $(-60,-30,0,30,60)$\n- Shoot cannon $(1,0)$\nThe options for us in terms of solving the game include how we represent the states and actions and how these are mapped to Q-values. We won't worry about the exploration problem here, only about representing $Q$-values. Our learning algorithm performs gradient descent steps on the squared Bellman error with respect to the parameters in the $Q$-values. Suppose we modify the network a bit by giving it 5 input units, m hidden units and $|A|$ output units where the output units represent the Q-values $Q(s, a), a \\in A$, for the state $s$ fed in as a one-hot vector. Again, we have no hidden units. Could this model match the correct Q-values? Why/why not.",
+       "Solution": "Yes we could provided that m is large enough"
+}

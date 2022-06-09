@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2018",
+       "Question Number": "9",
+       "Part": "b.iii",
+       "Points": 1.1,
+       "Topic": "MDPs",
+       "Type": "Text",
+       "Question": "Sometimes we can make robust reinforcement-learning algorithms by reducing the problem to supervised learning. Assume:\n- The state space is $\\mathbb{R}^{d}$, so in general the same state $s$ may not occur more than once in our data set.\n- The action space is $\\{0,1\\}$.\n- The space of possible rewards is $\\{0,1\\}$.\n- There is a discount factor $\\gamma$.\nYou are given a data set $\\mathcal{D}$ of experience interacting with a domain. It contains $n$ tuples, each of the form $\\left(s, a, r, s^{\\prime}\\right)$. Let $\\mathcal{D}_{0}$ be the subset of the data tuples where $a=0$, and similarly $\\mathcal{D}_{1}$ be the subset of the data tuples where $a=1$.\n\nAssume you have supervised classification and regression algorithms available to you, so that you can call classify $(X, Y)$ or regress $(X, Y)$ where $X$ is a matrix of input values and $Y$ is a vector of output values, and get out a hypothesis.\n\nIn each of the following questions, we will ask you to construct a call to one of these procedures to produce a $Q, V$, or $\\pi$ function. In each case, we will ask you to specify:\n- Whether it is a regression or classification problem.\n- The subset of $\\mathcal{D}$ you will use.\n- How you will construct a training example $(x, y)$ from an original tuple $\\left(s, a, r, s^{r}\\right)$.\nFor example, if you wanted to train a neural network to take in a state $s$ and predict the expected next state given that you take action 1 , then you might do a regression problem using data $D_{1}$, by setting $x=s$ and $y=s^{\\prime}$.\nAssuming horizon $h=1$, construct a supervised learning problem to find the optimal policy $\\pi^{1}$. Recall that the space of possible rewards is $\\{0,1\\}$.\n\nHow will you construct a training example $(x, y)$ from an original tuple $\\left(s, a, r, s^{r}\\right)$?\n",
+       "Solution": "x: s, y: a if r =1 else 1- a"
+}

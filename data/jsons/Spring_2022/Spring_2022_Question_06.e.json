@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2022",
+       "Question Number": "6",
+       "Part": "e",
+       "Points": 2.0,
+       "Topic": "MDPs",
+       "Type": "Image",
+       "Question": "Consider the MDP shown above. It has states $S_{0}, \\ldots, S_{6}$ and actions $A, B$. Each arrow is labeled with one or more actions, and a probability value: this means that if any of those actions is chosen from the state at the start of the arrow, then it will make a transition to the state at the end of the arrow with the associated probability.\n\nRewards are associated with states, and independent, in this example, from the action that is taken in that state. Remember that with horizon $H=1$, the agent can collect the reward associated with the state it is in, and then terminates. \nIf we increase the horizon beyond 3 , will the optimal action in state $S_{0}$ ever change? Explain.",
+       "Solution": "Yes. With a longer horizon, it's worth taking action $\\mathrm{B}$ in $S_{0}$ and going around and around that loop."
+}

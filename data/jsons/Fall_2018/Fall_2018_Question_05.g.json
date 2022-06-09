@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2018",
+       "Question Number": "5",
+       "Part": "g",
+       "Points": 1.857142857,
+       "Topic": "MDPs",
+       "Type": "Image",
+       "Question": "Consider the following MDP with $k+4$ statess. There are two actions, $a_{1}$ and $a_{2}$. Arrows with no labels represent a transition for both actions with probability 1. Arrows labeled $a / p$ make the transition on action $a$ with probability $p$. States with no label have reward 0 . Two states have reward $+1$, obtained when taking an action in that state. There are $k-2$ states between $s_{1}$ and $s_{k}$, with a deterministic transition on any action (so that once you are in s1 you are guaranteed to end up in $s_{k}$ in $k-1$ steps).\nWe are interested in the infinite-horizon discounted values of some states in this MDP. Under what conditions on $k$ and $\\gamma$ would we prefer to take action $a_{1}$ in state $s_{0}$ ? Write down a specific mathematical relationship.",
+       "Solution": "When $(9 / 10) \\gamma^{k-1}>\\gamma /(2-\\gamma)$."
+}

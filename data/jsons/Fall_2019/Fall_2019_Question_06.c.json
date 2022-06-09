@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2019",
+       "Question Number": "6",
+       "Part": "c",
+       "Points": 1.0,
+       "Topic": "Decision Trees",
+       "Type": "Image",
+       "Question": "Draw the decision tree corresponding to this tree with two splits. Clearly label the test \rin each node, which case (yes or no) each branch corresponds to, and the output at a leaf\r node represented as a probability of having a positive label, +1.",
+       "Solution": "Draw on image"
+}

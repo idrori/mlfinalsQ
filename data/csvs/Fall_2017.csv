@@ -1,0 +1,541 @@
+Semester,Question Number,Part,Points,Topic,Type,Question,Solution,Solution
+Fall 2017,1,a,2,Regression,Text,"We're given a data set $D=\left\{\left(x^{(i)}, y^{(i)}\right)\right\}_{i=1}^{n}$, where $x^{(i)} \in R^{d}$ and $y^{(i)} \in R$. Let $X$ be a $d \times n$ matrix in which the $x^{(i)}$ are the columns and let $Y$ be a $1 \times n$ vector containing the values of $y^{(i)}$. Using the ordinary least-squares formula, we can compute $$ W_{o l s}=\left(X X^{T}\right)^{-1} X Y^{T} $$ Using ridge regression, we can compute $$ W_{\text {ridge }}=\left(X X^{T}+\lambda I\right)^{-1} X Y^{T} $$ We decide to try to use these methods to initialize a single-unit ""neural network"" with a linear activation function. Assume that $X X^{T}$ is neither singular nor equal to the identity matrix, and that neither $W_{\text {ols }}$ nor $W_{\text {ridge }}$ is equal to $(0,0, \ldots, 0)$.If we initialized our neuron with $W_{\text {ols }}$ and did batch gradient descent (summing the error over all the data points) with squared loss and a fixed small step size, which of the following would most typically happen: 
+A. The weights would change and then converge back to the original value
+B. Weights would not change
+C. Weights would make small oscillations around the initial weights
+D. The weights would converge to a different value
+E. Something else would happen",B. The weights would not change,B. The weights would not change
+Fall 2017,1,b,1,Regression,Text,"We're given a data set $D=\left\{\left(x^{(i)}, y^{(i)}\right)\right\}_{i=1}^{n}$, where $x^{(i)} \in R^{d}$ and $y^{(i)} \in R$. Let $X$ be a $d \times n$ matrix in which the $x^{(i)}$ are the columns and let $Y$ be a $1 \times n$ vector containing the values of $y^{(i)}$. Using the ordinary least-squares formula, we can compute $$ W_{o l s}=\left(X X^{T}\right)^{-1} X Y^{T} $$ Using ridge regression, we can compute $$ W_{\text {ridge }}=\left(X X^{T}+\lambda I\right)^{-1} X Y^{T} $$ We decide to try to use these methods to initialize a single-unit """"neural network"""" with a linear activation function. Assume that $X X^{T}$ is neither singular nor equal to the identity matrix, and that neither $W_{\text {ols }}$ nor $W_{\text {ridge }}$ is equal to $(0,0, \ldots, 0)$.If we initialized our neuron with $W_{\text {ols }}$ and did batch gradient descent (summing the error over all the data points) with squared loss and a fixed small step size, explain why the weights would not change.",These weights are an optimum of the objective and the gradient will be (nearly) zero.,These weights are an optimum of the objective and the gradient will be (nearly) zero.
+Fall 2017,1,c,1,Regression,Text,"We're given a data set $D=\left\{\left(x^{(i)}, y^{(i)}\right)\right\}_{i=1}^{n}$, where $x^{(i)} \in R^{d}$ and $y^{(i)} \in R$. Let $X$ be a $d \times n$ matrix in which the $x^{(i)}$ are the columns and let $Y$ be a $1 \times n$ vector containing the values of $y^{(i)}$. Using the ordinary least-squares formula, we can compute $$ W_{o l s}=\left(X X^{T}\right)^{-1} X Y^{T} $$ Using ridge regression, we can compute $$ W_{\text {ridge }}=\left(X X^{T}+\lambda I\right)^{-1} X Y^{T} $$ We decide to try to use these methods to initialize a single-unit ""neural network"" with a linear activation function. Assume that $X X^{T}$ is neither singular nor equal to the identity matrix, and that neither $W_{\text {ols }}$ nor $W_{\text {ridge }}$ is equal to $(0,0, \ldots, 0)$. If we initialized our neuron with $W_{\text {ols }}$ and did stochastic gradient descent (one data point at a time) with squared loss and a fixed small step size, which of the following would most typically happen?
+A. The weights would change and then converge back to the original value
+B. Weights would not change
+C. Weights would make small oscillations around the initial weights
+D. The weights would converge to a different value
+E. Something else would happen",C. The weights would make small osciallations around the initial weights,C. The weights would make small osciallations around the initial weights
+Fall 2017,1,d,1,Regression,Text,"We're given a data set $D=\left\{\left(x^{(i)}, y^{(i)}\right)\right\}_{i=1}^{n}$, where $x^{(i)} \in R^{d}$ and $y^{(i)} \in R$. Let $X$ be a $d \times n$ matrix in which the $x^{(i)}$ are the columns and let $Y$ be a $1 \times n$ vector containing the values of $y^{(i)}$. Using the ordinary least-squares formula, we can compute $$ W_{o l s}=\left(X X^{T}\right)^{-1} X Y^{T} $$ Using ridge regression, we can compute $$ W_{\text {ridge }}=\left(X X^{T}+\lambda I\right)^{-1} X Y^{T} $$ We decide to try to use these methods to initialize a single-unit """"neural network"""" with a linear activation function. Assume that $X X^{T}$ is neither singular nor equal to the identity matrix, and that neither $W_{\text {ols }}$ nor $W_{\text {ridge }}$ is equal to $(0,0, \ldots, 0)$. If we initialized our neuron with $W_{\text {ols }}$ and did stochastic gradient descent (one data point at a time) with squared loss and a fixed small step size, explain why the weights would make small oscillations around the initial weights.",In expectation the steps should be small motions around the optimum. If someone says it will (or might) do something else (like hop out of this and get stuck somewhere else) that’s most of the credit if it is well reasoned and explained.,In expectation the steps should be small motions around the optimum. If someone says it will (or might) do something else (like hop out of this and get stuck somewhere else) that’s most of the credit if it is well reasoned and explained.
+Fall 2017,1,e,1,Regression,Text,"We're given a data set $D=\left\{\left(x^{(i)}, y^{(i)}\right)\right\}_{i=1}^{n}$, where $x^{(i)} \in R^{d}$ and $y^{(i)} \in R$. Let $X$ be a $d \times n$ matrix in which the $x^{(i)}$ are the columns and let $Y$ be a $1 \times n$ vector containing the values of $y^{(i)}$. Using the ordinary least-squares formula, we can compute $$ W_{o l s}=\left(X X^{T}\right)^{-1} X Y^{T} $$ Using ridge regression, we can compute $$ W_{\text {ridge }}=\left(X X^{T}+\lambda I\right)^{-1} X Y^{T} $$ We decide to try to use these methods to initialize a single-unit ""neural network"" with a linear activation function. Assume that $X X^{T}$ is neither singular nor equal to the identity matrix, and that neither $W_{\text {ols }}$ nor $W_{\text {ridge }}$ is equal to $(0,0, \ldots, 0)$. Consider a neuron initialized with $W_{\text {ridge. Provide an objective function }} J(W)$ that depends on the data, such that batch gradient descent to minimize $J$ will have no effect on the weights, or argue that one does not exist.",$J(W)=\left(W^{T} X-Y\right)^{2}+\lambda\|W\|^{2}$,$J(W)=\left(W^{T} X-Y\right)^{2}+\lambda\|W\|^{2}$
+Fall 2017,1,f,1,Regression,Text,"We're given a data set $D=\left\{\left(x^{(i)}, y^{(i)}\right)\right\}_{i=1}^{n}$, where $x^{(i)} \in R^{d}$ and $y^{(i)} \in R$. Let $X$ be a $d \times n$ matrix in which the $x^{(i)}$ are the columns and let $Y$ be a $1 \times n$ vector containing the values of $y^{(i)}$. Using the ordinary least-squares formula, we can compute $$ W_{o l s}=\left(X X^{T}\right)^{-1} X Y^{T} $$ Using ridge regression, we can compute $$ W_{\text {ridge }}=\left(X X^{T}+\lambda I\right)^{-1} X Y^{T} $$ We decide to try to use these methods to initialize a single-unit ""neural network"" with a linear activation function. Assume that $X X^{T}$ is neither singular nor equal to the identity matrix, and that neither $W_{\text {ols }}$ nor $W_{\text {ridge }}$ is equal to $(0,0, \ldots, 0)$. Reggie has solved many problems like this before and the solution has typically been close to $W_{0}=(1, \ldots, 1)^{T}$. Define an objective function that would result in good estimates for Reggie's next problem, even with very little data.", $J(W)=\left(W^{T} X-Y\right)^{2}+\lambda\|W-\mathbf{1}\|^{2}$, $J(W)=\left(W^{T} X-Y\right)^{2}+\lambda\|W-\mathbf{1}\|^{2}$
+Fall 2017,2,a,2.5,MDPs,Image,"Consider the MDP shown above. It has states $S_{0}, \ldots, S_{6}$ and actions $A, B$. Each arrow is labeled with one or more actions, and a probability value: this means that if any of those actions is chosen from the state at the start of the arrow, then it will make a transition to the state at the end of the arrow with the associated probability.
+
+Rewards are associated with states, and independent, in this example, from the action that is taken in that state. Remember that with horizon $H=1$, the agent can collect the reward associated with the state it is in, and then terminates.
+Consider the policy $\pi$ that takes action $B$ in $S_{0}$ and action $A$ in $S_{2}$. If the system starts in $S_{0}$ or $S_{2}$, then under that policy, only those two states $\left(S_{0}\right.$ and $\left.S_{2}\right)$ are reachable.
+Assuming the discount factor $\gamma=0.5$, what are the values of $V_{\pi}\left(S_{0}\right)$ and $V_{\pi}\left(S_{2}\right)$ ? It is sufficient to write out a small system of linear equations that determine the values of those two variables; you do not have to take the time to solve them numerically.","$$
+\begin{aligned}
+&V_{\pi}\left(S_{0}\right)=0+0.5 \cdot V_{\pi}\left(S_{2}\right) \\
+&V_{\pi}\left(S_{2}\right)=1+0.5 \cdot\left(0.9 V_{\pi}\left(S_{2}\right)+0.1 V_{\pi}\left(S_{0}\right)\right)
+\end{aligned}
+$$",
+Fall 2017,2,b,2.5,MDPs,Image,"Consider the MDP shown above. It has states $S_{0}, \ldots, S_{6}$ and actions $A, B$. Each arrow is labeled with one or more actions, and a probability value: this means that if any of those actions is chosen from the state at the start of the arrow, then it will make a transition to the state at the end of the arrow with the associated probability.
+
+Rewards are associated with states, and independent, in this example, from the action that is taken in that state. Remember that with horizon $H=1$, the agent can collect the reward associated with the state it is in, and then terminates.
+What is the optimal value $V(s)=\max _{a} Q(s, a)$ for each state for horizon $H=1$ with no discounting?","i. $S_{0}$ 0
+ii. $S_{1}$ 0
+iii. $S_{2}$ 1
+iv. $S_{3}$ 2
+v. $S_{4}$ 1
+vi. $S_{5}$ 10
+vii. $S_{6}$
+0",
+Fall 2017,2,c,2.5,MDPs,Image,"Consider the MDP shown above. It has states $S_{0}, \ldots, S_{6}$ and actions $A, B$. Each arrow is labeled with one or more actions, and a probability value: this means that if any of those actions is chosen from the state at the start of the arrow, then it will make a transition to the state at the end of the arrow with the associated probability.
+
+Rewards are associated with states, and independent, in this example, from the action that is taken in that state. Remember that with horizon $H=1$, the agent can collect the reward associated with the state it is in, and then terminates.
+
+What is the optimal action and value $V(s)$ for each state for horizon $H=2$ with no discounting?","i. $S_{0} a$ : $v:$ 1
+ii. $S_{1} a$ : A $v:$ 2
+iii. $S_{2} a$ : A $v:$ $1.9$
+iv. $S_{3} a$ : A or B $v:$ 2
+v. $S_{4} a: \quad \mathbf{A}$ or $\mathbf{B} v$ : 1
+vi. $S_{5} a$ : A or B $v:$ 10
+vii. $S_{6} a$ : A or $B$ $v:$",
+Fall 2017,2,d,2.5,MDPs,Image,"Consider the MDP shown above. It has states $S_{0}, \ldots, S_{6}$ and actions $A, B$. Each arrow is labeled with one or more actions, and a probability value: this means that if any of those actions is chosen from the state at the start of the arrow, then it will make a transition to the state at the end of the arrow with the associated probability.
+
+Rewards are associated with states, and independent, in this example, from the action that is taken in that state. Remember that with horizon $H=1$, the agent can collect the reward associated with the state it is in, and then terminates.
+
+Are there any policies that result in infinite-horizon $Q_{\pi}$ values that are finite for all states even when $\gamma=1$ ? If so, provide such a policy. If not, explain why not.","i. $S_{0}$ A
+ii. $S_{1}-2$ A
+iii. $S_{2}$ A or $\mathbf{B}$
+iv. $S_{3} \quad \mathbf{A}$ or $\mathbf{B}$
+v. $S_{4} \ldots \mathbf{A}$ or $\mathbf{B}$
+vi. $S_{5} \quad \mathbf{A}$ or $\mathbf{B}$
+vii. $S_{6}$ A or $\mathbf{B}$",
+Fall 2017,3,a.i,1,Reinforcement Learning,Text,"Consider an MDP with four states, called $A, B, C$, and $D$, and with two actions called Move and Stay. The discount factor $\gamma=0.9$. Here is a reminder of the Q-learning update formula, based on experience tuple $\left(s, a, r, s^{\prime}\right)$ : $$ Q(s, a):=(1-\alpha) Q(s, a)+\alpha\left(r+\gamma \max _{a^{\prime}} Q\left(s^{\prime}, a^{\prime}\right)\right) $$ Let $\alpha=1$. Assume we see the following state-action-reward sequence: 
+A, Move, 0 
+Provide the q-learning value for Q(A, Move).",0,0
+Fall 2017,3,a.ii,1,Reinforcement Learning,Text,"Consider an MDP with four states, called $A, B, C$, and $D$, and with two actions called Move and Stay. The discount factor $\gamma=0.9$. Here is a reminder of the Q-learning update formula, based on experience tuple $\left(s, a, r, s^{\prime}\right)$ : $$ Q(s, a):=(1-\alpha) Q(s, a)+\alpha\left(r+\gamma \max _{a^{\prime}} Q\left(s^{\prime}, a^{\prime}\right)\right) $$ Let $\alpha=1$. Assume we see the following state-action-reward sequence: 
+A, Move, 0 
+B, Move, 0 
+Provide the q-learning value for Q(B, Move).",0,0
+Fall 2017,3,a.iii,1,Reinforcement Learning,Text,"Consider an MDP with four states, called $A, B, C$, and $D$, and with two actions called Move and Stay. The discount factor $\gamma=0.9$. Here is a reminder of the Q-learning update formula, based on experience tuple $\left(s, a, r, s^{\prime}\right)$ : $$ Q(s, a):=(1-\alpha) Q(s, a)+\alpha\left(r+\gamma \max _{a^{\prime}} Q\left(s^{\prime}, a^{\prime}\right)\right) $$ Let $\alpha=1$. Assume we see the following state-action-reward sequence: 
+A, Move, 0 
+B, Move, 0 
+C, Move, 1 
+With Q-values all starting at 0, we run the Q-learning algorithm on that state-action sequence. Provide the q-learning value for Q(C, Move)",1,1
+Fall 2017,3,a.iv,1,Reinforcement Learning,Text,"Consider an MDP with four states, called $A, B, C$, and $D$, and with two actions called Move and Stay. The discount factor $\gamma=0.9$. Here is a reminder of the Q-learning update formula, based on experience tuple $\left(s, a, r, s^{\prime}\right)$ : $$ Q(s, a):=(1-\alpha) Q(s, a)+\alpha\left(r+\gamma \max _{a^{\prime}} Q\left(s^{\prime}, a^{\prime}\right)\right) $$ Let $\alpha=1$. Assume we see the following state-action-reward sequence: 
+A, Move, 0 
+B, Move, 0 
+C, Move, 1 
+A, Move, 0 
+With Q-values all starting at 0, we run the Q-learning algorithm on that state-action sequence. Provide the q-learning value for Q(A, move).",0,0
+Fall 2017,3,a.v,1,Reinforcement Learning,Text,"Consider an MDP with four states, called $A, B, C$, and $D$, and with two actions called Move and Stay. The discount factor $\gamma=0.9$. Here is a reminder of the Q-learning update formula, based on experience tuple $\left(s, a, r, s^{\prime}\right)$ : $$ Q(s, a):=(1-\alpha) Q(s, a)+\alpha\left(r+\gamma \max _{a^{\prime}} Q\left(s^{\prime}, a^{\prime}\right)\right) $$ Let $\alpha=1$. Assume we see the following state-action-reward sequence: 
+A, Move, 0 
+B, Move, 0 
+C, Move, 1 
+A, Move, 0 
+B, Move, 0. 
+With Q-values all starting at 0, we run the Q-learning algorithm on that state-action sequence. Provide the q-learning value for Q(b, move).",0.9,0.9
+Fall 2017,3,b,1,Reinforcement Learning,Text,"Consider an MDP with four states, called $A, B, C$, and $D$, and with two actions called Move and Stay. The discount factor $\gamma=0.9$. Here is a reminder of the Q-learning update formula, based on experience tuple $\left(s, a, r, s^{\prime}\right)$ : $$ Q(s, a):=(1-\alpha) Q(s, a)+\alpha\left(r+\gamma \max _{a^{\prime}} Q\left(s^{\prime}, a^{\prime}\right)\right) $$ Let $\alpha=1$. Assume we see the following state-action-reward sequence: 
+A, Move, 0 
+B, Move, 0 
+C, Move, 1 
+A, Move, 0 
+B, Move, 0. With Q-values all starting at 0, we run the Q-learning algorithm on that state-action sequence. Characterize the weakness of Q-learning demonstrated by this example, which would be worse if there were a long sequence of states $B_{1}, \ldots, B_{100}$ between A and C. Very briefly describe a strategy for overcoming this weakness. ",It doesn't propagate the value all the way back the chain. Do the updates backward along the trajectory; or save your experience and replay it.,It doesn't propagate the value all the way back the chain. Do the updates backward along the trajectory; or save your experience and replay it.
+Fall 2017,3,c.i,1,Reinforcement Learning,Text,"Consider an MDP with four states, called $A, B, C$, and $D$, and with two actions called Move and Stay. The discount factor $\gamma=0.9$. Here is a reminder of the Q-learning update formula, based on experience tuple $\left(s, a, r, s^{\prime}\right)$ : $$ Q(s, a):=(1-\alpha) Q(s, a)+\alpha\left(r+\gamma \max _{a^{\prime}} Q\left(s^{\prime}, a^{\prime}\right)\right) $$ Let $\alpha=1$. Assume we see the following state-action-reward sequence: 
+A, Move, 0 
+B, Move, 0 
+C, Move, 1 
+A, Move, 0 
+B, Move, 0. 
+A, Move, 0
+B, Move, 0
+With Q-values all starting at 0, we run the Q-learning algorithm on that state-action sequence. Provide the q-learning value for Q(A, move).","Q(A, move) = .81","Q(A, move) = .81"
+Fall 2017,3,c.ii,1,Reinforcement Learning,Text,"Consider an MDP with four states, called $A, B, C$, and $D$, and with two actions called Move and Stay. The discount factor $\gamma=0.9$. Here is a reminder of the Q-learning update formula, based on experience tuple $\left(s, a, r, s^{\prime}\right)$ : $$ Q(s, a):=(1-\alpha) Q(s, a)+\alpha\left(r+\gamma \max _{a^{\prime}} Q\left(s^{\prime}, a^{\prime}\right)\right) $$ Let $\alpha=1$. Assume we see the following state-action-reward sequence: 
+A, Move, 0 
+B, Move, 0 
+C, Move, 1 
+A, Move, 0 
+B, Move, 0. 
+A, Move, 0
+B, Move, 0
+With Q-values all starting at 0, we run the Q-learning algorithm on that state-action sequence. Provide the q-learning value for Q(B, move).","Q(B, move) = 0","Q(B, move) = 0"
+Fall 2017,3,d,1,Reinforcement Learning,Text,"Consider an MDP with four states, called $A, B, C$, and $D$, and with two actions called Move and Stay. The discount factor $\gamma=0.9$. Here is a reminder of the Q-learning update formula, based on experience tuple $\left(s, a, r, s^{\prime}\right)$ : $$ Q(s, a):=(1-\alpha) Q(s, a)+\alpha\left(r+\gamma \max _{a^{\prime}} Q\left(s^{\prime}, a^{\prime}\right)\right) $$ Let $\alpha=1$. Assume we see the following state-action-reward sequence: 
+A, Move, 0 
+B, Move, 0 
+C, Move, 1 
+A, Move, 0 
+B, Move, 0. 
+A, Move, 0
+B, Move, 0
+With Q-values all starting at 0, we run the Q-learning algorithm on that state-action sequence. What problem with our algorithm is revealed by this example? Very briefly explain a small change to the method or parameters we are using that will solve this problem.",Use a smaller learning rate,Use a smaller learning rate
+Fall 2017,4,a,2,Neural Networks,Image,"Consider just the general shape of the following plots. For each of the following possible interpretations of the quantities being plotted on the $\mathrm{X}$ and $Y$ axes, indicate which of the plots would most typically be the result, or mark ""none"" if none are appropriate.
+
+Assume all quantities other than $\mathrm{X}$ are held constant during the experiment. Error quantities reported are averages over the data set they are being reported on.
+Provide a one-sentence justification for each answer.
+
+X axis: Number of training examples $\mathbf{Y}$ axis: test set error $\sqrt{A} O \mathrm{~B} O \mathrm{C} O \mathrm{D} O$ none","A.
+With more training data, we are better able to find a good hypothesis.",
+Fall 2017,4,b,2,Neural Networks,Image,"Consider just the general shape of the following plots. For each of the following possible interpretations of the quantities being plotted on the $\mathrm{X}$ and $Y$ axes, indicate which of the plots would most typically be the result, or mark ""none"" if none are appropriate.
+
+Assume all quantities other than $\mathrm{X}$ are held constant during the experiment. Error quantities reported are averages over the data set they are being reported on.
+Provide a one-sentence justification for each answer.
+
+$\mathbf{X}$ axis: Number of training examples $\mathbf{Y}$ axis: training error
+A $\sqrt{B} O$ C $O$ D none","B.
+It's easy to fit a small amount of data exactly; harder as we get more data.",
+Fall 2017,4,c,2,Neural Networks,Image,"Consider just the general shape of the following plots. For each of the following possible interpretations of the quantities being plotted on the $\mathrm{X}$ and $Y$ axes, indicate which of the plots would most typically be the result, or mark ""none"" if none are appropriate.
+
+Assume all quantities other than $\mathrm{X}$ are held constant during the experiment. Error quantities reported are averages over the data set they are being reported on.
+Provide a one-sentence justification for each answer.
+
+X axis: Order of polynomial feature set $\mathbf{Y}$ axis: test set error
+A O B $\sqrt{\text { C }}$ O D $O$ none","C.
+
+Underfits if too low; overfits if too high.",
+Fall 2017,4,d,2,Neural Networks,Image,"Consider just the general shape of the following plots. For each of the following possible interpretations of the quantities being plotted on the $\mathrm{X}$ and $Y$ axes, indicate which of the plots would most typically be the result, or mark ""none"" if none are appropriate.
+
+Assume all quantities other than $\mathrm{X}$ are held constant during the experiment. Error quantities reported are averages over the data set they are being reported on.
+Provide a one-sentence justification for each answer.
+
+X axis: Order of polynomial feature set $\mathbf{Y}$ axis: training set error
+$\sqrt{A} \bigcirc \mathrm{B} \bigcirc \mathrm{C} \bigcirc \mathrm{D} \bigcirc$ none","A.
+More features makes it easier to fit complex data.",
+Fall 2017,4,e,2,Neural Networks,Image,"Consider just the general shape of the following plots. For each of the following possible interpretations of the quantities being plotted on the $\mathrm{X}$ and $Y$ axes, indicate which of the plots would most typically be the result, or mark ""none"" if none are appropriate.
+
+Assume all quantities other than $\mathrm{X}$ are held constant during the experiment. Error quantities reported are averages over the data set they are being reported on.
+Provide a one-sentence justification for each answer.
+
+X axis: Order of polynomial feature set $\quad \mathbf{Y}$ axis: cross validation error
+A $\bigcirc$ B $\sqrt{\text { C }} \bigcirc$ D $O$ none","C.
+Same as test set error.",
+Fall 2017,5,a,2,CNNs,Text,"We'll consider here a simple one-dimensional convolutional neural network layer. This is a feature map created by a single filter whose parameters we must learn. The filter represents a local pattern detector that is applied in every position of the input signal. The feature map therefore transforms an input vector (one dimensional signal) into another vector (one-dimensional feature map). To train such a layer on its own, i.e., not as part of a bigger network as we typically do, we can imagine having training pairs $(x, y)$ where $x$ is the input signal as a vector and $y$ is a binary vector representing whether the relevant pattern appeared in a particular position or not. Specifically,
+- Input $x$ is a one-dimensional vector of length $d$.
+- Target $y$ is also a one-dimensional vector of length. $d$. One """"pixel"""" in the output, $y_{j}$, has value 1 if the input pixels $x_{j-1}, x_{j}, x_{j+1}$, centered at $j$, exhibit the target pattern and 0 if they do not.
+- The filter is represented by a weight vector $w$ consisting of three values.
+- The output of the network is a vector $\hat{y}$ whose $j^{t h}$ coordinate (pixel) is $\hat{y}_{j}=\sigma\left(z_{j}\right.$ ) where $z_{j}=\left[x_{j-1} ; x_{j} ; x_{j+1}\right]^{T} w$ and $\sigma(\cdot)$ is the sigmoid function. Assume that $x_{0}$ and $x_{d+1}$ are 0 for the purposes of computing outputs.
+- We have a training set $D=\left(x^{(1)}, y^{(1)}\right), \ldots,\left(x^{(n)}, y^{(n)}\right)$.
+- We measure the loss between the target binary vector $y$ and the network output $\hat{y}$ pixel by pixel using cross-entropy (Negative Log-Likelihood or NLL). The aggregate loss over the whole training set is
+$$
+L(w, D)=\sum_{i=1}^{n} \sum_{j=1}^{d} \operatorname{NLL}\left(y_{j}^{(i)}, \hat{y}_{j}^{(i)}\right)
+$$
+What is the ""stride"" for this feature map?",1,1
+Fall 2017,5,b,2,CNNs,Text,"We'll consider here a simple one-dimensional convolutional neural network layer. This is a feature map created by a single filter whose parameters we must learn. The filter represents a local pattern detector that is applied in every position of the input signal. The feature map therefore transforms an input vector (one dimensional signal) into another vector (one-dimensional feature map). To train such a layer on its own, i.e., not as part of a bigger network as we typically do, we can imagine having training pairs $(x, y)$ where $x$ is the input signal as a vector and $y$ is a binary vector representing whether the relevant pattern appeared in a particular position or not. Specifically,
+- Input $x$ is a one-dimensional vector of length $d$.
+- Target $y$ is also a one-dimensional vector of length. $d$. One ""pixel"" in the output, $y_{j}$, has value 1 if the input pixels $x_{j-1}, x_{j}, x_{j+1}$, centered at $j$, exhibit the target pattern and 0 if they do not.
+- The filter is represented by a weight vector $w$ consisting of three values.
+- The output of the network is a vector $\hat{y}$ whose $j^{t h}$ coordinate (pixel) is $\hat{y}_{j}=\sigma\left(z_{j}\right.$ ) where $z_{j}=\left[x_{j-1} ; x_{j} ; x_{j+1}\right]^{T} w$ and $\sigma(\cdot)$ is the sigmoid function. Assume that $x_{0}$ and $x_{d+1}$ are 0 for the purposes of computing outputs.
+- We have a training set $D=\left(x^{(1)}, y^{(1)}\right), \ldots,\left(x^{(n)}, y^{(n)}\right)$.
+- We measure the loss between the target binary vector $y$ and the network output $\hat{y}$ pixel by pixel using cross-entropy (Negative Log-Likelihood or NLL). The aggregate loss over the whole training set is
+$$
+L(w, D)=\sum_{i=1}^{n} \sum_{j=1}^{d} \operatorname{NLL}\left(y_{j}^{(i)}, \hat{y}_{j}^{(i)}\right)
+$$ Provide a formula for $\nabla_{w} \mathrm{NLL}\left(y_{j}, \hat{y}_{j}\right)$, which is the gradient of the loss with respect to pixel $j$ of an example with respect to $w=\left[w_{1}, w_{2}, w_{3}\right]^{T}$, in terms of $x, y$, and $z$ values only.","$$
+\left(\sigma\left(z_{j}\right)-y_{j}\right)\left[\begin{array}{c}
+x_{j-1} \\
+x_{j} \\
+x_{j+1}
+\end{array}\right]
+$$","$$
+\left(\sigma\left(z_{j}\right)-y_{j}\right)\left[\begin{array}{c}
+x_{j-1} \\
+x_{j} \\
+x_{j+1}
+\end{array}\right]
+$$"
+Fall 2017,5,c.i,2,CNNs,Text,"We'll consider here a simple one-dimensional convolutional neural network layer. This is a feature map created by a single filter whose parameters we must learn. The filter represents a local pattern detector that is applied in every position of the input signal. The feature map therefore transforms an input vector (one dimensional signal) into another vector (one-dimensional feature map). To train such a layer on its own, i.e., not as part of a bigger network as we typically do, we can imagine having training pairs $(x, y)$ where $x$ is the input signal as a vector and $y$ is a binary vector representing whether the relevant pattern appeared in a particular position or not. Specifically,
+- Input $x$ is a one-dimensional vector of length $d$.
+- Target $y$ is also a one-dimensional vector of length. $d$. One ""pixel"" in the output, $y_{j}$, has value 1 if the input pixels $x_{j-1}, x_{j}, x_{j+1}$, centered at $j$, exhibit the target pattern and 0 if they do not.
+- The filter is represented by a weight vector $w$ consisting of three values.
+- The output of the network is a vector $\hat{y}$ whose $j^{t h}$ coordinate (pixel) is $\hat{y}_{j}=\sigma\left(z_{j}\right.$ ) where $z_{j}=\left[x_{j-1} ; x_{j} ; x_{j+1}\right]^{T} w$ and $\sigma(\cdot)$ is the sigmoid function. Assume that $x_{0}$ and $x_{d+1}$ are 0 for the purposes of computing outputs.
+- We have a training set $D=\left(x^{(1)}, y^{(1)}\right), \ldots,\left(x^{(n)}, y^{(n)}\right)$.
+- We measure the loss between the target binary vector $y$ and the network output $\hat{y}$ pixel by pixel using cross-entropy (Negative Log-Likelihood or NLL). The aggregate loss over the whole training set is
+$$
+L(w, D)=\sum_{i=1}^{n} \sum_{j=1}^{d} \operatorname{NLL}\left(y_{j}^{(i)}, \hat{y}_{j}^{(i)}\right)
+$$ We'd like to use a simple stochastic gradient descent (SGD) algorithm for estimating the filter parameters $w$. But wait... how is the algorithm stochastic? Given the framing of our problem there may be multiple ways to write a valid SGD update.
+For each of the following cases of SGD, write an update rule for $w$, in terms of step size $\eta, \nabla_{w} \mathrm{NLL}$, target pixel values $y_{j}^{(i)}$ and actual pixel values $\hat{y}_{j}^{(i)}$.
+Update based on all pixels of example ","$w \leftarrow w-\eta \sum_{j=1}^{d} \nabla_{w} N\left(y_{j}^{(i)}, \hat{y}_{j}^{(i)}\right)$","$w \leftarrow w-\eta \sum_{j=1}^{d} \nabla_{w} N\left(y_{j}^{(i)}, \hat{y}_{j}^{(i)}\right)$"
+Fall 2017,5,c.ii,2,CNNs,Text,"We'll consider here a simple one-dimensional convolutional neural network layer. This is a feature map created by a single filter whose parameters we must learn. The filter represents a local pattern detector that is applied in every position of the input signal. The feature map therefore transforms an input vector (one dimensional signal) into another vector (one-dimensional feature map). To train such a layer on its own, i.e., not as part of a bigger network as we typically do, we can imagine having training pairs $(x, y)$ where $x$ is the input signal as a vector and $y$ is a binary vector representing whether the relevant pattern appeared in a particular position or not. Specifically,
+- Input $x$ is a one-dimensional vector of length $d$.
+- Target $y$ is also a one-dimensional vector of length. $d$. One ""pixel"" in the output, $y_{j}$, has value 1 if the input pixels $x_{j-1}, x_{j}, x_{j+1}$, centered at $j$, exhibit the target pattern and 0 if they do not.
+- The filter is represented by a weight vector $w$ consisting of three values.
+- The output of the network is a vector $\hat{y}$ whose $j^{t h}$ coordinate (pixel) is $\hat{y}_{j}=\sigma\left(z_{j}\right.$ ) where $z_{j}=\left[x_{j-1} ; x_{j} ; x_{j+1}\right]^{T} w$ and $\sigma(\cdot)$ is the sigmoid function. Assume that $x_{0}$ and $x_{d+1}$ are 0 for the purposes of computing outputs.
+- We have a training set $D=\left(x^{(1)}, y^{(1)}\right), \ldots,\left(x^{(n)}, y^{(n)}\right)$.
+- We measure the loss between the target binary vector $y$ and the network output $\hat{y}$ pixel by pixel using cross-entropy (Negative Log-Likelihood or NLL). The aggregate loss over the whole training set is
+$$
+L(w, D)=\sum_{i=1}^{n} \sum_{j=1}^{d} \operatorname{NLL}\left(y_{j}^{(i)}, \hat{y}_{j}^{(i)}\right)
+$$ We'd like to use a simple stochastic gradient descent (SGD) algorithm for estimating the filter parameters $w$. But wait... how is the algorithm stochastic? Given the framing of our problem there may be multiple ways to write a valid SGD update.
+For each of the following cases of SGD, write an update rule for $w$, in terms of step size $\eta, \nabla_{w} \mathrm{NLL}$, target pixel values $y_{j}^{(i)}$ and actual pixel values $\hat{y}_{j}^{(i)}$.
+Update based on pixel $j$ of all examples"," Select $j$ (position) at random, $w \leftarrow w-\eta \sum_{i=1}^{n} \nabla_{w} N\left(y_{j}^{(i)}, \hat{y}_{j}^{(i)}\right)$"," Select $j$ (position) at random, $w \leftarrow w-\eta \sum_{i=1}^{n} \nabla_{w} N\left(y_{j}^{(i)}, \hat{y}_{j}^{(i)}\right)$"
+Fall 2017,5,c.iii,2,CNNs,Text,"We'll consider here a simple one-dimensional convolutional neural network layer. This is a feature map created by a single filter whose parameters we must learn. The filter represents a local pattern detector that is applied in every position of the input signal. The feature map therefore transforms an input vector (one dimensional signal) into another vector (one-dimensional feature map). To train such a layer on its own, i.e., not as part of a bigger network as we typically do, we can imagine having training pairs $(x, y)$ where $x$ is the input signal as a vector and $y$ is a binary vector representing whether the relevant pattern appeared in a particular position or not. Specifically,
+- Input $x$ is a one-dimensional vector of length $d$.
+- Target $y$ is also a one-dimensional vector of length. $d$. One ""pixel"" in the output, $y_{j}$, has value 1 if the input pixels $x_{j-1}, x_{j}, x_{j+1}$, centered at $j$, exhibit the target pattern and 0 if they do not.
+- The filter is represented by a weight vector $w$ consisting of three values.
+- The output of the network is a vector $\hat{y}$ whose $j^{t h}$ coordinate (pixel) is $\hat{y}_{j}=\sigma\left(z_{j}\right.$ ) where $z_{j}=\left[x_{j-1} ; x_{j} ; x_{j+1}\right]^{T} w$ and $\sigma(\cdot)$ is the sigmoid function. Assume that $x_{0}$ and $x_{d+1}$ are 0 for the purposes of computing outputs.
+- We have a training set $D=\left(x^{(1)}, y^{(1)}\right), \ldots,\left(x^{(n)}, y^{(n)}\right)$.
+- We measure the loss between the target binary vector $y$ and the network output $\hat{y}$ pixel by pixel using cross-entropy (Negative Log-Likelihood or NLL). The aggregate loss over the whole training set is
+$$
+L(w, D)=\sum_{i=1}^{n} \sum_{j=1}^{d} \operatorname{NLL}\left(y_{j}^{(i)}, \hat{y}_{j}^{(i)}\right)
+$$ We'd like to use a simple stochastic gradient descent (SGD) algorithm for estimating the filter parameters $w$. But wait... how is the algorithm stochastic? Given the framing of our problem there may be multiple ways to write a valid SGD update.
+For each of the following cases of SGD, write an update rule for $w$, in terms of step size $\eta, \nabla_{w} \mathrm{NLL}$, target pixel values $y_{j}^{(i)}$ and actual pixel values $\hat{y}_{j}^{(i)}$.
+Update based on pixel $j$ of example $i$","Select $i$ (example) and $j$ (position) at random, $w \leftarrow w-\eta \nabla_{w} N\left(y_{j}^{(i)}, \hat{y}_{j}^{(i)}\right)$","Select $i$ (example) and $j$ (position) at random, $w \leftarrow w-\eta \nabla_{w} N\left(y_{j}^{(i)}, \hat{y}_{j}^{(i)}\right)$"
+Fall 2017,6,a,2,CNNs,Text,"We are going to consider two different simple convolutional networks over one dimensional (vector) inputs. Each network has a single convolutional layer with a single filter of size 3 and stride 1 . Let $\left(z_{1}, \ldots, z_{d}\right)$ be the output of this convolutional layer, i.e., $\left(z_{1}, \ldots, z_{d}\right)$ represents the feature map constructed from the input vector $\left(x_{1}, \ldots, x_{d}\right)$. For simplicity, you can think of $z_{j}$ just as a linear map $z_{j}=\left[x_{j-1} ; x_{j} ; x_{j+1}\right]^{T} w$ where $w$ are the filter parameters. Our two networks differ in terms of how the feature map values are pooled to a single output value.
+
+Network A has a single max-pooling layer with input size $d$, so that the output of the network $\hat{y}=\sigma\left(\max \left(z_{1}, \ldots, z_{d}\right)\right)$ where $\sigma(\cdot)$ is the sigmoid function.
+Network B has a single min-pooling layer with input size $d$, so that the output of the network
+$$
+\hat{y}=\sigma\left(\min \left(z_{1}, \ldots, z_{d}\right)\right)
+$$
+When the filter's output value is high it represents a positive detection of some pattern of interest.For which network does a high output value correspond, qualitatively, to ""every pixel in $x$ corresponds to an instance of the desired pattern,"" A, B or none?",B,B
+Fall 2017,6,b,2,CNNs,Text,"We are going to consider two different simple convolutional networks over one dimensional (vector) inputs. Each network has a single convolutional layer with a single filter of size 3 and stride 1 . Let $\left(z_{1}, \ldots, z_{d}\right)$ be the output of this convolutional layer, i.e., $\left(z_{1}, \ldots, z_{d}\right)$ represents the feature map constructed from the input vector $\left(x_{1}, \ldots, x_{d}\right)$. For simplicity, you can think of $z_{j}$ just as a linear map $z_{j}=\left[x_{j-1} ; x_{j} ; x_{j+1}\right]^{T} w$ where $w$ are the filter parameters. Our two networks differ in terms of how the feature map values are pooled to a single output value.
+
+Network A has a single max-pooling layer with input size $d$, so that the output of the network $\hat{y}=\sigma\left(\max \left(z_{1}, \ldots, z_{d}\right)\right)$ where $\sigma(\cdot)$ is the sigmoid function.
+Network B has a single min-pooling layer with input size $d$, so that the output of the network
+$$
+\hat{y}=\sigma\left(\min \left(z_{1}, \ldots, z_{d}\right)\right)
+$$
+When the filter's output value is high it represents a positive detection of some pattern of interest. For which network does a high output value correspond, qualitatively, to ""at least half of the pixels in $x$ correspond to an instance of the desired pattern"" A, B, or none?",None,None
+Fall 2017,6,c,2,CNNs,Text,"We are going to consider two different simple convolutional networks over one dimensional (vector) inputs. Each network has a single convolutional layer with a single filter of size 3 and stride 1 . Let $\left(z_{1}, \ldots, z_{d}\right)$ be the output of this convolutional layer, i.e., $\left(z_{1}, \ldots, z_{d}\right)$ represents the feature map constructed from the input vector $\left(x_{1}, \ldots, x_{d}\right)$. For simplicity, you can think of $z_{j}$ just as a linear map $z_{j}=\left[x_{j-1} ; x_{j} ; x_{j+1}\right]^{T} w$ where $w$ are the filter parameters. Our two networks differ in terms of how the feature map values are pooled to a single output value.
+
+Network A has a single max-pooling layer with input size $d$, so that the output of the network $\hat{y}=\sigma\left(\max \left(z_{1}, \ldots, z_{d}\right)\right)$ where $\sigma(\cdot)$ is the sigmoid function.
+Network B has a single min-pooling layer with input size $d$, so that the output of the network
+$$
+\hat{y}=\sigma\left(\min \left(z_{1}, \ldots, z_{d}\right)\right)
+$$
+When the filter's output value is high it represents a positive detection of some pattern of interest. For which network does a high output value correspond, qualitatively, to ""there is at least one instance of the desired pattern in this image"" A, B, or none?",A,A
+Fall 2017,6,d,2,CNNs,Text,"We are going to consider two different simple convolutional networks over one dimensional (vector) inputs. Each network has a single convolutional layer with a single filter of size 3 and stride 1 . Let $\left(z_{1}, \ldots, z_{d}\right)$ be the output of this convolutional layer, i.e., $\left(z_{1}, \ldots, z_{d}\right)$ represents the feature map constructed from the input vector $\left(x_{1}, \ldots, x_{d}\right)$. For simplicity, you can think of $z_{j}$ just as a linear map $z_{j}=\left[x_{j-1} ; x_{j} ; x_{j+1}\right]^{T} w$ where $w$ are the filter parameters. Our two networks differ in terms of how the feature map values are pooled to a single output value.
+
+Network A has a single max-pooling layer with input size $d$, so that the output of the network $\hat{y}=\sigma\left(\max \left(z_{1}, \ldots, z_{d}\right)\right)$ where $\sigma(\cdot)$ is the sigmoid function.
+Network B has a single min-pooling layer with input size $d$, so that the output of the network
+$$
+\hat{y}=\sigma\left(\min \left(z_{1}, \ldots, z_{d}\right)\right)
+$$
+When the filter's output value is high it represents a positive detection of some pattern of interest. Assume for simplicity that all $z_{1}, \ldots, z_{d}$ have distinct values (we can ignore the corner cases where some of the values are equal). What is $\partial \hat{y} / \partial z_{i}$ for network A?","$\sigma\left(z_{i}\right)\left(1-\sigma\left(z_{i}\right)\right)$ if $z_{i}=\max \left(z_{1}, \ldots, z_{d}\right)$, and 0 otherwise.","$\sigma\left(z_{i}\right)\left(1-\sigma\left(z_{i}\right)\right)$ if $z_{i}=\max \left(z_{1}, \ldots, z_{d}\right)$, and 0 otherwise."
+Fall 2017,6,e.i,0.5,CNNs,Text,"We are going to consider two different simple convolutional networks over one dimensional (vector) inputs. Each network has a single convolutional layer with a single filter of size 3 and stride 1 . Let $\left(z_{1}, \ldots, z_{d}\right)$ be the output of this convolutional layer, i.e., $\left(z_{1}, \ldots, z_{d}\right)$ represents the feature map constructed from the input vector $\left(x_{1}, \ldots, x_{d}\right)$. For simplicity, you can think of $z_{j}$ just as a linear map $z_{j}=\left[x_{j-1} ; x_{j} ; x_{j+1}\right]^{T} w$ where $w$ are the filter parameters. Our two networks differ in terms of how the feature map values are pooled to a single output value.
+
+Network A has a single max-pooling layer with input size $d$, so that the output of the network $\hat{y}=\sigma\left(\max \left(z_{1}, \ldots, z_{d}\right)\right)$ where $\sigma(\cdot)$ is the sigmoid function.
+Network B has a single min-pooling layer with input size $d$, so that the output of the network
+$$
+\hat{y}=\sigma\left(\min \left(z_{1}, \ldots, z_{d}\right)\right)
+$$
+When the filter's output value is high it represents a positive detection of some pattern of interest. Now, suppose we are just given a single training pair $(x, y)$ where the target $y$ is binary $0 / 1$. The loss that we are minimizing is again just
+$$
+\mathrm{NLL}(y, \hat{y})=-y \log \hat{y}-(1-y) \log (1-\hat{y})
+$$
+which is minimized when $\hat{y}$ matches the target $y$. We are interested in understanding qualitatively how the filter parameters $w$ get updated in the two networks if we use simple gradient descent to minimize $\operatorname{NLL}(y, \hat{y})$. Specify whether the behavior would occur in:
+- Which network (A, B, or it doesn't matter)
+- Target $y$ (1, 0, or it doesn't matter). 
+The behavior is the filter weights $w$ become increasingly aligned in the direction of a particular triplet $\left[x_{j-1} ; x_{j} ; x_{j+1}\right]$.","A, 1","A, 1"
+Fall 2017,6,e.ii,0.5,CNNs,Text,"We are going to consider two different simple convolutional networks over one dimensional (vector) inputs. Each network has a single convolutional layer with a single filter of size 3 and stride 1 . Let $\left(z_{1}, \ldots, z_{d}\right)$ be the output of this convolutional layer, i.e., $\left(z_{1}, \ldots, z_{d}\right)$ represents the feature map constructed from the input vector $\left(x_{1}, \ldots, x_{d}\right)$. For simplicity, you can think of $z_{j}$ just as a linear map $z_{j}=\left[x_{j-1} ; x_{j} ; x_{j+1}\right]^{T} w$ where $w$ are the filter parameters. Our two networks differ in terms of how the feature map values are pooled to a single output value.
+
+Network A has a single max-pooling layer with input size $d$, so that the output of the network $\hat{y}=\sigma\left(\max \left(z_{1}, \ldots, z_{d}\right)\right)$ where $\sigma(\cdot)$ is the sigmoid function.
+Network B has a single min-pooling layer with input size $d$, so that the output of the network
+$$
+\hat{y}=\sigma\left(\min \left(z_{1}, \ldots, z_{d}\right)\right)
+$$
+When the filter's output value is high it represents a positive detection of some pattern of interest. Now, suppose we are just given a single training pair $(x, y)$ where the target $y$ is binary $0 / 1$. The loss that we are minimizing is again just
+$$
+\mathrm{NLL}(y, \hat{y})=-y \log \hat{y}-(1-y) \log (1-\hat{y})
+$$
+which is minimized when $\hat{y}$ matches the target $y$. We are interested in understanding qualitatively how the filter parameters $w$ get updated in the two networks if we use simple gradient descent to minimize $\operatorname{NLL}(y, \hat{y})$. Specify whether the behavior would occur in:
+- Which network (A, B, or it doesn't matter)
+- Target $y$ (1, 0, or it doesn't matter). 
+The behavior is the filter weights $w$ become increasingly aligned in the negative direction of a particular triplet $\left[x_{j-1} ; x_{j} ; x_{j+1}\right]$.","B, 0","B, 0"
+Fall 2017,6,e.iii,0.5,CNNs,Text,"We are going to consider two different simple convolutional networks over one dimensional (vector) inputs. Each network has a single convolutional layer with a single filter of size 3 and stride 1 . Let $\left(z_{1}, \ldots, z_{d}\right)$ be the output of this convolutional layer, i.e., $\left(z_{1}, \ldots, z_{d}\right)$ represents the feature map constructed from the input vector $\left(x_{1}, \ldots, x_{d}\right)$. For simplicity, you can think of $z_{j}$ just as a linear map $z_{j}=\left[x_{j-1} ; x_{j} ; x_{j+1}\right]^{T} w$ where $w$ are the filter parameters. Our two networks differ in terms of how the feature map values are pooled to a single output value.
+
+Network A has a single max-pooling layer with input size $d$, so that the output of the network $\hat{y}=\sigma\left(\max \left(z_{1}, \ldots, z_{d}\right)\right)$ where $\sigma(\cdot)$ is the sigmoid function.
+Network B has a single min-pooling layer with input size $d$, so that the output of the network
+$$
+\hat{y}=\sigma\left(\min \left(z_{1}, \ldots, z_{d}\right)\right)
+$$
+When the filter's output value is high it represents a positive detection of some pattern of interest. Now, suppose we are just given a single training pair $(x, y)$ where the target $y$ is binary $0 / 1$. The loss that we are minimizing is again just
+$$
+\mathrm{NLL}(y, \hat{y})=-y \log \hat{y}-(1-y) \log (1-\hat{y})
+$$
+which is minimized when $\hat{y}$ matches the target $y$. We are interested in understanding qualitatively how the filter parameters $w$ get updated in the two networks if we use simple gradient descent to minimize $\operatorname{NLL}(y, \hat{y})$. Specify whether the behavior would occur in:
+- Which network (A, B, or it doesn't matter)
+- Target $y$ (1, 0, or it doesn't matter). 
+The behavior is each update moves the filter weights $w$ in the direction of some triplet but the specific triplet keeps changing from one update to another.","B, 1","B, 1"
+Fall 2017,6,e.iv,0.5,CNNs,Text,"We are going to consider two different simple convolutional networks over one dimensional (vector) inputs. Each network has a single convolutional layer with a single filter of size 3 and stride 1 . Let $\left(z_{1}, \ldots, z_{d}\right)$ be the output of this convolutional layer, i.e., $\left(z_{1}, \ldots, z_{d}\right)$ represents the feature map constructed from the input vector $\left(x_{1}, \ldots, x_{d}\right)$. For simplicity, you can think of $z_{j}$ just as a linear map $z_{j}=\left[x_{j-1} ; x_{j} ; x_{j+1}\right]^{T} w$ where $w$ are the filter parameters. Our two networks differ in terms of how the feature map values are pooled to a single output value.
+
+Network A has a single max-pooling layer with input size $d$, so that the output of the network $\hat{y}=\sigma\left(\max \left(z_{1}, \ldots, z_{d}\right)\right)$ where $\sigma(\cdot)$ is the sigmoid function.
+Network B has a single min-pooling layer with input size $d$, so that the output of the network
+$$
+\hat{y}=\sigma\left(\min \left(z_{1}, \ldots, z_{d}\right)\right)
+$$
+When the filter's output value is high it represents a positive detection of some pattern of interest. Now, suppose we are just given a single training pair $(x, y)$ where the target $y$ is binary $0 / 1$. The loss that we are minimizing is again just
+$$
+\mathrm{NLL}(y, \hat{y})=-y \log \hat{y}-(1-y) \log (1-\hat{y})
+$$
+which is minimized when $\hat{y}$ matches the target $y$. We are interested in understanding qualitatively how the filter parameters $w$ get updated in the two networks if we use simple gradient descent to minimize $\operatorname{NLL}(y, \hat{y})$. Specify whether the behavior would occur in:
+- Which network (A, B, or it doesn't matter)
+- Target $y$ (1, 0, or it doesn't matter). 
+The behavior is Each update causes the filter weights $w$ to move in the negative direction of some triplet but the specific triplet may change from one update to next.","A, 0","A, 0"
+Fall 2017,7,a,2,Reinforcement Learning,Text,"Chris wants to use Q-learning to solve a video-game problem in which there is a ball moving on an $\mathrm{n}$ by $\mathrm{n}$ pixel screen, similar to the one we studied in class. However, instead of moving a paddle up and down along the right wall, there is a ""photon cannon"" fixed in the middle of the right-hand side, and the player is allowed to instantaneously set the angle of the cannon and to try to shoot. If the photon beam hits the ball, the ball will reflect backwards. It takes 10 time steps for the cannon to recharge after being fired, however, before it can be fired again. Our goal here is to try to understand how to apply deep Q-learning to this problem.
+The state of the system is composed of five parts:
+- Ball position x (1 .. n)
+- Ball position y (1 ... n)
+- Ball velocity x $(-1,1)$
+- Ball velocity y $(-1,0,1)$
+- Number of time steps until the cannon is ready to shoot again $(0, \ldots, 10)$
+The possible actions at each time step involve both the aim and whether to try to shoot:
+- Cannon angle in degrees $(-60,-30,0,30,60)$
+- Shoot cannon $(1,0)$
+The options for us in terms of solving the game include how we represent the states and actions and how these are mapped to Q-values. We won't worry about the exploration problem here, only about representing $Q$-values. Our learning algorithm performs gradient descent steps on the squared Bellman error with respect to the parameters in the $Q$-values. How many states and actions are there in this game?",$n^{2} * 2 * 3 * 11$ states and $5 * 2$ actions,$n^{2} * 2 * 3 * 11$ states and $5 * 2$ actions
+Fall 2017,7,b,2,Reinforcement Learning,Text,"Chris wants to use Q-learning to solve a video-game problem in which there is a ball moving on an $\mathrm{n}$ by $\mathrm{n}$ pixel screen, similar to the one we studied in class. However, instead of moving a paddle up and down along the right wall, there is a ""photon cannon"" fixed in the middle of the right-hand side, and the player is allowed to instantaneously set the angle of the cannon and to try to shoot. If the photon beam hits the ball, the ball will reflect backwards. It takes 10 time steps for the cannon to recharge after being fired, however, before it can be fired again. Our goal here is to try to understand how to apply deep Q-learning to this problem.
+The state of the system is composed of five parts:
+- Ball position x (1 .. n)
+- Ball position y (1 ... n)
+- Ball velocity x $(-1,1)$
+- Ball velocity y $(-1,0,1)$
+- Number of time steps until the cannon is ready to shoot again $(0, \ldots, 10)$
+The possible actions at each time step involve both the aim and whether to try to shoot:
+- Cannon angle in degrees $(-60,-30,0,30,60)$
+- Shoot cannon $(1,0)$
+The options for us in terms of solving the game include how we represent the states and actions and how these are mapped to Q-values. We won't worry about the exploration problem here, only about representing $Q$-values. Our learning algorithm performs gradient descent steps on the squared Bellman error with respect to the parameters in the $Q$-values. Let $S$ be the set of states, and $A$ the set of actions. Suppose we construct a simple one layer neural network to represent Q-values. The network has $|S|+|A|$ input units, no hidden units, and just one linear output unit to represent the associated $Q$-value. The pair $(s, a)$ is fed into the model by concatenating a one-hot vector for $s$ and a one-hot vector for $a$. Could this model learn to match the correct Q-values for each state-action pair? Briefly describe why/why not.","No, since the model is restricted. The value is predicted as a sum of a state-dependent and action-dependent parts without any cross-talk.","No, since the model is restricted. The value is predicted as a sum of a state-dependent and action-dependent parts without any cross-talk."
+Fall 2017,7,c,2,Reinforcement Learning,Text,"Chris wants to use Q-learning to solve a video-game problem in which there is a ball moving on an $\mathrm{n}$ by $\mathrm{n}$ pixel screen, similar to the one we studied in class. However, instead of moving a paddle up and down along the right wall, there is a ""photon cannon"" fixed in the middle of the right-hand side, and the player is allowed to instantaneously set the angle of the cannon and to try to shoot. If the photon beam hits the ball, the ball will reflect backwards. It takes 10 time steps for the cannon to recharge after being fired, however, before it can be fired again. Our goal here is to try to understand how to apply deep Q-learning to this problem.
+The state of the system is composed of five parts:
+- Ball position x (1 .. n)
+- Ball position y (1 ... n)
+- Ball velocity x $(-1,1)$
+- Ball velocity y $(-1,0,1)$
+- Number of time steps until the cannon is ready to shoot again $(0, \ldots, 10)$
+The possible actions at each time step involve both the aim and whether to try to shoot:
+- Cannon angle in degrees $(-60,-30,0,30,60)$
+- Shoot cannon $(1,0)$
+The options for us in terms of solving the game include how we represent the states and actions and how these are mapped to Q-values. We won't worry about the exploration problem here, only about representing $Q$-values. Our learning algorithm performs gradient descent steps on the squared Bellman error with respect to the parameters in the $Q$-values. Suppose we modify the network a bit by giving it $|S|$ input units and $|A|$ output units where the output units represent the Q-values $Q(s, a), a \in A$, for the state $s$ fed in as a one-hot vector. Again, we have no hidden units. Could this model match the correct Q-values? Why/why not.","Yes, it could. We can specify arbitrary outgoing weights for each input state thus can set the Q-values without restriction.","Yes, it could. We can specify arbitrary outgoing weights for each input state thus can set the Q-values without restriction."
+Fall 2017,7,d,2,Reinforcement Learning,Text,"Chris wants to use Q-learning to solve a video-game problem in which there is a ball moving on an $\mathrm{n}$ by $\mathrm{n}$ pixel screen, similar to the one we studied in class. However, instead of moving a paddle up and down along the right wall, there is a """"photon cannon"""" fixed in the middle of the right-hand side, and the player is allowed to instantaneously set the angle of the cannon and to try to shoot. If the photon beam hits the ball, the ball will reflect backwards. It takes 10 time steps for the cannon to recharge after being fired, however, before it can be fired again. Our goal here is to try to understand how to apply deep Q-learning to this problem.
+The state of the system is composed of five parts:
+- Ball position x (1 .. n)
+- Ball position y (1 ... n)
+- Ball velocity x $(-1,1)$
+- Ball velocity y $(-1,0,1)$
+- Number of time steps until the cannon is ready to shoot again $(0, \ldots, 10)$
+The possible actions at each time step involve both the aim and whether to try to shoot:
+- Cannon angle in degrees $(-60,-30,0,30,60)$
+- Shoot cannon $(1,0)$
+The options for us in terms of solving the game include how we represent the states and actions and how these are mapped to Q-values. We won't worry about the exploration problem here, only about representing $Q$-values. Our learning algorithm performs gradient descent steps on the squared Bellman error with respect to the parameters in the $Q$-values. Suppose we modify the network a bit by giving it 5 input units, m hidden units and $|A|$ output units where the output units represent the Q-values $Q(s, a), a \in A$, for the state $s$ fed in as a one-hot vector. Again, we have no hidden units. Could this model match the correct Q-values? Why/why not.",Yes we could provided that m is large enough,Yes we could provided that m is large enough
+Fall 2017,7,e,2,Reinforcement Learning,Text,"Chris wants to use Q-learning to solve a video-game problem in which there is a ball moving on an $\mathrm{n}$ by $\mathrm{n}$ pixel screen, similar to the one we studied in class. However, instead of moving a paddle up and down along the right wall, there is a """"photon cannon"""" fixed in the middle of the right-hand side, and the player is allowed to instantaneously set the angle of the cannon and to try to shoot. If the photon beam hits the ball, the ball will reflect backwards. It takes 10 time steps for the cannon to recharge after being fired, however, before it can be fired again. Our goal here is to try to understand how to apply deep Q-learning to this problem.
+The state of the system is composed of five parts:
+- Ball position x (1 .. n)
+- Ball position y (1 ... n)
+- Ball velocity x $(-1,1)$
+- Ball velocity y $(-1,0,1)$
+- Number of time steps until the cannon is ready to shoot again $(0, \ldots, 10)$
+The possible actions at each time step involve both the aim and whether to try to shoot:
+- Cannon angle in degrees $(-60,-30,0,30,60)$
+- Shoot cannon $(1,0)$
+The options for us in terms of solving the game include how we represent the states and actions and how these are mapped to Q-values. We won't worry about the exploration problem here, only about representing $Q$-values. Our learning algorithm performs gradient descent steps on the squared Bellman error with respect to the parameters in the $Q$-values.If we increase $n$ and also include many more angle gradations for the aim, so that $|S|$ and $|A|$ are very large, which of the following architectures would we prefer for repenting Q-values? Choose from: 
+A. $|S|$ input units (one-hot vector for $s),
+B. |A|$ output units, 5 input units, some $m$ hidden units, $|A|$ output units,
+C. $5+2$ input units for the five part state, two-part action, $m$ hidden units and one output unit 
+D. 5 input units, some $m$ hidden units, and two output units.","C. $5+2$ input units for the five part state, two-part action, $m$ hidden units and one output unit ","C. $5+2$ input units for the five part state, two-part action, $m$ hidden units and one output unit "
+Fall 2017,8,a,4,RNNs,Text,"Consider three RNN variants:
+1. The basic RNN architecture we studied was
+$$
+\begin{aligned}
+&s_{t}=f\left(W^{s s} s_{t-1}+W^{s x} x_{t}\right) \\
+&y_{t}=W^{o} s_{t}
+\end{aligned}
+$$
+where $W^{s s}$ is $m \times m, W^{s x}$ is $m \times d$, and $f$ is an activation function to be specified later. We omit the offset parameters for simplicity (set them to zero).
+2. Ranndy thinks the basic RNN is representationally weak, and it would be better not to decompose the state update in this way. Ranndy's proposal is to instead
+$$
+\begin{aligned}
+&s_{t}=f\left(W^{s s x} \operatorname{concat}\left(s_{t-1}, x_{t}\right)\right) \\
+&y_{t}=W^{o} s_{t}
+\end{aligned}
+$$
+where $\operatorname{concat}\left(s_{t-1}, x_{t}\right)$ is a vector of length $m+d$ obtained by concatenating $s_{t-1}$ and $x_{t}$, so $W^{s s x}$ has dimensions $m \times(m+d)$.
+3. Orenn wants to try yet another model, of the form:
+$$
+\begin{aligned}
+&s_{t}=f\left(W^{s s} s_{t-1}\right)+f\left(W^{s x} x_{t}\right) \\
+&y_{t}=W^{o} s_{t}
+\end{aligned}
+$$ Lec Surer insists on understanding these models a bit better, and how they might relate.
+(a) Select the correct claim and answer the associated question.
+(1) Claim: The three models are all equivalent when $f(z)=z$. In this case, define $W^{s s x}$
+(2) Claim: The three models are not all equivalent when $f(z)=z$. In this case, assume $m=d=1$ and provide one setting of $W^{s s x}$ in Ranndy's model such that $W^{s s}$ and $W^{s x}$ cannot be chosen to make the basic and Orenn's models the same as Ranndy's.","Claim $1 W^{s s x}=hstack\left(W^{s s}, W^{s x}\right)$","Claim $1 W^{s s x}=hstack\left(W^{s s}, W^{s x}\right)$"
+Fall 2017,8,b,3,RNNs,Image,"Consider three RNN variants:
+1. The basic RNN architecture we studied was
+$$
+\begin{aligned}
+&s_{t}=f\left(W^{s s} s_{t-1}+W^{s x} x_{t}\right) \\
+&y_{t}=W^{o} s_{t}
+\end{aligned}
+$$
+where $W^{s s}$ is $m \times m, W^{s I}$ is $m \times d$, and $f$ is an activation function to be specified later. We omit the offset parameters for simplicity (set them to zero).
+2. Ranndy thinks the basic RNN is representationally weak, and it would be better not to decompose the state update in this way. Ranndy's proposal is to instead
+$$
+\begin{aligned}
+&s_{t}=f\left(W^{s s x} \operatorname{concat}\left(s_{t-1}, x_{t}\right)\right) \\
+&y_{t}=W^{o} s_{t}
+\end{aligned}
+$$
+where concat $\left(s_{t-1}, x_{t}\right)$ is a vector of length $m+d$ obtained by concatenating $s_{t-1}$ and $x_{t}$, so $W^{\text {sss }}$ has dimensions $m \times(m+d)$.
+3. Orenn wants to try yet another model, of the form:
+$$
+\begin{aligned}
+&s_{t}=f\left(W^{s s} s_{t-1}\right)+f\left(W^{s x} x_{t}\right) \\
+&y_{t}=W^{o} s_{t}
+\end{aligned}
+$$
+Lec Surer insists on understanding these models a bit better, and how they might relate.
+
+Lec Surer thinks that something interesting happens with Orenn's model when $f(z)=$ $\tanh (z)$. Specifically, it supposedly corresponds to the architecture shown in the figure below, which includes an additional hidden layer. Specify what $W, W^{\prime}$, and $m^{\prime}$ are so that this architecture indeed corresponds to Orenn's model.
+Ignore the dimensions written on the figure above; they are backwards.
+i. $m^{\prime}$
+ii. $W$
+iii. $W^{\prime}$
+","i. $2 m$
+ii.  A block-diagonal matrix of the form
+$$
+\left[\begin{array}{cc}
+W^{s s} & 0 \\
+0 & W^{s x}
+\end{array}\right]
+$$
+iii. hstack $(I(m) ; I(m))$",
+Fall 2017,8,c,3,RNNs,Image,"Consider three RNN variants:
+1. The basic RNN architecture we studied was
+$$
+\begin{aligned}
+&s_{t}=f\left(W^{s s} s_{t-1}+W^{s x} x_{t}\right) \\
+&y_{t}=W^{o} s_{t}
+\end{aligned}
+$$
+where $W^{s s}$ is $m \times m, W^{s I}$ is $m \times d$, and $f$ is an activation function to be specified later. We omit the offset parameters for simplicity (set them to zero).
+2. Ranndy thinks the basic RNN is representationally weak, and it would be better not to decompose the state update in this way. Ranndy's proposal is to instead
+$$
+\begin{aligned}
+&s_{t}=f\left(W^{s s x} \operatorname{concat}\left(s_{t-1}, x_{t}\right)\right) \\
+&y_{t}=W^{o} s_{t}
+\end{aligned}
+$$
+where concat $\left(s_{t-1}, x_{t}\right)$ is a vector of length $m+d$ obtained by concatenating $s_{t-1}$ and $x_{t}$, so $W^{\text {sss }}$ has dimensions $m \times(m+d)$.
+3. Orenn wants to try yet another model, of the form:
+$$
+\begin{aligned}
+&s_{t}=f\left(W^{s s} s_{t-1}\right)+f\left(W^{s x} x_{t}\right) \\
+&y_{t}=W^{o} s_{t}
+\end{aligned}
+$$
+Lec Surer insists on understanding these models a bit better, and how they might relate.
+
+Assume again that $f(z)=\tanh (z)$. Suppose $s_{0}=0$ (vector) and we feed $x_{1}, \ldots, x_{n}$ as the input sequence to Orenn's model, obtaining $y_{1}, \ldots, y_{n}$ as the associated output sequence. If we change the input sequence to $-x_{1}, \ldots,-x_{n}$, which of the following is the best characterization of the resulting output sequence?
+
+The new output sequence will alternate between positive and negative values.
+The new output sequence depends on the parameters.
+The new output is just the negative of the previous output sequence
+",The new output is just the negative of the previous output sequence,
+Fall 2017,9,a.i,1,Classifiers,Text,"Here is a dataset in the form of (x, y) coordinates. P1 = (1, 1), P2 = (6, 6), P3 = (4, 6), P4 = (6, 4) and the seperator is a line at y = 3.5. What is the margin for P1 with respect to the separator?",2.5,2.5
+Fall 2017,9,a.ii,1,Classifiers,Text,"Here is a dataset in the form of (x, y) coordinates. P1 = (1, 1), P2 = (6, 6), P3 = (4, 6), P4 = (6, 4) and the seperator is a line at y = 3.5. How far is P2 from the seperator?",2.5,2.5
+Fall 2017,9,a.iii,1,Classifiers,Text,"Here is a dataset in the form of (x, y) coordinates. P1 = (1, 1), P2 = (6, 6), P3 = (4, 6), P4 = (6, 4) and the seperator is a line at y = 3.5. What is the margin for P3 with respect to the separator?",2.5,2.5
+Fall 2017,9,a.iv,1,Classifiers,Text,"Here is a dataset in the form of (x, y) coordinates. P1 = (1, 1), P2 = (6, 6), P3 = (4, 6), P4 = (6, 4) and the seperator is a line at y = 3.5. What is the margin for P4 with respect to the separator?",0.5,0.5
+Fall 2017,9,b,2,Classifiers,Text,"Here is a dataset in the form of (x, y) coordinates. P1 = (1, 1), P2 = (6, 6), P3 = (4, 6), P4 = (6, 4) and the seperator is a line at y = 3.5. Let our objective be the regularized average hinge loss with respect to $\gamma_{\text {ref }}$ :
+$$
+J\left(\theta, \theta_{0}, \gamma_{\text {ref }}\right)=\frac{1}{n} \sum_{i=1}^{n} L_{H}\left(\frac{\gamma\left(x, y, \theta, \theta_{0}\right)}{\gamma_{\text {ref }}}\right)+\lambda \frac{1}{\gamma_{\text {ref }}^{2}}
+$$
+If $\lambda=0$, and we're still referring to the separator at y=3.5, what range of values of $\gamma_{\text {ref }}$ achieves the optimal value of $J$?",$\gamma_{\text {ref }}<0.5$,$\gamma_{\text {ref }}<0.5$
+Fall 2017,9,c,2,Classifiers,Text,"Here is a dataset in the form of (x, y) coordinates. P1 = (1, 1), P2 = (6, 6), P3 = (4, 6), P4 = (6, 4) and the seperator is a line at y = 3.5. Let our objective be the regularized average hinge loss with respect to $\gamma_{\text {ref }}$ :
+$$
+J\left(\theta, \theta_{0}, \gamma_{\text {ref }}\right)=\frac{1}{n} \sum_{i=1}^{n} L_{H}\left(\frac{\gamma\left(x, y, \theta, \theta_{0}\right)}{\gamma_{\text {ref }}}\right)+\lambda \frac{1}{\gamma_{\text {ref }}^{2}}
+$$
+Now let $\lambda=\epsilon$, a very small value, and consider that same separator. What value of $\gamma_{\text {ref }}$ achieves the closest to optimal value of $J$? Choose from the following list (-10, -1, -.5, 0, .5, 1, 10)",0.5,0.5
+Fall 2017,9,d,2,Classifiers,Text,"Here is a dataset in the form of (x, y) coordinates. P1 = (1, 1), P2 = (6, 6), P3 = (4, 6), P4 = (6, 4) and the seperator is a line at y = 3.5. Let our objective be the regularized average hinge loss with respect to $\gamma_{\text {ref }}$ :
+$$
+J\left(\theta, \theta_{0}, \gamma_{\text {ref }}\right)=\frac{1}{n} \sum_{i=1}^{n} L_{H}\left(\frac{\gamma\left(x, y, \theta, \theta_{0}\right)}{\gamma_{\text {ref }}}\right)+\lambda \frac{1}{\gamma_{\text {ref }}^{2}}
+$$
+When $\lambda=\epsilon$, and using the maximum margin separator, supply a value of $\gamma_{\text {ref }}$ that approximately minimizes $J$.",\gamma_{\text {ref }}=2 \sqrt{2},\gamma_{\text {ref }}=2 \sqrt{2}
+Fall 2017,9,e,2,Classifiers,Text,"Here is a dataset in the form of (x, y) coordinates. P1 = (1, 1), P2 = (6, 6), P3 = (4, 6), P4 = (6, 4) and the seperator is a line at y = 3.5. Let our objective be the regularized average hinge loss with respect to $\gamma_{\text {ref }}$ :
+$$
+J\left(\theta, \theta_{0}, \gamma_{\text {ref }}\right)=\frac{1}{n} \sum_{i=1}^{n} L_{H}\left(\frac{\gamma\left(x, y, \theta, \theta_{0}\right)}{\gamma_{\text {ref }}}\right)+\lambda \frac{1}{\gamma_{\text {ref }}^{2}}
+$$
+Why might we prefer a maximum-margin separator over the one originally provided?",We expect it will generalize better because it is not as dependent on the data points (a small variation in the data probably won't change the result too much).,We expect it will generalize better because it is not as dependent on the data points (a small variation in the data probably won't change the result too much).
+Fall 2017,10,a.i,2,Classifiers,Text,"Consider the following data in (coordinate, sign) format: ((-4, 4),positive), ((4, -4),positive), ((-1, -1),-1) , ((1, 1),-1). Clearly, the points are not linearly separable, so we will try three alternative approaches to solving the problem. Approach 1: Nested linear classifiers Let $w=\left[\begin{array}{l}+1 \\ -1\end{array}\right]$ and $a=\left[\begin{array}{l}a_{1} \\ a_{2}\end{array}\right]$ where $$ \begin{aligned} a_{1} &=\operatorname{sign}\left(w^{T} x+4\right) \\ a_{2} &=\operatorname{sign}\left(w^{T} x-4\right) \\ y_{\text {predicted }} &=\operatorname{sign}\left(v_{1} a_{1}+v_{2} a_{2}+v_{0}\right) \end{aligned} $$ (a) Select the value of v1 so that the nested classifier correctly predicts the value in the data set.",-1,-1
+Fall 2017,10,a.ii,1,Classifiers,Text,"Consider the following data in (coordinate, sign) format: ((-4, 4),positive), ((4, -4),positive), ((-1, -1),-1) , ((1, 1),-1). Clearly, the points are not linearly separable, so we will try three alternative approaches to solving the problem. Approach 1: Nested linear classifiers Let $w=\left[\begin{array}{l}+1 \\ -1\end{array}\right]$ and $a=\left[\begin{array}{l}a_{1} \\ a_{2}\end{array}\right]$ where $$ \begin{aligned} a_{1} &=\operatorname{sign}\left(w^{T} x+4\right) \\ a_{2} &=\operatorname{sign}\left(w^{T} x-4\right) \\ y_{\text {predicted }} &=\operatorname{sign}\left(v_{1} a_{1}+v_{2} a_{2}+v_{0}\right) \end{aligned} $$ (a) Select the value of v2 so that the nested classifier correctly predicts the value in the data set.",1,1
+Fall 2017,10,a.iii,1,Classifiers,Text,"Consider the following data in (coordinate, sign) format: ((-4, 4),positive), ((4, -4),positive), ((-1, -1),-1) , ((1, 1),-1). Clearly, the points are not linearly separable, so we will try three alternative approaches to solving the problem. Approach 1: Nested linear classifiers Let $w=\left[\begin{array}{l}+1 \\ -1\end{array}\right]$ and $a=\left[\begin{array}{l}a_{1} \\ a_{2}\end{array}\right]$ where $$ \begin{aligned} a_{1} &=\operatorname{sign}\left(w^{T} x+4\right) \\ a_{2} &=\operatorname{sign}\left(w^{T} x-4\right) \\ y_{\text {predicted }} &=\operatorname{sign}\left(v_{1} a_{1}+v_{2} a_{2}+v_{0}\right) \end{aligned} $$ (a) Select the value of v0 so that the nested classifier correctly predicts the value in the data set.",0.5,0.5
+Fall 2017,10,b.i,1,Classifiers,Text,"Consider the following data in (coordinate, sign) format: ((-4, 4),positive), ((4, -4),positive), ((-1, -1),-1) , ((1, 1),-1). Clearly, the points are not linearly separable, so we will try three alternative approaches to solving the problem. Suppose $K\left(x, x^{\prime}\right)=e^{-\left\|x-x^{\prime}\right\|^{2}}$ and for the points in our data set, $K\left(p_{i}, p_{j}\right)=\mathbf{K}_{i j}$ where the matrix $$ \mathbf{K} \approx\left[\begin{array}{cccc} 1 & \exp (-15) & \exp (-15) & \exp (-56) \\ \exp (-15) & 1 & \exp (-4) & \exp (-15) \\ \exp (-15) & \exp (-4) & 1 & \exp (-15) \\ \exp (-56) & \exp (-15) & \exp (-15) & 1 \end{array}\right] $$ (b) Now we will use the kernel perceptron algorithm to find the $\alpha$ values in the classifer, which has the form $$ y_{\text {predicted }}=\operatorname{sign}\left(\sum_{i=1}^{4} \alpha_{i} y^{(i)} K\left(x^{(i)}, x\right)\right) $$ Assuming that we go through the points in order $p 1, p 2, p 3, p 4$ as many times as necessary to correctly classify the data, what is the value of $\alpha_{1}?",1,1
+Fall 2017,10,b.ii,1,Classifiers,Text,"Consider the following data in (coordinate, sign) format: ((-4, 4),positive), ((4, -4),positive), ((-1, -1),-1) , ((1, 1),-1). Clearly, the points are not linearly separable, so we will try three alternative approaches to solving the problem. Suppose $K\left(x, x^{\prime}\right)=e^{-\left\|x-x^{\prime}\right\|^{2}}$ and for the points in our data set, $K\left(p_{i}, p_{j}\right)=\mathbf{K}_{i j}$ where the matrix $$ \mathbf{K} \approx\left[\begin{array}{cccc} 1 & \exp (-15) & \exp (-15) & \exp (-56) \\ \exp (-15) & 1 & \exp (-4) & \exp (-15) \\ \exp (-15) & \exp (-4) & 1 & \exp (-15) \\ \exp (-56) & \exp (-15) & \exp (-15) & 1 \end{array}\right] $$ (b) Now we will use the kernel perceptron algorithm to find the $\alpha$ values in the classifer, which has the form $$ y_{\text {predicted }}=\operatorname{sign}\left(\sum_{i=1}^{4} \alpha_{i} y^{(i)} K\left(x^{(i)}, x\right)\right) $$ Assuming that we go through the points in order $p 1, p 2, p 3, p 4$ as many times as necessary to correctly classify the data, what is the value of $\alpha_{2}?",1,1
+Fall 2017,10,b.iii,1,Classifiers,Text,"Consider the following data in (coordinate, sign) format: ((-4, 4),positive), ((4, -4),positive), ((-1, -1),-1) , ((1, 1),-1). Clearly, the points are not linearly separable, so we will try three alternative approaches to solving the problem. Suppose $K\left(x, x^{\prime}\right)=e^{-\left\|x-x^{\prime}\right\|^{2}}$ and for the points in our data set, $K\left(p_{i}, p_{j}\right)=\mathbf{K}_{i j}$ where the matrix $$ \mathbf{K} \approx\left[\begin{array}{cccc} 1 & \exp (-15) & \exp (-15) & \exp (-56) \\ \exp (-15) & 1 & \exp (-4) & \exp (-15) \\ \exp (-15) & \exp (-4) & 1 & \exp (-15) \\ \exp (-56) & \exp (-15) & \exp (-15) & 1 \end{array}\right] $$ (b) Now we will use the kernel perceptron algorithm to find the $\alpha$ values in the classifer, which has the form $$ y_{\text {predicted }}=\operatorname{sign}\left(\sum_{i=1}^{4} \alpha_{i} y^{(i)} K\left(x^{(i)}, x\right)\right) $$ Assuming that we go through the points in order $p 1, p 2, p 3, p 4$ as many times as necessary to correctly classify the data, what is the value of $\alpha_{3}?",0,0
+Fall 2017,10,b.iv,1,Classifiers,Text,"Consider the following data in (coordinate, sign) format: ((-4, 4),positive), ((4, -4),positive), ((-1, -1),-1) , ((1, 1),-1). Clearly, the points are not linearly separable, so we will try three alternative approaches to solving the problem. Suppose $K\left(x, x^{\prime}\right)=e^{-\left\|x-x^{\prime}\right\|^{2}}$ and for the points in our data set, $K\left(p_{i}, p_{j}\right)=\mathbf{K}_{i j}$ where the matrix $$ \mathbf{K} \approx\left[\begin{array}{cccc} 1 & \exp (-15) & \exp (-15) & \exp (-56) \\ \exp (-15) & 1 & \exp (-4) & \exp (-15) \\ \exp (-15) & \exp (-4) & 1 & \exp (-15) \\ \exp (-56) & \exp (-15) & \exp (-15) & 1 \end{array}\right] $$ (b) Now we will use the kernel perceptron algorithm to find the $\alpha$ values in the classifer, which has the form $$ y_{\text {predicted }}=\operatorname{sign}\left(\sum_{i=1}^{4} \alpha_{i} y^{(i)} K\left(x^{(i)}, x\right)\right) $$ Assuming that we go through the points in order $p 1, p 2, p 3, p 4$ as many times as necessary to correctly classify the data, what is the value of $\alpha_{4}?",1,1
+Fall 2017,10,c,4,Classifiers,Image,"Consider the following data. Clearly, the points are not linearly separable, so we will try three alternative approaches to solving the problem.
+Approach 1: Nested linear classifiers
+Let $w=\left[\begin{array}{l}+1 \\ -1\end{array}\right]$ and $a=\left[\begin{array}{l}a_{1} \\ a_{2}\end{array}\right]$ where
+$$
+\begin{aligned}
+a_{1} &=\operatorname{sign}\left(w^{T} x+4\right) \\
+a_{2} &=\operatorname{sign}\left(w^{T} x-4\right) \\
+y_{\text {predicted }} &=\operatorname{sign}\left(v_{1} a_{1}+v_{2} a_{2}+v_{0}\right)
+\end{aligned}
+$$
+
+We can classify the points correctly if $f$ is tanh. Assume that
+$w_{11}=w_{12}=+1$ and
+$w_{21}=w_{22}=-1$.
+Provide the rest of the weights so this network will correctly classify the given points.
+i. $v_{1}$
+ii. $v_{2} 
+iii. $v_{0}$
+iv. $w_{01}$
+V. $w_{02}$","i. -1
+ii. 1
+iii. .5
+iv. 4
+v. -4",
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,0
+,,,,,,,,13
+,,,,,,,,0
+,,,,,,,,1

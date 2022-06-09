@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2019",
+       "Question Number": "4",
+       "Part": "b",
+       "Points": 2.0,
+       "Topic": "CNNs",
+       "Type": "Text",
+       "Question": "Conne von Lucien has many pictures from her trip to Flatland and wants to determine which ones have her in the image. All of the pictures are arrays of size 4x1, with array values of either 0 or 1. Conne looks like the vector [1,0,1] in one dimension, so if a picture contains the pattern [1,0,1] anywhere inside it, it should be classified as a positive example, otherwise as a negative example.\nFortunately, you learned about CNNs and have helped Conne by designing the following network architecture with three layers:\n1. A convolutional layer with one filter W that is size 3x1, and stride 1, and a single bias w_0 (where the output pixel corresponds to the input pixel that the filter is centered on). Input values of 0 should be assumed beyond the boundaries of the input.\n2. A max-pooling layer P with size 2x1 and stride 2.\n3. A fully connected layer $\\sigma(\\cdot)$ with a single output unit having a sigmoidal activation function.\nWhat loss function is most appropriate here, especially if you want your neural network package to be useful with few modifications, to other Flatland visitors (who may appear as longer vectors)? \nA. NLL loss\nB. Hinge loss\nC. Quadratic loss",
+       "Solution": "NLL loss"
+}

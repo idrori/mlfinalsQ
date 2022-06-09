@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2018",
+       "Question Number": "7",
+       "Part": "a",
+       "Points": 4.0,
+       "Topic": "Neural Networks",
+       "Type": "Text",
+       "Question": "Consider a recommender system that has $n$ users and $m$ movies, with sparse ratings available for each user and movie. Our typical strategy is to look for matrices $U$ and $V$ such that $U V^{T}$ is a rank $k$ approximation to the true matrix at the locations it has been observed. M.A. Trix suggests a new decomposition of the solution matrix $X$ into $U W V^{T}$ where $W$ is a $k \\times k$ matrix, and $U$ and $V$ are as in the original approach. Is M.A. Trix's approach able to represent: A richer class of models than the original? A smaller class? $\\sqrt{\\text { The same class? }}$ Choose 1 and provide a short concrete justification of your answer. ",
+       "Solution": "The same class. You could just multiply $W$ directly into $U$ or $V^{T}$ and end up with the original model."
+}

@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2021",
+       "Question Number": "8",
+       "Part": "b.i",
+       "Points": 0.5,
+       "Topic": "CNNs",
+       "Type": "Text",
+       "Question": "When performing binary classification what activation function should one use in the final output layer?",
+       "Solution": "sigmoid"
+}

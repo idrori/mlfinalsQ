@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2019",
+       "Question Number": "4",
+       "Part": "f",
+       "Points": 1.5,
+       "Topic": "Neural Networks",
+       "Type": "Text",
+       "Question": "Otto N. Coder is exploring different autoencoder architectures. Consider the following autoencoder with input $x \\in \\mathbb{R}^{d}$ and output $y^{\\text {pred }} \\in \\mathbb{R}^{d}$. The autoencoder has one hidden layer with $m$ hidden units: $z^{(1)}, a^{(1)} \\in \\mathbb{R}^{m}$. Assume $x, z^{(2)}$, and $y^{\\text {pred }}$ have dimensions $d \\times 1$. Also let $z^{(1)}$ and $a^{(1)}$ have dimensions $m \\times 1$. \nOtto trains the autoencoder with back-propagation. The loss for a given datapoint $x, y$ is:\n$$\nJ(x, y)=\\frac{1}{2}\\left\\|y^{\\text {pred }}-y\\right\\|^{2}=\\frac{1}{2}\\left(y^{\\text {pred }}-y\\right)^{T}\\left(y^{\\text {pred }}-y\\right)\n$$\nCompute the following intermediate partial derivatives. For the following questions, write your answer in terms of $x, y, y^{p r e d}, W^{(1)}, b^{(1)}, W^{(2)}, b^{(2)}, f^{(1)}, f^{(2)}$ and any previously computed or provided partial derivative. Also note that:\n1. Let $\\partial f^{(1)} / \\partial z^{(1)}$ be an $m \\times 1$ matrix, provided to you.\n2. Let $\\partial f^{(2)} / \\partial z^{(2)}$ be a $d \\times 1$ matrix, provided to you.\n3. If $A x=y$ where $A$ is a $m \\times n$ matrix and $x$ is $n \\times 1$ and $y$ is $m \\times 1$, then let $\\partial y / \\partial A=x$.\n4. In your answers below, we will assume multiplications are matrix multiplication; to indicate element-wise multiplication, use the symbol *.\nOtto's friend Bigsby believes that bigger is better. He takes a look at Otto's neural network and tells Otto that he should make the number of hidden units $m$ in the hidden layer very large: $m=10 d$. (Recall that $z^{(1)}$ has dimensions $m \\times 1$.) Is Bigsby correct? What would you expect to see with training and test accuracy using Bigsby's approach?",
+       "Solution": "No; training accuracy might be high, but this would likely be due to overfitting and lead to worse test accuracy."
+}

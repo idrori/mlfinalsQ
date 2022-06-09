@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2021",
+       "Question Number": "8",
+       "Part": "d.iii",
+       "Points": 0.25,
+       "Topic": "CNNs",
+       "Type": "Text",
+       "Question": "w is the weights for classifier network. What are dimensions of w for k-class classification?",
+       "Solution": "w = [1, k]"
+}

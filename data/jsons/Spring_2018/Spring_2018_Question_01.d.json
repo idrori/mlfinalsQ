@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2018",
+       "Question Number": "1",
+       "Part": "d",
+       "Points": 4.0,
+       "Topic": "Classifiers",
+       "Type": "Text",
+       "Question": "In this problem, we will consider two-dimensional input data vectors $x=\\left[x_{1}, x_{2}\\right]^{T}$. We will explore the impact of a feature transformation on various learning methods. We will be using the feature transformation $$ \\phi(x)=\\left[1, x_{1}, x_{2}, x_{1} x_{2}, x_{1}^{2}, x_{2}^{2}\\right]^{T} $$ Consider the following $2 \\mathrm{D}$ data sets: Classic XOR: positive: $(0,1),(1,0)$ and negative: $(0,0),(1,1)$. Signed XOR: positive: $(-1,1),(1,-1)$ and negative: $(-1,-1),(1,1)$  For the dataset indicated below, could a one-hidden-layer neural network with the entries in $\\phi(x)$ as inputs, a layer of up to four relu units and a final tanh output unit be trained to separate the data set? If yes, show the network with weights, including offsets if any. If no, explain briefly why not. Make sure that the prediction has the correct sign. The network is specified as follows: $$ \\begin{aligned} &z=W^{T} \\phi(x)+W_{0} \\\\ &o=\\tanh \\left(V^{T} \\operatorname{relu}(z)+V_{0}\\right) \\end{aligned} $$ Assuming you use $k \\leq 4$ hidden units, $W$ is $6 \\times k, W_{0}$ is $k \\times 1$ and $V$ is $k \\times 1$ and $V_{0}$ is $1 \\times 1$. $$ \\phi(x)=\\left[1, x_{1}, x_{2}, x_{1} x_{2}, x_{1}^{2}, x_{2}^{2}\\right]^{T} $$ Signed XOR: positive: $(-1,1),(1,-1)$ and negative: $(-1,-1),(1,1)$",
+       "Solution": "Yes"
+}

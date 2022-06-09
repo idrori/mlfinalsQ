@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2021",
+       "Question Number": "8",
+       "Part": "ci",
+       "Points": 0.5,
+       "Topic": "CNNs",
+       "Type": "Text",
+       "Question": "If Rec wants to allow for more than two classes when performing classification, which activation function should they use in the final output layer?",
+       "Solution": "softmax"
+}

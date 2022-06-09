@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2021",
+       "Question Number": "7",
+       "Part": "d.iv",
+       "Points": 1.0,
+       "Topic": "Neural Networks",
+       "Type": "Text",
+       "Question": "A neural network is given as Z1 = X * W1, A1 = f1(Z1), Z2 = W2 * A1, \\hat{y} = f2(Z2). We now use back-propagation to update the weights during each iteration. Assume that we only have one data point (X, y) available to use, and the stepsize\nparameter is 0.01. Assume $X = [1, 1, 1, 1]^T, y = [1]$. Further assume that we start off with $W^1$ as a matrix of all ones. \\textbf{$W^2 = [0, 1, 0]^T$}. How many components of $W^1$ will get updated (i.e. have their value changed) after one iteration of backprop?",
+       "Solution": "4 components"
+}

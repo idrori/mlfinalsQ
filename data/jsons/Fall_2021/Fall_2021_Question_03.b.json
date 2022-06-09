@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2021",
+       "Question Number": "3",
+       "Part": "b",
+       "Points": 2.0,
+       "Topic": "Decision Trees",
+       "Type": "Image",
+       "Question": "We seek to learn a classifier on the data set shown on the left with 13 data points labeled $+1$ or $-1$. For your convenience, we include some helpful calculations in the table to the right. \nWe now learn a depth-2 decision tree, with min_samples_split=2. We give you a partially completed tree below, where the first split is $x_{1} \\geq 3$. Complete the rest of the tree by filling in the boxes with the splits on the second level and the classifications (either $+1$ or $-1$ ) at the leafs. Use the entropy criterion to choose the splits, and leave empty any boxes that are unused. As a reminder, min_samples_split is the minimum number of data points required to split an internal node.",
+       "Solution": "yes"
+}

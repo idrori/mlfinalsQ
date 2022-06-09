@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2019",
+       "Question Number": "3",
+       "Part": "a",
+       "Points": 2.0,
+       "Topic": "Regression",
+       "Type": "Text",
+       "Question": "Mitch Mitdiddle has kept track of ratings of three items from three different users\nof his new e-commerce website. These items are essential, and so each user has purchased and rated all three of the items. However, Mitch has lost one of the ratings, r: The (almost) complete ratings matrix is here:\n$$\nY=\\left[\\begin{array}{ccc}\n6 & 8 & 10 \\\\\n9 & 12 & r \\\\\n3 & 4 & 5\n\\end{array}\\right]\n$$\nNote, users $a$ and items $i$ are indexed from 1 , i.e., the first row of $Y$ corresponds to user $1(a=1)$, and the first column of $Y$ corresponds to item $1(i=1)$.\nTreating $r$ as a missing value, is there a rank-1 representation of $Y$ as $U V^{T}$ (i.e., such that $U V^{T}$ produces a matrix that perfectly matches the non-missing elements of $\\left.Y\\right)$ ? If yes, provide matrices $U$ and $V$ of shape $3 \\times 1$ such that $Y=U V^{T}$. If no, explain why not.\n",
+       "Solution": "U = [2; 3; 1], V = [3; 4; 5]. Other solutions exist if student scales $U$ by $s$ and $V$ by 1/s."
+}

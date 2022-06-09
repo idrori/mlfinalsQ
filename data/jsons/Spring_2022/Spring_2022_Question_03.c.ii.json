@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2022",
+       "Question Number": "3",
+       "Part": "c.ii",
+       "Points": 2.0,
+       "Topic": "Classifiers",
+       "Type": "Text",
+       "Question": "Consider the following data: Positive = (-4, 4), (4, -4), Negative = (-1, 1), (1, -1). Clearly, the points are not linearly separable, so we will try three alternative approaches to solving the problem. Let $w=\\left[\\begin{array}{l}+1 \\\\ -1\\end{array}\\right]$ and $$ \\begin{aligned} a_{1} &=\\operatorname{sign}\\left(w^{T} x+4\\right) \\\\ a_{2} &=\\operatorname{sign}\\left(w^{T} x-4\\right) \\\\ h\\left(x ; v_{0}, v_{1}, v_{2}\\right) &=\\operatorname{sign}\\left(v_{1} a_{1}+v_{2} a_{2}+v_{0}\\right) \\end{aligned} $$ where $$ \\operatorname{sign}(x)= \\begin{cases}+1 & \\text { if } x>0 \\\\ -1 & \\text { otherwise }\\end{cases} $$ We'll define a new feature transformation $\\phi$ that maps a point $x \\in \\mathbb{R}^{2}$ into a four-dimensional vector: $$ (K(x,(-4,4)), K(x,(-1,-1)), K(x,(1,1)), K(x,(4,-4))) $$ where $K$ is a function of two points: $K\\left(x, x^{\\prime}\\right)=e^{-\\left\\|x-x^{\\prime}\\right\\|^{2}}$. Intuitively, feature $i$ of $\\phi(x)$ has value 1 if $x$ is equal to point $p_{i}$ and its value decreases as $x$ moves away from $p_{i}$. (c) We find a classifier in the transformed space with parameters $\\theta=(1,-1,-1,1)$ $$ h(x ; \\theta)=\\operatorname{sign}\\left(\\theta^{T} \\phi(x)\\right) $$ What prediction does it make for point $(0,0)$?",
+       "Solution": "-1"
+}

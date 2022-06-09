@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2021",
+       "Question Number": "2",
+       "Part": "e",
+       "Points": 1.0,
+       "Topic": "Clustering",
+       "Type": "Image",
+       "Question": "Assume that the number of clusters $k=2$ for all of the following questions. \nAccording to the $k$-means objective of the learned clusters, which initialization was better?",
+       "Solution": "$\\sqrt{\\text { Initialization (a) } \\quad \\text { Initialization (c) }$"
+}

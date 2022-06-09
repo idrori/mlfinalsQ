@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2021",
+       "Question Number": "2",
+       "Part": "a",
+       "Points": 2.0,
+       "Topic": "Clustering",
+       "Type": "Image",
+       "Question": "Assume that the number of clusters $k=2$ for all of the following questions. \nWalk through each step of the $k$-means algorithm, beginning with the initialization shown in the plot in the top left of the box below. Dots show the observed data. In each plot (go left to right, top to down), mark with two ' $x$ ' symbols where the cluster centers are in that iteration of $k$-means. These are already shown in the initial state. Once the $k$-means algorithm has converged, you can leave all subsequent plots unmarked.",
+       "Solution": "Image filling"
+}

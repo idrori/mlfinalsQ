@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2021",
+       "Question Number": "1",
+       "Part": "c.ii",
+       "Points": 0.333333333,
+       "Topic": "Neural Networks",
+       "Type": "Text",
+       "Question": "Mac O\u2019Larnin is considering selling an app on Frugal Play. You have a friend with inside info at Frugal, and they\u2019re able to share data on how previous apps have performed on the store. Mac decides that he will learn a neural network with no hidden layer (i.e., consisting only of the output layer). He needs help in figuring out the precise formulation for machine learning.\nMac has data on three other properties: whether an app was featured on the front page, whether it got a favorable review on the Coolest Apps Evar web site, and whether Orange Computer offered to pay to port the app to their site. He would like to train a new neural network to predict these three properties. For this new prediction task, what should Mac choose for the activation function in the output layer? Choose from linear, ReLU, sigmoid or softmax.",
+       "Solution": "Sigmoid"
+}

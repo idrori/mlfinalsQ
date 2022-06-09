@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2021",
+       "Question Number": "4",
+       "Part": "e",
+       "Points": 2.0,
+       "Topic": "Logistic Regression",
+       "Type": "Text",
+       "Question": "It is common in classification problems for the cost of a false positive (predicting positive when the true answer is negative) to be different from the cost of a false negative (predicting negative when the true answer is positive). This might happen, for example, when the task is to predict the presence of a serious disease.\nLet\u2019s say that the cost of a correct classification is 0, the cost of a false positive is 1, and the\ncost of a false negative (that is, you predict 0 when the correct answer was +1) is \u03b1. Recall that the usual logistic regression loss is: \\begin{equation*} \n\\mathcal{L}_\\text{nll}(g, y) = \n-\\left(y \\cdot \\log g + (1 - y)\\cdot\\log (1 -\n g)\\right) \\;\\;.\n\\end{equation*}\nJun proposes that we can find a classifier that optimizes the classification cost without changing our logistic regression loss function, by rebalancing the training data, that is, adding multiple copies of each of the points in one of the classes. Would Jun\u2019s approach result in a classifier that optimizes the classification cost when using the Perceptron algorithm when the data are linearly separable? Explain briefly why or why not.\n",
+       "Solution": "For the separable case, repeating existing data points will keep the dataset\nseparable (for the perceptron). The classification error should remain at 0. This should\nbe similar to Jun\u2019s approach."
+}

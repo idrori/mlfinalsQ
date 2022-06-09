@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2018",
+       "Question Number": "7",
+       "Part": "b.i",
+       "Points": 1.0,
+       "Topic": "Neural Networks",
+       "Type": "Text",
+       "Question": "Consider a recommender system that has $n$ users and $m$ movies, with sparse ratings available for each user and movie. Our typical strategy is to look for matrices $U$ and $V$ such that $U V^{T}$ is a rank $k$ approximation to the true matrix at the locations it has been observed. Otto N. Coder thinks there's a whole different and interesting way to approach this problem. Consider a neural network with two layers of weights and tanh activation functions: $$ \\begin{aligned} a &=\\tanh \\left(W^{a T} x\\right) \\\\ x^{\\prime} &=\\tanh \\left(W^{b^{T}} a\\right) \\end{aligned} $$ where $x$ is a $m \\times 1$ vector representing a single user's movie-watching experience. We will assume just binary ratings ( $+1$ means the user liked the movie and $-1$ that they did not; a value of 0 indicates that the user has not yet rated the movie). The vector $a$ is $k \\times 1$ where $k$ is significantly less than $m$. We can make a data-set with $n$ such vectors, one for each user, and then train this network as an \"auto-encoder\", which takes in an $x$ vector and attempts to recreate it as its output, but which is forced to go through a much smaller representation. To train this network, we would use ordinary supervised training, but with pairs $(x, x)$ with one $x$ vector for each user in the training data, used as both the input and the desired output of the network.\n\nThe loss function $L\\left(x^{\\prime}, x\\right)$ where $x$ is the true output vector and $x^{\\prime}$ is the prediction, would be\n$$\nL\\left(x^{\\prime}, x\\right)=\\sum_{j=1}^{m} \\begin{cases}0 & \\text { if } x_{j}=0 \\\\ \\left(x_{j}-x_{j}^{\\prime}\\right)^{2} & \\text { otherwise }\\end{cases}\n$$\nWhat is $L\\left(x^{\\prime}, x\\right)$ if this user has never watched any movies?",
+       "Solution": "0"
+}

@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2021",
+       "Question Number": "1",
+       "Part": "a.v",
+       "Points": 0.4,
+       "Topic": "Features",
+       "Type": "Text",
+       "Question": "Mac O\u2019Larnin is considering selling an app on Frugal Play. You have a friend with inside info at Frugal, and they\u2019re able to share data on how previous apps have performed on the store. Mac decides that he will learn a neural network with no hidden layer (i.e., consisting only of the output layer). He needs help in figuring out the precise formulation for machine learning.\nWhat is the best way to encode the app characteristic 'Does it have in-game advertising (True, False)' as a feature for an input to the neural network? Choose from among the following: multiple unary features (one-hot encoding), multiple binary features (thermometer encoding), an integer or real-valued feature. Also give the exact function that maps each input to its corresponding feature(s).",
+       "Solution": "Single binary feature, True: 1, False: 0. We also accepted a True/False encoding since Python correctly does arithmetic with it.\n"
+}

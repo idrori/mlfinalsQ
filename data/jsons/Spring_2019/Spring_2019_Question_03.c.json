@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2019",
+       "Question Number": "3",
+       "Part": "c",
+       "Points": 1.5,
+       "Topic": "MDPs",
+       "Type": "Text",
+       "Question": "Tic-tac-toe is a paper-and-pencil game for two players, X and O, who take turns\nmarking the spaces in a 3\u00d73 grid. The player who succeeds in placing three of their marks sequentially in a horizontal, vertical, or diagonal row wins the game. In this question, we'll consider a solitaire version of tic-tac-toe, in which we assume:\n\u2022 We are the X player;\n\u2022 The O player is a fi\fxed (but possibly stochastic) algorithm;\n\u2022 The initial state of the board is empty, and X has the \ffirst move;\n\u2022 We can select any of the nine squares on our turn;\n\u2022 We don't know the strategy of the O player or the reward function used by O.\nWe place an X in an empty square, then an O appears in some other square, and then it's our turn to play again. We receive a +1 reward for getting three X's in a row, reward -1 if there are three O's in a row, and reward 0 otherwise. If we select a square that already has an X or an O in it, nothing changes and it's still our turn.\nWe can model this problem as a Markov decision process in several different ways. Here are some possible choices for the state space.\n\u2022 Jody suggests letting the state space be all possible 3 x 3 grids in which each square contains one of the following: a space, an O, and an X.\n\u2022 Dana suggests using all possible 3 x 3 grids in which each square contains one of the three options (a space, an O, and an X), and there is an equal number of O's and X's.\n\u2022 Chris suggests using all 3 x 3 tic-tac-toe game grids which appear in games where the players both employ optimal strategies.\nWhat is the action space of the MDP with Dana's state space definition?",
+       "Solution": "Selection of one of the 9 squares."
+}

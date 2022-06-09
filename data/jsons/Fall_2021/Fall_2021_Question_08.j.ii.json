@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2021",
+       "Question Number": "8",
+       "Part": "j.ii",
+       "Points": 0.5,
+       "Topic": "CNNs",
+       "Type": "Text",
+       "Question": "Using \u2202L/\u2202b = (g \u2212 y), z = conv2d(x , fcoef , padding =0 , stride =1), a = ReLU( z )\na_sum = z1.sum( dim = -1).sum( dim = -1), z2 = w.T @ a_sum + b, write an expression for gradient of the loss with respect to b of the output layer when the loss is negative log likelihood of predicted output g and actual output y? You may express your answers in terms of a_sum.",
+       "Solution": "dl/db = z1_sum(g-y)"
+}

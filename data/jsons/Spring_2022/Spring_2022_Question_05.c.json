@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2022",
+       "Question Number": "5",
+       "Part": "c",
+       "Points": 3.0,
+       "Topic": "Features",
+       "Type": "Text",
+       "Question": "You are hired by an event-planning company to build some machine-learning predictors. One of them, for predicting the number of attendees of a concert, takes as input x, a vector of aspects of the event (day of the week, start time, city size, music genre (classical, folk, rock, pop, rap), number of attendees at last concert, if known). Cody decides to use a loss function of the following form\n $$\n \\mathcal{L}_{\\text {cody }}(g, a)= \\begin{cases}\\lambda(g-a)^{2} & \\text { if } g>a \\\\ (g-a)^{2} & \\text { otherwise }\\end{cases}\n $$\n where $g$ is the guessed value and $a$ is the actual value, and $\\lambda$ is an adjustable parameter. Jody decides to use a loss function of the following form\n $$\n \\mathcal{L}_{\\text {cody }}(g, a)= \\begin{cases}\\lambda_1(g-a)^{2} & \\text { if } g>a \\\\ \\lambda_2(g-a)^{2} & \\text { otherwise }\\end{cases}\n $$\n where $g$ is the guessed value and $a$ is the actual value, and $\\lambda$ is an adjustable parameter. Is Jody\u2019s loss function actually able to capture a larger class of losses?",
+       "Solution": "No"
+}

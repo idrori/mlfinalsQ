@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2019",
+       "Question Number": "5",
+       "Part": "a",
+       "Points": 2.0,
+       "Topic": "MDPs",
+       "Type": "Image",
+       "Question": "Consider the following deterministic Markow Decision Process (MDP), describing a simple robot grid world. Notice that the values of the irnmediate rewards $r$ for two transitions are written next to thern; the other transitions, with no value written next to them, have an immedinte reward of $r=0$. Assume the discount factor $\\gamma$ is $0.8$.\nFor states $s \\in\\left\\{s 6\\right.$, $s 5$, s2\\}, write the value for $V_{\\pi^{*}}(s)$, the discounted inflinite horizon value of state $s$ using an optimal policy $\\pi^{*}$. It is flne to write a mumerical expression-you don't have to evaluate it-but it shouldin't contain any variables.",
+       "Solution": "$$\nV_{a^{*}}(a 6)=100\n$$\n$$\nV_{n^{*}}(s 5)=V_{x^{*}}(s 6)=80\n$$\n$$\nV_{\\pi^{*}}(s 2)=\\gamma V_{\\pi^{*}}(s 5)=64\n$$"
+}

@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2019",
+       "Question Number": "1",
+       "Part": "e",
+       "Points": 2.0,
+       "Topic": "Classifiers",
+       "Type": "Text",
+       "Question": "General Ization is consulting for a shop that sells shoes, and the General is building a model to predict what color of sneakers a given customer will buy, given information about their age and the color of the shoes they're wearing when they enter the store. The shoe shop asks for a classifier, as well as an indication of how well the classifier will perform once deployed.\nThe store goes back to the General and says they've discovered a new feature they think might be useful: the color of shoes that a famous celebrity, Keslie Laelbling, is wearing that day. (Due to social media, both the customer and the store know exactly what color of shoes Keslie is wearing each day.) Unfortunately, the General is close to her deadline: she has time to train a new linear model, but not to train another deep neural network like she did before. How might the General produce an augmented model that incorporates this new feature?",
+       "Solution": "Train a linear classifier that uses the neural network plus the color of Keslie's shoes as input, and produces a new prediction for what color of shoes the customer will buy."
+}

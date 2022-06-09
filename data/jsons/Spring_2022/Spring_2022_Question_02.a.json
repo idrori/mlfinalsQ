@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2022",
+       "Question Number": "2",
+       "Part": "a",
+       "Points": 2.0,
+       "Topic": "Neural Networks",
+       "Type": "Image",
+       "Question": "A recent paper gives us reason to think that, rather than regularizing the weights used in a deep network that is used for classification, it is good to regularize the $z$ values, before the activation function is applied, in the last layer.\n\nConsider a neural network with one hidden layer and a single output unit where the activation function $f$ is a sigmoid, as shown below.\nWe can specify the DARC objective function $J(\\theta, \\lambda)$, where the parameters $\\theta=\\left(w_{11}, w_{12}, w_{21}, w_{22}, v_{1}, v_{2}\\right)$ which depends on data set $D=\\left\\{\\left(x^{(i)}, y^{(i)}\\right)\\right\\}_{i-1}^{N}$ as\n$$\nJ(\\theta, \\lambda)=\\sum_{i} \\mathcal{L}_{n l l}\\left(f\\left(z^{(i)}\\right), y^{(i)}\\right)+\\lambda \\sum_{i}\\left(z^{(i)}\\right)^{2}\n$$\nwhere $z^{(i)}$ is the value of the output unit on example $i$ before it goes into the activation function. \nWhat is the partial derivative of this unusual regularization term with respect to the weight $w_{11}$, for a single $(x, y)$ training point?\n$$\n\\frac{\\partial}{\\partial w_{11}} \\lambda(z)^{2}\n$$\nWrite it in terms of $x, y, z_{1}, z_{2}, z, w$ and $v$ values. You can use $f^{\\prime}$ for derivative of $f$.",
+       "Solution": "$2 \\lambda z v_{1} x_{1} f^{\\prime}\\left(z_{1}\\right)$"
+}

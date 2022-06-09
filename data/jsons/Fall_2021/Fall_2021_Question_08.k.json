@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2021",
+       "Question Number": "8",
+       "Part": "k",
+       "Points": 1.0,
+       "Topic": "CNNs",
+       "Type": "Image",
+       "Question": "Assume we apply a filter with weights $[[f 1, f 2],[f 3, f 4]]$ to this $3 \\times 3$ image:\nwith stride 1 and padding 0 and perform back propagation. Which filter weights may have non-zero gradients? Why? Under what conditions will those gradients be non-zero?",
+       "Solution": "$\\mathrm{f} 1$ and $\\mathrm{f} 3$ are the only weights that will receive gradients because only those weights get multiplied by non-zero features. The gradients to those weights will be non-zero if $2 *(f 1+f 3)>0$ because of the ReLU activation function."
+}

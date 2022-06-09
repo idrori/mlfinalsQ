@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2018",
+       "Question Number": "3",
+       "Part": "d.ii",
+       "Points": 1.666666667,
+       "Topic": "CNNs",
+       "Type": "Text",
+       "Question": "Dana has an idea for a new kind of network called a ModConv NN. If the network is n\u21e5n, we will use a filter of size n/k (assume k evenly divides n). To compute entry (a, b) of the resulting image, we apply this filter to the \u201csubimage\u201d of pixels (i, j) from the original image, where i mod k = a and j mod k = b. What underlying assumption about patterns in images is built into a regular convolutional network, but not this one?",
+       "Solution": "This one does not encode the fact that nearby groups of pixels work together to encode information (that there is spatial locality of useful patterns in an image)."
+}

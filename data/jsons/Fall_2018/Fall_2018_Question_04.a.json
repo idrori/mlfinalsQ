@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2018",
+       "Question Number": "4",
+       "Part": "a",
+       "Points": 3.0,
+       "Topic": "Neural Networks",
+       "Type": "Text",
+       "Question": "You are working on a new system that will replace Keras for building neural networks. It is founded on the ideas of series and parallel combination. For simplicity, in this problem, we will assume all of our modules have input and output dimension $n$.\nA series combination of two modules looks like this:\nIf you think of each module as a function, then the final output\n$$\n\\hat{y}=M_{2}\\left(M_{1}\\left(x ; W_{1}\\right) ; W_{2}\\right) .\n$$\nA parallel combination of two modules looks like this (we added the outputs of the two modules to keep the input and output dimensions equal).\nIf you think of each module as a function, then the final output\n$$\n\\hat{y}=M_{1}\\left(x ; W_{1}\\right)+M_{2}\\left(x ; W_{2}\\right)\n$$\nWe won't assume that we know anything about the modules, except that they are feed-forward, have some collection of parameters $W_{i}$, which we will treat as a single vector, and that we can compute\n$$\nM_{\\mathrm{i}}\\left(v ; W_{i}\\right), \\frac{\\partial M_{i}\\left(v ; W_{\\mathrm{i}}\\right)}{\\partial W_{\\mathrm{i}}} \\text { and } \\frac{\\partial M_{\\mathrm{i}}\\left(v ; W_{i}\\right)}{\\partial v}\n$$\nfor each module, where $v$ is the input to that module. Assume that our loss function is squared loss, so\n$$\nL(\\hat{y}, y)=\\frac{1}{2}(\\hat{y}-y)^{2}\n$$\n\nWhat is $\\partial L(\\hat{y}, y) / \\partial W_{1}$ for a series combination of $M_{1}$ and $M_{2}$ ? Write your answer in terms of input $x$, target output $y$, and weights $W_{1}$ and $W_{2}$, using the given forward and gradient functions.",
+       "Solution": "$$\n\\left.\\underset{\\left(x ; W_{1}\\right)}{\\partial M_{2}\\left(a_{1} ; W_{2}\\right)} \\frac{\\partial M_{1}\\left(x ; W_{1}\\right)}{\\partial W_{1}}\\right)^{T}\\left(M_{2}\\left(M_{1}\\left(x ; W_{1}\\right)\\right)-y\\right)\n$$\nwhere $a_{1}=M_{1}\\left(x ; W_{1}\\right)$."
+}

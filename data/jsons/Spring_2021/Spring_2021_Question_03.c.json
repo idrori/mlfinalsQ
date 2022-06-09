@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2021",
+       "Question Number": "3",
+       "Part": "c",
+       "Points": 2.0,
+       "Topic": "Features",
+       "Type": "Text",
+       "Question": "You are trying to predict whether start-up companies will succeed or fail, based on the name of the company. You have the following dataset in the format (x, y): (Aardvarkia, +1), (Fro, +1), (Rodotopo, -1), (Whoodo, -1).  You have a one hot encoding for each of the names (Aardvarkia, Fro, Rodotopo, Whoodo). You consider two different encodings of the features:\n\u2022 One-hot encoding, with the first feature corresponding to \u201cAardvarkia,\u201d the second to \u201cFro,\u201d third to \u201cRodotopo,\u201d and fourth to \u201cWhoodo.\u201d\n\u2022 Numerical encoding, using the numerical place of the first letter of the name in the English alphabet (so \u2019A\u2019 is 0 and \u2019Z\u2019 is 25).You add a new company with name \u201cZzyyzygy\u201d and class +1. If you extend the one-hot encoding to add another feature corresponding to this company name, will this new data set be linearly separable using the one-hot encoding? Explain briefly.",
+       "Solution": "Yes. With the one hot encoding, there\u2019s a dimension for each point x(i), y(i), with y (i) \u2208 {\u22121, 1}, so we can always pick \u03b8 = [y\n(0), ..., y(n)] and \u03b80 = 0"
+}

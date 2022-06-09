@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2019",
+       "Question Number": "7",
+       "Part": "b",
+       "Points": 2.0,
+       "Topic": "RNNs",
+       "Type": "Text",
+       "Question": "We have seen in class recurrent neural networks ( $\\mathrm{RNNs}$ ) that are structured as:\n$$\n\\begin{aligned}\nz_{t}^{1} &=W^{s s} s_{t-1}+W^{s x} x_{t} \\\\\ns_{t} &=f_{1}\\left(z_{t}^{1}\\right) \\\\\nz_{t}^{2} &=W^{o} s_{t} \\\\\np_{t} &=f_{2}\\left(z_{t}^{2}\\right)\n\\end{aligned}\n$$\nwhere we have set biases to zero. Here $x_{t}$ is the input and $y_{t}$ the actual output for $\\left(x_{t}, y_{t}\\right)$ sequences used for training, with $p_{t}$ as the RNN output (during or after training).\nAssume our first RNN, call it RNN-A, has $s_{t}, x_{t}, p_{t}$ all being vectors of shape $2 \\times 1$. In addition, the activation functions are simply $f_{1}(z)=z$ and $f_{2}(z)=z$.\nWe have finished training RNN-A, using some overall loss $J=\\sum_{t} \\operatorname{Loss}\\left(y_{t}, p_{t}\\right)$ given the per-element loss function $\\operatorname{Loss}\\left(y_{t}, p_{t}\\right)$. We are now interested in the derivative of the overall loss with respect to $x_{t}$; for example, we might want to know how sensitive the loss is to a particular input (perhaps to identify an outlier input). What is the derivative of overall loss at time $t$ with respect to $x_{t}, \\partial J / \\partial x_{t}$, with dimensions $2 \\times 1$, in terms of the weights $W^{s s}, W^{s x}, W^{0}$ and the input $x_{t}$ ? Assume we have $\\partial Loss / \\partial z_{t}^{2}$, with dimensions $2 \\times 1$. Use $*$ to indicate element-wise multiplication.",
+       "Solution": "\\frac{\\partial J}{\\partial x_{t}}=W^{s x T} W^{o T} \\frac{\\partial Loss}{\\partial z_{t}^{2}}"
+}

@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2019",
+       "Question Number": "4",
+       "Part": "a.iii",
+       "Points": 0.5,
+       "Topic": "Neural Networks",
+       "Type": "Text",
+       "Question": "Otto N. Coder is exploring different autoencoder architectures. Consider the following autoencoder with input $x \\in \\mathbb{R}^{d}$ and output $y^{\\text {pred }} \\in \\mathbb{R}^{d}$. The autoencoder has one hidden layer with $m$ hidden units: $z^{(1)}, a^{(1)} \\in \\mathbb{R}^{m}$. Assume $x, z^{(2)}$, and $y^{\\text {pred }}$ have dimensions $d \\times 1$. Also let $z^{(1)}$ and $a^{(1)}$ have dimensions $m \\times 1$. What are the dimensions of $W^{(2)}$?",
+       "Solution": "d x m"
+}

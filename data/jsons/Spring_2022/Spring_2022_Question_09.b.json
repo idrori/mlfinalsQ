@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2022",
+       "Question Number": "9",
+       "Part": "b",
+       "Points": 6.0,
+       "Topic": "RNNs",
+       "Type": "Image",
+       "Question": "Here is Rina's model again:\n$$\n\\begin{aligned}\n&s_{t}=f\\left(W^{s s} s_{t-1}\\right)+f\\left(W^{s x_{t}} x_{t}\\right) \\\\\n&y_{t}=W^{s_{s}}\n\\end{aligned}\n$$\nSomething interesting might happen with this model when $f(z)$ is not the identity. Specifically, it supposedly corresponds to the architecture shown in the figure below, which includes an additional hidden layer. Specify what $W, W^{\\prime}$, and $m^{\\prime}$ are so that this architecture indeed corresponds to Rina's model. Specify your answers in terms of $m, W^{s a}$, $W^{s z}$, and $W^{O}$.",
+       "Solution": "i. 2m\nii. $W$\nSolution: A block-diagonal matrix of the form\n$$\n\\left[\\begin{array}{cc}\nW^{s s} & 0 \\\\\n0 & W^{s x}\n\\end{array}\\right]\n$$\niii. $W^{\\prime}$\nSolution: hstack $(I(m) ; I(m))$"
+}

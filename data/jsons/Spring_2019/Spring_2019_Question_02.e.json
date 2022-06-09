@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2019",
+       "Question Number": "2",
+       "Part": "e",
+       "Points": 1.333333333,
+       "Topic": "Decision Trees",
+       "Type": "Text",
+       "Question": "Consider the following 2D dataset in (x,y) format: ((1,-1), +1), ((1,1),  +1), ((1,2.5),+1), ((2,-2),-1), ((2,1),+1),((2,3),+1),((5,-1),-1),((5,-2),-1). We will construct a tree using a greedy algorithm that recursively minimizes weighted average entropy. Recall that the weighted average entropy of a split into subsets A and B is: (fraction of points in $A) \\cdot H\\left(R_{j, s}^{A}\\right)+($ fraction of points in $B) \\cdot H\\left(R_{j, s}^{B}\\right)$ where the entropy $H\\left(R_{m}\\right)$ of data in a region $R_{m}$ is given by $H\\left(R_{m}\\right)=-\\sum_{k} \\hat{P}_{m k} \\log _{2} \\hat{P}_{m k}$. The $\\hat{P}_{m k}$ is the empirical probability, which is in this case the fraction of items in region $m$ that are of class $k$. Some facts that might be useful to you: H(0) = 0, H(3/5) = 0.97, H(3/8) = 0.95, H(3/4) = 0.81, H(5/6) = 0.65, H(1) = 0. \nFor decision trees built using our greedy algorithm, standardizing feature values is important: true or false?",
+       "Solution": "FALSE"
+}

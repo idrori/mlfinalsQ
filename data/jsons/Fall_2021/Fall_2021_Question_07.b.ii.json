@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2021",
+       "Question Number": "7",
+       "Part": "b.ii",
+       "Points": 1.0,
+       "Topic": "Neural Networks",
+       "Type": "Text",
+       "Question": "A neural network is given as Z1 = X * W1, A1 = f1(Z1), Z2 = W2 * A1, \\hat{y} = f2(Z2). There is only one data point which is: $X = [1, 1, 1, 1]^T$ and $y = [1]$. If $W^1$ is a matrix of all $-1$\u2019s (all negative ones) and $W^2$ is a vector of all $1$\u2019s (positive ones), what is the resulting Loss where the Loss = (y - \\hat{y})^2$?",
+       "Solution": "1"
+}

@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2019",
+       "Question Number": "6",
+       "Part": "a",
+       "Points": 2.0,
+       "Topic": "Decision Trees",
+       "Type": "Text",
+       "Question": "Consider the following 2D dataset in the (x,y) format: ((0,1), +1), ((1,1),+1), ((-1,-2),-1), ((0,-1),-1), ((1,-1),+1), ((2,-1),-1). Consider the following splits: Split A: x2 >= 0\nSplit B: x1 >= 0:5\nSplit C: x1 >=\udbc0\udc000:5\nPaul Bunyan works to construct trees using the algorithm discussed in the lecture notes, i.e., a greedy algorithm that recursively minimizes weighted average entropy, considering only combinations of the three splits mentioned above. He wants the output of the tree for any input $\\left(x_{1}, x_{2}\\right)$ to be the probability that the input is a positive $(+1)$ example.\nRecall that the weighted average entropy $\\bar{H}$ of a split into subsets $R_{1}$ and $R_{2}$ is\n$$\n\\bar{H}(\\text { split })=\\left(\\text { fraction of points in } R_{1}\\right) \\cdot H\\left(R_{1}\\right)+\\left(\\text { fraction of points in } R_{2}\\right) \\cdot H\\left(R_{2}\\right)\n$$\nwhere the entropy $H\\left(R_{m}\\right)$ of data in a region $R_{m}$ is given by\n$$\nH\\left(R_{m}\\right)=-\\sum_{k} \\hat{P}_{m k} \\log _{2} \\hat{P}_{m k}\n$$\nHere $\\hat{P}_{m k}$ is the empirical probability, which is in this case the fraction of items in region $m$ that are of class $k$.\nConsidering the entire data set, Paul finds that the best first split of these three is Split A, with $\\bar{H}(A)=0.54$, compared to $\\bar{H}(B)=0.92$ and $\\bar{H}(C)=0.81$, resulting in a region $R_{A^{+}}$ with all positive examples, and a region $R_{A^{-}}$with mixed positive and negative examples. Given Split A, however, Paul is not sure which is the next split to include in his tree. Calculate the weighted average entropy of Split $\\mathrm{B}$ for region $R_{A^{-}}, \\bar{H}\\left(B \\mid R_{A^{-}}\\right)$, versus Split $\\mathrm{C}$ for the same region, $\\bar{H}\\left(C \\mid R_{A^{-}}\\right)$, and identify which of Split B or Split $\\mathrm{C}$ Paul should choose for his second split. ",
+       "Solution": "Split B"
+}

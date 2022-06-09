@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2022",
+       "Question Number": "9",
+       "Part": "a",
+       "Points": 4.0,
+       "Topic": "RNNs",
+       "Type": "Text",
+       "Question": "Consider three RNN variants:\n1. The basic RNN architecture we studied was\n$$\n\\begin{aligned}\n&s_{t}=f\\left(W^{s s} s_{t-1}+W^{s x} x_{t}\\right) \\\\\n&y_{t}=W^{o} s_{t}\n\\end{aligned}\n$$\nwhere $W^{s s}$ is $m \\times m, W^{s x}$ is $m \\times d$, and $f$ is an activation function to be specified later. We omit the offset parameters for simplicity (set them to zero).\n2. Ranndy thinks the basic RNN is representationally weak, and it would be better not to decompose the state update in this way. Ranndy's proposal is to instead\n$$\n\\begin{aligned}\n&s_{t}=f\\left(W^{s s x} \\operatorname{concat}\\left(s_{t-1}, x_{t}\\right)\\right) \\\\\n&y_{t}=W^{o} s_{t}\n\\end{aligned}\n$$\nwhere $\\operatorname{concat}\\left(s_{t-1}, x_{t}\\right)$ is a vector of length $m+d$ obtained by concatenating $s_{t-1}$ and $x_{t}$, so $W^{s s x}$ has dimensions $m \\times(m+d)$.\n3. Orenn wants to try yet another model, of the form:\n$$\n\\begin{aligned}\n&s_{t}=f\\left(W^{s s} s_{t-1}\\right)+f\\left(W^{s x} x_{t}\\right) \\\\\n&y_{t}=W^{o} s_{t}\n\\end{aligned}\n$$ Lec Surer insists on understanding these models a bit better, and how they might relate.\n(a) Select the correct claim and answer the associated question.\n(1) Claim: The three models are all equivalent when $f(z)=z$. In this case, define $W^{s s x}$\n(2) Claim: The three models are not all equivalent when $f(z)=z$. In this case, assume $m=d=1$ and provide one setting of $W^{s s x}$ in Ranndy's model such that $W^{s s}$ and $W^{s x}$ cannot be chosen to make the basic and Orenn's models the same as Ranndy's.",
+       "Solution": "Claim $1 W^{s s x}=h s t a c k\\left(W^{s s}, W^{s x}\\right)$"
+}

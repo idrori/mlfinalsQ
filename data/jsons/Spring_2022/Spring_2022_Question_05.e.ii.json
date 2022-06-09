@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2022",
+       "Question Number": "5",
+       "Part": "e.ii",
+       "Points": 1.5,
+       "Topic": "Features",
+       "Type": "Text",
+       "Question": "You are hired by an event-planning company to build some machine-learning predictors. One of them, for predicting the number of attendees of a concert, takes as input x, a vector of aspects of the event (day of the week, start time, city size, music genre (classical, folk, rock, pop, rap), number of attendees at last concert, if known). We talk to Bodie, who really knows the concert business and says a better model for the total loss is:\n $$\n \\mathcal{L}_{\\text {bodie }}(g, a)=\\alpha g+\\beta \\max (0, a-g) .\n $$\n This loss has two terms. The first part of the loss comes from the cost of renting a venue: if we guess that there will be $g$ attendees, we have to rent a place with $g$ seats, and we assume that such a rental costs $\\alpha$ per seat. The second part of the loss comes from the loss of potential ticket sales: if $a$ people really wanted to attend but we can only seat $g$, then we lose $\\beta$ for each of the $g-a$ people we have to turn away. Note that it is safe to assume that $\\alpha<\\beta$ (otherwise, we should not bother holding the concert!). But Bodie isn't really sure how to set the $\\alpha$ and $\\beta$ parameters, so we still have a problem! However, they are able to find a set of data of the form $(s, p, l)$ where $s$ describes the number of seats in the venue rented, $p$ describes the actual number of people who attempted to attend (including the number of people who were turned away) and $l$ describes the actual loss value. (e) Bodie wants to use this data to estimate $\\alpha$ and $\\beta$ in $\\mathcal{L}_{\\text {bodie }}$ by finding values of these parameters that predict the loss the most accurately in the mean-squared-error sense. Describe how to use the $(s, p, l)$ data to formulate a linear regression problem that will recover $\\operatorname{good}$ estimates of $\\alpha$ and $\\beta$. What are the target outputs, $y$?",
+       "Solution": "l"
+}

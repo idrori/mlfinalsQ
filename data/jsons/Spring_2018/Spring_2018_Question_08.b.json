@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2018",
+       "Question Number": "8",
+       "Part": "b",
+       "Points": 2.0,
+       "Topic": "RNNs",
+       "Type": "Image",
+       "Question": "One of the RNN architectures we studied was\n$$\n\\begin{aligned}\n&s_{t}=f_{1}\\left(W^{s s} s_{t-1}+W^{s x_{t}} x_{t}\\right) \\\\\n&y_{t}=f_{2}\\left(W^{o} s_{t}\\right)\n\\end{aligned}\n$$\nwhere $W^{s s}$ is $m \\times m, W^{s x}$ is $m \\times l$ and $W^{o}$ is $n \\times m$. Assume $f_{i}$ can be any of our standard activation functions. We omit the offset parameters for simplicity (set them to zero). Now, we'll consider two strategies for making the RNN generate two output symbols for each input symbol. Assume the symbols are drawn from a vocabulary of size $n$.\nModel A: We use a separate softmsx output for each symbol, so\n$$\n\\begin{aligned}\n&y_{t}^{1}=\\operatorname{softmax}\\left(W^{o 1} s_{t}\\right) \\\\\n&y_{t}^{2}=\\operatorname{softmax}\\left(W^{02} s_{t}\\right)\n\\end{aligned}\n$$\nwhere $W^{o 1}$ and $W^{o 2}$ are $n \\times m$.\nModel B: We use a single softmax output, but it ranges over $n^{2}$ possible pairs of symbols, so\n$$\ny_{t}^{1}, y_{t}^{2}=\\operatorname{softmax}\\left(W^{o 3} s_{t}\\right)\n$$\ni. What would the dimension of $W^{33}$ need to be?\nii. Which of the following is true:\nModels A and B can express exactly the same set of RNN models.\nModel A is more expressive than model B.\n$\\sqrt{\\text { Model } \\mathbf{B} \\text { is more expressive than model } A .$",
+       "Solution": "i. $n^{2} \\times m$\nii. Model B is more expressive than model A."
+}

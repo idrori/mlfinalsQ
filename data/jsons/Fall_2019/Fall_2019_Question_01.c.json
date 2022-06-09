@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2019",
+       "Question Number": "1",
+       "Part": "c",
+       "Points": 2.0,
+       "Topic": "Classifiers",
+       "Type": "Text",
+       "Question": "General Ization is consulting for a shop that sells shoes, and the General is building a model to predict what color of sneakers a given customer will buy, given information about their age and the color of the shoes they're wearing when they enter the store. The shoe shop asks for a classifier, as well as an indication of how well the classifier will perform once deployed.\nAround how many iterations should the General use to train the classifier she delivers to the shoe shop? Explain why.",
+       "Solution": "Around 40 , as this is when the validation loss starts to increase."
+}

@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2017",
+       "Question Number": "10",
+       "Part": "a.ii",
+       "Points": 1.0,
+       "Topic": "Classifiers",
+       "Type": "Text",
+       "Question": "Consider the following data in (coordinate, sign) format: ((-4, 4),positive), ((4, -4),positive), ((-1, -1),-1) , ((1, 1),-1). Clearly, the points are not linearly separable, so we will try three alternative approaches to solving the problem. Approach 1: Nested linear classifiers Let $w=\\left[\\begin{array}{l}+1 \\\\ -1\\end{array}\\right]$ and $a=\\left[\\begin{array}{l}a_{1} \\\\ a_{2}\\end{array}\\right]$ where $$ \\begin{aligned} a_{1} &=\\operatorname{sign}\\left(w^{T} x+4\\right) \\\\ a_{2} &=\\operatorname{sign}\\left(w^{T} x-4\\right) \\\\ y_{\\text {predicted }} &=\\operatorname{sign}\\left(v_{1} a_{1}+v_{2} a_{2}+v_{0}\\right) \\end{aligned} $$ (a) Select the value of v2 so that the nested classifier correctly predicts the value in the data set.",
+       "Solution": "1"
+}

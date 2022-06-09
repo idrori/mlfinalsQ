@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2018",
+       "Question Number": "2",
+       "Part": "d",
+       "Points": 2.5,
+       "Topic": "Neural Networks",
+       "Type": "Text",
+       "Question": "We will consider a neural network with a slightly unusual structure. Let the input $x$ be $d \\times 1$ and let the weights be represented as $k 1 \\times d$ vectors, $W^{(1)}, \\ldots, W^{(k)}$. Then the final output is\n$$\n\\hat{y}=\\prod_{i=1}^{k} \\sigma\\left(W^{(i)} x\\right)=\\sigma\\left(W^{(1)} x\\right) \\times \\cdots \\times \\sigma\\left(W^{(k)} x\\right)\n$$\nDefine $a^{(j)}=\\sigma\\left(W^{(j)} x\\right)$.\nWhat would the form of a stochastic gradient descent update rule be for $W^{(j)}$ ? Express your answer in terms of $\\partial L(\\hat{y}, y) / \\partial a^{(j)}$ and $\\partial a^{(j)} / \\partial W^{(j)}$. Use $\\eta$ for the step size.",
+       "Solution": "$$\nW^{(j)}=W^{(j)}-\\eta \\frac{\\partial L(\\hat{y}, y)}{\\partial a^{(j)}} \\frac{\\partial a^{(j)}}{\\partial W^{(j)}}\n$$"
+}

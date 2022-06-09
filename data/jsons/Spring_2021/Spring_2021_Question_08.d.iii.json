@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2021",
+       "Question Number": "8",
+       "Part": "d.iii",
+       "Points": 1.666666667,
+       "Topic": "Reinforcement Learning",
+       "Type": "Text",
+       "Question": "You are moving up a 1-dimensional track with squares s(1), s(2), s(4), s(5), s(7).\nThe following transitions happen with 100% probability:\ns(3) to s(5)\ns(9) to s(1)\ns(8) to s(1)\ns(6) to s(2)\nYou have two actions: climb and quit. If you climb from state s(i) then with probability 0.5 you go up one square, and with probability 0.5 you go up two squares. So, for example, in our case, if you start in state s(5) and climb there is a .5 chance you'll end up in square s(2) (because you move up one but transition to s(2) and a .5 chance you'll end up in square s(7). If you climb from s(7) then you will go back to square s(1) with probability 1.0. If you quit then the game is over and you get to take no further actions. Each new episode starts in state s(1). The reward for choosing climb in any state is 0. The reward for choosing quit in state s(i) is i. Assume we know the rewards, but not the transition model. During learning, after executing the quit action and getting a reward, a new learning episode is initialized, after we go back to square 1. We will use a discount factor of \u03b3 = 1. \nAssume we start with a tabular Q function on states s1, s2, s4, s5 and s7, initialized to all 0\u2019s. Then we get the following experience, consisting of three trajectories, shown below as (state, action, reward) tuples. \nUsing learning rate \u03b1 = 0.5, what is the Q function after each of these trajectories? (You only need to fill in the non-zero entries). Trajectory: ((s(1), climb, 0),(s(2), climb, 0),(s(5), climb, 0),(s(7), quit, 7))",
+       "Solution": "Q(s(1), quit) = 0.5, Q(s(7), quit) = 5.25, Q(s(5), climb) = 1.75"
+}

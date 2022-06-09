@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2019",
+       "Question Number": "5",
+       "Part": "c",
+       "Points": 2.0,
+       "Topic": "MDPs",
+       "Type": "Image",
+       "Question": "Consider the following deterministic Markow Decision Process (MDP), describing a simple robot grid world. Notice that the values of the irnmediate rewards $r$ for two transitions are written next to thern; the other transitions, with no value written next to them, have an immedinte reward of $r=0$. Assume the discount factor $\\gamma$ is $0.8$.\nFor each state in the state diagram below, circle exactly one outgoing arrow, invicating an optimal action $\\pi^{*}(\\mathrm{~s})$ to take from that state. If there is a tie, it is flne to select any action with optimnl value.",
+       "Solution": "Image filling"
+}

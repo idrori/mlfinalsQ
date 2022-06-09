@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2019",
+       "Question Number": "1",
+       "Part": "d",
+       "Points": 2.0,
+       "Topic": "Classifiers",
+       "Type": "Text",
+       "Question": "Consider the following 2D dataset in (x,y) format: ((1,-1), +1), ((1,1),  +1), ((1,2.5),+1), ((2,-2),-1), ((2,1),+1),((2,3),+1),((5,-1),-1),((5,-2),-1). Break ties in distance by choosing the point with smaller x_1 coordinate, and if still tied, by smaller x_2 coordinate.\nIn the case of the 3-nearest neighbor algorithm, is it possible to strictly increase the leave-one-out cross validation accuracy on this dataset by changing the label of a single point in the original dataset? If so, give such a point.",
+       "Solution": "No, not possible. If we try to change the point at (2, -2) to +1, then that point will be correctly predicted during cross-validation as +1. Unfortunately, with that change the two points at (5,-1) and (5,-2) will now be misclassi\fed, making our cross-validation accuracy worse."
+}

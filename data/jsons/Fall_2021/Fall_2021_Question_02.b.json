@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2021",
+       "Question Number": "2",
+       "Part": "b",
+       "Points": 1.0,
+       "Topic": "Clustering",
+       "Type": "Image",
+       "Question": "Assume that the number of clusters $k=2$ for all of the following questions. \nWhat is the numerical value of the $k$-means objective for the clustering found in (a), after the algorithm has finished running?",
+       "Solution": "$8 \\cdot\\left(1^{2}+0.5^{2}\\right)=8 \\cdot(1.25)=10$"
+}

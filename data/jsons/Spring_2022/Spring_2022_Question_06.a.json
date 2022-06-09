@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2022",
+       "Question Number": "6",
+       "Part": "a",
+       "Points": 2.0,
+       "Topic": "MDPs",
+       "Type": "Image",
+       "Question": "Consider the MDP shown above. It has states $S_{0}, \\ldots, S_{6}$ and actions $A, B$. Each arrow is labeled with one or more actions, and a probability value: this means that if any of those actions is chosen from the state at the start of the arrow, then it will make a transition to the state at the end of the arrow with the associated probability.\n\nRewards are associated with states, and independent, in this example, from the action that is taken in that state. Remember that with horizon $H=1$, the agent can collect the reward associated with the state it is in, and then terminates. \nConsider the policy $\\pi$ that takes action $B$ in $S_{0}$ and action $A$ in $S_{2}$. If the system starts in $S_{0}$ or $S_{2}$, then under that policy, only those two states (So and $S_{2}$ ) are reachable. Recall that, for a fixed policy $\\pi$,\n$$\nV_{\\pi}(s)=R(s, \\pi(s))+\\gamma \\sum_{s^{\\prime}} P\\left(S_{t+1}=s^{\\prime} \\mid S_{t}=s_{1} A_{t}=\\pi(s)\\right) V_{\\pi}\\left(s^{\\prime}\\right)\n$$\nAssuming the discount factor $\\gamma=0.8$, what are the infinite-horizon values $V_{\\pi}\\left(S_{0}\\right)$ and $V_{\\pi}\\left(S_{2}\\right)$ ? It is sufficient to write out a small system of linear equations involving just those two variables; you do not have to take the time to solve them numerically.",
+       "Solution": "$$\n\\begin{aligned}\n&V_{\\pi}\\left(S_{0}\\right)=0+0.8 \\cdot V_{\\pi}\\left(S_{2}\\right) \\\\\n&V_{\\pi}\\left(S_{2}\\right)=1+0.8 \\cdot\\left(0.9 V_{\\pi}\\left(S_{2}\\right)+0.1 V_{\\pi}\\left(S_{0}\\right)\\right)\n\\end{aligned}\n$$"
+}

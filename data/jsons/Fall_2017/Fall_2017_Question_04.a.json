@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2017",
+       "Question Number": "4",
+       "Part": "a",
+       "Points": 2.0,
+       "Topic": "Neural Networks",
+       "Type": "Image",
+       "Question": "Consider just the general shape of the following plots. For each of the following possible interpretations of the quantities being plotted on the $\\mathrm{X}$ and $Y$ axes, indicate which of the plots would most typically be the result, or mark \"none\" if none are appropriate.\n\nAssume all quantities other than $\\mathrm{X}$ are held constant during the experiment. Error quantities reported are averages over the data set they are being reported on.\nProvide a one-sentence justification for each answer.\n\nX axis: Number of training examples $\\mathbf{Y}$ axis: test set error $\\sqrt{A} O \\mathrm{~B} O \\mathrm{C} O \\mathrm{D} O$ none",
+       "Solution": "A.\nWith more training data, we are better able to find a good hypothesis."
+}

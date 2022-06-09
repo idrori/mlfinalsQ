@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2021",
+       "Question Number": "3",
+       "Part": "d",
+       "Points": 1.0,
+       "Topic": "Decision Trees",
+       "Type": "Text",
+       "Question": "In decision trees, what is the purpose of increasing the minimum samples in each split?",
+       "Solution": "It improves generalization (i.e., prevents overfitting to the training data) by requiring more samples to split a node, resulting in smaller tree depth."
+}

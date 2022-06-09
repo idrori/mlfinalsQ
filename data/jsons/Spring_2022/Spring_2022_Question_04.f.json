@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2022",
+       "Question Number": "4",
+       "Part": "f",
+       "Points": 2.0,
+       "Topic": "Regression",
+       "Type": "Text",
+       "Question": "We're given a data set $D=\\left\\{\\left(x^{(i)}, y^{(i)}\\right)\\right\\}_{i=1}^{n}$, where $x^{(i)} \\in R^{d}$ and $y^{(i)} \\in R$. Let $X$ be a $d \\times n$ matrix in which the $x^{(i)}$ are the columns and let $Y$ be a $1 \\times n$ vector containing the values of $y^{(i)}$. Using the analytical regression (ordinary least-squares) formula, we can compute\n $$\n W_{o l s}=\\left(X X^{T}\\right)^{-1} X Y^{T}\n $$\n Using ridge regression, we can compute\n $$\n W_{\\text {ridge }}=\\left(X X^{T}+\\lambda I\\right)^{-1} X Y^{T}\n $$\n We decide to try to use these methods to initialize a single-unit \"\"neural network\"\" with a linear activation function and no offset:\n $$\n h(x ; W)=W^{T} x .\n $$\n Assume that $X X^{T}$ is invertible and not equal to the identity matrix, and that neither $W_{o l s}$ nor $W_{\\text {ridge }}$ is equal to $(0,0, \\ldots, 0)$. Note also that we are not using an explicit offset/bias term. \nRyo thinks they can get a better hypothesis by using knowledge about neural networks, and considers the hypothesis class $$ g=w_{a} \\sigma\\left(w_{b} x+w_{c}\\right)+w_{d} $$ Assume that the inputs $x$ are 1-dimensional and recall $\\sigma(z)=1 /\\left(1+e^{-z}\\right)$. Provide a data set with 3 points for which Ryo's hypothesis class can reach a lower MSE than the original OLS solution or argue that one does not exist. ",
+       "Solution": "(0, 0), (1, 1), (2, 1)"
+}

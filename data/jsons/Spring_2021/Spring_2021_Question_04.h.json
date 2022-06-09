@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2021",
+       "Question Number": "4",
+       "Part": "h",
+       "Points": 1.0,
+       "Topic": "Logistic Regression",
+       "Type": "Text",
+       "Question": "It is common in classification problems for the cost of a false positive (predicting positive when the true answer is negative) to be different from the cost of a false negative (predicting negative when the true answer is positive). This might happen, for example, when the task is to predict the presence of a serious disease.\nLet\u2019s say that the cost of a correct classification is 0, the cost of a false positive is 1, and the\ncost of a false negative (that is, you predict 0 when the correct answer was +1) is \u03b1. Recall that the usual logistic regression loss is: \\begin{equation*} \n\\mathcal{L}_\\text{nll}(g, y) = \n-\\left(y \\cdot \\log g + (1 - y)\\cdot\\log (1 -\n g)\\right) \\;\\;.\n\\end{equation*}\nSuggest a strategy that Jin can use for picking a new threshold that minimizes our average asymmetric cost of classification.",
+       "Solution": "Try several values and and find the one that minimizes the training loss."
+}

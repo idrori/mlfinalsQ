@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2021",
+       "Question Number": "1",
+       "Part": "f",
+       "Points": 1.0,
+       "Topic": "Neural Networks",
+       "Type": "Image",
+       "Question": "Continuing the scenario of (e), which value of $\\lambda$ (out of $1,10,100$, and 1000 ) should Mac choose to obtain the neural network that he will deploy on the app store, and why?",
+       "Solution": "$\\lambda=100$, because the validation error is lowest at this value."
+}

@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2021",
+       "Question Number": "8",
+       "Part": "i",
+       "Points": 1.0,
+       "Topic": "CNNs",
+       "Type": "Text",
+       "Question": "Write an expression for the derivative of the binary classification loss with respect to z2, where z = conv2d(x , fcoef , padding =0 , stride =1), a = ReLU( z ), a_sum = z1.sum( dim = -1).sum( dim = -1), z2 = w.T @ a_sum + b\nYou may express your answer using g for the output of final act and y for the example label.",
+       "Solution": "g-y"
+}

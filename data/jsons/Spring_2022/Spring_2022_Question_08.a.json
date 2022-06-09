@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2022",
+       "Question Number": "8",
+       "Part": "a",
+       "Points": 1.0,
+       "Topic": "CNNs",
+       "Type": "Text",
+       "Question": "Network A is a neural network with a single convolution of size 3. It has a single max pooling layer with size d so the output of the network it sigmoid (max(z1,..zd)). Network B is a neural network with a single convolution of size 3. It has a single min pooling layer with size d so the output of the network it sigmoid (min(z1,..zd)). For which network does a high output value correspond, qualitatively, to \u201cevery location in x corresponds to an instance of the desired pattern\u201d choose between A or B or none.",
+       "Solution": "B"
+}

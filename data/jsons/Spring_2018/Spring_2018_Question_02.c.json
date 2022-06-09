@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2018",
+       "Question Number": "2",
+       "Part": "c",
+       "Points": 2.0,
+       "Topic": "Decision Trees",
+       "Type": "Image",
+       "Question": "We will continue the example from the previous question. For any dataset with only positive-valued $x_{1}$ and $x_{2}$, what features in $\\phi(x)$ cannot possibly appear in a decision tree computed by the algorithm from class. Assume the splitting rule described earlier: if there is a tie in the choice of split, first prefer features that appear earlier in the $\\phi(x)$ vector and then smaller thresholds. Explain your answer.\n$$\n\\phi(x)=\\left[1, x_{1}, x_{2}, x_{1} x_{2}, x_{1}^{2}, x_{2}^{2}\\right]^{T}\n$$",
+       "Solution": "Features $1, x_{1}^{2}$ and $x_{2}^{2}$ cannot appear. The first one provides no information and the square terms (for positive data values) create the same splits in the data as the $x_{1}$ and $x_{2}$ features."
+}

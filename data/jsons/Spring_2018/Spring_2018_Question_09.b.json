@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2018",
+       "Question Number": "9",
+       "Part": "b",
+       "Points": 3.0,
+       "Topic": "CNNs",
+       "Type": "Image",
+       "Question": "We will explore how convolutional neural networks operate by designing one. Our objective is to be able to locate the pattern\nin an image. Throughout this problem, treat dark squares as having value $+1$ and light squares as having value $-1$. In order to detect this pattern, we would create a network that has\n- a convolutional layer with a single filter, corresponding to the desired pattern,\n- a max-pooling layer with input size equal to the image size, and finally\n- a single ReLU unit.\nProvide a value for the offset $W_{o}$ on the input to the ReLU that, for any image, would guarantee the output of the ReLU is positive if and only if there is a perfect instance of this pattern in the image.",
+       "Solution": "$-8$\nA perfect score is 9 . The next best match would be 8 correct and 1 wrong, which would total to 7 . Any value between 7 and 9 would be correct here."
+}

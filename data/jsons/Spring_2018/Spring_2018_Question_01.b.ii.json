@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2018",
+       "Question Number": "1",
+       "Part": "b.ii",
+       "Points": 3.0,
+       "Topic": "Classifiers",
+       "Type": "Text",
+       "Question": "In this problem, we will consider two-dimensional input data vectors $x=\\left[x_{1}, x_{2}\\right]^{T}$. We will explore the impact of a feature transformation on various learning methods. We will be using the feature transformation $$ \\phi(x)=\\left[1, x_{1}, x_{2}, x_{1} x_{2}, x_{1}^{2}, x_{2}^{2}\\right]^{T} $$ Consider the following $2 \\mathrm{D}$ data sets: Classic XOR: positive: $(0,1),(1,0)$ and negative: $(0,0),(1,1)$. Signed XOR: positive: $(-1,1),(1,-1)$ and negative: $(-1,-1),(1,1)$  For each dataset, is there a vector $\\theta^{T}$ for a linear classifier through the origin $\\left(\\theta^{T} \\phi(x)\\right)$ that perfectly separates the data? $$ \\phi(x)=\\left[1, x_{1}, x_{2}, x_{1} x_{2}, x_{1}^{2}, x_{2}^{2}\\right]^{T} $$ Signed XOR: positive: $(-1,1),(1,-1)$ and negative: $(-1,-1),(1,1)$",
+       "Solution": "Yes"
+}

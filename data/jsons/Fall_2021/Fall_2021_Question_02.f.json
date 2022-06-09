@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2021",
+       "Question Number": "2",
+       "Part": "f",
+       "Points": 2.0,
+       "Topic": "Clustering",
+       "Type": "Image",
+       "Question": "Assume that the number of clusters $k=2$ for all of the following questions. \nConsider the data in black dots shown in the plot below. We drew one cluster center with an $x$ symbol at $(2,4)$. Draw the second cluster center to satisfy the following property. When we initialize the clusters centers at the two $x$ 's and run the k-means algorithm to convergence, the final state will be such that one cluster will have all the data points assigned to it, and the other cluster will have no data points assigned to it.",
+       "Solution": "There are two correct answers, either $(0,0)$ or $(0,8)$."
+}

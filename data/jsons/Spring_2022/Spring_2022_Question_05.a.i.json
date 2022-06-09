@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2022",
+       "Question Number": "5",
+       "Part": "a.i",
+       "Points": 1.0,
+       "Topic": "Features",
+       "Type": "Text",
+       "Question": "You are hired by an event-planning company to build some machine-learning predictors. One of them, for predicting the number of attendees of a concert, takes as input x, a vector of aspects of the event (day of the week, start time, city size, music genre (classical, folk, rock, pop, rap), number of attendees at last concert, if known). What would be a good encoding strategy for music genre? Choose between numeric, one hot, discretized numeric (meaning discretized into bins), other.",
+       "Solution": "One Hot"
+}

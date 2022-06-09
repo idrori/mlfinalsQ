@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2021",
+       "Question Number": "8",
+       "Part": "b.ii",
+       "Points": 0.5,
+       "Topic": "CNNs",
+       "Type": "Text",
+       "Question": "When performing binary classification what loss function should one use?",
+       "Solution": "negative log likelihood loss"
+}

@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2017",
+       "Question Number": "2",
+       "Part": "d",
+       "Points": 2.5,
+       "Topic": "MDPs",
+       "Type": "Image",
+       "Question": "Consider the MDP shown above. It has states $S_{0}, \\ldots, S_{6}$ and actions $A, B$. Each arrow is labeled with one or more actions, and a probability value: this means that if any of those actions is chosen from the state at the start of the arrow, then it will make a transition to the state at the end of the arrow with the associated probability.\n\nRewards are associated with states, and independent, in this example, from the action that is taken in that state. Remember that with horizon $H=1$, the agent can collect the reward associated with the state it is in, and then terminates.\n\nAre there any policies that result in infinite-horizon $Q_{\\pi}$ values that are finite for all states even when $\\gamma=1$ ? If so, provide such a policy. If not, explain why not.",
+       "Solution": "i. $S_{0}$ A\nii. $S_{1}-2$ A\niii. $S_{2}$ A or $\\mathbf{B}$\niv. $S_{3} \\quad \\mathbf{A}$ or $\\mathbf{B}$\nv. $S_{4} \\ldots \\mathbf{A}$ or $\\mathbf{B}$\nvi. $S_{5} \\quad \\mathbf{A}$ or $\\mathbf{B}$\nvii. $S_{6}$ A or $\\mathbf{B}$"
+}

@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2022",
+       "Question Number": "3",
+       "Part": "b.ii",
+       "Points": 1.666666667,
+       "Topic": "Classifiers",
+       "Type": "Text",
+       "Question": "Consider the following data: Positive = (-4, 4), (4, -4), Negative = (-1, 1), (1, -1). Clearly, the points are not linearly separable, so we will try three alternative approaches to solving the problem. Let $w=\\left[\\begin{array}{l}+1 \\\\ -1\\end{array}\\right]$ and $$ \\begin{aligned} a_{1} &=\\operatorname{sign}\\left(w^{T} x+4\\right) \\\\ a_{2} &=\\operatorname{sign}\\left(w^{T} x-4\\right) \\\\ h\\left(x ; v_{0}, v_{1}, v_{2}\\right) &=\\operatorname{sign}\\left(v_{1} a_{1}+v_{2} a_{2}+v_{0}\\right) \\end{aligned} $$ where $$ \\operatorname{sign}(x)= \\begin{cases}+1 & \\text { if } x>0 \\\\ -1 & \\text { otherwise }\\end{cases} $$ Select values of the v2 so that the nested classifier correctly predicts the values in the data set.",
+       "Solution": "1"
+}

@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2019",
+       "Question Number": "1",
+       "Part": "a",
+       "Points": 2.0,
+       "Topic": "Classifiers",
+       "Type": "Text",
+       "Question": "Consider the following 2D dataset in (x,y) format: ((1,-1), +1), ((1,1),  +1), ((1,2.5),+1), ((2,-2),-1), ((2,1),+1),((2,3),+1),((5,-1),-1),((5,-2),-1). Break ties in distance by choosing the point with smaller x_1 coordinate, and if still tied, by smaller x_2 coordinate.\nCompute the leave-one-out cross validation accuracy (i.e., average 8 -fold cross validation accuracy) of the 1-nearest-neighbor learning algorithm on this dataset.",
+       "Solution": "6/8. When left out of the training set, the point at (1,-1) will be misclassif\fed during testing; similarly for the point at (2,-2)."
+}

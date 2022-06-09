@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2022",
+       "Question Number": "5",
+       "Part": "f",
+       "Points": 4.0,
+       "Topic": "Features",
+       "Type": "Image",
+       "Question": "Given a true loss function $\\mathcal{L}_{\\text {true, which is not differentisble, how could you use it to find }}$ a good value of $\\lambda$ so that you can use $\\mathcal{L}_{\\text {cody }}$ with that $\\lambda$ to construct a good predictive hypothesis? Assume you have a dataset $\\mathcal{D}$ and that you are given a set lambdas of plausible values for $\\lambda$. Let's write out a strategy in very abstract pseudo-code, using the following basic procedures:\n- train(data, lossfn) : trains a regression model to minimize lossfn on data, returns parameters theta\n- subpart (data, $j, K$ ) : divides data into $K$ equal parts and returns the jth subpart\n- allbutsubpart (data, $j, K$ ) : divides data into $K$ equal parts and returns all except the jth subpart\n- eval (theta, data, lossfn) : returns average loss of hypothesis with weights theta on data according to lossfn\n- L.true : the true loss function that maps a guess and an actual value into a cost\n- L_cody(lambda) : returns $\\mathcal{L}_{\\text {cady }}$ for this value of lambda, which is itself a loss function that maps a guess and an actual value into a cost\n\nFill in the blanks in the code below, for a process in which we perform 10-fold crossvalidation to find the best lambda value.\nbest_lambda = None; best_loss $=$ None\nfor lambda in lambdas do\nfor $k$ in range( $)$ do\nhypoth $=\\operatorname{train}($ allbut subpart $($ data. k, 10),$\\ldots$ Lucody (lambda)\nloss $=\\operatorname{eval}($ hypoth, subpart (data, k, 10)\nif best_lambda is None or loss < best_loss then\nbest_lambda $=$ lambda\nbest_loss $=$ loss\nbest_lambda\nreturn best_lambda\n",
+       "Solution": "Image filling"
+}

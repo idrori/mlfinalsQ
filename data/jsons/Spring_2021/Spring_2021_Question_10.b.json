@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2021",
+       "Question Number": "10",
+       "Part": "b",
+       "Points": 2.0,
+       "Topic": "Classifiers",
+       "Type": "Text",
+       "Question": "Given a set of data $\\mathcal{D}_\\text{train} = \\{(\\ex{x}{i}, \\ex{y}{i})\\}$, a weighted nearest neighbor regressor  has the form \n\\[h(x , \\theta) = \\frac{\\sum_{(\\ex{x}{i}, \\ex{y}{i}) \\in \\mathcal{D}_\\text{train}} f(x, \\ex{x}{i} , \\theta) \\ex{y}{i}}\n{\\sum_{(\\ex{x}{i}, \\ex{y}{i}) \\in \\mathcal{D}_\\text{train}} f(x, \\ex{x}{i} , \\theta) }\n\\,\\,.\\]\nA typical choice for $f$ is\n\\[f(x, x', \\theta) = e^{-\\theta \\|x - x'\\|^2}\n\\]\nwhere $\\theta$ is a scalar and $\\|x-x'\\|^2 = \\sum_{j=1}^d (x_j - x'_j)^2$. Assume our training data $\\mathcal{D}_\\text{train} = ((1, 1), (2, 2), (3, 6))$. Approximately what is $h(10, 1)$? \n",
+       "Solution": "Approximately 6"
+}

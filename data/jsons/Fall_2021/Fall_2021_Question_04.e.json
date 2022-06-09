@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2021",
+       "Question Number": "4",
+       "Part": "e",
+       "Points": 3.0,
+       "Topic": "Classifiers",
+       "Type": "Image",
+       "Question": "This question asks about learning nearest neighbor (NN) classifiers. Assume that we are using Euclidean distance squared as the distance metric, i.e. $d\\left(x, x^{\\prime}\\right)=\\left\\|x-x^{\\prime}\\right\\|^{2}$. \nThe plots below show the decision boundaries as predicted by a k-NN classifier for four different values of $\\mathrm{k}: 1,5,20,40$. Map each plot to the corresponding value of $k$.\n(I)\n(II)\n(III)\n$(\\mathrm{IV})$",
+       "Solution": "Image filling"
+}

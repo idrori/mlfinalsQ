@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2018",
+       "Question Number": "3",
+       "Part": "c.ii",
+       "Points": 1.666666667,
+       "Topic": "CNNs",
+       "Type": "Image",
+       "Question": "What would be the result of applying max-pooling with size $k=2$ and stride 2 on the original, unfiltered image above?\nii. Draw the actual image with numerical values for each pixel in the space below.",
+       "Solution": "11\n$-11$"
+}

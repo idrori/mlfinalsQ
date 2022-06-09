@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2019",
+       "Question Number": "5",
+       "Part": "e",
+       "Points": 2.0,
+       "Topic": "MDPs",
+       "Type": "Image",
+       "Question": "Consider the following deterministic Markow Decision Process (MDP), describing a simple robot grid world. Notice that the values of the irnmediate rewards $r$ for two transitions are written next to thern; the other transitions, with no value written next to them, have an immedinte reward of $r=0$. Assume the discount factor $\\gamma$ is $0.8$.\nAssume $p=0.75$. For each of the states $s \\in\\{s 2, s 5, s 6\\}$, write the value for $V_{\\pi^{*}}(s)$. It is flne to write a numerical expression, but it shouldn't contain any variables.",
+       "Solution": "Solution:\n$$\n\\begin{aligned}\nV_{x^{*}}(s 6) &=100 p+(1-p) \\gamma V_{\\pi^{*}}(s 6) \\\\\nV_{z^{*}}(s 6)(1-(1-p) \\gamma) &=100 p \\\\\nV_{x^{*}}(s 6) &=\\frac{100 p}{1-(1-p) \\gamma}=93.75\n\\end{aligned}\n$$\nSolution:\n$$\nV_{\\pi^{*}}(35)=V_{x^{*}}(s 6)=75\n$$\nSolution:\n$$\nV_{\\pi^{*}}(s 2)=V_{\\mathrm{m}^{*}}(s 5)=60\n$$"
+}

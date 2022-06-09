@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2018",
+       "Question Number": "9",
+       "Part": "a",
+       "Points": 3.0,
+       "Topic": "CNNs",
+       "Type": "Image",
+       "Question": "We will explore how convolutional neural networks operate by designing one. Our objective is to be able to locate the pattern\nin an image. Throughout this problem, treat dark squares as having value $+1$ and light squares as having value $-1$. Consider the image that would result from convolving the image below with a filter that is the same as the pattern above. (Use our definition of convolution, in which we slide the filter over the image and compute the dot product.) Assume that the edges are padded with $-1$ and that use a stride of 1 .\n\nIndicate which pixel in the resulting image will have the maximum value by writing the resulting pixel value in the appropriate cell of the image on the right below.",
+       "Solution": "Image filling"
+}

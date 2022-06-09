@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2018",
+       "Question Number": "6",
+       "Part": "g",
+       "Points": 2.0,
+       "Topic": "Reinforcement Learning",
+       "Type": "Text",
+       "Question": "We often use \u000f$\\epsilon$-greedy exploration in Q learning, in which we execute the action with the highest Q value in the current state with probability 1 \u2212 $\\epsilon$ and execute a random action with probability \u000f$\\epsilon$. What problem might occur if we set $\\epsilon$ to be too small?",
+       "Solution": "We might get stuck for a long time doing a sub-optimal action choice due to lack of exploration."
+}

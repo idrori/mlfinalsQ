@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2017",
+       "Question Number": "1",
+       "Part": "a",
+       "Points": 2.0,
+       "Topic": "Regression",
+       "Type": "Text",
+       "Question": "We're given a data set $D=\\left\\{\\left(x^{(i)}, y^{(i)}\\right)\\right\\}_{i=1}^{n}$, where $x^{(i)} \\in R^{d}$ and $y^{(i)} \\in R$. Let $X$ be a $d \\times n$ matrix in which the $x^{(i)}$ are the columns and let $Y$ be a $1 \\times n$ vector containing the values of $y^{(i)}$. Using the ordinary least-squares formula, we can compute $$ W_{o l s}=\\left(X X^{T}\\right)^{-1} X Y^{T} $$ Using ridge regression, we can compute $$ W_{\\text {ridge }}=\\left(X X^{T}+\\lambda I\\right)^{-1} X Y^{T} $$ We decide to try to use these methods to initialize a single-unit \"neural network\" with a linear activation function. Assume that $X X^{T}$ is neither singular nor equal to the identity matrix, and that neither $W_{\\text {ols }}$ nor $W_{\\text {ridge }}$ is equal to $(0,0, \\ldots, 0)$.If we initialized our neuron with $W_{\\text {ols }}$ and did batch gradient descent (summing the error over all the data points) with squared loss and a fixed small step size, which of the following would most typically happen: \nA. The weights would change and then converge back to the original value\nB. Weights would not change\nC. Weights would make small oscillations around the initial weights\nD. The weights would converge to a different value\nE. Something else would happen",
+       "Solution": "B. The weights would not change"
+}

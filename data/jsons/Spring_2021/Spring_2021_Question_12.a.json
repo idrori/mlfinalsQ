@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2021",
+       "Question Number": "12",
+       "Part": "a",
+       "Points": 1.0,
+       "Topic": "Decision Trees",
+       "Type": "Image",
+       "Question": "Here is a standard regression tree of a fixed size. It has 5 scalar parameters $\\left(s_{1}, s_{2}, v_{1}, v_{2}, v_{3}\\right)$ and two discrete choices of feature to split on, denoted by integers $j$ and $k$.\nWe are given a training data set $\\mathcal{D}_{\\operatorname{train}}=\\left\\{\\left(x^{(j)}, y^{(j)}\\right)\\right\\}$ where the dimension of $x^{(j)}$ is $d$. \nExplain briefly why we cannot use gradient descent on a squared loss to optimize all the parameters of this predictor.",
+       "Solution": "The gradients are are zero or do not exist."
+}

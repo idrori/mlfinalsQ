@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2019",
+       "Question Number": "6",
+       "Part": "a",
+       "Points": 1.75,
+       "Topic": "Classifiers",
+       "Type": "Text",
+       "Question": "After taking 6.036, Bob decides to train a recommender system to predict what ratings different customers will give to different movies. Currently, he knows of three really popular movies, and he knows of two potential customers who have ranked some of these movies. The data matrix currently looks like: $Y=[[2, ?, 3],[4,2, ?]]$ where, as in class, rows correspond to customers and columns correspond to movies, and ? indicates a missing or unknown ranking. He decides to find a low rank factorization of $Y$ using the alternating least squares algorithm implemented in class. Assume for this question that offsets are set to $0 .$\nBob starts out by trying a rank 1 factorization of $Y$ as $U V^{T}$. He initializes $U=[1,2]^{T}$. Assume there is no regularization. In the first iteration of alternating least squares, we will find the best $V$ given the current $U$. What is the objective function $J(V)$ in terms of $V$ ? Write it in terms of $V_{1}, V_{2}, V_{3}$ and specific numerical values from $Y$.",
+       "Solution": "J(V)=\\left(1 \\cdot V_{1}-2\\right)^{2}+\\left(1 \\cdot V_{3}-3\\right)^{2}+\\left(2 \\cdot V_{1}-4\\right)^{2}+\\left(2 \\cdot V_{2}-2\\right)^{2}"
+}

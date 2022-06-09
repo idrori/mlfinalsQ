@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2018",
+       "Question Number": "3",
+       "Part": "b",
+       "Points": 1.666666667,
+       "Topic": "CNNs",
+       "Type": "Text",
+       "Question": "If for a Convolutional Neural Network we used 5 different filters with size 3x3 and stride 1 on this image, what would the dimensions of the resulting output be?",
+       "Solution": "4x4x5"
+}

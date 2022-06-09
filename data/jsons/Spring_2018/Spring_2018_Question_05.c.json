@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2018",
+       "Question Number": "5",
+       "Part": "c",
+       "Points": 2.0,
+       "Topic": "MDPs",
+       "Type": "Image",
+       "Question": "Consider the following Markov decision process:\nAssume:\n- Reward is 0 in all states, except $+10$ in s6 and $+5$ in s5; the reward is received when exiting the state.\n- Transitions out of s0 are deterministic, and depend on the choice of action (A or B). Now, assume that transitions out of so are deterministic, but that all other transitions follow the arrows indicated with probsbility $0.9$ and stay in the current state with probsbility $0.1$\n\nFor policy $\\pi\\left(s_{0}\\right)=B$, write a system of equations that can be solved in order to compute $V_{\\pi}(s 0)$ when the horizon is infinite and $\\gamma=0.8$.\nDo not solve the equations!",
+       "Solution": "$$\n\\begin{aligned}\n&v_{0}=0.8 v_{4} \\\\\n&v_{4}=0.8\\left(0.1 v_{4}+0.9 v_{5}\\right) \\\\\n&v_{\\mathrm{g}}=5+0.8\\left(0.1 v_{\\mathrm{g}}+0.9 v_{\\mathrm{D}}\\right)\n\\end{aligned}\n$$"
+}

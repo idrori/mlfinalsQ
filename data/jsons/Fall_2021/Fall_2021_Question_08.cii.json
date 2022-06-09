@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2021",
+       "Question Number": "8",
+       "Part": "cii",
+       "Points": 0.5,
+       "Topic": "CNNs",
+       "Type": "Text",
+       "Question": "If Rec wants to allow for more than two classes when performing classification, what loss function should one use?",
+       "Solution": "cross entropy"
+}

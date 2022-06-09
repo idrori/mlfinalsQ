@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2017",
+       "Question Number": "9",
+       "Part": "a.iv",
+       "Points": 1.0,
+       "Topic": "Classifiers",
+       "Type": "Text",
+       "Question": "Here is a dataset in the form of (x, y) coordinates. P1 = (1, 1), P2 = (6, 6), P3 = (4, 6), P4 = (6, 4) and the seperator is a line at y = 3.5. What is the margin for P4 with respect to the separator?",
+       "Solution": "0.5"
+}

@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2019",
+       "Question Number": "9",
+       "Part": "d",
+       "Points": 2.0,
+       "Topic": "RNNs",
+       "Type": "Text",
+       "Question": "We want to make an RNN to translate English to Martian. We have a training set of pairs $\\left(e^{(i)}, m^{(i)}\\right)$, where $e^{(i)}$ is a sequence of length $J^{(i)}$ of English words and $m^{(i)}$ is a sequence of length $K^{(i)}$ of Martian words. The sequences, even within a pair, do not need to be of the same length, i.e., $J^{(i)}$ need not equal $K^{(i)}$. We are considering two different strategies for turning this into a transduction or sequence-to-sequence learning problem for an RNN.\nMethod 1: Construct a training-sequence pair $(x, y)$ from an example $(e, m)$ by letting $x=(e_{1}, e_{2}, \\ldots, e_{L}, stop)$, $y=\\left(m_{1}, m_{2}, \\ldots, m_{L}, \\text { stop }). In Method 1, we assume that if the original $e$ and $m$ had different numbers of words, then the shorter sentence is padded with enough time-wasting words (\"ummm\" for English, \"grlork\" for Martian) so that they now have equal length, L. Any needed padding words are inserted at the end of $e^{(i)}$, and at the start of $m^{(i)}$.\nMethod 2: Construct a training-sequence pair $(x, y)$ from an example $(e, m)$ by letting $x=(e_{1}, e_{2}, \\ldots, e_{J}, \\text { stop, blank }, \\ldots, \\text { blank })$, $y=(\\text { blank }, \\ldots, \\text { blank, } m_{1}, m_{2}, \\ldots, m_{K}, \\text { stop })$. In Method 2 , blanks are inserted at the end of $e$ and start of $m$ such that the length of $x$ and $y$ are now both $J+K+1$.\nWhich method is better if English and Martian have very different word order? Explain why.",
+       "Solution": "Method 2 since it can first parse the entire input sentence, and then output in a different word order."
+}

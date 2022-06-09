@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2021",
+       "Question Number": "1",
+       "Part": "j",
+       "Points": 1.0,
+       "Topic": "Neural Networks",
+       "Type": "Text",
+       "Question": "Mac O\u2019Larnin is considering selling an app on Frugal Play. You have a friend with inside info at Frugal, and they\u2019re able to share data on how previous apps have performed on the store. Mac decides that he will learn a neural network with no hidden layer (i.e., consisting only of the output layer). He needs help in figuring out the precise formulation for machine learning. Mac experiments with even more training data and additional values of \u03bb, but finds that he cannot decrease the validation error further. Are there changes to the neural network architecture that Mac could make to try to improve prediction performance? Explain.",
+       "Solution": "Mac could add hidden layers with nonlinear activation functions to the\nneural network."
+}

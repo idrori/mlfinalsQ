@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2022",
+       "Question Number": "3",
+       "Part": "d",
+       "Points": 4.0,
+       "Topic": "Classifiers",
+       "Type": "Image",
+       "Question": "We can classify the points correctly if $f$ (in both layers) is sigmoid. Provide the weights so this network will correctly classify the given points.",
+       "Solution": "Image filling"
+}

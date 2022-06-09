@@ -1,0 +1,508 @@
+Semester,Question Number,Part,Points,Topic,Type,Question,Solution
+Fall 2018,2,a,2.5,Neural Networks,Text,"We will consider a neural network with a slightly unusual structure. Let the input $x$ be $d \times 1$ and let the weights be represented as $k 1 \times d$ vectors, $W^{(1)}, \ldots, W^{(k)}$. Then the final output is
+$$
+\hat{y}=\prod_{i=1}^{k} \sigma\left(W^{(i)} x\right)=\sigma\left(W^{(1)} x\right) \times \cdots \times \sigma\left(W^{(k)} x\right)
+$$
+Define $a^{(j)}=\sigma\left(W^{(j)} x\right)$.
+What is $\partial L(\hat{y}, y) / \partial a^{(j)}$ for some $j$ ? Since we have not specified the loss function, you can express your answer in terms of $\partial L(\hat{y}, y) / \partial \hat{y}$.","$$
+\frac{\partial L(\hat{y}, y)}{\partial \hat{y}} \prod_{i \neq j} \sigma\left(W^{(i)} x\right)
+$$"
+Fall 2018,2,b,2.5,Neural Networks,Text,"We will consider a neural network with a slightly unusual structure. Let the input $x$ be $d \times 1$ and let the weights be represented as $k 1 \times d$ vectors, $W^{(1)}, \ldots, W^{(k)}$. Then the final output is
+$$
+\hat{y}=\prod_{i=1}^{k} \sigma\left(W^{(i)} x\right)=\sigma\left(W^{(1)} x\right) \times \cdots \times \sigma\left(W^{(k)} x\right)
+$$
+Define $a^{(j)}=\sigma\left(W^{(j)} x\right)$.
+What are the dimensions of $\partial a^{(j)} / \partial W^{(j)}$ ?","Because $a^{(j)}$ is a scalar, they are the same as for $W^{(j)}$, which is $1 \times d$."
+Fall 2018,2,c,2.5,Neural Networks,Text,"We will consider a neural network with a slightly unusual structure. Let the input $x$ be $d \times 1$ and let the weights be represented as $k 1 \times d$ vectors, $W^{(1)}, \ldots, W^{(k)}$. Then the final output is
+$$
+\hat{y}=\prod_{i=1}^{k} \sigma\left(W^{(i)} x\right)=\sigma\left(W^{(1)} x\right) \times \cdots \times \sigma\left(W^{(k)} x\right)
+$$
+Define $a^{(j)}=\sigma\left(W^{(j)} x\right)$.
+What is $\partial a^{(j)} / \partial W^{(j)}$ ? (Recall that $d \sigma(v) / d v=\sigma(v)(1-\sigma(v))$.)","$$
+a^{(j)}\left(1-a^{(j)}\right) x^{T}
+$$"
+Fall 2018,2,d,2.5,Neural Networks,Text,"We will consider a neural network with a slightly unusual structure. Let the input $x$ be $d \times 1$ and let the weights be represented as $k 1 \times d$ vectors, $W^{(1)}, \ldots, W^{(k)}$. Then the final output is
+$$
+\hat{y}=\prod_{i=1}^{k} \sigma\left(W^{(i)} x\right)=\sigma\left(W^{(1)} x\right) \times \cdots \times \sigma\left(W^{(k)} x\right)
+$$
+Define $a^{(j)}=\sigma\left(W^{(j)} x\right)$.
+What would the form of a stochastic gradient descent update rule be for $W^{(j)}$ ? Express your answer in terms of $\partial L(\hat{y}, y) / \partial a^{(j)}$ and $\partial a^{(j)} / \partial W^{(j)}$. Use $\eta$ for the step size.","$$
+W^{(j)}=W^{(j)}-\eta \frac{\partial L(\hat{y}, y)}{\partial a^{(j)}} \frac{\partial a^{(j)}}{\partial W^{(j)}}
+$$"
+Fall 2018,3,a,1.666666667,CNNs,Image,"Consider the following image (on the left) and filter (on the right):
+Consider what results from filtering this image with this filter, assuming that the input image is padded with zeros, and using a stride of 1 . To compute the output value of a particular pixel $(i, j)$, apply the filter with its center on pixel $(i, j)$ of the input image.
+Assume dark pixels have a value of 1 and light pixels have a value of -1.
+i. What is the output value for the top-left image pixel (that is, the pixel with indices $(1,1)$ in one-based indexing)?
+ii. What element of the output image will have the highest value? (Assume the rows and columns of the image are numbered starting with 1.)
+","i. -2
+ii. 3,1"
+Fall 2018,3,b,1.666666667,CNNs,Text,"If for a Convolutional Neural Network we used 5 different filters with size 3x3 and stride 1 on this image, what would the dimensions of the resulting output be?",4x4x5
+Fall 2018,3,c.i,1.666666667,CNNs,Image,"What would be the result of applying max-pooling with size $k=2$ and stride 2 on the original, unfiltered image above?
+i. What are the dimensions of the resulting image?
+ii. Draw the actual image with numerical values for each pixel in the space below.
+Solution:
+11
+$-11$",$\frac{2 \times 2}{\text { iraw the actual ins }}$
+Fall 2018,3,c.ii,1.666666667,CNNs,Image,"What would be the result of applying max-pooling with size $k=2$ and stride 2 on the original, unfiltered image above?
+ii. Draw the actual image with numerical values for each pixel in the space below.","11
+$-11$"
+Fall 2018,3,d.i,1.666666667,CNNs,Text,"Dana has an idea for a new kind of network called a ModConv NN. If the network is n⇥n, we will use a filter of size n/k (assume k evenly divides n). To compute entry (a, b) of the resulting image, we apply this filter to the “subimage” of pixels (i, j) from the original image, where i mod k = a and j mod k = b. Could we train the weights of a ModConvNN using gradient descent? Explain why or why not.",Sure. Just another parametric model
+Fall 2018,3,d.ii,1.666666667,CNNs,Text,"Dana has an idea for a new kind of network called a ModConv NN. If the network is n⇥n, we will use a filter of size n/k (assume k evenly divides n). To compute entry (a, b) of the resulting image, we apply this filter to the “subimage” of pixels (i, j) from the original image, where i mod k = a and j mod k = b. What underlying assumption about patterns in images is built into a regular convolutional network, but not this one?",This one does not encode the fact that nearby groups of pixels work together to encode information (that there is spatial locality of useful patterns in an image).
+Fall 2018,4,a,3,Neural Networks,Text,"You are working on a new system that will replace Keras for building neural networks. It is founded on the ideas of series and parallel combination. For simplicity, in this problem, we will assume all of our modules have input and output dimension $n$.
+A series combination of two modules looks like this:
+If you think of each module as a function, then the final output
+$$
+\hat{y}=M_{2}\left(M_{1}\left(x ; W_{1}\right) ; W_{2}\right) .
+$$
+A parallel combination of two modules looks like this (we added the outputs of the two modules to keep the input and output dimensions equal).
+If you think of each module as a function, then the final output
+$$
+\hat{y}=M_{1}\left(x ; W_{1}\right)+M_{2}\left(x ; W_{2}\right)
+$$
+We won't assume that we know anything about the modules, except that they are feed-forward, have some collection of parameters $W_{i}$, which we will treat as a single vector, and that we can compute
+$$
+M_{\mathrm{i}}\left(v ; W_{i}\right), \frac{\partial M_{i}\left(v ; W_{\mathrm{i}}\right)}{\partial W_{\mathrm{i}}} \text { and } \frac{\partial M_{\mathrm{i}}\left(v ; W_{i}\right)}{\partial v}
+$$
+for each module, where $v$ is the input to that module. Assume that our loss function is squared loss, so
+$$
+L(\hat{y}, y)=\frac{1}{2}(\hat{y}-y)^{2}
+$$
+
+What is $\partial L(\hat{y}, y) / \partial W_{1}$ for a series combination of $M_{1}$ and $M_{2}$ ? Write your answer in terms of input $x$, target output $y$, and weights $W_{1}$ and $W_{2}$, using the given forward and gradient functions.","$$
+\left.\underset{\left(x ; W_{1}\right)}{\partial M_{2}\left(a_{1} ; W_{2}\right)} \frac{\partial M_{1}\left(x ; W_{1}\right)}{\partial W_{1}}\right)^{T}\left(M_{2}\left(M_{1}\left(x ; W_{1}\right)\right)-y\right)
+$$
+where $a_{1}=M_{1}\left(x ; W_{1}\right)$."
+Fall 2018,4,b,3,Neural Networks,Text,"You are working on a new system that will replace Keras for building neural networks. It is founded on the ideas of series and parallel combination. For simplicity, in this problem, we will assume all of our modules have input and output dimension $n$.
+A series combination of two modules looks like this:
+If you think of each module as a function, then the final output
+$$
+\hat{y}=M_{2}\left(M_{1}\left(x ; W_{1}\right) ; W_{2}\right) .
+$$
+A parallel combination of two modules looks like this (we added the outputs of the two modules to keep the input and output dimensions equal).
+If you think of each module as a function, then the final output
+$$
+\hat{y}=M_{1}\left(x ; W_{1}\right)+M_{2}\left(x ; W_{2}\right)
+$$
+We won't assume that we know anything about the modules, except that they are feed-forward, have some collection of parameters $W_{i}$, which we will treat as a single vector, and that we can compute
+$$
+M_{\mathrm{i}}\left(v ; W_{i}\right), \frac{\partial M_{i}\left(v ; W_{\mathrm{i}}\right)}{\partial W_{\mathrm{i}}} \text { and } \frac{\partial M_{\mathrm{i}}\left(v ; W_{i}\right)}{\partial v}
+$$
+for each module, where $v$ is the input to that module. Assume that our loss function is squared loss, so
+$$
+L(\hat{y}, y)=\frac{1}{2}(\hat{y}-y)^{2}
+$$
+
+
+What is $\partial L / \partial W_{1}$ for a parallel combination of $M_{1}$ and $M_{2}$ ? Write your answer in terms of input $x$, target output $y$, and weights $W_{1}$ and $W_{2}$, using the given forward and gradient functions.","$$
+\left(\frac{\partial M_{1}\left(x ; W_{1}\right)}{W_{1}}\right)^{T}\left(M_{1}\left(x ; W_{1}\right)+M_{2}\left(x ; W_{2}\right)-y\right)
+$$"
+Fall 2018,5,a,1.857142857,MDPs,Image,"Consider the following MDP with $k+4$ statess. There are two actions, $a_{1}$ and $a_{2}$. Arrows with no labels represent a transition for both actions with probability 1. Arrows labeled $a / p$ make the transition on action $a$ with probability $p$. States with no label have reward 0 . Two states have reward $+1$, obtained when taking an action in that state. There are $k-2$ states between $s_{1}$ and $s_{k}$, with a deterministic transition on any action (so that once you are in s1 you are guaranteed to end up in $s_{k}$ in $k-1$ steps).
+We are interested in the infinite-horizon discounted values of some states in this MDP. What is $V\left(s_{1}\right)$ as a function of $k$ when $\gamma=0$ ?",0
+Fall 2018,5,b,1.857142857,MDPs,Image,"Consider the following MDP with $k+4$ statess. There are two actions, $a_{1}$ and $a_{2}$. Arrows with no labels represent a transition for both actions with probability 1. Arrows labeled $a / p$ make the transition on action $a$ with probability $p$. States with no label have reward 0 . Two states have reward $+1$, obtained when taking an action in that state. There are $k-2$ states between $s_{1}$ and $s_{k}$, with a deterministic transition on any action (so that once you are in s1 you are guaranteed to end up in $s_{k}$ in $k-1$ steps).
+We are interested in the infinite-horizon discounted values of some states in this MDP. What is $V\left(s_{1}\right)$ as a function of $k$ when $\gamma=1 ?$",1
+Fall 2018,5,c,1.857142857,MDPs,Image,"Consider the following MDP with $k+4$ statess. There are two actions, $a_{1}$ and $a_{2}$. Arrows with no labels represent a transition for both actions with probability 1. Arrows labeled $a / p$ make the transition on action $a$ with probability $p$. States with no label have reward 0 . Two states have reward $+1$, obtained when taking an action in that state. There are $k-2$ states between $s_{1}$ and $s_{k}$, with a deterministic transition on any action (so that once you are in s1 you are guaranteed to end up in $s_{k}$ in $k-1$ steps).
+We are interested in the infinite-horizon discounted values of some states in this MDP. What is $V\left(s_{1}\right)$ as a function of $k$ when $0<\gamma<1$ ?",$\gamma^{k-1}$
+Fall 2018,5,d,1.857142857,MDPs,Image,"Consider the following MDP with $k+4$ statess. There are two actions, $a_{1}$ and $a_{2}$. Arrows with no labels represent a transition for both actions with probability 1. Arrows labeled $a / p$ make the transition on action $a$ with probability $p$. States with no label have reward 0 . Two states have reward $+1$, obtained when taking an action in that state. There are $k-2$ states between $s_{1}$ and $s_{k}$, with a deterministic transition on any action (so that once you are in s1 you are guaranteed to end up in $s_{k}$ in $k-1$ steps).
+We are interested in the infinite-horizon discounted values of some states in this MDP. What is $V\left(s_{x}\right)$ when $\gamma=0$ ?",0
+Fall 2018,5,e,1.857142857,MDPs,Image,"Consider the following MDP with $k+4$ statess. There are two actions, $a_{1}$ and $a_{2}$. Arrows with no labels represent a transition for both actions with probability 1. Arrows labeled $a / p$ make the transition on action $a$ with probability $p$. States with no label have reward 0 . Two states have reward $+1$, obtained when taking an action in that state. There are $k-2$ states between $s_{1}$ and $s_{k}$, with a deterministic transition on any action (so that once you are in s1 you are guaranteed to end up in $s_{k}$ in $k-1$ steps).
+We are interested in the infinite-horizon discounted values of some states in this MDP. What is $V\left(s_{x}\right)$ when $\gamma=1$ ?",1
+Fall 2018,5,f,1.857142857,MDPs,Image,"Consider the following MDP with $k+4$ statess. There are two actions, $a_{1}$ and $a_{2}$. Arrows with no labels represent a transition for both actions with probability 1. Arrows labeled $a / p$ make the transition on action $a$ with probability $p$. States with no label have reward 0 . Two states have reward $+1$, obtained when taking an action in that state. There are $k-2$ states between $s_{1}$ and $s_{k}$, with a deterministic transition on any action (so that once you are in s1 you are guaranteed to end up in $s_{k}$ in $k-1$ steps).
+We are interested in the infinite-horizon discounted values of some states in this MDP. What is $V\left(s_{x}\right)$ when $0<\gamma<1$ ?",\frac{\gamma}{2 - \gamma}
+Fall 2018,5,g,1.857142857,MDPs,Image,"Consider the following MDP with $k+4$ statess. There are two actions, $a_{1}$ and $a_{2}$. Arrows with no labels represent a transition for both actions with probability 1. Arrows labeled $a / p$ make the transition on action $a$ with probability $p$. States with no label have reward 0 . Two states have reward $+1$, obtained when taking an action in that state. There are $k-2$ states between $s_{1}$ and $s_{k}$, with a deterministic transition on any action (so that once you are in s1 you are guaranteed to end up in $s_{k}$ in $k-1$ steps).
+We are interested in the infinite-horizon discounted values of some states in this MDP. Under what conditions on $k$ and $\gamma$ would we prefer to take action $a_{1}$ in state $s_{0}$ ? Write down a specific mathematical relationship.",When $(9 / 10) \gamma^{k-1}>\gamma /(2-\gamma)$.
+Fall 2018,6,a-p,12,Regression,Image,"We generated a data set with 5 data-points, with $x$ and $y$ values in $\mathbb{R}$ and applied several regression methods to it.
+
+For each figure below, specify (a) which regression methods could possibly have generated the hypothesis on some data set and (b) given that each hypothesis was actually generated by exactly one of these methods, match each hypothesis to a single method.
+A 1-Nearest neighbor
+B Regression tree (with constants in the leaves)
+C Regression tree (with linear regressors in the leaves)
+D Linear regression with no feature transformation
+E Linear regression with second-order polynomial features
+$\mathrm{F}$ Linear regression with fifth-order polynomial features
+$\mathrm{G}$ Neural network with no hidden layer and sigmoid output non-linearity
+H Neural network with one ReLU hidden layer and no output non-linearity",Image matching
+Fall 2018,7,a,2,RNNs,Text,"Recall the specification of a standard recurrent neural network (RNN): input $x_{t}$ of dimension $\ell \times 1$, state $s_{t}$ of dimension $m \times 1$, and output $y_{t}$ of dimension $v \times 1$. The weights in the network, then, are
+$$
+\begin{aligned}
+&W^{s x}: m \times \ell \\
+&W^{s s}: m \times m \\
+&W^{O}: v \times m
+\end{aligned}
+$$
+with activation functions $f_{1}$ and $f_{2}$. Throughout this problem, for simplicity, we will treat all offsets as equal to 0 . Finally, the operation of the RNN is described by
+$$
+\begin{aligned}
+&s_{t}=f_{1}\left(W^{s x} x_{t}+W^{s s} s_{t-1}\right) \\
+&y_{t}=f_{2}\left(W^{o} s_{t}\right)
+\end{aligned}
+$$
+
+Consider an RNN defined by $\ell=1, m=2, v=1, f_{1}=f_{2}=$ the identity function, and
+$$
+W^{s x}=\left[\begin{array}{l}
+5 \\
+6
+\end{array}\right] \quad W^{s s}=\left[\begin{array}{ll}
+1 & 2 \\
+3 & 4
+\end{array}\right] \quad W^{O}=\left[\begin{array}{ll}
+-3 & -2
+\end{array}\right]
+$$
+Assuming the initial state is all 0 , and the input sequence is $[[1],[-1]]$, what is the output sequence?","$$
+\begin{aligned}
+s 1 &=[5,6]^{T} \\
+y 1 &=-15-12=-27 \\
+s 2 &=[-5,-6]^{T}+[5+12,15+24]^{T}=[12,33]^{T} \\
+y 2 &=-36-66=-102
+\end{aligned}
+$$
+So answer is $[[-27],[-102]]$. Don't worry about transpose."
+Fall 2018,7,b.i,2,RNNs,Text,"Recall the specification of a standard recurrent neural network (RNN): input $x_{t}$ of dimension $\ell \times 1$, state $s_{t}$ of dimension $m \times 1$, and output $y_{t}$ of dimension $v \times 1$. The weights in the network, then, are
+$$
+\begin{aligned}
+&W^{s x}: m \times \ell \\
+&W^{s s}: m \times m \\
+&W^{O}: v \times m
+\end{aligned}
+$$
+with activation functions $f_{1}$ and $f_{2}$. Throughout this problem, for simplicity, we will treat all offsets as equal to 0 . Finally, the operation of the RNN is described by
+$$
+\begin{aligned}
+&s_{t}=f_{1}\left(W^{s x} x_{t}+W^{s s} s_{t-1}\right) \\
+&y_{t}=f_{2}\left(W^{o} s_{t}\right)
+\end{aligned}
+$$
+We can think of the RNN as mapping input sequences to output sequences. Jody thinks that if we remove $f_{1}$ and $f_{2}$ then the mapping from input sequence to output sequence can be achieved by a hypothesis of the form $Y=W X$. In the case of a length 3 sequence, assuming inputs and outputs are 1-dimensional, $s_{0}=[0], X=\left[x_{1}, x_{2}, x_{3}\right]^{T}, Y=\left[y_{1}, y_{2}, y_{3}\right]^{T}$, and $W$ is $3 \times 3$.
+Is Jody right? 
+
+
+
+
+",Yes
+Fall 2018,7,b.ii,2,RNNs,Text,"Recall the specification of a standard recurrent neural network (RNN): input $x_{t}$ of dimension $\ell \times 1$, state $s_{t}$ of dimension $m \times 1$, and output $y_{t}$ of dimension $v \times 1$. The weights in the network, then, are
+$$
+\begin{aligned}
+&W^{s x}: m \times \ell \\
+&W^{s s}: m \times m \\
+&W^{O}: v \times m
+\end{aligned}
+$$
+with activation functions $f_{1}$ and $f_{2}$. Throughout this problem, for simplicity, we will treat all offsets as equal to 0 . Finally, the operation of the RNN is described by
+$$
+\begin{aligned}
+&s_{t}=f_{1}\left(W^{s x} x_{t}+W^{s s} s_{t-1}\right) \\
+&y_{t}=f_{2}\left(W^{o} s_{t}\right)
+\end{aligned}
+$$
+We can think of the RNN as mapping input sequences to output sequences. Jody thinks that if we remove $f_{1}$ and $f_{2}$ then the mapping from input sequence to output sequence can be achieved by a hypothesis of the form $Y=W X$. In the case of a length 3 sequence, assuming inputs and outputs are 1-dimensional, $s_{0}=[0], X=\left[x_{1}, x_{2}, x_{3}\right]^{T}, Y=\left[y_{1}, y_{2}, y_{3}\right]^{T}$, and $W$ is $3 \times 3$.
+If Jody is right, provide a definition for $W$ in Jody's model in terms of $W^{s x}, W^{s s}$, and $W^{O}$ of the original RNN that makes them equivalent If Jody is wrong, explain why.
+","$$
+W=\left[\begin{array}{ccc}
+W^{O} W^{s x} & 0 & 0 \\
+W^{O} W^{s s} W^{s x} & W^{O} W^{s x} & 0 \\
+W^{O} W^{s s} W^{s s} W^{s x} & W^{O} W^{s s} W^{s x} & W^{O} W^{s x}
+\end{array}\right]
+$$"
+Fall 2018,7,c.i,2,RNNs,Text,"Recall the specification of a standard recurrent neural network (RNN): input $x_{t}$ of dimension $\ell \times 1$, state $s_{t}$ of dimension $m \times 1$, and output $y_{t}$ of dimension $v \times 1$. The weights in the network, then, are
+$$
+\begin{aligned}
+&W^{s x}: m \times \ell \\
+&W^{s s}: m \times m \\
+&W^{O}: v \times m
+\end{aligned}
+$$
+Pat thinks a different RNN model would be good. Its operation is defined by
+$$
+\begin{aligned}
+s_{t}^{(i)} &=f_{1}\left(W_{i}^{s x} x_{t}^{(i)}+W_{i}^{s s} s_{t-1}^{(i)}\right) \\
+y_{t} &=f_{2}\left(W^{O} s_{t}\right)
+\end{aligned}
+$$
+where the dimension of the state, $m=k \cdot \ell$, so there are $k$ state dimensions for each input dimension, $s^{(i)}$ is the ith group of $k$ dimensions in the state vector, $x^{(i)}$ is the ith entry in the input vector, $W_{i}^{s x}$ is $k \times 1$ and $W_{i}^{s s}$ is $k \times k$.
+with activation functions $f_{1}$ and $f_{2}$. Throughout this problem, for simplicity, we will treat all offsets as equal to 0 . Finally, the operation of the RNN is described by
+$$
+\begin{aligned}
+&s_{t}=f_{1}\left(W^{s x} x_{t}+W^{s s} s_{t-1}\right) \\
+&y_{t}=f_{2}\left(W^{o} s_{t}\right)
+\end{aligned}
+$$
+Can this model represent the same set of state machines as a regular RNN?
+",No
+Fall 2018,7,c.ii,2,RNNs,Text,"Recall the specification of a standard recurrent neural network (RNN): input $x_{t}$ of dimension $\ell \times 1$, state $s_{t}$ of dimension $m \times 1$, and output $y_{t}$ of dimension $v \times 1$. The weights in the network, then, are
+$$
+\begin{aligned}
+&W^{s x}: m \times \ell \\
+&W^{s s}: m \times m \\
+&W^{O}: v \times m
+\end{aligned}
+$$
+Pat thinks a different RNN model would be good. Its operation is defined by
+$$
+\begin{aligned}
+s_{t}^{(i)} &=f_{1}\left(W_{i}^{s x} x_{t}^{(i)}+W_{i}^{s s} s_{t-1}^{(i)}\right) \\
+y_{t} &=f_{2}\left(W^{O} s_{t}\right)
+\end{aligned}
+$$
+where the dimension of the state, $m=k \cdot \ell$, so there are $k$ state dimensions for each input dimension, $s^{(i)}$ is the ith group of $k$ dimensions in the state vector, $x^{(i)}$ is the ith entry in the input vector, $W_{i}^{s x}$ is $k \times 1$ and $W_{i}^{s s}$ is $k \times k$.
+with activation functions $f_{1}$ and $f_{2}$. Throughout this problem, for simplicity, we will treat all offsets as equal to 0 . Finally, the operation of the RNN is described by
+$$
+\begin{aligned}
+&s_{t}=f_{1}\left(W^{s x} x_{t}+W^{s s} s_{t-1}\right) \\
+&y_{t}=f_{2}\left(W^{o} s_{t}\right)
+\end{aligned}
+$$
+If this model can represent the same set of state machines as a regular RNN, explain how to convert the weights of a regular RNN into weights for Pat's model.
+If this model cannot represent the same set of state machines as a regular RNN, describe a concrete input/output relationship (for example, the output $y_{t}$ is the sum of all the inputs $x_{t}^{(1)}, \ldots, x_{t}^{(\ell)}$ ) that can be represented by a regular RNN but cannot be represented by Pat's model, for any value of $k$.",Output a 1 if and only if $x^{(1)}$ and $x^{(2)}$ were simultaneously non-zero.
+Fall 2018,8,a,4,Decision Trees,Text,"There are different strategies for pruning decision trees. We assume that we grow 
+a decision tree until there is one or a small number of elements in each leaf. Then, we 
+prune by deleting individual leaves of the tree until the score of the tree starts to get worse.
+The question is how to score each possible pruning of the tree.
+ Here is a definition of the score: The score is the percentage correct of the tree on the training set. Explain whether or not it would be a good 
+idea and give a reason why or why not.",Not a good idea. The original tree was constructed to maximize performance on the training set. Pruning any part of the tree will reduce performance on the training set.
+Fall 2018,8,b,4,Decision Trees,Text,"There are different strategies for pruning decision trees. We assume that we grow 
+a decision tree until there is one or a small number of elements in each leaf. Then, we 
+prune by deleting individual leaves of the tree until the score of the tree starts to get worse.
+The question is how to score each possible pruning of the tree.
+ Here is a definition of the score: The score is the percentage correct of the tree on a separate validation set. Explain whether or not it would be a good 
+idea and give a reason why or why not.",A good idea. The validation set will be an independent check on whether pruning a node is likely to increase or decrease performance on unseen data.
+Fall 2018,8,c,4,Decision Trees,Text,"There are different strategies for pruning decision trees. We assume that we grow 
+a decision tree until there is one or a small number of elements in each leaf. Then, we 
+prune by deleting individual leaves of the tree until the score of the tree starts to get worse.
+The question is how to score each possible pruning of the tree.
+ Here is a definition of the score: The score is the percentage correct of the tree, computed using cross validation. Explain whether or not it would be a good idea and give a reason why or why not.","Not a good idea. Cross-validation allows you to evaluate algorithms, not individual
+hypotheses. Cross-validation will construct many new hypotheses and average their
+performance, this will not tell you whether pruning a node in a particular hypothesis is
+worthwhile or not."
+Fall 2018,8,d,4,Decision Trees,Text,"There are different strategies for pruning decision trees. We assume that we grow 
+a decision tree until there is one or a small number of elements in each leaf. Then, we 
+prune by deleting individual leaves of the tree until the score of the tree starts to get worse.
+The question is how to score each possible pruning of the tree.
+ Here is a definition of the score: The score is the percentage correct of the tree, computed on the training set, minus a
+constant C times the number of nodes in the tree. C is chosen in advance by running this algorithm (grow a large tree then prune in orderto maximize percent correct minus C times number of nodes) for many di erent valuesof C, and choosing the value of C that minimizes training-set error. Explain whether or not it would be a good 
+idea and give a reason why or why not.","Not a good idea. Running trials to maximize performance on the training set will not
+give us an indication of whether this algorithm will produce answers that generalize to
+other data sets."
+Fall 2018,8,e,4,Decision Trees,Text,"There are different strategies for pruning decision trees. We assume that we grow 
+a decision tree until there is one or a small number of elements in each leaf. Then, we 
+prune by deleting individual leaves of the tree until the score of the tree starts to get worse.
+The question is how to score each possible pruning of the tree.
+ Here is a definition of the score: The score is the percentage correct of the tree, computed on the training set, minus aconstant C times the number of nodes in the tree.C is chosen in advance by running cross-validation trials of this algorithm (grow alarge tree then prune in order to maximize percent correct minus C times number ofnodes) for many di erent values of C, and choosing the value of C that minimizescross-validation error. Explain whether or not it would be a good 
+idea and give a reason why or why not.","A good idea when we don’t have enough data to hold out a validation set. ChoosingC by cross-validation will hopefully give us an e ective general way of penalizing forcomplexity of the tree (for this type of data)."
+Fall 2018,9,a.i,1.1,MDPs,Text,"Sometimes we can make robust reinforcement-learning algorithms by reducing the problem to supervised learning. Assume:
+- The state space is $\mathbb{R}^{d}$, so in general the same state $s$ may not occur more than once in our data set.
+- The action space is $\{0,1\}$.
+- The space of possible rewards is $\{0,1\}$.
+- There is a discount factor $\gamma$.
+You are given a data set $\mathcal{D}$ of experience interacting with a domain. It contains $n$ tuples, each of the form $\left(s, a, r, s^{\prime}\right)$. Let $\mathcal{D}_{0}$ be the subset of the data tuples where $a=0$, and similarly $\mathcal{D}_{1}$ be the subset of the data tuples where $a=1$.
+
+Assume you have supervised classification and regression algorithms available to you, so that you can call classify $(X, Y)$ or regress $(X, Y)$ where $X$ is a matrix of input values and $Y$ is a vector of output values, and get out a hypothesis.
+
+In each of the following questions, we will ask you to construct a call to one of these procedures to produce a $Q, V$, or $\pi$ function. In each case, we will ask you to specify:
+- Whether it is a regression or classification problem.
+- The subset of $\mathcal{D}$ you will use.
+- How you will construct a training example $(x, y)$ from an original tuple $\left(s, a, r, s^{r}\right)$.
+For example, if you wanted to train a neural network to take in a state $s$ and predict the expected next state given that you take action 1 , then you might do a regression problem using data $D_{1}$, by setting $x=s$ and $y=s^{\prime}$.
+Assume horizon $h=1$. Construct a supervised learning problem to find $Q^{1}(s, 0)$, that is, the horizon-1 $Q$ value for action 0 , as a function of state $s$.
+Would you call classification or regression?",regression
+Fall 2018,9,a.ii,1.1,MDPs,Text,"Sometimes we can make robust reinforcement-learning algorithms by reducing the problem to supervised learning. Assume:
+- The state space is $\mathbb{R}^{d}$, so in general the same state $s$ may not occur more than once in our data set.
+- The action space is $\{0,1\}$.
+- The space of possible rewards is $\{0,1\}$.
+- There is a discount factor $\gamma$.
+You are given a data set $\mathcal{D}$ of experience interacting with a domain. It contains $n$ tuples, each of the form $\left(s, a, r, s^{\prime}\right)$. Let $\mathcal{D}_{0}$ be the subset of the data tuples where $a=0$, and similarly $\mathcal{D}_{1}$ be the subset of the data tuples where $a=1$.
+
+Assume you have supervised classification and regression algorithms available to you, so that you can call classify $(X, Y)$ or regress $(X, Y)$ where $X$ is a matrix of input values and $Y$ is a vector of output values, and get out a hypothesis.
+
+In each of the following questions, we will ask you to construct a call to one of these procedures to produce a $Q, V$, or $\pi$ function. In each case, we will ask you to specify:
+- Whether it is a regression or classification problem.
+- The subset of $\mathcal{D}$ you will use.
+- How you will construct a training example $(x, y)$ from an original tuple $\left(s, a, r, s^{r}\right)$.
+For example, if you wanted to train a neural network to take in a state $s$ and predict the expected next state given that you take action 1 , then you might do a regression problem using data $D_{1}$, by setting $x=s$ and $y=s^{\prime}$.
+Assume horizon $h=1$. Construct a supervised learning problem to find $Q^{1}(s, 0)$, that is, the horizon-1 $Q$ value for action 0 , as a function of state $s$.
+Will you use subset D, D0, or D1?",D0
+Fall 2018,9,a.iii,1.1,MDPs,Text,"Sometimes we can make robust reinforcement-learning algorithms by reducing the problem to supervised learning. Assume:
+- The state space is $\mathbb{R}^{d}$, so in general the same state $s$ may not occur more than once in our data set.
+- The action space is $\{0,1\}$.
+- The space of possible rewards is $\{0,1\}$.
+- There is a discount factor $\gamma$.
+You are given a data set $\mathcal{D}$ of experience interacting with a domain. It contains $n$ tuples, each of the form $\left(s, a, r, s^{\prime}\right)$. Let $\mathcal{D}_{0}$ be the subset of the data tuples where $a=0$, and similarly $\mathcal{D}_{1}$ be the subset of the data tuples where $a=1$.
+
+Assume you have supervised classification and regression algorithms available to you, so that you can call classify $(X, Y)$ or regress $(X, Y)$ where $X$ is a matrix of input values and $Y$ is a vector of output values, and get out a hypothesis.
+
+In each of the following questions, we will ask you to construct a call to one of these procedures to produce a $Q, V$, or $\pi$ function. In each case, we will ask you to specify:
+- Whether it is a regression or classification problem.
+- The subset of $\mathcal{D}$ you will use.
+- How you will construct a training example $(x, y)$ from an original tuple $\left(s, a, r, s^{r}\right)$.
+For example, if you wanted to train a neural network to take in a state $s$ and predict the expected next state given that you take action 1 , then you might do a regression problem using data $D_{1}$, by setting $x=s$ and $y=s^{\prime}$.
+Assume horizon $h=1$. Construct a supervised learning problem to find $Q^{1}(s, 0)$, that is, the horizon-1 $Q$ value for action 0 , as a function of state $s$.
+How will you construct a training example $(x, y)$ from an original tuple $\left(s, a, r, s^{r}\right)$.","x: s, y: r"
+Fall 2018,9,b.i,1.1,MDPs,Text,"Sometimes we can make robust reinforcement-learning algorithms by reducing the problem to supervised learning. Assume:
+- The state space is $\mathbb{R}^{d}$, so in general the same state $s$ may not occur more than once in our data set.
+- The action space is $\{0,1\}$.
+- The space of possible rewards is $\{0,1\}$.
+- There is a discount factor $\gamma$.
+You are given a data set $\mathcal{D}$ of experience interacting with a domain. It contains $n$ tuples, each of the form $\left(s, a, r, s^{\prime}\right)$. Let $\mathcal{D}_{0}$ be the subset of the data tuples where $a=0$, and similarly $\mathcal{D}_{1}$ be the subset of the data tuples where $a=1$.
+
+Assume you have supervised classification and regression algorithms available to you, so that you can call classify $(X, Y)$ or regress $(X, Y)$ where $X$ is a matrix of input values and $Y$ is a vector of output values, and get out a hypothesis.
+
+In each of the following questions, we will ask you to construct a call to one of these procedures to produce a $Q, V$, or $\pi$ function. In each case, we will ask you to specify:
+- Whether it is a regression or classification problem.
+- The subset of $\mathcal{D}$ you will use.
+- How you will construct a training example $(x, y)$ from an original tuple $\left(s, a, r, s^{r}\right)$.
+For example, if you wanted to train a neural network to take in a state $s$ and predict the expected next state given that you take action 1 , then you might do a regression problem using data $D_{1}$, by setting $x=s$ and $y=s^{\prime}$.
+Assuming horizon $h=1$, construct a supervised learning problem to find the optimal policy $\pi^{1}$. Recall that the space of possible rewards is $\{0,1\}$.
+Would you call this classification or regression?
+",classification
+Fall 2018,9,b.ii,1.1,MDPs,Text,"Sometimes we can make robust reinforcement-learning algorithms by reducing the problem to supervised learning. Assume:
+- The state space is $\mathbb{R}^{d}$, so in general the same state $s$ may not occur more than once in our data set.
+- The action space is $\{0,1\}$.
+- The space of possible rewards is $\{0,1\}$.
+- There is a discount factor $\gamma$.
+You are given a data set $\mathcal{D}$ of experience interacting with a domain. It contains $n$ tuples, each of the form $\left(s, a, r, s^{\prime}\right)$. Let $\mathcal{D}_{0}$ be the subset of the data tuples where $a=0$, and similarly $\mathcal{D}_{1}$ be the subset of the data tuples where $a=1$.
+
+Assume you have supervised classification and regression algorithms available to you, so that you can call classify $(X, Y)$ or regress $(X, Y)$ where $X$ is a matrix of input values and $Y$ is a vector of output values, and get out a hypothesis.
+
+In each of the following questions, we will ask you to construct a call to one of these procedures to produce a $Q, V$, or $\pi$ function. In each case, we will ask you to specify:
+- Whether it is a regression or classification problem.
+- The subset of $\mathcal{D}$ you will use.
+- How you will construct a training example $(x, y)$ from an original tuple $\left(s, a, r, s^{r}\right)$.
+For example, if you wanted to train a neural network to take in a state $s$ and predict the expected next state given that you take action 1 , then you might do a regression problem using data $D_{1}$, by setting $x=s$ and $y=s^{\prime}$.
+Assuming horizon $h=1$, construct a supervised learning problem to find the optimal policy $\pi^{1}$. Recall that the space of possible rewards is $\{0,1\}$.
+Will you use subset D, D0, or D1?
+",D
+Fall 2018,9,b.iii,1.1,MDPs,Text,"Sometimes we can make robust reinforcement-learning algorithms by reducing the problem to supervised learning. Assume:
+- The state space is $\mathbb{R}^{d}$, so in general the same state $s$ may not occur more than once in our data set.
+- The action space is $\{0,1\}$.
+- The space of possible rewards is $\{0,1\}$.
+- There is a discount factor $\gamma$.
+You are given a data set $\mathcal{D}$ of experience interacting with a domain. It contains $n$ tuples, each of the form $\left(s, a, r, s^{\prime}\right)$. Let $\mathcal{D}_{0}$ be the subset of the data tuples where $a=0$, and similarly $\mathcal{D}_{1}$ be the subset of the data tuples where $a=1$.
+
+Assume you have supervised classification and regression algorithms available to you, so that you can call classify $(X, Y)$ or regress $(X, Y)$ where $X$ is a matrix of input values and $Y$ is a vector of output values, and get out a hypothesis.
+
+In each of the following questions, we will ask you to construct a call to one of these procedures to produce a $Q, V$, or $\pi$ function. In each case, we will ask you to specify:
+- Whether it is a regression or classification problem.
+- The subset of $\mathcal{D}$ you will use.
+- How you will construct a training example $(x, y)$ from an original tuple $\left(s, a, r, s^{r}\right)$.
+For example, if you wanted to train a neural network to take in a state $s$ and predict the expected next state given that you take action 1 , then you might do a regression problem using data $D_{1}$, by setting $x=s$ and $y=s^{\prime}$.
+Assuming horizon $h=1$, construct a supervised learning problem to find the optimal policy $\pi^{1}$. Recall that the space of possible rewards is $\{0,1\}$.
+
+How will you construct a training example $(x, y)$ from an original tuple $\left(s, a, r, s^{r}\right)$?
+","x: s, y: a if r =1 else 1- a"
+Fall 2018,9,c.i,1.1,MDPs,Text,"Sometimes we can make robust reinforcement-learning algorithms by reducing the problem to supervised learning. Assume:
+- The state space is $\mathbb{R}^{d}$, so in general the same state $s$ may not occur more than once in our data set.
+- The action space is $\{0,1\}$.
+- The space of possible rewards is $\{0,1\}$.
+- There is a discount factor $\gamma$.
+You are given a data set $\mathcal{D}$ of experience interacting with a domain. It contains $n$ tuples, each of the form $\left(s, a, r, s^{\prime}\right)$. Let $\mathcal{D}_{0}$ be the subset of the data tuples where $a=0$, and similarly $\mathcal{D}_{1}$ be the subset of the data tuples where $a=1$.
+
+Assume you have supervised classification and regression algorithms available to you, so that you can call classify $(X, Y)$ or regress $(X, Y)$ where $X$ is a matrix of input values and $Y$ is a vector of output values, and get out a hypothesis.
+
+In each of the following questions, we will ask you to construct a call to one of these procedures to produce a $Q, V$, or $\pi$ function. In each case, we will ask you to specify:
+- Whether it is a regression or classification problem.
+- The subset of $\mathcal{D}$ you will use.
+- How you will construct a training example $(x, y)$ from an original tuple $\left(s, a, r, s^{r}\right)$.
+For example, if you wanted to train a neural network to take in a state $s$ and predict the expected next state given that you take action 1 , then you might do a regression problem using data $D_{1}$, by setting $x=s$ and $y=s^{\prime}$.
+Assume that we have already learned $V^{3}(s)$, that is, a function that maps a state $s$ into the optimal horizon-three value.
+
+Construct a supervised learning problem to find the optimal horizon 4 Q function for action $0, Q^{4}(s, 0)$. You can malue calls to $V^{3}$.
+
+Would you call classification or regression?",regression
+Fall 2018,9,c.ii,1.1,MDPs,Text,"Sometimes we can make robust reinforcement-learning algorithms by reducing the problem to supervised learning. Assume:
+- The state space is $\mathbb{R}^{d}$, so in general the same state $s$ may not occur more than once in our data set.
+- The action space is $\{0,1\}$.
+- The space of possible rewards is $\{0,1\}$.
+- There is a discount factor $\gamma$.
+You are given a data set $\mathcal{D}$ of experience interacting with a domain. It contains $n$ tuples, each of the form $\left(s, a, r, s^{\prime}\right)$. Let $\mathcal{D}_{0}$ be the subset of the data tuples where $a=0$, and similarly $\mathcal{D}_{1}$ be the subset of the data tuples where $a=1$.
+
+Assume you have supervised classification and regression algorithms available to you, so that you can call classify $(X, Y)$ or regress $(X, Y)$ where $X$ is a matrix of input values and $Y$ is a vector of output values, and get out a hypothesis.
+
+In each of the following questions, we will ask you to construct a call to one of these procedures to produce a $Q, V$, or $\pi$ function. In each case, we will ask you to specify:
+- Whether it is a regression or classification problem.
+- The subset of $\mathcal{D}$ you will use.
+- How you will construct a training example $(x, y)$ from an original tuple $\left(s, a, r, s^{r}\right)$.
+For example, if you wanted to train a neural network to take in a state $s$ and predict the expected next state given that you take action 1 , then you might do a regression problem using data $D_{1}$, by setting $x=s$ and $y=s^{\prime}$.
+Assume that we have already learned $V^{3}(s)$, that is, a function that maps a state $s$ into the optimal horizon-three value.
+
+Construct a supervised learning problem to find the optimal horizon 4 Q function for action $0, Q^{4}(s, 0)$. You can malue calls to $V^{3}$.
+Will you use subset D, D0, or D1?",D0
+Fall 2018,9,c.iii,1.1,MDPs,Text,"Sometimes we can make robust reinforcement-learning algorithms by reducing the problem to supervised learning. Assume:
+- The state space is $\mathbb{R}^{d}$, so in general the same state $s$ may not occur more than once in our data set.
+- The action space is $\{0,1\}$.
+- The space of possible rewards is $\{0,1\}$.
+- There is a discount factor $\gamma$.
+You are given a data set $\mathcal{D}$ of experience interacting with a domain. It contains $n$ tuples, each of the form $\left(s, a, r, s^{\prime}\right)$. Let $\mathcal{D}_{0}$ be the subset of the data tuples where $a=0$, and similarly $\mathcal{D}_{1}$ be the subset of the data tuples where $a=1$.
+
+Assume you have supervised classification and regression algorithms available to you, so that you can call classify $(X, Y)$ or regress $(X, Y)$ where $X$ is a matrix of input values and $Y$ is a vector of output values, and get out a hypothesis.
+
+In each of the following questions, we will ask you to construct a call to one of these procedures to produce a $Q, V$, or $\pi$ function. In each case, we will ask you to specify:
+- Whether it is a regression or classification problem.
+- The subset of $\mathcal{D}$ you will use.
+- How you will construct a training example $(x, y)$ from an original tuple $\left(s, a, r, s^{r}\right)$.
+For example, if you wanted to train a neural network to take in a state $s$ and predict the expected next state given that you take action 1 , then you might do a regression problem using data $D_{1}$, by setting $x=s$ and $y=s^{\prime}$.
+Assume that we have already learned $V^{3}(s)$, that is, a function that maps a state $s$ into the optimal horizon-three value.
+
+Construct a supervised learning problem to find the optimal horizon 4 Q function for action $0, Q^{4}(s, 0)$. You can malue calls to $V^{3}$.
+How will you construct a training example $(x, y)$ from an original tuple $\left(s, a, r, s^{r}\right)$?","x: s, $y: r+\gamma V^{3}\left(g^{r}\right)$"
+Fall 2018,9,d,1.1,MDPs,Text,"Sometimes we can make robust reinforcement-learning algorithms by reducing the problem to supervised learning. Assume:
+- The state space is $\mathbb{R}^{d}$, so in general the same state $s$ may not occur more than once in our data set.
+- The action space is $\{0,1\}$.
+- The space of possible rewards is $\{0,1\}$.
+- There is a discount factor $\gamma$.
+You are given a data set $\mathcal{D}$ of experience interacting with a domain. It contains $n$ tuples, each of the form $\left(s, a, r, s^{\prime}\right)$. Let $\mathcal{D}_{0}$ be the subset of the data tuples where $a=0$, and similarly $\mathcal{D}_{1}$ be the subset of the data tuples where $a=1$.
+
+Assume you have supervised classification and regression algorithms available to you, so that you can call classify $(X, Y)$ or regress $(X, Y)$ where $X$ is a matrix of input values and $Y$ is a vector of output values, and get out a hypothesis.
+
+In each of the following questions, we will ask you to construct a call to one of these procedures to produce a $Q, V$, or $\pi$ function. In each case, we will ask you to specify:
+- Whether it is a regression or classification problem.
+- The subset of $\mathcal{D}$ you will use.
+- How you will construct a training example $(x, y)$ from an original tuple $\left(s, a, r, s^{r}\right)$.
+For example, if you wanted to train a neural network to take in a state $s$ and predict the expected next state given that you take action 1 , then you might do a regression problem using data $D_{1}$, by setting $x=s$ and $y=s^{\prime}$.
+Because the state space is continuous, it is difficult to train $V^{4}$ without first estimating $Q^{4}$, given only our data set and $V^{3}$. Explain briefly why.","For any given $g$ we only know what happens when we take one of the actions, but not the other, since they don't line up, we don't have a way to take the max over actions."
+Fall 2018,10,a,2,Loss Functions,Image,"We can do machine learning experiments in which we hold all parameters constant, vary a single parameter, take the hypotheses we have learned at each point, and plot its error on the training and test sets. For each experiment below, select a plot from above that indicates the generally expected shape of the curve for training and for test error. If the experiment doesn't make any sense, choose ""not sensible"" rather than a curve above.
+
+Don't worry about the fact that we would generally expect curves to bounce around a bit and not be as smooth as these. Also, don't necessarily interpret the plotted $x$ axis as being for the value $y=0$.
+Provide a one-sentence justification for each answer. 
+$\mathrm{X}$ axis: size of training set
+train error:
+.
+test error:
+","train error:
+$\mathbf{B}$
+It's easier to get low training error on small dataset.
+test error:
+$\mathbf{4}$
+As we get more training data, we generalize better to new test data."
+Fall 2018,10,b,2,Loss Functions,Image,"We can do machine learning experiments in which we hold all parameters constant, vary a single parameter, take the hypotheses we have learned at each point, and plot its error on the training and test sets. For each experiment below, select a plot from above that indicates the generally expected shape of the curve for training and for test error. If the experiment doesn't make any sense, choose ""not sensible"" rather than a curve above.
+
+Don't worry about the fact that we would generally expect curves to bounce around a bit and not be as smooth as these. Also, don't necessarily interpret the plotted $x$ axis as being for the value $y=0$.
+Provide a one-sentence justification for each answer. 
+X axis: number of iterations of gradient descent
+train error: 
+test error:","train error: $\mathbf{A}$
+Training error is usually our objective, and generally decreases with iterations.
+test error:
+$\mathbf{C}$
+Early, we have not fit well enough; later we may overfit"
+Fall 2018,10,c,2,Loss Functions,Image,"We can do machine learning experiments in which we hold all parameters constant, vary a single parameter, take the hypotheses we have learned at each point, and plot its error on the training and test sets. For each experiment below, select a plot from above that indicates the generally expected shape of the curve for training and for test error. If the experiment doesn't make any sense, choose ""not sensible"" rather than a curve above.
+
+Don't worry about the fact that we would generally expect curves to bounce around a bit and not be as smooth as these. Also, don't necessarily interpret the plotted $x$ axis as being for the value $y=0$.
+Provide a one-sentence justification for each answer. 
+X axis: gradient-descent step size $\eta$
+train error:
+test error:","train error: C
+Small step size is slow to converge; big step size may diverge,
+test error: $\mathrm{C}$
+Test error is likely to suffer in the same way as training error."
+Fall 2018,10,d,2,Loss Functions,Image,"We can do machine learning experiments in which we hold all parameters constant, vary a single parameter, take the hypotheses we have learned at each point, and plot its error on the training and test sets. For each experiment below, select a plot from above that indicates the generally expected shape of the curve for training and for test error. If the experiment doesn't make any sense, choose ""not sensible"" rather than a curve above.
+
+Don't worry about the fact that we would generally expect curves to bounce around a bit and not be as smooth as these. Also, don't necessarily interpret the plotted $x$ axis as being for the value $y=0$.
+Provide a one-sentence justification for each answer.
+$\mathrm{X}$ axis: regularization parameter $\lambda$
+train error:
+test error:
+","train error: B
+With bigger $\lambda$ we quit caring about training error.
+test error: $\mathbf{C}$
+With small $\lambda$ we may overfit; with big $\lambda$ we may not fit well enough."
+Fall 2018,10,d,2,Loss Functions,Image,,

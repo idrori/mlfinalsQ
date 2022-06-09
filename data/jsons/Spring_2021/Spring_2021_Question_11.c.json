@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2021",
+       "Question Number": "11",
+       "Part": "c",
+       "Points": 3.0,
+       "Topic": "RNNs",
+       "Type": "Text",
+       "Question": "Ronnie makes a simple RNN with state dimension 1 and a {\\em step} function for $f_1$, so that \\[s_t = \\text{step}( w_1 x_t + w_2 s_{t-1} + b) \\] where $\\text{step}(z) = 1$ if $z > 0.0$ and equals $0$ otherwise, and where the output \\[y_t = s_t\\;\\;.\\] Assuming $s_0 = 1$, we want to generate output sequence  \\[[1, 1, 1, 0, 0, 0, 1, 1]\\] given input sequence \\[ [0, 0, 0, 1, 0, 0, 1, 0]\\]. Rennie thinks this is not possible using Ronnie\u2019s architecture. Rennie makes an argument based on the relationships in the table above. Is Rennie right?",
+       "Solution": "Rennie is right"
+}

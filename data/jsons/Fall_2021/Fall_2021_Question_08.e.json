@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2021",
+       "Question Number": "8",
+       "Part": "e",
+       "Points": 2.0,
+       "Topic": "CNNs",
+       "Type": "Image",
+       "Question": "MIT grad student Rec Urrent would like to submit an entry to win this year's Grand ML Tetris Competition, which gives awards to the smallest neural networks which can identify tetris pieces with the highest accuracy. Rec seeks to make a convolutional neural network that can accurately classify single-channel $3 \\times 3$ images of $2 \\mathrm{D}$ tetris pieces as being either a line-shaped piece, or a corner-shaped piece, using just one $2 \\times 2$ filter. Let's help Rec win this competition. \nWhat are the spatial dimensions of the output image if a $2 \\times 2$ filter is convolved with a $3 \\times 3$ image for paddings of 0,1 , and 2 , and strides of 1 and 2 ? Fill in the dimensions below:",
+       "Solution": "$2 \\times 2-4 \\times 4-6 \\times 6$"
+}

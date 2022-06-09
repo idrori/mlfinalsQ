@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2017",
+       "Question Number": "8",
+       "Part": "b",
+       "Points": 3.0,
+       "Topic": "RNNs",
+       "Type": "Image",
+       "Question": "Consider three RNN variants:\n1. The basic RNN architecture we studied was\n$$\n\\begin{aligned}\n&s_{t}=f\\left(W^{s s} s_{t-1}+W^{s x} x_{t}\\right) \\\\\n&y_{t}=W^{o} s_{t}\n\\end{aligned}\n$$\nwhere $W^{s s}$ is $m \\times m, W^{s I}$ is $m \\times d$, and $f$ is an activation function to be specified later. We omit the offset parameters for simplicity (set them to zero).\n2. Ranndy thinks the basic RNN is representationally weak, and it would be better not to decompose the state update in this way. Ranndy's proposal is to instead\n$$\n\\begin{aligned}\n&s_{t}=f\\left(W^{s s x} \\operatorname{concat}\\left(s_{t-1}, x_{t}\\right)\\right) \\\\\n&y_{t}=W^{o} s_{t}\n\\end{aligned}\n$$\nwhere concat $\\left(s_{t-1}, x_{t}\\right)$ is a vector of length $m+d$ obtained by concatenating $s_{t-1}$ and $x_{t}$, so $W^{\\text {sss }}$ has dimensions $m \\times(m+d)$.\n3. Orenn wants to try yet another model, of the form:\n$$\n\\begin{aligned}\n&s_{t}=f\\left(W^{s s} s_{t-1}\\right)+f\\left(W^{s x} x_{t}\\right) \\\\\n&y_{t}=W^{o} s_{t}\n\\end{aligned}\n$$\nLec Surer insists on understanding these models a bit better, and how they might relate.\n\nLec Surer thinks that something interesting happens with Orenn's model when $f(z)=$ $\\tanh (z)$. Specifically, it supposedly corresponds to the architecture shown in the figure below, which includes an additional hidden layer. Specify what $W, W^{\\prime}$, and $m^{\\prime}$ are so that this architecture indeed corresponds to Orenn's model.\nIgnore the dimensions written on the figure above; they are backwards.\ni. $m^{\\prime}$\nii. $W$\niii. $W^{\\prime}$\n",
+       "Solution": "i. $2 m$\nii.  A block-diagonal matrix of the form\n$$\n\\left[\\begin{array}{cc}\nW^{s s} & 0 \\\\\n0 & W^{s x}\n\\end{array}\\right]\n$$\niii. hstack $(I(m) ; I(m))$"
+}

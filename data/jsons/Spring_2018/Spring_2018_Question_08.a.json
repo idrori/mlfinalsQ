@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2018",
+       "Question Number": "8",
+       "Part": "a",
+       "Points": 3.0,
+       "Topic": "RNNS",
+       "Type": "Image",
+       "Question": "One of the RNN architectures we studied was\n$$\n\\begin{aligned}\n&s_{t}=f_{1}\\left(W^{s s} s_{t-1}+W^{s x_{t}} x_{t}\\right) \\\\\n&y_{t}=f_{2}\\left(W^{o} s_{t}\\right)\n\\end{aligned}\n$$\nwhere $W^{s s}$ is $m \\times m, W^{s x}$ is $m \\times l$ and $W^{o}$ is $n \\times m$. Assume $f_{i}$ can be any of our standard activation functions. We omit the offset parameters for simplicity (set them to zero). Suppose we modify the original architecture as follows:\n$$\ns_{t}=f_{1}\\left(W^{s s 1} f_{3}\\left(W^{s s 2} s_{t-1}\\right)+W^{s z} x_{t}\\right)\n$$\ni. Provide values for the original $W^{s a}$ that make the original architecture equivalent to this one, or explain why none exist.\n$$\nW^{\\text {ss }}=\n$$\n\nii. Provide values for $W^{s s 2}, f_{3}$ and $W^{s s 1}$ that make this new architecture equivalent to the original, or explain why none exist.",
+       "Solution": "i. This architecture can represent state machines that can't be represented by the original architecture, because the class of state transition functions that can be modeled in the modified architecture is bigger.\n\nii. linear / Wss / I"
+}

@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2021",
+       "Question Number": "7",
+       "Part": "c.v",
+       "Points": 0.4,
+       "Topic": "MDPs",
+       "Type": "Text",
+       "Question": "You are moving up a 1-dimensional track with squares s(1), s(2), s(4), s(5), s(7).\nThe following transitions happen with 100% probability:\ns(3) to s(5)\ns(9) to s(1)\ns(8) to s(1)\ns(6) to s(2)\nYou have two actions: climb and quit. If you climb from state s(i) then with probability 0.5 you go up one square, and with probability 0.5 you go up two squares. So, for example, in our case, if you start in state s(5) and climb there is a .5 chance you'll end up in square s(2) (because you move up one but transition to s(2) and a .5 chance you'll end up in square s(7). If you climb from s(7) then you will go back to square s(1) with probability 1.0. If you quit then the game is over and you get to take no further actions. Each new episode starts in state s(1). The reward for choosing climb in any state is 0. The reward for choosing quit in state s(i) is i. What is the optimal infinite horizon policy in s(5) with no discounting climb or quit?",
+       "Solution": "climb"
+}

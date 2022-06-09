@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2017",
+       "Question Number": "9",
+       "Part": "b",
+       "Points": 2.0,
+       "Topic": "Classifiers",
+       "Type": "Text",
+       "Question": "Here is a dataset in the form of (x, y) coordinates. P1 = (1, 1), P2 = (6, 6), P3 = (4, 6), P4 = (6, 4) and the seperator is a line at y = 3.5. Let our objective be the regularized average hinge loss with respect to $\\gamma_{\\text {ref }}$ :\n$$\nJ\\left(\\theta, \\theta_{0}, \\gamma_{\\text {ref }}\\right)=\\frac{1}{n} \\sum_{i=1}^{n} L_{H}\\left(\\frac{\\gamma\\left(x, y, \\theta, \\theta_{0}\\right)}{\\gamma_{\\text {ref }}}\\right)+\\lambda \\frac{1}{\\gamma_{\\text {ref }}^{2}}\n$$\nIf $\\lambda=0$, and we're still referring to the separator at y=3.5, what range of values of $\\gamma_{\\text {ref }}$ achieves the optimal value of $J$?",
+       "Solution": "$\\gamma_{\\text {ref }}<0.5$"
+}

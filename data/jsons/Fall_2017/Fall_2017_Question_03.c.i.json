@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2017",
+       "Question Number": "3",
+       "Part": "c.i",
+       "Points": 1.0,
+       "Topic": "Reinforcement Learning",
+       "Type": "Text",
+       "Question": "Consider an MDP with four states, called $A, B, C$, and $D$, and with two actions called Move and Stay. The discount factor $\\gamma=0.9$. Here is a reminder of the Q-learning update formula, based on experience tuple $\\left(s, a, r, s^{\\prime}\\right)$ : $$ Q(s, a):=(1-\\alpha) Q(s, a)+\\alpha\\left(r+\\gamma \\max _{a^{\\prime}} Q\\left(s^{\\prime}, a^{\\prime}\\right)\\right) $$ Let $\\alpha=1$. Assume we see the following state-action-reward sequence: \nA, Move, 0 \nB, Move, 0 \nC, Move, 1 \nA, Move, 0 \nB, Move, 0. \nA, Move, 0\nB, Move, 0\nWith Q-values all starting at 0, we run the Q-learning algorithm on that state-action sequence. Provide the q-learning value for Q(A, move).",
+       "Solution": "Q(A, move) = .81"
+}

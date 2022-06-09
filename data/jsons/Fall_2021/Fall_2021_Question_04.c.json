@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2021",
+       "Question Number": "4",
+       "Part": "c",
+       "Points": 2.0,
+       "Topic": "Classifiers",
+       "Type": "Image",
+       "Question": "This question asks about learning nearest neighbor (NN) classifiers. Assume that we are using Euclidean distance squared as the distance metric, i.e. $d\\left(x, x^{\\prime}\\right)=\\left\\|x-x^{\\prime}\\right\\|^{2}$. \nYou perform leave-one-out cross-validation of the 1-NN and 3-NN classifiers on this data set, i.e. you use use cross-validation with a chunk size of 1 data point. Assume ties go to the $+1$ region. What cross-validation errors do you obtain?",
+       "Solution": "Image filling"
+}

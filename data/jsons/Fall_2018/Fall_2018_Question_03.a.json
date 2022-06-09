@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2018",
+       "Question Number": "3",
+       "Part": "a",
+       "Points": 1.666666667,
+       "Topic": "CNNs",
+       "Type": "Image",
+       "Question": "Consider the following image (on the left) and filter (on the right):\nConsider what results from filtering this image with this filter, assuming that the input image is padded with zeros, and using a stride of 1 . To compute the output value of a particular pixel $(i, j)$, apply the filter with its center on pixel $(i, j)$ of the input image.\nAssume dark pixels have a value of 1 and light pixels have a value of -1.\ni. What is the output value for the top-left image pixel (that is, the pixel with indices $(1,1)$ in one-based indexing)?\nii. What element of the output image will have the highest value? (Assume the rows and columns of the image are numbered starting with 1.)\n",
+       "Solution": "i. -2\nii. 3,1"
+}

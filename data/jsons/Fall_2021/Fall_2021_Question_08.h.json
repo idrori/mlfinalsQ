@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2021",
+       "Question Number": "8",
+       "Part": "h",
+       "Points": 1.0,
+       "Topic": "CNNs",
+       "Type": "Image",
+       "Question": "MIT grad student Rec Urrent would like to submit an entry to win this year's Grand ML Tetris Competition, which gives awards to the smallest neural networks which can identify tetris pieces with the highest accuracy. Rec seeks to make a convolutional neural network that can accurately classify single-channel $3 \\times 3$ images of $2 \\mathrm{D}$ tetris pieces as being either a line-shaped piece, or a corner-shaped piece, using just one $2 \\times 2$ filter. Let's help Rec win this competition. \nWhat are dimensions of $w$ and $\\mathrm{b}$ for i) binary classification vs. ii) $k$-class classification?",
+       "Solution": "For binary classification $u$ is: $[1,1] \\quad$ and $b$ is: $[1]$\nFor $k$-class classification $u$ is: $[1, \\mathrm{k}] \\quad$ and $\\mathrm{b}$ is: $[\\mathrm{k}]$"
+}

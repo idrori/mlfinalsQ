@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2021",
+       "Question Number": "1",
+       "Part": "d.i",
+       "Points": 1.0,
+       "Topic": "Neural Networks",
+       "Type": "Text",
+       "Question": "Mac O\u2019Larnin is considering selling an app on Frugal Play. You have a friend with inside info at Frugal, and they\u2019re able to share data on how previous apps have performed on the store. Mac decides that he will learn a neural network with no hidden layer (i.e., consisting only of the output layer). He needs help in figuring out the precise formulation for machine learning.\nMac\u2019s first attempt at machine learning to predict the sales volume (setup of (b)) uses all customer data from 2020. He randomly partitions the data into train (80%) and validation (20%), and uses one unit, linear activation function, and quadratic loss function. To prevent overfitting, he uses ridge regularization of the weights W, minimizing the optimization objective $J(W; \\lambda) = \\sum_{i=1}^n \\mathcal{L}(h(x^{(i)}; W), y^{(i)}) + \\lambda \\|W\\|^2$ where $\\|W\\|^{2}$ is the sum over the square of all output units' weights. Mac discovers that it\u2019s possible to find a value of W such that J(W ; \u03bb) = 0 even when \u03bb is very large, nearing \u221e.  Mac suspects that he might have an error in the code that he\nwrote to derive the labels (i.e., the monthly sales volumes). Let\u2019s see why. What can Mac conclude about W from this finding?",
+       "Solution": "every element of W equals 0."
+}

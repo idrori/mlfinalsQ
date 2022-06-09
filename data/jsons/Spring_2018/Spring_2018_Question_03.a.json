@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2018",
+       "Question Number": "3",
+       "Part": "a",
+       "Points": 2.0,
+       "Topic": "Neural Networks",
+       "Type": "Image",
+       "Question": "Assume two data sets are sampled from the same distribution where data set 1 has 1,000 elements and data set 2 has 10,000 elements. Also assume we randomly construct train and test sets from both data sets by dividing them into $90 \\%$ training and $10 \\%$ testing.\n\nWe will explore the effect of using models of increasing complexity (you can think of this as decreasing regularization).\n- Draw two curves, for training error and test error, for each data set with the $y$-axis denoting the error and the $x$-axis denoting the model complexity.\n- You should have total of 4 curves: one training error and one test error curve for each dataset.\n- Draw all 4 of them in the same diagram below. We have included the true error value on the diagram; this is the error that the correct model has on this data.\n- Clearly mark your curves with the labels: $1 \\mathrm{~K}$ train, $1 \\mathrm{~K}$ test, $10 \\mathrm{~K}$ train, $10 \\mathrm{~K}$ test.\nThe following factors will be used for grading:\n- The general shape of the curves.\n- The relative ordering of the curves in the \"Prediction Error\" direction.",
+       "Solution": "- Training error is lower than the true error (with sufficient model complexity), while test error is higher, as we are fitting to the training data\n- Training error decreases with increasing model complexity, as we have increased capacity to fit the data\n- Test error initially decreases with increasing model complexity and then increases, as we start to fit the data better and then proceed to overfit\n- The $10 \\mathrm{k}$ dataset makes it more difficult to overfit, so training error is higher and test error lower compared to their $1 \\mathrm{k}$ counterparts."
+}

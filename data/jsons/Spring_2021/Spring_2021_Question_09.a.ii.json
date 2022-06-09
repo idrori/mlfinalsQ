@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2021",
+       "Question Number": "9",
+       "Part": "a.ii",
+       "Points": 1.0,
+       "Topic": "Reinforcement Learning",
+       "Type": "Text",
+       "Question": "Kim is running Q learning on a simple 2D grid-world problem and visualizes the current Q value estimates and greedy policy with respect to the current Q value estimates at each location. States correspond to squares in the grid, actions are north, south, east, and west, and there is a single state with non-zero reward. Assume the transition model is deterministic and action north moves you one square up, etc., except at the boundaries of the domain. Diagonal moves are not possible. \nDefine the following in terms of the current estimated action-value function, Q: The estimated value of state s.",
+       "Solution": "value = max_a Q(s, a)"
+}

@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2018",
+       "Question Number": "10",
+       "Part": "d",
+       "Points": 2.0,
+       "Topic": "Loss Functions",
+       "Type": "Image",
+       "Question": "We can do machine learning experiments in which we hold all parameters constant, vary a single parameter, take the hypotheses we have learned at each point, and plot its error on the training and test sets. For each experiment below, select a plot from above that indicates the generally expected shape of the curve for training and for test error. If the experiment doesn't make any sense, choose \"not sensible\" rather than a curve above.\n\nDon't worry about the fact that we would generally expect curves to bounce around a bit and not be as smooth as these. Also, don't necessarily interpret the plotted $x$ axis as being for the value $y=0$.\nProvide a one-sentence justification for each answer.\n$\\mathrm{X}$ axis: regularization parameter $\\lambda$\ntrain error:\ntest error:\n",
+       "Solution": "train error: B\nWith bigger $\\lambda$ we quit caring about training error.\ntest error: $\\mathbf{C}$\nWith small $\\lambda$ we may overfit; with big $\\lambda$ we may not fit well enough."
+}

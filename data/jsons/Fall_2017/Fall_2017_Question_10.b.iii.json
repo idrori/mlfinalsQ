@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2017",
+       "Question Number": "10",
+       "Part": "b.iii",
+       "Points": 1.0,
+       "Topic": "Classifiers",
+       "Type": "Text",
+       "Question": "Consider the following data in (coordinate, sign) format: ((-4, 4),positive), ((4, -4),positive), ((-1, -1),-1) , ((1, 1),-1). Clearly, the points are not linearly separable, so we will try three alternative approaches to solving the problem. Suppose $K\\left(x, x^{\\prime}\\right)=e^{-\\left\\|x-x^{\\prime}\\right\\|^{2}}$ and for the points in our data set, $K\\left(p_{i}, p_{j}\\right)=\\mathbf{K}_{i j}$ where the matrix $$ \\mathbf{K} \\approx\\left[\\begin{array}{cccc} 1 & \\exp (-15) & \\exp (-15) & \\exp (-56) \\\\ \\exp (-15) & 1 & \\exp (-4) & \\exp (-15) \\\\ \\exp (-15) & \\exp (-4) & 1 & \\exp (-15) \\\\ \\exp (-56) & \\exp (-15) & \\exp (-15) & 1 \\end{array}\\right] $$ (b) Now we will use the kernel perceptron algorithm to find the $\\alpha$ values in the classifer, which has the form $$ y_{\\text {predicted }}=\\operatorname{sign}\\left(\\sum_{i=1}^{4} \\alpha_{i} y^{(i)} K\\left(x^{(i)}, x\\right)\\right) $$ Assuming that we go through the points in order $p 1, p 2, p 3, p 4$ as many times as necessary to correctly classify the data, what is the value of $\\alpha_{3}?",
+       "Solution": "0"
+}

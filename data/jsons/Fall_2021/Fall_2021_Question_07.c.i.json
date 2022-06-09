@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2021",
+       "Question Number": "7",
+       "Part": "c.i",
+       "Points": 2.0,
+       "Topic": "Neural Networks",
+       "Type": "Text",
+       "Question": "A neural network is given as Z1 = X * W1, A1 = f1(Z1), Z2 = W2 * A1, \\hat{y} = f2(Z2). Determine the expression for $\\frac{\\partial L}{\\partial W^1}$. You may leave your expression in terms of $X, y, \\hat{y}, W^2$ and $\\frac{\\partial A^1}{\\partial Z^1}$.",
+       "Solution": "\u2202L/\u2202W^1 = \u22122X(\u2202A^1/\u2202Z^1*W2*(y \u2212 y\u02c6))^T"
+}

@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2019",
+       "Question Number": "7",
+       "Part": "f.ii",
+       "Points": 0.5,
+       "Topic": "RNNs",
+       "Type": "Text",
+       "Question": "We have seen in class recurrent neural networks (RNNs) that are structured as:\n$$\n\\begin{aligned}\nz_{t}^{1} &=W^{s s} s_{t-1}+W^{s x} x_{t} \\\\\ns_{t} &=f_{1}\\left(z_{t}^{1}\\right) \\\\\nz_{t}^{2} &=W^{o} s_{t} \\\\\np_{t} &=f_{2}\\left(z_{t}^{2}\\right)\n\\end{aligned}\n$$\nwhere we have set biases to zero. Here $x_{t}$ is the input and $y_{t}$ the actual output for $\\left(x_{t}, y_{t}\\right)$ sequences used for training, with $p_{t}$ as the RNN output (during or after training).\nAssume our first RNN, call it RNN-A, has $s_{t}, x_{t}, p_{t}$ all being vectors of shape $2 \\times 1$. In addition, the activation functions are simply $f_{1}(z)=z$ and $f_{2}(z)=z$.\nNow consider a modified RNN, call it RNN-B, that does the following:\n$$\n\\begin{aligned}\nz_{t}^{1} &=W^{s s x}\\left[\\begin{array}{c}\ns_{t-1} \\\\\nx_{t}\n\\end{array}\\right] \\\\\ns_{t} &=z_{t}^{1} \\\\\nz_{t}^{2} &=W^{o x}\\left[\\begin{array}{l}\ns_{t} \\\\\nx_{t}\n\\end{array}\\right] \\\\\np_{t} &=f_{2}\\left(z_{t}^{2}\\right)\n\\end{aligned}\n$$\nwhere $s_{t}, x_{t}, p_{t}$ are all vectors of shape $2 \\times 1,\\left[\\begin{array}{c}s_{t-1} \\\\ x_{t}\\end{array}\\right]$ and $\\left[\\begin{array}{l}s_{t} \\\\ x_{t}\\end{array}\\right]$ are vectors of shape $4 \\times 1$.\nFor RNN-B, we are also interested in the derivative of loss at time $t$ with respect to $x_{t}$, $\\partial$ Loss $/ \\partial x_{t}$. does $\\partial$ Loss $/ \\partial x_{t}$ depend on all elements $W^{ox}$? Indicate true or false.\n",
+       "Solution": "TRUE"
+}

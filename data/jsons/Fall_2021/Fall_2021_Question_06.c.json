@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2021",
+       "Question Number": "6",
+       "Part": "c",
+       "Points": 2.0,
+       "Topic": "Neural Networks",
+       "Type": "Image",
+       "Question": "Years ago, MIT student Itu Nes learned about neural networks and how to train them, from taking 6.036. Now Itu is an engineer at Orange Computer, a hot tech company employing machine learning to revolutionize music. Looking back at her notes, Itu realizes that she once wrote down exactly what she now needs to do in her job, but unfortunately some key details are lost. Can you help her figure things out?\nSpecifically, Itu wants to train this simple single-node neural network:\nThe network accepts two inputs $x_{1}$ and $x_{2}$, and outputs a prediction $\\hat{y}$ based on weights $a$ and $b$. Itu's dataset has points $(x, y)$ where $x=\\left(x_{1}, x_{2}\\right)$, and $y$ are the true labels. Itu employs the squared error loss function\n$$\nL(\\hat{y}, y)=(y-\\hat{y})^{2}\n$$\nIn her notes, Itu wrote about using gradient descent to obtain the optimal weights for the network, by minimizing this loss. Moreover, for each run of the gradient descent, she used a single data point to train the weights. Afterwards, Itu learns that the true labels are $y=x_{1}+x_{2}$. \nItu soes that when she fixed $x_{1}=1, x_{2}=1$ and ran 10 iterations of gradient descent starting with $a_{0}=2, b_{0}=2$, she recorded that the two weights oscillated back and forth, as captured in this plot pasted into her notebook:\n\nNote that in this plot, the $a$ and $b$ points lay on top of each other. Unfortunately, Itu forgot to write down her code, nor did she write down what value of $\\eta$ may have been used to generate this plot. Help her figure out: was this plot a mistake (and explain why), or if not, what value of $\\eta$ could have generated it?",
+       "Solution": "This oscillation happens when $\\eta=1 / 2$, because $d L / d a=d L / d b=-4$"
+}

@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2019",
+       "Question Number": "5",
+       "Part": "b",
+       "Points": 2.0,
+       "Topic": "MDPs",
+       "Type": "Image",
+       "Question": "Consider the following simple MDP: Positive Reward\nFirst consider the case where the MDP has positive reward. In this scenario, there is only one action $($ next $)$; we name this decision policy $\\pi_{A}$ with $\\pi_{A}(s)=n e x t$ for all $s$. The reward is $R(s, n e x t)=0$ for all states $s$, except for state $s_{k}$ where reward is $R\\left(s_{k}\\right.$, next $)=10$. We always start at state $s_{1}$ and each arrow indicates a deterministic transition probability $p=1$. There is no transition out of the end state $E N D$, and 0 reward for any action from the end state. \nCalculate $V_{\\pi}(s)$ for each state in the infinite horizon case with $k=4$ and discount factor $\\gamma=0.9$",
+       "Solution": "$$\n\\begin{aligned}\n&V_{\\pi}\\left(s_{4}\\right)=10 \\\\\n&V_{\\pi}\\left(s_{3}\\right)=0+\\gamma * 10=0.9 * 10=9 \\\\\n&V_{\\pi}\\left(s_{2}\\right)=0.9 * 9=8.1 \\\\\n&V_{\\pi}\\left(s_{1}\\right)=0.9 * 8.1=7.29\n\\end{aligned}\n$$"
+}

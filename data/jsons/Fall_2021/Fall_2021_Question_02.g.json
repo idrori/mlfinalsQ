@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2021",
+       "Question Number": "2",
+       "Part": "g",
+       "Points": 2.0,
+       "Topic": "Clustering",
+       "Type": "Text",
+       "Question": "Assume that the number of clusters k = 2. Christy thinks she came up with a compelling new initialization method for the $k$-means algorithm. Looking at her code below, explain why it is unlikely to give good results.\n\\begin{lstlisting}[language=Python]\ndef kmeans_init(X, n_clusters):\n    centers = []\n    for i in range(n_clusters):\n        centers.append(X[:, X.shape[1]-1-i])\n    return np.asarray(centers).T\n\\end{lstlisting}",
+       "Solution": "Christy's method selects the last n\\_clusters data points as the cluster centers. These points may be very close to each other, leading to the $k$-means algorithm finding a poor local optima of the $k$-means objective."
+}

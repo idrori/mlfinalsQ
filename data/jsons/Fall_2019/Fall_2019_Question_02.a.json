@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2019",
+       "Question Number": "2",
+       "Part": "a",
+       "Points": 3.6,
+       "Topic": "Reinforcement Learning",
+       "Type": "Image",
+       "Question": "You have designed a robot curling stone to enter a modified curling contest. 1 In an attempt to get your robot stone to perform well, you have designed a state and action space, a reward structure, and a transition model. The goal of the robot stone is to slide upwards on an ioe sheet and stop in a target region. Your robot stone likes to show off; after each state transition, it displays the reward it receives. In addition to your robot stone, there will be a number of opponent stones on the ice, as shown below. For simplicity's salke, we will consider the opponent stones to be fixed.\n(image here)\nYour model for the state and action spaces is as follows:\n$$\n\\begin{aligned}\n&S \\in\\{t, 0,1,2,3\\} \\\\\n&a \\in\\{\\text { \"go\", \"stop\" }\\}\n\\end{aligned}\n$$\nwhere the states refer to the robot stone being in either a terminal state (denoted as $t$ ) or within one of the four regions below: (image here)\n\n\nYou design the following reward function and (deterministic) transition model for your robot stone: (table here is an image)\nand all other transition probsbilities are 0 . Here * indicates any state. Note that once the robot stone enters state $t$ the game ends: there is no transition and zero reward out of state $t$ (and hence no action to decide once in state $t$.) Together with this reward function and transition model, you specify a discount factor $\\gamma=1$. \nIn order to enable decision making by your robot stone, you need to give it the optimal policy $\\pi^{*}(s)$. For your reward and transition structure and discount factor $\\gamma=1$, what are the optimal Q-values, $Q^{*}(s, a)$ ? What is the optimal policy $\\pi^{*}(s)$ ? Fill in the following two tables.\n(table here)",
+       "Solution": "Image filling"
+}

@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2018",
+       "Question Number": "9",
+       "Part": "c",
+       "Points": 2.0,
+       "Topic": "CNNs",
+       "Type": "Image",
+       "Question": "Kanye Volution thinks that instead of having this single convolution layer with a single filter matching the whole desired pattern, it would be better to start with a convolutional layer with four smaller filters, shown below:\n\nThe following images are the result of convolving the original image with these 4 simple filters and running through a ReLU. Black squares have value $+1$, grey squares have value $+0.5$, and the rest have value 0 .\n\nIt is slightly unusual to have $2 \\times 2$ filters (usually they have odd dimension). When we apply them, we place the upper-left pixel of the filter on top of the image pixel whose value we are computing.\n\nThe next layer of Kanye's network now takes an input of depth 4 and applies a single $2 x$ $2 \\times 4$ filter. Specify a filter on the output of the simple filters that will generate an image with a high value at the pixel located at the upper left corner of the pattern and lower values elsewhere. Fill weight values (either $+1$ or $-1$ ) into the squares below.",
+       "Solution": "Image filling"
+}

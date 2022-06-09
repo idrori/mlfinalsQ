@@ -1,0 +1,468 @@
+Semester,Question Number,Part,Points,Topic,Type,Question,Solution
+Spring 2019,1,a,2,Classifiers,Text,"Consider the following 2D dataset in (x,y) format: ((1,-1), +1), ((1,1),  +1), ((1,2.5),+1), ((2,-2),-1), ((2,1),+1),((2,3),+1),((5,-1),-1),((5,-2),-1). Break ties in distance by choosing the point with smaller x_1 coordinate, and if still tied, by smaller x_2 coordinate.
+Compute the leave-one-out cross validation accuracy (i.e., average 8 -fold cross validation accuracy) of the 1-nearest-neighbor learning algorithm on this dataset.","6/8. When left out of the training set, the point at (1,-1) will be misclassifed during testing; similarly for the point at (2,-2)."
+Spring 2019,1,b,2,Classifiers,Text,"Consider the following 2D dataset in (x,y) format: ((1,-1), +1), ((1,1),  +1), ((1,2.5),+1), ((2,-2),-1), ((2,1),+1),((2,3),+1),((5,-1),-1),((5,-2),-1). Break ties in distance by choosing the point with smaller x_1 coordinate, and if still tied, by smaller x_2 coordinate.
+Compute the leave-one-out cross validation accuracy of the 3-nearest-neighbor learning algorithm on this dataset.","7/8. Now only the point at (2,-2) will be misclassied during testing, when left out of the training set."
+Spring 2019,1,c,2,Classifiers,Text,"Consider the following 2D dataset in (x,y) format: ((1,-1), +1), ((1,1),  +1), ((1,2.5),+1), ((2,-2),-1), ((2,1),+1),((2,3),+1),((5,-1),-1),((5,-2),-1). Break ties in distance by choosing the point with smaller x_1 coordinate, and if still tied, by smaller x_2 coordinate.
+In the case of the 1-nearest-neighbor learning algorithm, is it possible to strictly increase the leave-one-out cross validation accuracy on this dataset by changing the label of a single point in the original dataset? If so, give such a point.","Yes. Change either point at (2,-2) to +1, or point at (1,-1) to -1."
+Spring 2019,1,d,2,Classifiers,Text,"Consider the following 2D dataset in (x,y) format: ((1,-1), +1), ((1,1),  +1), ((1,2.5),+1), ((2,-2),-1), ((2,1),+1),((2,3),+1),((5,-1),-1),((5,-2),-1). Break ties in distance by choosing the point with smaller x_1 coordinate, and if still tied, by smaller x_2 coordinate.
+In the case of the 3-nearest neighbor algorithm, is it possible to strictly increase the leave-one-out cross validation accuracy on this dataset by changing the label of a single point in the original dataset? If so, give such a point.","No, not possible. If we try to change the point at (2, -2) to +1, then that point will be correctly predicted during cross-validation as +1. Unfortunately, with that change the two points at (5,-1) and (5,-2) will now be misclassied, making our cross-validation accuracy worse."
+Spring 2019,2,a,1.333333333,Decision Trees,Text,"Consider the following 2D dataset in (x,y) format: ((1,-1), +1), ((1,1),  +1), ((1,2.5),+1), ((2,-2),-1), ((2,1),+1),((2,3),+1),((5,-1),-1),((5,-2),-1). We will construct a tree using a greedy algorithm that recursively minimizes weighted average entropy. Recall that the weighted average entropy of a split into subsets A and B is: (fraction of points in $A) \cdot H\left(R_{j, s}^{A}\right)+($ fraction of points in $B) \cdot H\left(R_{j, s}^{B}\right)$ where the entropy $H\left(R_{m}\right)$ of data in a region $R_{m}$ is given by $H\left(R_{m}\right)=-\sum_{k} \hat{P}_{m k} \log _{2} \hat{P}_{m k}$. The $\hat{P}_{m k}$ is the empirical probability, which is in this case the fraction of items in region $m$ that are of class $k$. Some facts that might be useful to you: H(0) = 0, H(3/5) = 0.97, H(3/8) = 0.95, H(3/4) = 0.81, H(5/6) = 0.65, H(1) = 0. 
+Draw the decision tree that would be constructed by our tree algorithm for this dataset. Clearly label the test in each node, which case (yes or no) each branch corresponds to, and the prediction that will be made at each leaf. Assume there is no pruning and that the algorithm runs until each leaf has only members of a single class.","x_2 < 0
+Yes branch:
+    x_1 < 1.5
+    Yes branch: +1
+    No branch: -1
+No branch: +1"
+Spring 2019,2,b,1.333333333,Decision Trees,Text,"Consider the following 2D dataset in (x,y) format: ((1,-1), +1), ((1,1),  +1), ((1,2.5),+1), ((2,-2),-1), ((2,1),+1),((2,3),+1),((5,-1),-1),((5,-2),-1). We will construct a tree using a greedy algorithm that recursively minimizes weighted average entropy. Recall that the weighted average entropy of a split into subsets A and B is: (fraction of points in $A) \cdot H\left(R_{j, s}^{A}\right)+($ fraction of points in $B) \cdot H\left(R_{j, s}^{B}\right)$ where the entropy $H\left(R_{m}\right)$ of data in a region $R_{m}$ is given by $H\left(R_{m}\right)=-\sum_{k} \hat{P}_{m k} \log _{2} \hat{P}_{m k}$. The $\hat{P}_{m k}$ is the empirical probability, which is in this case the fraction of items in region $m$ that are of class $k$. Some facts that might be useful to you: H(0) = 0, H(3/5) = 0.97, H(3/8) = 0.95, H(3/4) = 0.81, H(5/6) = 0.65, H(1) = 0. 
+Draw the decision tree boundaries represented by the following decision tree on a plot:
+x_2 < 0
+Yes branch:
+    x_1 < 1.5
+    Yes branch: +1
+    No branch: -1
+No branch: +1","x_2 = 0, x_1 = 1.5 for x_2 <= 0 (https://cdn.mathpix.com/cropped/2022_06_01_4b45961d5bf942e8929cg-05.jpg?height=367&width=896&top_left_y=722&top_left_x=236)"
+Spring 2019,2,c,1.333333333,Decision Trees,Text,"Consider the following 2D dataset in (x,y) format: ((1,-1), +1), ((1,1),  +1), ((1,2.5),+1), ((2,-2),-1), ((2,1),+1),((2,3),+1),((5,-1),-1),((5,-2),-1). We will construct a tree using a greedy algorithm that recursively minimizes weighted average entropy. Recall that the weighted average entropy of a split into subsets A and B is: (fraction of points in $A) \cdot H\left(R_{j, s}^{A}\right)+($ fraction of points in $B) \cdot H\left(R_{j, s}^{B}\right)$ where the entropy $H\left(R_{m}\right)$ of data in a region $R_{m}$ is given by $H\left(R_{m}\right)=-\sum_{k} \hat{P}_{m k} \log _{2} \hat{P}_{m k}$. The $\hat{P}_{m k}$ is the empirical probability, which is in this case the fraction of items in region $m$ that are of class $k$. Some facts that might be useful to you: H(0) = 0, H(3/5) = 0.97, H(3/8) = 0.95, H(3/4) = 0.81, H(5/6) = 0.65, H(1) = 0. 
+Given the decision tree below, what class does the decision tree predict for the new point: (1, -2)?:
+x_2 < 0
+Yes branch:
+    x_1 < 1.5
+    Yes branch: +1
+    No branch: -1
+No branch: +1",1
+Spring 2019,2,d,1.333333333,Decision Trees,Text,"Consider the following 2D dataset in (x,y) format: ((1,-1), +1), ((1,1),  +1), ((1,2.5),+1), ((2,-2),-1), ((2,1),+1),((2,3),+1),((5,-1),-1),((5,-2),-1). We will construct a tree using a greedy algorithm that recursively minimizes weighted average entropy. Recall that the weighted average entropy of a split into subsets A and B is: (fraction of points in $A) \cdot H\left(R_{j, s}^{A}\right)+($ fraction of points in $B) \cdot H\left(R_{j, s}^{B}\right)$ where the entropy $H\left(R_{m}\right)$ of data in a region $R_{m}$ is given by $H\left(R_{m}\right)=-\sum_{k} \hat{P}_{m k} \log _{2} \hat{P}_{m k}$. The $\hat{P}_{m k}$ is the empirical probability, which is in this case the fraction of items in region $m$ that are of class $k$. Some facts that might be useful to you: H(0) = 0, H(3/5) = 0.97, H(3/8) = 0.95, H(3/4) = 0.81, H(5/6) = 0.65, H(1) = 0. 
+Decision trees built using our greedy algorithm are a good choice of classiers for images: true or false?",FALSE
+Spring 2019,2,e,1.333333333,Decision Trees,Text,"Consider the following 2D dataset in (x,y) format: ((1,-1), +1), ((1,1),  +1), ((1,2.5),+1), ((2,-2),-1), ((2,1),+1),((2,3),+1),((5,-1),-1),((5,-2),-1). We will construct a tree using a greedy algorithm that recursively minimizes weighted average entropy. Recall that the weighted average entropy of a split into subsets A and B is: (fraction of points in $A) \cdot H\left(R_{j, s}^{A}\right)+($ fraction of points in $B) \cdot H\left(R_{j, s}^{B}\right)$ where the entropy $H\left(R_{m}\right)$ of data in a region $R_{m}$ is given by $H\left(R_{m}\right)=-\sum_{k} \hat{P}_{m k} \log _{2} \hat{P}_{m k}$. The $\hat{P}_{m k}$ is the empirical probability, which is in this case the fraction of items in region $m$ that are of class $k$. Some facts that might be useful to you: H(0) = 0, H(3/5) = 0.97, H(3/8) = 0.95, H(3/4) = 0.81, H(5/6) = 0.65, H(1) = 0. 
+For decision trees built using our greedy algorithm, standardizing feature values is important: true or false?",FALSE
+Spring 2019,2,f,1.333333333,Decision Trees,Text,"Consider the following 2D dataset in (x,y) format: ((1,-1), +1), ((1,1),  +1), ((1,2.5),+1), ((2,-2),-1), ((2,1),+1),((2,3),+1),((5,-1),-1),((5,-2),-1). We will construct a tree using a greedy algorithm that recursively minimizes weighted average entropy. Recall that the weighted average entropy of a split into subsets A and B is: (fraction of points in $A) \cdot H\left(R_{j, s}^{A}\right)+($ fraction of points in $B) \cdot H\left(R_{j, s}^{B}\right)$ where the entropy $H\left(R_{m}\right)$ of data in a region $R_{m}$ is given by $H\left(R_{m}\right)=-\sum_{k} \hat{P}_{m k} \log _{2} \hat{P}_{m k}$. The $\hat{P}_{m k}$ is the empirical probability, which is in this case the fraction of items in region $m$ that are of class $k$. Some facts that might be useful to you: H(0) = 0, H(3/5) = 0.97, H(3/8) = 0.95, H(3/4) = 0.81, H(5/6) = 0.65, H(1) = 0. 
+A disadvantage of using decision trees for classication is that they can only be used to classify data having two classes: true or false?",FALSE
+Spring 2019,3,a.i,0.75,MDPs,Text,"Tic-tac-toe is a paper-and-pencil game for two players, X and O, who take turns
+marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks sequentially in a horizontal, vertical, or diagonal row wins the game. In this question, we'll consider a solitaire version of tic-tac-toe, in which we assume:
+• We are the X player;
+• The O player is a fixed (but possibly stochastic) algorithm;
+• The initial state of the board is empty, and X has the first move;
+• We can select any of the nine squares on our turn;
+• We don't know the strategy of the O player or the reward function used by O.
+We place an X in an empty square, then an O appears in some other square, and then it's our turn to play again. We receive a +1 reward for getting three X's in a row, reward -1 if there are three O's in a row, and reward 0 otherwise. If we select a square that already has an X or an O in it, nothing changes and it's still our turn.
+We can model this problem as a Markov decision process in several different ways. Here are some possible choices for the state space.
+• Jody suggests letting the state space be all possible 3 x 3 grids in which each square contains one of the following: a space, an O, and an X.
+• Dana suggests using all possible 3 x 3 grids in which each square contains one of the three options (a space, an O, and an X), and there is an equal number of O's and X's.
+• Chris suggests using all 3 x 3 tic-tac-toe game grids which appear in games where the players both employ optimal strategies.
+Is Dana's suggestion better or worse for tabular Q learning than Jody's? Explain your answer.","Dana's is better, because some of Jody's states might not be part of any plausible games. Jody's approach covers a much larger state space, including states that cannot arise given the rules of the game."
+Spring 2019,3,a.ii,0.75,MDPs,Text,"Tic-tac-toe is a paper-and-pencil game for two players, X and O, who take turns
+marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks sequentially in a horizontal, vertical, or diagonal row wins the game. In this question, we'll consider a solitaire version of tic-tac-toe, in which we assume:
+• We are the X player;
+• The O player is a fixed (but possibly stochastic) algorithm;
+• The initial state of the board is empty, and X has the first move;
+• We can select any of the nine squares on our turn;
+• We don't know the strategy of the O player or the reward function used by O.
+We place an X in an empty square, then an O appears in some other square, and then it's our turn to play again. We receive a +1 reward for getting three X's in a row, reward -1 if there are three O's in a row, and reward 0 otherwise. If we select a square that already has an X or an O in it, nothing changes and it's still our turn.
+We can model this problem as a Markov decision process in several different ways. Here are some possible choices for the state space.
+• Jody suggests letting the state space be all possible 3 x 3 grids in which each square contains one of the following: a space, an O, and an X.
+• Dana suggests using all possible 3 x 3 grids in which each square contains one of the three options (a space, an O, and an X), and there is an equal number of O's and X's.
+• Chris suggests using all 3 x 3 tic-tac-toe game grids which appear in games where the players both employ optimal strategies.
+Is Chris' suggestion better or worse for tabular Q learning than Jody's? Explain your answer.","Worse, since we do not know if O plays optimally. We might not cover all possible states. Also, Chris' suggestion may be infeasible, if we do not know the optimal strategies for both players."
+Spring 2019,3,b.i,0.75,MDPs,Text,"Tic-tac-toe is a paper-and-pencil game for two players, X and O, who take turns
+marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks sequentially in a horizontal, vertical, or diagonal row wins the game. In this question, we'll consider a solitaire version of tic-tac-toe, in which we assume:
+• We are the X player;
+• The O player is a fixed (but possibly stochastic) algorithm;
+• The initial state of the board is empty, and X has the first move;
+• We can select any of the nine squares on our turn;
+• We don't know the strategy of the O player or the reward function used by O.
+We place an X in an empty square, then an O appears in some other square, and then it's our turn to play again. We receive a +1 reward for getting three X's in a row, reward -1 if there are three O's in a row, and reward 0 otherwise. If we select a square that already has an X or an O in it, nothing changes and it's still our turn.
+We can model this problem as a Markov decision process in several different ways. Here are some possible choices for the state space.
+• Jody suggests letting the state space be all possible 3 x 3 grids in which each square contains one of the following: a space, an O, and an X.
+• Dana suggests using all possible 3 x 3 grids in which each square contains one of the three options (a space, an O, and an X), and there is an equal number of O's and X's.
+• Chris suggests using all 3 x 3 tic-tac-toe game grids which appear in games where the players both employ optimal strategies.
+Many states of the game are effectively the same due to symmetry. Draw a pair of such states which are the same due to symmetry:","Horizontal, vertical, two different diagonal symmetries with respect to the line passing through the center; rotations through 90, 180, 270 degrees."
+Spring 2019,3,b.ii,0.75,MDPs,Text,"Tic-tac-toe is a paper-and-pencil game for two players, X and O, who take turns
+marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks sequentially in a horizontal, vertical, or diagonal row wins the game. In this question, we'll consider a solitaire version of tic-tac-toe, in which we assume:
+• We are the X player;
+• The O player is a fixed (but possibly stochastic) algorithm;
+• The initial state of the board is empty, and X has the first move;
+• We can select any of the nine squares on our turn;
+• We don't know the strategy of the O player or the reward function used by O.
+We place an X in an empty square, then an O appears in some other square, and then it's our turn to play again. We receive a +1 reward for getting three X's in a row, reward -1 if there are three O's in a row, and reward 0 otherwise. If we select a square that already has an X or an O in it, nothing changes and it's still our turn.
+We can model this problem as a Markov decision process in several different ways. Here are some possible choices for the state space.
+• Jody suggests letting the state space be all possible 3 x 3 grids in which each square contains one of the following: a space, an O, and an X.
+• Dana suggests using all possible 3 x 3 grids in which each square contains one of the three options (a space, an O, and an X), and there is an equal number of O's and X's.
+• Chris suggests using all 3 x 3 tic-tac-toe game grids which appear in games where the players both employ optimal strategies.
+Jordan suggests using a state-space that includes one state that stands for each set of board games that are equivalent due to symmetry. Would this be better or worse for learning than Jody's representation? Explain your answer.","Better. Jordan's state space representation has fewer states, and should facilitate faster learning."
+Spring 2019,3,c,1.5,MDPs,Text,"Tic-tac-toe is a paper-and-pencil game for two players, X and O, who take turns
+marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks sequentially in a horizontal, vertical, or diagonal row wins the game. In this question, we'll consider a solitaire version of tic-tac-toe, in which we assume:
+• We are the X player;
+• The O player is a fixed (but possibly stochastic) algorithm;
+• The initial state of the board is empty, and X has the first move;
+• We can select any of the nine squares on our turn;
+• We don't know the strategy of the O player or the reward function used by O.
+We place an X in an empty square, then an O appears in some other square, and then it's our turn to play again. We receive a +1 reward for getting three X's in a row, reward -1 if there are three O's in a row, and reward 0 otherwise. If we select a square that already has an X or an O in it, nothing changes and it's still our turn.
+We can model this problem as a Markov decision process in several different ways. Here are some possible choices for the state space.
+• Jody suggests letting the state space be all possible 3 x 3 grids in which each square contains one of the following: a space, an O, and an X.
+• Dana suggests using all possible 3 x 3 grids in which each square contains one of the three options (a space, an O, and an X), and there is an equal number of O's and X's.
+• Chris suggests using all 3 x 3 tic-tac-toe game grids which appear in games where the players both employ optimal strategies.
+What is the action space of the MDP with Dana's state space definition?",Selection of one of the 9 squares.
+Spring 2019,3,d,1.5,MDPs,Text,"Tic-tac-toe is a paper-and-pencil game for two players, X and O, who take turns
+marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks sequentially in a horizontal, vertical, or diagonal row wins the game. In this question, we'll consider a solitaire version of tic-tac-toe, in which we assume:
+• We are the X player;
+• The O player is a fixed (but possibly stochastic) algorithm;
+• The initial state of the board is empty, and X has the first move;
+• We can select any of the nine squares on our turn;
+• We don't know the strategy of the O player or the reward function used by O.
+We place an X in an empty square, then an O appears in some other square, and then it's our turn to play again. We receive a +1 reward for getting three X's in a row, reward -1 if there are three O's in a row, and reward 0 otherwise. If we select a square that already has an X or an O in it, nothing changes and it's still our turn.
+We can model this problem as a Markov decision process in several different ways. Here are some possible choices for the state space.
+• Jody suggests letting the state space be all possible 3 x 3 grids in which each square contains one of the following: a space, an O, and an X.
+• Dana suggests using all possible 3 x 3 grids in which each square contains one of the three options (a space, an O, and an X), and there is an equal number of O's and X's.
+• Chris suggests using all 3 x 3 tic-tac-toe game grids which appear in games where the players both employ optimal strategies.
+You get to sit and watch an expert player (who always makes optimal moves) play this game for a long time, and you observe the sequence of state-action pairs that occur in many games. Which of the following machine-learning problem formulations is most appropriate, for you to learn how to play the game? For the item you select, provide the specified additional information (where not ""none"").
+1. supervised regression (describe the loss function)
+2. supervised classification (describe the loss function)
+3. reinforcement learning of a policy (none)
+4. reinforcement learning of a value function (none)
+Explain your answer.","supervised classification (loss function). You learn the mapping from input to output (e.g., the position on the grid, where you need to make the next move). The loss function could be the negative log likelihood between the expert's move and your predicted move."
+Spring 2019,3,e,1.5,Reinforcement Learning,Text,"Tic-tac-toe is a paper-and-pencil game for two players, X and O, who take turns
+marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks sequentially in a horizontal, vertical, or diagonal row wins the game. In this question, we'll consider a solitaire version of tic-tac-toe, in which we assume:
+• We are the X player;
+• The O player is a fixed (but possibly stochastic) algorithm;
+• The initial state of the board is empty, and X has the first move;
+• We can select any of the nine squares on our turn;
+• We don't know the strategy of the O player or the reward function used by O.
+We place an X in an empty square, then an O appears in some other square, and then it's our turn to play again. We receive a +1 reward for getting three X's in a row, reward -1 if there are three O's in a row, and reward 0 otherwise. If we select a square that already has an X or an O in it, nothing changes and it's still our turn.
+We can model this problem as a Markov decision process in several different ways. Here are some possible choices for the state space.
+• Jody suggests letting the state space be all possible 3 x 3 grids in which each square contains one of the following: a space, an O, and an X.
+• Dana suggests using all possible 3 x 3 grids in which each square contains one of the three options (a space, an O, and an X), and there is an equal number of O's and X's.
+• Chris suggests using all 3 x 3 tic-tac-toe game grids which appear in games where the players both employ optimal strategies.
+You get to interact with an implementation of this game for many game instances, selecting your actions, observing the results and rewards. Which of the following machine-learning problem formulations is most appropriate, for you to learn how to play the game? For the item you select, provide the specified additional information (where not ""none"").
+1. supervised regression (describe the loss function) Name:
+2. supervised classification (describe the loss function)
+3. reinforcement learning of a policy (none)
+4. reinforcement learning of a value function (none)
+Explain your answer.",Reinforcement learning of a policy (none).
+Spring 2019,3,f.i,1.5,Reinforcement Learning,Text,"Tic-tac-toe is a paper-and-pencil game for two players, X and O, who take turns
+marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks sequentially in a horizontal, vertical, or diagonal row wins the game. In this question, we'll consider a solitaire version of tic-tac-toe, in which we assume:
+• We are the X player;
+• The O player is a fixed (but possibly stochastic) algorithm;
+• The initial state of the board is empty, and X has the first move;
+• We can select any of the nine squares on our turn;
+• We don't know the strategy of the O player or the reward function used by O.
+We place an X in an empty square, then an O appears in some other square, and then it's our turn to play again. We receive a +1 reward for getting three X's in a row, reward -1 if there are three O's in a row, and reward 0 otherwise. If we select a square that already has an X or an O in it, nothing changes and it's still our turn.
+We can model this problem as a Markov decision process in several different ways. Here are some possible choices for the state space.
+• Jody suggests letting the state space be all possible 3 x 3 grids in which each square contains one of the following: a space, an O, and an X.
+• Dana suggests using all possible 3 x 3 grids in which each square contains one of the three options (a space, an O, and an X), and there is an equal number of O's and X's.
+• Chris suggests using all 3 x 3 tic-tac-toe game grids which appear in games where the players both employ optimal strategies.
+Barney wants to solve a tic-tac-toe problem that is exactly the same as the above game (i.e., three in a row/column/diagonal wins), except that it is played on a 100 x 100 grid. Is it better for Barney to use tabular Q learning or neural-net Q learning? Explain. ",Neural-net Q-learning. A table would be too large.
+Spring 2019,3,f.ii,1.5,Reinforcement Learning,Text,"Tic-tac-toe is a paper-and-pencil game for two players, X and O, who take turns
+marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks sequentially in a horizontal, vertical, or diagonal row wins the game. In this question, we'll consider a solitaire version of tic-tac-toe, in which we assume:
+• We are the X player;
+• The O player is a fixed (but possibly stochastic) algorithm;
+• The initial state of the board is empty, and X has the first move;
+• We can select any of the nine squares on our turn;
+• We don't know the strategy of the O player or the reward function used by O.
+We place an X in an empty square, then an O appears in some other square, and then it's our turn to play again. We receive a +1 reward for getting three X's in a row, reward -1 if there are three O's in a row, and reward 0 otherwise. If we select a square that already has an X or an O in it, nothing changes and it's still our turn.
+We can model this problem as a Markov decision process in several different ways. Here are some possible choices for the state space.
+• Jody suggests letting the state space be all possible 3 x 3 grids in which each square contains one of the following: a space, an O, and an X.
+• Dana suggests using all possible 3 x 3 grids in which each square contains one of the three options (a space, an O, and an X), and there is an equal number of O's and X's.
+• Chris suggests using all 3 x 3 tic-tac-toe game grids which appear in games where the players both employ optimal strategies.
+Barney wants to solve a tic-tac-toe problem that is exactly the same as the above game (i.e., three in a row/column/diagonal wins), except that it is played on a 100 x 100 grid. Suppose Barney were to use neural-net Q learning; would it help for him to start with a convolutional layer? If your answer is yes, describe four 3x3 convolutional filters that would be particularly helpful for this problem.","Yes. A 3x3 filter that detects vertical, horizontal, or diagonal lines can be very useful in detecting local solution (both for X and O)."
+Spring 2019,3,g,1.5,Reinforcement Learning,Text,"Tic-tac-toe is a paper-and-pencil game for two players, X and O, who take turns
+marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks sequentially in a horizontal, vertical, or diagonal row wins the game. In this question, we'll consider a solitaire version of tic-tac-toe, in which we assume:
+• We are the X player;
+• The O player is a fixed (but possibly stochastic) algorithm;
+• The initial state of the board is empty, and X has the first move;
+• We can select any of the nine squares on our turn;
+• We don't know the strategy of the O player or the reward function used by O.
+We place an X in an empty square, then an O appears in some other square, and then it's our turn to play again. We receive a +1 reward for getting three X's in a row, reward -1 if there are three O's in a row, and reward 0 otherwise. If we select a square that already has an X or an O in it, nothing changes and it's still our turn.
+We can model this problem as a Markov decision process in several different ways. Here are some possible choices for the state space.
+• Jody suggests letting the state space be all possible 3 x 3 grids in which each square contains one of the following: a space, an O, and an X.
+• Dana suggests using all possible 3 x 3 grids in which each square contains one of the three options (a space, an O, and an X), and there is an equal number of O's and X's.
+• Chris suggests using all 3 x 3 tic-tac-toe game grids which appear in games where the players both employ optimal strategies.
+Suppose you apply Q-learning to the 3x3 tic-tac-toe problem, and your actions always select an unfilled square. Bert suggests that it is okay to let the discount factor be 1. Is that true? Explain why or why not.",Yes. The game has a finite number of steps.
+Spring 2019,4,a,2,CNNs,Text,"Conne von Lucien has many pictures from her trip to Flatland and wants to determine which ones have her in the image. All of the pictures are arrays of size 4x1, with array values of either 0 or 1. Conne looks like the vector [1,0,1] in one dimension, so if a picture contains the pattern [1,0,1] anywhere inside it, it should be classified as a positive example, otherwise as a negative example.
+Fortunately, you learned about CNNs and have helped Conne by designing the following network architecture with three layers:
+1. A convolutional layer with one filter W that is size 3x1, and stride 1, and a single bias w_0 (where the output pixel corresponds to the input pixel that the filter is centered on). Input values of 0 should be assumed beyond the boundaries of the input.
+2. A max-pooling layer P with size 2x1 and stride 2.
+3. A fully connected layer $\sigma(\cdot)$ with a single output unit having a sigmoidal activation function.
+What is the shape of the output of each layer?","4x1, 2x2, 1x1 scalar"
+Spring 2019,4,b,2,CNNs,Text,"Conne von Lucien has many pictures from her trip to Flatland and wants to determine which ones have her in the image. All of the pictures are arrays of size 4x1, with array values of either 0 or 1. Conne looks like the vector [1,0,1] in one dimension, so if a picture contains the pattern [1,0,1] anywhere inside it, it should be classified as a positive example, otherwise as a negative example.
+Fortunately, you learned about CNNs and have helped Conne by designing the following network architecture with three layers:
+1. A convolutional layer with one filter W that is size 3x1, and stride 1, and a single bias w_0 (where the output pixel corresponds to the input pixel that the filter is centered on). Input values of 0 should be assumed beyond the boundaries of the input.
+2. A max-pooling layer P with size 2x1 and stride 2.
+3. A fully connected layer $\sigma(\cdot)$ with a single output unit having a sigmoidal activation function.
+What loss function is most appropriate here, especially if you want your neural network package to be useful with few modifications, to other Flatland visitors (who may appear as longer vectors)? 
+A. NLL loss
+B. Hinge loss
+C. Quadratic loss",NLL loss
+Spring 2019,4,c,2,CNNs,Text,"Conne von Lucien has many pictures from her trip to Flatland and wants to determine which ones have her in the image. All of the pictures are arrays of size 4x1, with array values of either 0 or 1. Conne looks like the vector [1,0,1] in one dimension, so if a picture contains the pattern [1,0,1] anywhere inside it, it should be classified as a positive example, otherwise as a negative example.
+Fortunately, you learned about CNNs and have helped Conne by designing the following network architecture with three layers:
+1. A convolutional layer with one filter W that is size 3x1, and stride 1, and a single bias w_0 (where the output pixel corresponds to the input pixel that the filter is centered on). Input values of 0 should be assumed beyond the boundaries of the input.
+2. A max-pooling layer P with size 2x1 and stride 2.
+3. A fully connected layer $\sigma(\cdot)$ with a single output unit having a sigmoidal activation function.
+We can express the loss function as $L(\sigma(P), y)$ where $P$ is the output from the max pooling layer of the CNN and $y$ is the true label for the input. Given $\frac{d L}{d P}$, derive the update rule for $w_{1}$ if the filter is composed of $W=\left[w_{1}, w_{2}, w_{3}\right]^{T}$ with bias $w_{0}$, and step size is $\eta$.","Consider $Z$ to be the outputs of layer $1, Z=\left[z_{1}, z_{2}, z_{3}, z_{4}\right]^{T}$.
+
+$$
+\begin{aligned}
+z_{1} &=w_{1} \cdot 0+w_{2} x_{1}+w_{3} x_{2}+w_{0} \\
+z_{2} &=w_{1} x_{1}+w_{2} x_{2}+w_{3} x_{3}+w_{0} \\
+z_{3} &=w_{1} x_{2}+w_{2} x_{3}+w_{3} x_{4}+w_{0} \\
+z_{4} &=w_{1} x_{3}+w_{2} x_{4}+w_{3} \cdot 0+w_{0} \\
+P &=\left[p_{1}, p_{2}\right]^{T} \\
+p_{1} &=\max \left(z_{1}, z_{2}\right) \\
+\frac{d p_{1}}{d w_{1}} &=0 \text { if } z_{1}>z_{2} \text { else } x_{1} \\
+p_{2} &=\max \left(z_{3}, z_{4}\right) \\
+\frac{d p_{2}}{d w_{1}} &=x_{2} \text { if } z_{3}>z_{4} \text { else } x_{3} \\
+\frac{d P}{d w_{1}} &=\left[\frac{d p_{1}}{d w_{1}}, \frac{d p_{2}}{d w_{1}}\right]^{T} \\
+w_{1} &:=w_{1}-\eta \frac{d L^{T}}{d P} \quad \frac{d P}{d w_{1}}
+\end{aligned}
+$$
+"
+Spring 2019,4,d,2,CNNs,Text,"Conne von Lucien has many pictures from her trip to Flatland and wants to determine which ones have her in the image. All of the pictures are arrays of size 4x1, with array values of either 0 or 1. Conne looks like the vector [1,0,1] in one dimension, so if a picture contains the pattern [1,0,1] anywhere inside it, it should be classified as a positive example, otherwise as a negative example.
+Fortunately, you learned about CNNs and have helped Conne by designing the following network architecture with three layers:
+1. A convolutional layer with one filter W that is size 3x1, and stride 1, and a single bias w_0 (where the output pixel corresponds to the input pixel that the filter is centered on). Input values of 0 should be assumed beyond the boundaries of the input.
+2. A max-pooling layer P with size 2x1 and stride 2.
+3. A fully connected layer $\sigma(\cdot)$ with a single output unit having a sigmoidal activation function.
+Given $\frac{d L}{d P}$, provide the update rule for $w_{0}$, the bias to the filter.",w_{0}:=w_{0}-\eta \frac{d L^{T}}{d P} \frac{d P}{d w_{0}}
+Spring 2019,4,e,2,CNNs,Text,"Conne von Lucien has many pictures from her trip to Flatland and wants to determine which ones have her in the image. All of the pictures are arrays of size 4x1, with array values of either 0 or 1. Conne looks like the vector [1,0,1] in one dimension, so if a picture contains the pattern [1,0,1] anywhere inside it, it should be classified as a positive example, otherwise as a negative example.
+Fortunately, you learned about CNNs and have helped Conne by designing the following network architecture with three layers:
+1. A convolutional layer with one filter W that is size 3x1, and stride 1, and a single bias w_0 (where the output pixel corresponds to the input pixel that the filter is centered on). Input values of 0 should be assumed beyond the boundaries of the input.
+2. A max-pooling layer P with size 2x1 and stride 2.
+3. A fully connected layer $\sigma(\cdot)$ with a single output unit having a sigmoidal activation function.
+Conne decides to use the neural network code as written by a $6.036$ student for the $6.036$ homework (and that actually was a correct implementation) to train her CNN using SGD. The sgd procedure may be called multiple times from elsewhere (e.g., to implement multiple epochs of SGD). Conne thinks she has a better sgd python procedure than that given in the package; her code is:
+def sgd (nn , X, Y, iters =100 , lrate =0.005) :
+    D, N = X.shape
+    sum loss = 0
+    for k in range(iters) :
+        Xt = X[ : , k : k+1]
+        Yt = Y[ : , k : k+1]
+        Ypred = nn.forward(Xt)
+        sum_loss += nn.loss.forward(Ypred , Yt)
+        err = nn.loss.backward()
+        nn.backward(err)
+        nn.sgd_step(lrate)
+Here, $n n$ is an instance of the Sequential class implementing the CNN. She knows from the unit tests that the nn routines function properly. In particular, nn.forward properly computes the predicted outputs Ypred from input data Xt, nn.loss.forward also properly computes the forward loss, $\mathrm{nn}$.loss.backward properly computes the backward loss, nn. backward properly computes the backward gradients, and nn.sgd_step properly applies an SGD update step with the specified learning rate lrate. And the $N$ sets of dimension $D$ input data $X$, and labels $Y$ are known to be correct.
+However, Conne's procedure consistently gives poor results (and occasionally throws errors), compared with the $6.036$ student's correct SGD routine, when run with identical arguments.
+Why? Specify the line(s) which have errors, and describe how the code should be improved to do as well as the correct implementation of the $6.036$ student","Lines 5 and 6. The SGD algorithm needs a random data point to be selected for the gradient computation. Thus, the Xt and Yt assignments should draw from a randomly chosen $j$, e.g.
+for k in range ( iters ) :
+    j = np.random.randint(N)
+    Xt = X[ : , j : j +1]
+    Yt = Y[ : , j : j +1]
+. . .
+Note that Conne's code may throw errors when iters $\geq N$."
+Spring 2019,5,a,2,MDPs,Image,"Consider the following deterministic Markow Decision Process (MDP), describing a simple robot grid world. Notice that the values of the irnmediate rewards $r$ for two transitions are written next to thern; the other transitions, with no value written next to them, have an immedinte reward of $r=0$. Assume the discount factor $\gamma$ is $0.8$.
+For states $s \in\left\{s 6\right.$, $s 5$, s2\}, write the value for $V_{\pi^{*}}(s)$, the discounted inflinite horizon value of state $s$ using an optimal policy $\pi^{*}$. It is flne to write a mumerical expression-you don't have to evaluate it-but it shouldin't contain any variables.","$$
+V_{a^{*}}(a 6)=100
+$$
+$$
+V_{n^{*}}(s 5)=V_{x^{*}}(s 6)=80
+$$
+$$
+V_{\pi^{*}}(s 2)=\gamma V_{\pi^{*}}(s 5)=64
+$$"
+Spring 2019,5,c,2,MDPs,Image,"Consider the following deterministic Markow Decision Process (MDP), describing a simple robot grid world. Notice that the values of the irnmediate rewards $r$ for two transitions are written next to thern; the other transitions, with no value written next to them, have an immedinte reward of $r=0$. Assume the discount factor $\gamma$ is $0.8$.
+For each state in the state diagram below, circle exactly one outgoing arrow, invicating an optimal action $\pi^{*}(\mathrm{~s})$ to take from that state. If there is a tie, it is flne to select any action with optimnl value.",Image filling
+Spring 2019,5,d,2,MDPs,Image,"Consider the following deterministic Markow Decision Process (MDP), describing a simple robot grid world. Notice that the values of the irnmediate rewards $r$ for two transitions are written next to thern; the other transitions, with no value written next to them, have an immedinte reward of $r=0$. Assume the discount factor $\gamma$ is $0.8$.
+Give a value for $\gamma$ (constrained by $0<\gamma<1$ ) that results in a different optirnal policy, and describe the resulting policy by indicating which $\pi^{*}(s)$ values (i.e., which policy actions) change.","A small $\gamma=0.001$ will make it not worthwhile to defer gains for very long. In this problem, if $\gamma^{2} 100<50$, then it will be better to directly take the 50 rewrard. So valid answers here are $0<\gamma<\frac{\sqrt{2}}{2}$.
+Now $\pi^{*}\left(s^{2}\right)$ is to go right (east)."
+Spring 2019,5,e,2,MDPs,Image,"Consider the following deterministic Markow Decision Process (MDP), describing a simple robot grid world. Notice that the values of the irnmediate rewards $r$ for two transitions are written next to thern; the other transitions, with no value written next to them, have an immedinte reward of $r=0$. Assume the discount factor $\gamma$ is $0.8$.
+Assume $p=0.75$. For each of the states $s \in\{s 2, s 5, s 6\}$, write the value for $V_{\pi^{*}}(s)$. It is flne to write a numerical expression, but it shouldn't contain any variables.","Solution:
+$$
+\begin{aligned}
+V_{x^{*}}(s 6) &=100 p+(1-p) \gamma V_{\pi^{*}}(s 6) \\
+V_{z^{*}}(s 6)(1-(1-p) \gamma) &=100 p \\
+V_{x^{*}}(s 6) &=\frac{100 p}{1-(1-p) \gamma}=93.75
+\end{aligned}
+$$
+Solution:
+$$
+V_{\pi^{*}}(35)=V_{x^{*}}(s 6)=75
+$$
+Solution:
+$$
+V_{\pi^{*}}(s 2)=V_{\mathrm{m}^{*}}(s 5)=60
+$$"
+Spring 2019,5,f.i,2,MDPs,Image,"Consider the following deterministic Markow Decision Process (MDP), describing a simple robot grid world. Notice that the values of the irnmediate rewards $r$ for two transitions are written next to thern; the other transitions, with no value written next to them, have an immedinte reward of $r=0$. Assume the discount factor $\gamma$ is $0.8$.
+How bad does the ice have to get before the robot will prefer to completely avoid the ice? Let us answer the question by giving a value for $p$ for which the optimal policy chooses actions that completely avoid the ice, i.e., choosing the action ""go left"" over ""go up"" when
+the robot is in the state a6. Approach this in four parts. The answer to each of the flrst three parts ean be a numerical expression; the answer to the last part can be an expression involving numbers and $p$.
+i. What is the value $V$ of going right in state $z 2 ?$",50
+Spring 2019,5,f.ii,2,MDPs,Image,"Consider the following deterministic Markow Decision Process (MDP), describing a simple robot grid world. Notice that the values of the irnmediate rewards $r$ for two transitions are written next to thern; the other transitions, with no value written next to them, have an immedinte reward of $r=0$. Assume the discount factor $\gamma$ is $0.8$.
+How bad does the ice have to get before the robot will prefer to completely avoid the ice? Let us answer the question by giving a value for $p$ for which the optimal policy chooses actions that completely avoid the ice, i.e., choosing the action ""go left"" over ""go up"" when
+the robot is in the state a6. Approach this in four parts. The answer to each of the flrst three parts ean be a numerical expression; the answer to the last part can be an expression involving numbers and $p$.
+ii. What is the value $V$ of going up in state $a 5$, if you're going to go right in state $z 2$ ?",$\gamma \cdot 50=40$
+Spring 2019,5,f.iii,2,MDPs,Image,"Consider the following deterministic Markow Decision Process (MDP), describing a simple robot grid world. Notice that the values of the irnmediate rewards $r$ for two transitions are written next to thern; the other transitions, with no value written next to them, have an immedinte reward of $r=0$. Assume the discount factor $\gamma$ is $0.8$.
+How bad does the ice have to get before the robot will prefer to completely avoid the ice? Let us answer the question by giving a value for $p$ for which the optimal policy chooses actions that completely avoid the ice, i.e., choosing the action ""go left"" over ""go up"" when
+the robot is in the state a6. Approach this in four parts. The answer to each of the flrst three parts ean be a numerical expression; the answer to the last part can be an expression involving numbers and $p$.
+iii. What is the value $V$ of going left in state $a 6$, if you're going to go up in state a5 and right in state a?",$\gamma^{2}-50=32$
+Spring 2019,5,f.iv,2,MDPs,Image,"Consider the following deterministic Markow Decision Process (MDP), describing a simple robot grid world. Notice that the values of the irnmediate rewards $r$ for two transitions are written next to thern; the other transitions, with no value written next to them, have an immedinte reward of $r=0$. Assume the discount factor $\gamma$ is $0.8$.
+How bad does the ice have to get before the robot will prefer to completely avoid the ice? Let us answer the question by giving a value for $p$ for which the optimal policy chooses actions that completely avoid the ice, i.e., choosing the action ""go left"" over ""go up"" when
+the robot is in the state a6. Approach this in four parts. The answer to each of the flrst three parts ean be a numerical expression; the answer to the last part can be an expression involving numbers and $p$.
+iv. Under what condition on $p$ is it better to go left in state $a 6$ (then up in state a5 and right in state $a$ 2) than it is to go up in state $z 6$ ?","$$
+\begin{aligned}
+\frac{p \cdot 100}{1-(1-p) \cdot 0.8} &<32 \\
+p &<\frac{8}{93} \approx 0.086
+\end{aligned}
+$$"
+Spring 2019,6,a,1.75,Classifiers,Text,"After taking 6.036, Bob decides to train a recommender system to predict what ratings different customers will give to different movies. Currently, he knows of three really popular movies, and he knows of two potential customers who have ranked some of these movies. The data matrix currently looks like: $Y=[[2, ?, 3],[4,2, ?]]$ where, as in class, rows correspond to customers and columns correspond to movies, and ? indicates a missing or unknown ranking. He decides to find a low rank factorization of $Y$ using the alternating least squares algorithm implemented in class. Assume for this question that offsets are set to $0 .$
+Bob starts out by trying a rank 1 factorization of $Y$ as $U V^{T}$. He initializes $U=[1,2]^{T}$. Assume there is no regularization. In the first iteration of alternating least squares, we will find the best $V$ given the current $U$. What is the objective function $J(V)$ in terms of $V$ ? Write it in terms of $V_{1}, V_{2}, V_{3}$ and specific numerical values from $Y$.",J(V)=\left(1 \cdot V_{1}-2\right)^{2}+\left(1 \cdot V_{3}-3\right)^{2}+\left(2 \cdot V_{1}-4\right)^{2}+\left(2 \cdot V_{2}-2\right)^{2}
+Spring 2019,6,b,1.75,Classifiers,Text,"After taking 6.036, Bob decides to train a recommender system to predict what ratings different customers will give to different movies. Currently, he knows of three really popular movies, and he knows of two potential customers who have ranked some of these movies. The data matrix currently looks like: $Y=[[2, ?, 3],[4,2, ?]]$ where, as in class, rows correspond to customers and columns correspond to movies, and ? indicates a missing or unknown ranking. He decides to find a low rank factorization of $Y$ using the alternating least squares algorithm implemented in class. Assume for this question that offsets are set to $0.$
+What is the optimal value of $V$?","The optimal value is $V=[2,1,3]^{T}$. We are fortunate in being able to exactly match all of the non-empty $Y$ elements."
+Spring 2019,6,c,1.75,Classifiers,Text,"After taking 6.036, Bob decides to train a recommender system to predict what ratings different customers will give to different movies. Currently, he knows of three really popular movies, and he knows of two potential customers who have ranked some of these movies. The data matrix currently looks like: $Y=[[2, ?, 3],[4,2, ?]]$ where, as in class, rows correspond to customers and columns correspond to movies, and ? indicates a missing or unknown ranking. He decides to find a low rank factorization of $Y$ using the alternating least squares algorithm implemented in class. Assume for this question that offsets are set to $0.$
+What is the associated overall training error?",The training error is 0 .
+Spring 2019,6,d,1.75,Classifiers,Text,"After taking 6.036, Bob decides to train a recommender system to predict what ratings different customers will give to different movies. Currently, he knows of three really popular movies, and he knows of two potential customers who have ranked some of these movies. The data matrix currently looks like: $Y=[[2, ?, 3],[4,2, ?]]$ where, as in class, rows correspond to customers and columns correspond to movies, and ? indicates a missing or unknown ranking. He decides to find a low rank factorization of $Y$ using the alternating least squares algorithm implemented in class. Assume for this question that offsets are set to $0.$
+Bob is happy about what he has accomplished, until he realizes that there are a bunch of movies and users that he still needs to add to his database! He sees that his database will slowly grow over time, and that it will be time-consuming to train a completely new model every single time he updates his database. If Bob has an $m \times n$ data matrix which he wants to find a rank $k$ factorization for, his analysis indicates that the worst-case run-time (in terms of number of expensive multiplications) of performing alternating least squares for $t$ iterations (where each iteration updates both $U$ and $V)$ will be $O(k^{2}*m*n*t)$.
+Instead, Bob comes upon the following idea: whenever he gets information about a new movie, he adds an extra row to $V$ but does not alter the existing entries of $U$ or $V$. He then finds the values of the entries in that extra row that minimize the objective function (with no regularization). He performs a similar procedure when he gets a new user, but instead adds an extra row to $U$. Working from the dataset in the first part, say Bob receives a new movie to which his first user has given the rating 4 . What is the updated value of $V$ ?","V=[2,1,3,4]^{T}"
+Spring 2019,6,e,1.75,Classifiers,Text,"After taking 6.036, Bob decides to train a recommender system to predict what ratings different customers will give to different movies. Currently, he knows of three really popular movies, and he knows of two potential customers who have ranked some of these movies. The data matrix currently looks like: $Y=[[2, ?, 3],[4,2, ?]]$ where, as in class, rows correspond to customers and columns correspond to movies, and ? indicates a missing or unknown ranking. He decides to find a low rank factorization of $Y$ using the alternating least squares algorithm implemented in class. Assume for this question that offsets are set to $0.$
+Bob is happy about what he has accomplished, until he realizes that there are a bunch of movies and users that he still needs to add to his database! He sees that his database will slowly grow over time, and that it will be time-consuming to train a completely new model every single time he updates his database. If Bob has an $m \times n$ data matrix which he wants to find a rank $k$ factorization for, his analysis indicates that the worst-case run-time (in terms of number of expensive multiplications) of performing alternating least squares for $t$ iterations (where each iteration updates both $U$ and $V)$ will be $O(k^{2}*m*n*t)$.
+Instead, Bob comes upon the following idea: whenever he gets information about a new movie, he adds an extra row to $V$ but does not alter the existing entries of $U$ or $V$. He then finds the values of the entries in that extra row that minimize the objective function (with no regularization). He performs a similar procedure when he gets a new user, but instead adds an extra row to $U$. Working from the dataset in the first part, say Bob receives a new movie to which his first user has given the rating 4, resulting in an updated $V$ of $V=[2,1,3,4]^{T}$. With this updated $V$, what rating does Bob predict that the second user will give this movie? ",8
+Spring 2019,6,f,1.75,Classifiers,Text,"After taking 6.036, Bob decides to train a recommender system to predict what ratings different customers will give to different movies. Currently, he knows of three really popular movies, and he knows of two potential customers who have ranked some of these movies. The data matrix currently looks like: $Y=[[2, ?, 3],[4,2, ?]]$ where, as in class, rows correspond to customers and columns correspond to movies, and ? indicates a missing or unknown ranking. He decides to find a low rank factorization of $Y$ using the alternating least squares algorithm implemented in class. Assume for this question that offsets are set to $0.$
+Bob is happy about what he has accomplished, until he realizes that there are a bunch of movies and users that he still needs to add to his database! He sees that his database will slowly grow over time, and that it will be time-consuming to train a completely new model every single time he updates his database. If Bob has an $m \times n$ data matrix which he wants to find a rank $k$ factorization for, his analysis indicates that the worst-case run-time (in terms of number of expensive multiplications) of performing alternating least squares for $t$ iterations (where each iteration updates both $U$ and $V)$ will be $O(k^{2}*m*n*t)$.
+Instead, Bob comes upon the following idea: whenever he gets information about a new movie, he adds an extra row to $V$ but does not alter the existing entries of $U$ or $V$. He then finds the values of the entries in that extra row that minimize the objective function (with no regularization). He performs a similar procedure when he gets a new user, but instead adds an extra row to $U$. 
+Bob continues using this update scheme whenever he adds new movies and users. Does the order in which Bob receives new information affect the final values of $U$ and $V$ that he learns? Explain.","Yes. Let us say Bob gets information about movie $k$ and person $a$ in that order. Based on this new update scheme, the row in $V$ corresponding to movie $k$ will be frozen after the information is received, and will not be updated when the information about person $a$ is received. On the other hand, the learned row in $U$ corresponding to person $a$ will depend in part on the previously updated row in $V$ corresponding to movie $k$.
+
+If the information was received in the opposite order, we would have the opposite result. The row in $U$ corresponding to person $a$ would be frozen after the first piece of information was received, and not be influenced by the information about movie $k$. Meanwhile, the row in $V$ corresponding to movie $k$ would be learned in part based on the information gained about person a previously.
+
+Thus, the order of new information matters a lot in this new scheme, because $U$ and $V$ aren't jointly optimized completely every time new information is received.
+"
+Spring 2019,6,g,1.75,Classifiers,Text,"After taking 6.036, Bob decides to train a recommender system to predict what ratings different customers will give to different movies. Currently, he knows of three really popular movies, and he knows of two potential customers who have ranked some of these movies. The data matrix currently looks like: $Y=[[2, ?, 3],[4,2, ?]]$ where, as in class, rows correspond to customers and columns correspond to movies, and ? indicates a missing or unknown ranking. He decides to find a low rank factorization of $Y$ using the alternating least squares algorithm implemented in class. Assume for this question that offsets are set to $0.$
+Bob is happy about what he has accomplished, until he realizes that there are a bunch of movies and users that he still needs to add to his database! He sees that his database will slowly grow over time, and that it will be time-consuming to train a completely new model every single time he updates his database. If Bob has an $m \times n$ data matrix which he wants to find a rank $k$ factorization for, his analysis indicates that the worst-case run-time (in terms of number of expensive multiplications) of performing alternating least squares for $t$ iterations (where each iteration updates both $U$ and $V)$ will be $O(k^{2}*m*n*t)$.
+Instead, Bob comes upon the following idea: whenever he gets information about a new movie, he adds an extra row to $V$ but does not alter the existing entries of $U$ or $V$. He then finds the values of the entries in that extra row that minimize the objective function (with no regularization). He performs a similar procedure when he gets a new user, but instead adds an extra row to $U$. 
+Bob modifies this procedure so that he still adds new movies and users in this way, but after every 100 new additions, he retrains $U$ and $V$ from scratch using alternating least squares. Would you expect that this method would make better predictions than if we just used Bob's original procedure? Explain.","Yes.
+
+Whenever we retrain $U$ and $V$ from scratch, we are minimizing the objective function over all variables in the problem (all entries of $U$ and $V$ ) so the minimum of the objective will be lower than we could obtain by just retraining a subset of variables, as we were doing in the previous part to lower computational costs. Name:
+
+Thus, this method will make better predictions"
+Spring 2019,6,h,1.75,Classifiers,Text,"After taking 6.036, Bob decides to train a recommender system to predict what ratings different customers will give to different movies. Currently, he knows of three really popular movies, and he knows of two potential customers who have ranked some of these movies. The data matrix currently looks like: $Y=[[2, ?, 3],[4,2, ?]]$ where, as in class, rows correspond to customers and columns correspond to movies, and ? indicates a missing or unknown ranking. He decides to find a low rank factorization of $Y$ using the alternating least squares algorithm implemented in class. Assume for this question that offsets are set to $0.$
+Bob is happy about what he has accomplished, until he realizes that there are a bunch of movies and users that he still needs to add to his database! He sees that his database will slowly grow over time, and that it will be time-consuming to train a completely new model every single time he updates his database. If Bob has an $m \times n$ data matrix which he wants to find a rank $k$ factorization for, his analysis indicates that the worst-case run-time (in terms of number of expensive multiplications) of performing alternating least squares for $t$ iterations (where each iteration updates both $U$ and $V)$ will be $O(k^{2}*m*n*t)$.
+Instead, Bob comes upon the following idea: whenever he gets information about a new movie, he adds an extra row to $V$ but does not alter the existing entries of $U$ or $V$. He then finds the values of the entries in that extra row that minimize the objective function (with no regularization). He performs a similar procedure when he gets a new user, but instead adds an extra row to $U$. 
+Bob modifies this procedure so that he still adds new movies and users in this way, but after every 100 new additions, he retrains $U$ and $V$ from scratch using alternating least squares.
+After having added a few thousand users and movies to his database, Bob wants to try analyzing the user and movie vectors that he has learned, in order to see whether he can interpret what is causing customers to like certain movies over others. However, some of the numbers in $U$ and $V$ have a very high magnitude, which may lead to problems with numerical precision. How might Bob adjust his training process to fix the problem of high magnitude numbers in $U$ and $V$ ?
+","In order to have fewer numbers of large magnitude, Bob can employ regularization of both $U, V$."
+Spring 2019,7,a,0.75,Regression,Image,"In this problem, we consider using linear regression with a regularization term. Assume a datnset of $n$ samples $\left\{\left(x^{(i)}, y^{(i)}\right)\right\}$ with $x^{(i)} \in \mathbb{R}^{2}$ and output values $y^{(i)} \in \mathbb{R}$. Recall that the ridge regression objective is deflned as follows:
+$$
+J_{\text {ridge }}(\theta)=J_{\text {data }}(\theta)+J_{\text {reg }}(\theta)=\frac{1}{n} \sum_{i=1}^{n}\left(\theta^{T} x^{(i)}-y^{(i)}\right)^{2}+\left.\lambda|| \theta\right|^{2}
+$$
+where $\theta=\left[\theta_{1}, \theta_{2}\right]$ and $\lambda$ is the regularization trude-off parameter.
+Chris would like to solve the problem of computing $\theta$ that minimizes the ridge regression objective. He will exnploy graphical methods to obtrin the solution. When plotting just the data error term, $J_{\text {data }}(\theta)$, as a function of $\theta_{1}$ and $\theta_{2}$, the following set of isocontour lines (curves connecting sets of $\theta_{1}, \theta_{2}$ for which the objective value is constant) is obtained, for his dataset:
+What is the optimum solution $\theta^{*}$ when you minimize only the data error term, $J_{\text {data }}(\theta)$, i.e., for $\lambda=0$ ? Give an approximate value, for Chris's data.","$[0.5,1.0]$"
+Spring 2019,7,b,1.75,Regression,Image,"In this problem, we consider using linear regression with a regularization term. Assume a datnset of $n$ samples $\left\{\left(x^{(i)}, y^{(i)}\right)\right\}$ with $x^{(i)} \in \mathbb{R}^{2}$ and output values $y^{(i)} \in \mathbb{R}$. Recall that the ridge regression objective is deflned as follows:
+$$
+J_{\text {ridge }}(\theta)=J_{\text {data }}(\theta)+J_{\text {reg }}(\theta)=\frac{1}{n} \sum_{i=1}^{n}\left(\theta^{T} x^{(i)}-y^{(i)}\right)^{2}+\left.\lambda|| \theta\right|^{2}
+$$
+where $\theta=\left[\theta_{1}, \theta_{2}\right]$ and $\lambda$ is the regularization trude-off parameter.
+Chris would like to solve the problem of computing $\theta$ that minimizes the ridge regression objective. He will exnploy graphical methods to obtrin the solution. When plotting just the data error term, $J_{\text {data }}(\theta)$, as a function of $\theta_{1}$ and $\theta_{2}$, the following set of isocontour lines (curves connecting sets of $\theta_{1}, \theta_{2}$ for which the objective value is constant) is obtained, for his dataset:
+In general, is the data error term $J_{\mathrm{dena}}\left(\theta^{*}\right)$ guaranteed to be zero for the optimal value of $\theta$, for the case when $\lambda=0$ ? Explain.","No. Since we are not likely to perfectly flt all of the data, the data term error is libely to be larger than zero even for the optimal $\theta$ value."
+Spring 2019,7,c,1.75,Regression,Image,"In this problem, we consider using linear regression with a regularization term. Assume a datnset of $n$ samples $\left\{\left(x^{(i)}, y^{(i)}\right)\right\}$ with $x^{(i)} \in \mathbb{R}^{2}$ and output values $y^{(i)} \in \mathbb{R}$. Recall that the ridge regression objective is deflned as follows:
+$$
+J_{\text {ridge }}(\theta)=J_{\text {data }}(\theta)+J_{\text {reg }}(\theta)=\frac{1}{n} \sum_{i=1}^{n}\left(\theta^{T} x^{(i)}-y^{(i)}\right)^{2}+\left.\lambda|| \theta\right|^{2}
+$$
+where $\theta=\left[\theta_{1}, \theta_{2}\right]$ and $\lambda$ is the regularization trude-off parameter.
+Chris would like to solve the problem of computing $\theta$ that minimizes the ridge regression objective. He will exnploy graphical methods to obtrin the solution. When plotting just the data error term, $J_{\text {data }}(\theta)$, as a function of $\theta_{1}$ and $\theta_{2}$, the following set of isocontour lines (curves connecting sets of $\theta_{1}, \theta_{2}$ for which the objective value is constant) is obtained, for his dataset:
+Recall that $\nabla J_{\text {dema }}(\theta)$ is a vector in 2D. In general, at any parameter vector $\theta$, describe the geometric relationship between $\nabla J_{\text {data }}(\theta)$ and the isocontour line of the data error term $J_{\text {data }}(\theta)$ that passes through $\theta$.","The vector $\nabla J_{\text {data }}(\theta)$ is locally perpendicular to the isocontour line of the data error tern $J_{\text {data }}(\theta)$ at $\theta$. The gradient points in the ""uphill"" direction."
+Spring 2019,7,d,1,Regression,Image,"In this problem, we consider using linear regression with a regularization term. Assume a datnset of $n$ samples $\left\{\left(x^{(i)}, y^{(i)}\right)\right\}$ with $x^{(i)} \in \mathbb{R}^{2}$ and output values $y^{(i)} \in \mathbb{R}$. Recall that the ridge regression objective is deflned as follows:
+$$
+J_{\text {ridge }}(\theta)=J_{\text {data }}(\theta)+J_{\text {reg }}(\theta)=\frac{1}{n} \sum_{i=1}^{n}\left(\theta^{T} x^{(i)}-y^{(i)}\right)^{2}+\left.\lambda|| \theta\right|^{2}
+$$
+where $\theta=\left[\theta_{1}, \theta_{2}\right]$ and $\lambda$ is the regularization trude-off parameter.
+Chris would like to solve the problem of computing $\theta$ that minimizes the ridge regression objective. He will exnploy graphical methods to obtrin the solution. When plotting just the data error term, $J_{\text {data }}(\theta)$, as a function of $\theta_{1}$ and $\theta_{2}$, the following set of isocontour lines (curves connecting sets of $\theta_{1}, \theta_{2}$ for which the objective value is constant) is obtained, for his dataset:
+What is $\nabla J_{\text {deta }}\left(\theta^{*}\right)$ at the optimumn $\theta^{*}$, when $\lambda=0$ ?",$\nabla J_{\text {deta }}\left(\theta^{*}\right)=0$.
+Spring 2019,7,e,1.75,Regression,Image,"In this problem, we consider using linear regression with a regularization term. Assume a datnset of $n$ samples $\left\{\left(x^{(i)}, y^{(i)}\right)\right\}$ with $x^{(i)} \in \mathbb{R}^{2}$ and output values $y^{(i)} \in \mathbb{R}$. Recall that the ridge regression objective is deflned as follows:
+$$
+J_{\text {ridge }}(\theta)=J_{\text {data }}(\theta)+J_{\text {reg }}(\theta)=\frac{1}{n} \sum_{i=1}^{n}\left(\theta^{T} x^{(i)}-y^{(i)}\right)^{2}+\left.\lambda|| \theta\right|^{2}
+$$
+where $\theta=\left[\theta_{1}, \theta_{2}\right]$ and $\lambda$ is the regularization trude-off parameter.
+Chris would like to solve the problem of computing $\theta$ that minimizes the ridge regression objective. He will exnploy graphical methods to obtrin the solution. When plotting just the data error term, $J_{\text {data }}(\theta)$, as a function of $\theta_{1}$ and $\theta_{2}$, the following set of isocontour lines (curves connecting sets of $\theta_{1}, \theta_{2}$ for which the objective value is constant) is obtained, for his dataset:
+Now we consider regularization. Sketch the isocontour lines for just the regularization term, $J_{\text {reg }}(\theta)$. Clearly label the contour line corresponding to the values of $\theta$ for which this term has value 1 , when $\lambda=1$.",Image filling
+Spring 2019,7,f,1.75,Regression,Image,"In this problem, we consider using linear regression with a regularization term. Assume a datnset of $n$ samples $\left\{\left(x^{(i)}, y^{(i)}\right)\right\}$ with $x^{(i)} \in \mathbb{R}^{2}$ and output values $y^{(i)} \in \mathbb{R}$. Recall that the ridge regression objective is deflned as follows:
+$$
+J_{\text {ridge }}(\theta)=J_{\text {data }}(\theta)+J_{\text {reg }}(\theta)=\frac{1}{n} \sum_{i=1}^{n}\left(\theta^{T} x^{(i)}-y^{(i)}\right)^{2}+\left.\lambda|| \theta\right|^{2}
+$$
+where $\theta=\left[\theta_{1}, \theta_{2}\right]$ and $\lambda$ is the regularization trude-off parameter.
+Chris would like to solve the problem of computing $\theta$ that minimizes the ridge regression objective. He will exnploy graphical methods to obtrin the solution. When plotting just the data error term, $J_{\text {data }}(\theta)$, as a function of $\theta_{1}$ and $\theta_{2}$, the following set of isocontour lines (curves connecting sets of $\theta_{1}, \theta_{2}$ for which the objective value is constant) is obtained, for his dataset:
+What is the effect of the regularization trade-off parameter $\lambda$ on the shape and value of the isocontour lines of the regularization term $J_{\text {reg }}(\theta)$ ?","The shape remains concentric circles centered at the origin. $\lambda$ scales the isocontour value for each radius of these concentric circles. (Note that for a constant isocontour value, the radius then decreases.) Visualizing the shape as a bowl, larger $\lambda$ makes the bowl steeper."
+Spring 2019,7,g,1.75,Regression,Image,"In this problem, we consider using linear regression with a regularization term. Assume a datnset of $n$ samples $\left\{\left(x^{(i)}, y^{(i)}\right)\right\}$ with $x^{(i)} \in \mathbb{R}^{2}$ and output values $y^{(i)} \in \mathbb{R}$. Recall that the ridge regression objective is deflned as follows:
+$$
+J_{\text {ridge }}(\theta)=J_{\text {data }}(\theta)+J_{\text {reg }}(\theta)=\frac{1}{n} \sum_{i=1}^{n}\left(\theta^{T} x^{(i)}-y^{(i)}\right)^{2}+\left.\lambda|| \theta\right|^{2}
+$$
+where $\theta=\left[\theta_{1}, \theta_{2}\right]$ and $\lambda$ is the regularization trude-off parameter.
+Chris would like to solve the problem of computing $\theta$ that minimizes the ridge regression objective. He will exnploy graphical methods to obtrin the solution. When plotting just the data error term, $J_{\text {data }}(\theta)$, as a function of $\theta_{1}$ and $\theta_{2}$, the following set of isocontour lines (curves connecting sets of $\theta_{1}, \theta_{2}$ for which the objective value is constant) is obtained, for his dataset:
+Now consider the gradient of the regularization term $\nabla J_{\text {rag }}(\theta)$. Tuwards what specifle point does the $-\nabla J_{\text {reg }}(\theta)$ vector point to?","The origin, $(0,0)$."
+Spring 2019,7,h,1.75,Regression,Image,"In this problem, we consider using linear regression with a regularization term. Assume a datnset of $n$ samples $\left\{\left(x^{(i)}, y^{(i)}\right)\right\}$ with $x^{(i)} \in \mathbb{R}^{2}$ and output values $y^{(i)} \in \mathbb{R}$. Recall that the ridge regression objective is deflned as follows:
+$$
+J_{\text {ridge }}(\theta)=J_{\text {data }}(\theta)+J_{\text {reg }}(\theta)=\frac{1}{n} \sum_{i=1}^{n}\left(\theta^{T} x^{(i)}-y^{(i)}\right)^{2}+\left.\lambda|| \theta\right|^{2}
+$$
+where $\theta=\left[\theta_{1}, \theta_{2}\right]$ and $\lambda$ is the regularization trude-off parameter.
+Chris would like to solve the problem of computing $\theta$ that minimizes the ridge regression objective. He will exnploy graphical methods to obtrin the solution. When plotting just the data error term, $J_{\text {data }}(\theta)$, as a function of $\theta_{1}$ and $\theta_{2}$, the following set of isocontour lines (curves connecting sets of $\theta_{1}, \theta_{2}$ for which the objective value is constant) is obtained, for his dataset:
+If $\lambda$ is very large, what is the $\theta^{*}$ that minimizes $J_{\text {ridge }}\left(\theta^{*}\right)$ ? What approximate mumerical value does $J_{d e a}\left(\theta^{*}\right)$ have for Chris's data?","$\lambda$ being very large forces $\theta^{*}$ to be very nearly $[0,0]$. Looking at the plot at the start of the problem, we see that the $J_{\text {data }}$ at the origin is approximately 20 ."
+Spring 2019,7,i,1.75,Regression,Image,"In this problem, we consider using linear regression with a regularization term. Assume a datnset of $n$ samples $\left\{\left(x^{(i)}, y^{(i)}\right)\right\}$ with $x^{(i)} \in \mathbb{R}^{2}$ and output values $y^{(i)} \in \mathbb{R}$. Recall that the ridge regression objective is deflned as follows:
+$$
+J_{\text {ridge }}(\theta)=J_{\text {data }}(\theta)+J_{\text {reg }}(\theta)=\frac{1}{n} \sum_{i=1}^{n}\left(\theta^{T} x^{(i)}-y^{(i)}\right)^{2}+\left.\lambda|| \theta\right|^{2}
+$$
+where $\theta=\left[\theta_{1}, \theta_{2}\right]$ and $\lambda$ is the regularization trude-off parameter.
+Chris would like to solve the problem of computing $\theta$ that minimizes the ridge regression objective. He will exnploy graphical methods to obtrin the solution. When plotting just the data error term, $J_{\text {data }}(\theta)$, as a function of $\theta_{1}$ and $\theta_{2}$, the following set of isocontour lines (curves connecting sets of $\theta_{1}, \theta_{2}$ for which the objective value is constant) is obtained, for his dataset:
+Given a general optimal solution $\theta^{*}$ for $J_{\text {ridge }}(\theta)$ for a given (flnite) $\lambda$, what is the algebraic relationship between $\nabla J_{\text {data }}\left(\theta^{*}\right)$ and $\nabla J_{\text {reg }}\left(\theta^{*}\right)$ ?",We know that $\nabla J_{\text {ridgse }}\left(\theta^{*}\right)=0$ at the optimal point. This forces $\nabla J_{d e a}\left(\theta^{*}\right)$ $=-\nabla J_{\mathrm{reg}}\left(\theta^{*}\right)$.
+Spring 2019,8,a,2.666666667,Neural Networks,Text,"In this problem we will investigate regularization for neural networks.
+Kim constructs a fully connected neural network with $L=2$ layers using mean squared error (MSE) loss and ReLU activation functions for the hidden layer, and a linear activation for the output layer. The network is trained with a gradient descent algorithm on a data set of $n$ points $\left\{\left(x^{(1)}, y^{(1)}\right), \ldots,\left(x^{(n)}, y^{(n)}\right)\right\}$.
+Recall that the update rule for weights $W^{1}$ can be specified in terms of step size $\eta$ and the gradient of the loss function with respect to weights $W^{1}$. This gradient can be expressed in terms of the activations $A^{l}$, weights $W^{l}$, pre-activations $Z^{l}$, and partials $\frac{\partial L}{\partial A^{2}}$, $\frac{\partial A^{l}}{\partial Z^{l}}$, for $l=1,2$ :
+$$
+W^{1}:=W^{1}-\eta \sum_{i=1}^{n} \frac{\partial L\left(h\left(x^{(i)} ; W\right), y^{(i)}\right)}{\partial W^{1}}
+$$
+where $h(\cdot)$ is the input-output mapping implemented by the entire neural network, and
+$$
+\frac{\partial L}{\partial W^{1}}=\frac{\partial Z^{1}}{\partial W^{1}} \cdot \frac{\partial A^{1}}{\partial Z^{1}} \cdot W^{2} \cdot \frac{\partial A^{2}}{\partial Z^{2}} \cdot \frac{\partial L}{\partial A^{2}}
+$$
+Derive a new update rule for weights $W^{1}$ which also penalizes the sum of squared values of all individual weights in the network:
+$$
+L^{n e w}=L\left(h\left(x^{(i)} ; W\right), y^{(i)}\right)+\lambda\|W\|^{2}
+$$
+where $\lambda$ denotes the regularization trade-off parameter. You can express the new update rule as follows:
+$$
+W^{1}:=\alpha W^{1}-\eta \sum_{i=1}^{n} \frac{\partial L\left(h\left(x^{(i)} ; W\right), y^{(i)}\right)}{\partial W^{1}}
+$$
+where $L(\cdot)$ represents the previous prediction error loss.
+What is the value of $\alpha$ in terms of $\lambda$ and $\eta$ ?","W^{1}:=(1-2 \lambda \eta) W^{1}-\eta \sum ∂L/∂W^{1}
+Thus $\alpha=1-2 \lambda \eta$"
+Spring 2019,8,b,2.666666667,Neural Networks,Text,"In this problem we will investigate regularization for neural networks.
+Kim constructs a fully connected neural network with $L=2$ layers using mean squared error (MSE) loss and ReLU activation functions for the hidden layer, and a linear activation for the output layer. The network is trained with a gradient descent algorithm on a data set of $n$ points $\left\{\left(x^{(1)}, y^{(1)}\right), \ldots,\left(x^{(n)}, y^{(n)}\right)\right\}$.
+Recall that the update rule for weights $W^{1}$ can be specified in terms of step size $\eta$ and the gradient of the loss function with respect to weights $W^{1}$. This gradient can be expressed in terms of the activations $A^{l}$, weights $W^{l}$, pre-activations $Z^{l}$, and partials $\frac{\partial L}{\partial A^{2}}$, $\frac{\partial A^{l}}{\partial Z^{l}}$, for $l=1,2$ :
+$$
+W^{1}:=W^{1}-\eta \sum_{i=1}^{n} \frac{\partial L\left(h\left(x^{(i)} ; W\right), y^{(i)}\right)}{\partial W^{1}}
+$$
+where $h(\cdot)$ is the input-output mapping implemented by the entire neural network, and
+$$
+\frac{\partial L}{\partial W^{1}}=\frac{\partial Z^{1}}{\partial W^{1}} \cdot \frac{\partial A^{1}}{\partial Z^{1}} \cdot W^{2} \cdot \frac{\partial A^{2}}{\partial Z^{2}} \cdot \frac{\partial L}{\partial A^{2}}
+$$
+The new update rule for weights $W^{1}$ which also penalizes the sum of squared values of all individual weights in the network:
+$$
+L^{n e w}=L\left(h\left(x^{(i)} ; W\right), y^{(i)}\right)+\lambda\|W\|^{2}
+$$
+where $\lambda$ denotes the regularization trade-off parameter is W^{1}:=(1-2 \lambda \eta) W^{1}-\eta \sum \frac{\partial L}{\partial W^{1}}, where $\alpha=1-2 \lambda \eta$. Explain how this new update rule helps the neural network reduce overtting to the data.","For reasonable $\lambda$ and $\eta$, the weights are scaled by a factor less than 1 at each iteration. (If $1-2 \lambda \eta>1$, the weights will rapidly grow and diverge.) A value of $|\alpha|<1$ pushes the weights toward zero in general, except those weights that are needed to fit substantial subsets of the data (i.e., those weights that are needed to keep the data loss term $L$ low)."
+Spring 2019,8,c,2.666666667,Neural Networks,Text,"In this problem we will investigate regularization for neural networks.
+Kim constructs a fully connected neural network with $L=2$ layers using mean squared error (MSE) loss and ReLU activation functions for the hidden layer, and a linear activation for the output layer. The network is trained with a gradient descent algorithm on a data set of $n$ points $\left\{\left(x^{(1)}, y^{(1)}\right), \ldots,\left(x^{(n)}, y^{(n)}\right)\right\}$.
+Recall that the update rule for weights $W^{1}$ can be specified in terms of step size $\eta$ and the gradient of the loss function with respect to weights $W^{1}$. This gradient can be expressed in terms of the activations $A^{l}$, weights $W^{l}$, pre-activations $Z^{l}$, and partials $\frac{\partial L}{\partial A^{2}}$, $\frac{\partial A^{l}}{\partial Z^{l}}$, for $l=1,2$ :
+$$
+W^{1}:=W^{1}-\eta \sum_{i=1}^{n} \frac{\partial L\left(h\left(x^{(i)} ; W\right), y^{(i)}\right)}{\partial W^{1}}
+$$
+where $h(\cdot)$ is the input-output mapping implemented by the entire neural network, and
+$$
+\frac{\partial L}{\partial W^{1}}=\frac{\partial Z^{1}}{\partial W^{1}} \cdot \frac{\partial A^{1}}{\partial Z^{1}} \cdot W^{2} \cdot \frac{\partial A^{2}}{\partial Z^{2}} \cdot \frac{\partial L}{\partial A^{2}}
+$$
+Given that we are training a neural network with gradient descent, what happens when we increase the regularization trade-off parameter $\lambda$ too much, while holding the step size $\eta$ fixed?","With too large a $\lambda, \alpha$ may approach zero and the weights would be too strongly penalized and thus tend to zero, preventing the neural network from fitting the available training data. That is to say, the network is pushed towards an overly ""generalized"" constant output based on zero or near-zero weights. With even larger values of $\lambda, \alpha$ may become negative causing oscillations in weights. With $|\alpha|$ larger than 1 , the weights will grow in magnitude without bound."
+Spring 2019,9,a,2,RNNs,Text,"We want to make an RNN to translate English to Martian. We have a training set of pairs $\left(e^{(i)}, m^{(i)}\right)$, where $e^{(i)}$ is a sequence of length $J^{(i)}$ of English words and $m^{(i)}$ is a sequence of length $K^{(i)}$ of Martian words. The sequences, even within a pair, do not need to be of the same length, i.e., $J^{(i)}$ need not equal $K^{(i)}$. We are considering two different strategies for turning this into a transduction or sequence-to-sequence learning problem for an RNN.
+Method 1: Construct a training-sequence pair $(x, y)$ from an example $(e, m)$ by letting $x=(e_{1}, e_{2}, \ldots, e_{L}, stop)$, $y=\left(m_{1}, m_{2}, \ldots, m_{L}, \text { stop }). In Method 1, we assume that if the original $e$ and $m$ had different numbers of words, then the shorter sentence is padded with enough time-wasting words (""ummm"" for English, ""grlork"" for Martian) so that they now have equal length, L. Any needed padding words are inserted at the end of $e^{(i)}$, and at the start of $m^{(i)}$.
+Method 2: Construct a training-sequence pair $(x, y)$ from an example $(e, m)$ by letting $x=(e_{1}, e_{2}, \ldots, e_{J}, \text { stop, blank }, \ldots, \text { blank })$, $y=(\text { blank }, \ldots, \text { blank, } m_{1}, m_{2}, \ldots, m_{K}, \text { stop })$. In Method 2 , blanks are inserted at the end of $e$ and start of $m$ such that the length of $x$ and $y$ are now both $J+K+1$.
+Assume an element-wise loss function $L_{elt}(p, y)$ on predicted versus true Martian words. What is an appropriate sequence loss function for Method 1? Assume that the predicted sequence $p$ has the same length as the target sequence $y$.","$$L_{seq}=\sum_{i=1}^{L+1} L_{e l t}\left(p_{i}, y_{i}\right)$$
+The RNN should seek to output the correct Martian words, as well as the stop indicator."
+Spring 2019,9,b,2,RNNs,Text,"We want to make an RNN to translate English to Martian. We have a training set of pairs $\left(e^{(i)}, m^{(i)}\right)$, where $e^{(i)}$ is a sequence of length $J^{(i)}$ of English words and $m^{(i)}$ is a sequence of length $K^{(i)}$ of Martian words. The sequences, even within a pair, do not need to be of the same length, i.e., $J^{(i)}$ need not equal $K^{(i)}$. We are considering two different strategies for turning this into a transduction or sequence-to-sequence learning problem for an RNN.
+Method 1: Construct a training-sequence pair $(x, y)$ from an example $(e, m)$ by letting $x=(e_{1}, e_{2}, \ldots, e_{L}, stop)$, $y=\left(m_{1}, m_{2}, \ldots, m_{L}, \text { stop }). In Method 1, we assume that if the original $e$ and $m$ had different numbers of words, then the shorter sentence is padded with enough time-wasting words (""ummm"" for English, ""grlork"" for Martian) so that they now have equal length, L. Any needed padding words are inserted at the end of $e^{(i)}$, and at the start of $m^{(i)}$.
+Method 2: Construct a training-sequence pair $(x, y)$ from an example $(e, m)$ by letting $x=(e_{1}, e_{2}, \ldots, e_{J}, \text { stop, blank }, \ldots, \text { blank })$, $y=(\text { blank }, \ldots, \text { blank, } m_{1}, m_{2}, \ldots, m_{K}, \text { stop })$. In Method 2 , blanks are inserted at the end of $e$ and start of $m$ such that the length of $x$ and $y$ are now both $J+K+1$.
+Assume an element-wise loss function $L_{elt}(p, y)$ on predicted versus true Martian words. What is an appropriate sequence loss function for Method 2? Assume the predicted sequence $p$ has the same length as the target sequence $y$.","L_{seq}=\sum_{i=J+1}^{J+K+1} L_{elt}(p_{i}, y_{i})
+It's really only necessary that the RNN correctly outputs the whole Martian sequence and the final stop indicator. But, it's okay if you sum starting from the first token, $i=1$."
+Spring 2019,9,c,2,RNNs,Text,"We want to make an RNN to translate English to Martian. We have a training set of pairs $\left(e^{(i)}, m^{(i)}\right)$, where $e^{(i)}$ is a sequence of length $J^{(i)}$ of English words and $m^{(i)}$ is a sequence of length $K^{(i)}$ of Martian words. The sequences, even within a pair, do not need to be of the same length, i.e., $J^{(i)}$ need not equal $K^{(i)}$. We are considering two different strategies for turning this into a transduction or sequence-to-sequence learning problem for an RNN.
+Method 1: Construct a training-sequence pair $(x, y)$ from an example $(e, m)$ by letting $x=(e_{1}, e_{2}, \ldots, e_{L}, stop)$, $y=\left(m_{1}, m_{2}, \ldots, m_{L}, \text { stop }). In Method 1, we assume that if the original $e$ and $m$ had different numbers of words, then the shorter sentence is padded with enough time-wasting words (""ummm"" for English, ""grlork"" for Martian) so that they now have equal length, L. Any needed padding words are inserted at the end of $e^{(i)}$, and at the start of $m^{(i)}$.
+Method 2: Construct a training-sequence pair $(x, y)$ from an example $(e, m)$ by letting $x=(e_{1}, e_{2}, \ldots, e_{J}, \text { stop, blank }, \ldots, \text { blank })$, $y=(\text { blank }, \ldots, \text { blank, } m_{1}, m_{2}, \ldots, m_{K}, \text { stop })$. In Method 2 , blanks are inserted at the end of $e$ and start of $m$ such that the length of $x$ and $y$ are now both $J+K+1$.
+Which method is likely to need a higher dimensional state? Explain why.","Method 2 likely needs to have a larger state to hold a representation of the full input sentence $e$, while Method 1 might have a shorter state that enables mapping of individual words or shorter sub-sequences of words to corresponding output words or sub-sequences."
+Spring 2019,9,d,2,RNNs,Text,"We want to make an RNN to translate English to Martian. We have a training set of pairs $\left(e^{(i)}, m^{(i)}\right)$, where $e^{(i)}$ is a sequence of length $J^{(i)}$ of English words and $m^{(i)}$ is a sequence of length $K^{(i)}$ of Martian words. The sequences, even within a pair, do not need to be of the same length, i.e., $J^{(i)}$ need not equal $K^{(i)}$. We are considering two different strategies for turning this into a transduction or sequence-to-sequence learning problem for an RNN.
+Method 1: Construct a training-sequence pair $(x, y)$ from an example $(e, m)$ by letting $x=(e_{1}, e_{2}, \ldots, e_{L}, stop)$, $y=\left(m_{1}, m_{2}, \ldots, m_{L}, \text { stop }). In Method 1, we assume that if the original $e$ and $m$ had different numbers of words, then the shorter sentence is padded with enough time-wasting words (""ummm"" for English, ""grlork"" for Martian) so that they now have equal length, L. Any needed padding words are inserted at the end of $e^{(i)}$, and at the start of $m^{(i)}$.
+Method 2: Construct a training-sequence pair $(x, y)$ from an example $(e, m)$ by letting $x=(e_{1}, e_{2}, \ldots, e_{J}, \text { stop, blank }, \ldots, \text { blank })$, $y=(\text { blank }, \ldots, \text { blank, } m_{1}, m_{2}, \ldots, m_{K}, \text { stop })$. In Method 2 , blanks are inserted at the end of $e$ and start of $m$ such that the length of $x$ and $y$ are now both $J+K+1$.
+Which method is better if English and Martian have very different word order? Explain why.","Method 2 since it can first parse the entire input sentence, and then output in a different word order."
+Spring 2019,9,e,2,RNNs,Text,"We want to make an RNN to translate English to Martian. We have a training set of pairs $\left(e^{(i)}, m^{(i)}\right)$, where $e^{(i)}$ is a sequence of length $J^{(i)}$ of English words and $m^{(i)}$ is a sequence of length $K^{(i)}$ of Martian words. The sequences, even within a pair, do not need to be of the same length, i.e., $J^{(i)}$ need not equal $K^{(i)}$. We are considering two different strategies for turning this into a transduction or sequence-to-sequence learning problem for an RNN.
+Method 1: Construct a training-sequence pair $(x, y)$ from an example $(e, m)$ by letting $x=(e_{1}, e_{2}, \ldots, e_{L}, stop)$, $y=\left(m_{1}, m_{2}, \ldots, m_{L}, \text { stop }). In Method 1, we assume that if the original $e$ and $m$ had different numbers of words, then the shorter sentence is padded with enough time-wasting words (""ummm"" for English, ""grlork"" for Martian) so that they now have equal length, L. Any needed padding words are inserted at the end of $e^{(i)}$, and at the start of $m^{(i)}$.
+Method 2: Construct a training-sequence pair $(x, y)$ from an example $(e, m)$ by letting $x=(e_{1}, e_{2}, \ldots, e_{J}, \text { stop, blank }, \ldots, \text { blank })$, $y=(\text { blank }, \ldots, \text { blank, } m_{1}, m_{2}, \ldots, m_{K}, \text { stop })$. In Method 2 , blanks are inserted at the end of $e$ and start of $m$ such that the length of $x$ and $y$ are now both $J+K+1$.
+Martian linguist Grlymp thinks it is also important to pad the original English and Martian sentences with time-wasting word to be of the same length for Method 2 (i.e., so that $J=K$, but English linguist Chome Nimsky disagrees. Who is correct, and why?","Chome Nimsky is right: Method 2 already has full flexibility in processing the entire sentence $e$ before outputting $m$, so additional time-wasting words would not help (and may hurt) in expressiveness and/or training."

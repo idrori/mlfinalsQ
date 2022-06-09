@@ -1,0 +1,10 @@
+{
+       "Semester": "Fall 2021",
+       "Question Number": "4",
+       "Part": "b",
+       "Points": 2.0,
+       "Topic": "Classifiers",
+       "Type": "Image",
+       "Question": "This question asks about learning nearest neighbor (NN) classifiers. Assume that we are using Euclidean distance squared as the distance metric, i.e. $d\\left(x, x^{\\prime}\\right)=\\left\\|x-x^{\\prime}\\right\\|^{2}$. \n Which training data points, if any, could you remove and keep the decision boundary identical? Answer using their $\\left(x_{1}, x_{2}\\right)$ coordinates.",
+       "Solution": "Image filling"
+}

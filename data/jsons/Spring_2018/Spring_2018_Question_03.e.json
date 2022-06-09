@@ -1,0 +1,10 @@
+{
+       "Semester": "Spring 2018",
+       "Question Number": "3",
+       "Part": "e",
+       "Points": 2.0,
+       "Topic": "Neural Networks",
+       "Type": "Text",
+       "Question": "An alternative to cross-validation for estimating prediction error is to use \"bootstrap samples\". These are datasets constructed by randomly sampling points from the original training set with replacement, that is, we do not remove previously sampled points, so a data point could appear more than once in a bootstrap sample. Consider the following alternative methodologies, assuming the training dataset contains $N$ samples. 1. Generate $K$ bootstrap samples of size $N$, train on each sample and evaluate on the original training dataset. Return average of results. 2. Generate $K$ bootstrap samples of size $N$, train on the original training dataset and evaluate on each sample. Return average of results. 3. Generate $K$ bootstrap samples of size $N$, train on each sample and evaluate on points in the original training dataset but not in the sample (assume there are always some such points). Return average of results. Order these (from best to worst) by how accurate you expect the estimates of prediction error on unseen test data to be. Explain your answer.",
+       "Solution": "$3,1,2$ The more unfamiliar your test data, the more accurate the evaluation will be."
+}
