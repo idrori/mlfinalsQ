@@ -55,7 +55,7 @@ def execute_zero_shot(finals):
         for i in range(len(sheet['Question'])):
             if sheet.loc[i, "Question Number"] == 'null': #a null(empty entry) in question is treated as cutoff
                 break
-            if (sheet.loc[i, "Part"].lower() == "image"): 
+            if (sheet.loc[i, "Type"].lower() == "image"): 
                 continue
             raw_question = sheet.loc[i, 'Question']
             indicator = str(sheet.loc[i, 'Question Number']) + str(sheet.loc[i, 'Part'])
