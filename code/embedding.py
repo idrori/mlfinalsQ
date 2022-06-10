@@ -4,7 +4,6 @@ from sentence_transformers import util
 import os
 import pandas as pd
 
-
 openai.api_key = os.getenv('OpenAI_API_Key')
 finals = ['Fall_2017', 'Spring_2018', 'Fall_2018', 'Spring_2019', 'Fall_2019', 'Spring_2021', 'Fall_2021', 'Spring_2022']
 embedding_engine = 'text-similarity-babbage-001'
@@ -15,7 +14,7 @@ def make_embeddings(embedding_engine, final):
     """
     list_of_embeddings = []
     print("Currently embedding " + final + "...")
-    sheet = pd.read_csv('finals/' + final + '.csv')
+    sheet = pd.read_csv('data/csvs/' + final + '.csv')
     sheet = sheet.fillna('null')
     for i in range(len(sheet['Question'])):
         if sheet.loc[i, "Question Number"] == 'null': #a null(empty entry) in question is treated as cutoff
@@ -27,10 +26,12 @@ def make_embeddings(embedding_engine, final):
                                             engine = embedding_engine)['data'][0]['embedding']
         list_of_embeddings.append(embedding)
     embeddings = {'list_of_embeddings':list_of_embeddings}
-    folder_path = 'embeddings'
+    if not os.path.isdir('data'):
+        os.mkdir('data')
+    folder_path = 'data/embeddings'
     if not os.path.isdir(folder_path):
         os.mkdir(folder_path)
-    with open('embeddings/' + final + '_embeddings.json', 'w') as f:
+    with open('data/embeddings/' + final + '_embeddings.json', 'w') as f:
         f.write(json.dumps(embeddings))
 
 def get_embeddings(embeddings_file):
@@ -58,5 +59,5 @@ def get_most_similar(embeddings, target_embedding):
 
 if __name__ == "__main__":
     for final in finals:
-        if not os.path.exists(final + '_embeddings.json'):
+        if not os.path.exists('data/embeddings/' + final + '_embeddings.json'):
             make_embeddings(embedding_engine, final)

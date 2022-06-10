@@ -50,7 +50,7 @@ def execute_zero_shot(finals):
         questions = []
         answers = []
         indicators = []
-        sheet = pd.read_csv('finals/' + final + '.csv')
+        sheet = pd.read_csv('data/csvs/' + final + '.csv')
         sheet = sheet.fillna('null')
         for i in range(len(sheet['Question'])):
             if sheet.loc[i, "Question Number"] == 'null': #a null(empty entry) in question is treated as cutoff

@@ -19,15 +19,16 @@ def get_file_q_num(n):
         return str(n)
 
 if __name__ == "__main__":
-    folder_path = 'jsons'
+    if not os.path.isdir('data'):
+        os.mkdir('data')
+    folder_path = 'data/jsons'
     if not os.path.isdir(folder_path):
         os.mkdir(folder_path)
-
     for final in FINALS:
-        final_path = 'jsons/' + final
+        final_path = 'data/jsons/' + final
         if not os.path.isdir(final_path):
             os.mkdir(final_path)
-        sheet = pd.read_csv('finals/' + final + '.csv')
+        sheet = pd.read_csv('data/csvs/' + final + '.csv')
         sheet = sheet.fillna('null')
 
         for i in range(len(sheet['Question'])):
@@ -41,6 +42,6 @@ if __name__ == "__main__":
             new_json['Question number'] = str(sheet.loc[i, 'Question Number'])
             new_json['Sub-Question number'] = sheet.loc[i, 'Part']
             json_object = json.dumps(new_json, indent = 7)
-            fname = 'jsons/' + final + '/' + final + "_Question_" + get_file_q_num(int(sheet.loc[i, 'Question #'])) + "_" + sheet.loc[i, 'Sub-Question #'] + ".json"
+            fname = 'data/jsons/' + final + '/' + final + "_Question_" + get_file_q_num(int(sheet.loc[i, 'Question #'])) + "_" + sheet.loc[i, 'Sub-Question #'] + ".json"
             with open(fname, "w") as outfile:
                 outfile.write(json_object)

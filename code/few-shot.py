@@ -44,7 +44,7 @@ def execute_few_shot(finals):
 
         #getting all qs and their embeddings
         final_qs = []
-        final_embeddings = get_embeddings('embeddings/' + final + '_embeddings.json')
+        final_embeddings = get_embeddings('data/embeddings/' + final + '_embeddings.json')
         for i in range(len(results['Question'])):
             question = results.loc[i, 'Question']
             final_qs.append(question)     
@@ -67,7 +67,7 @@ def execute_few_shot(finals):
                     #to find the candidate questions information and use it if it works
                     for closest in get_most_similar(fewshot_embeddings, final_embeddings[i]):
                         for dif_final in finals:
-                            embeddings = get_embeddings('embeddings/' + dif_final + '_embeddings.json')
+                            embeddings = get_embeddings('data/embeddings/' + dif_final + '_embeddings.json')
                             if closest > len(embeddings):
                                 closest -= len(embeddings)
                             else:
@@ -118,7 +118,7 @@ def execute_GPT3_few_shot(finals):
 
         #getting all qs and their embeddings
         final_qs = []
-        final_embeddings = get_embeddings('embeddings/' + final + '_embeddings.json')
+        final_embeddings = get_embeddings('data/embeddings/' + final + '_embeddings.json')
         for i in range(len(results['Original Question'])):
             question = results.loc[i, 'Original Question']
             final_qs.append(question)     
@@ -141,7 +141,7 @@ def execute_GPT3_few_shot(finals):
                     #to find the candidate questions information and use it if it works
                     for closest in get_most_similar(fewshot_embeddings, final_embeddings[i]):
                         for dif_final in finals:
-                            embeddings = get_embeddings('embeddings/' + dif_final + '_embeddings.json')
+                            embeddings = get_embeddings('data/embeddings/' + dif_final + '_embeddings.json')
                             if closest > len(embeddings):
                                 closest -= len(embeddings)
                             else:
@@ -192,7 +192,7 @@ def execute_GPT3_CoT_few_shot(finals):
 
         #getting all qs and their embeddings
         final_qs = []
-        final_embeddings = get_embeddings('embeddings/' + final + '_embeddings.json')
+        final_embeddings = get_embeddings('data/embeddings/' + final + '_embeddings.json')
         for i in range(len(results['Original Question'])):
             question = results.loc[i, 'Original Question']
             final_qs.append(question)     
@@ -215,7 +215,7 @@ def execute_GPT3_CoT_few_shot(finals):
                     #to find the candidate questions information and use it if it works
                     for closest in get_most_similar(fewshot_embeddings, final_embeddings[i]):
                         for dif_final in finals:
-                            embeddings = get_embeddings('embeddings/' + dif_final + '_embeddings.json')
+                            embeddings = get_embeddings('data/embeddings/' + dif_final + '_embeddings.json')
                             if closest > len(embeddings):
                                 closest -= len(embeddings)
                             else:
