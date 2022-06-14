@@ -1082,7 +1082,9 @@ a decision tree until there is one or a small number of elements in each leaf. T
 prune by deleting individual leaves of the tree until the score of the tree starts to get worse.
 The question is how to score each possible pruning of the tree.
  Here is a definition of the score: The score is the percentage correct of the tree, computed on the training set, minus a
-constant C times the number of nodes in the tree. C is chosen in advance by running this algorithm (grow a large tree then prune in orderto maximize percent correct minus C times number of nodes) for many di erent valuesof C, and choosing the value of C that minimizes training-set error. Explain whether or not it would be a good 
+constant C times the number of nodes in the tree. C is chosen in advance by running this algorithm (grow a large tree then prune in order
+to maximize percent correct minus C times number of nodes) for many di erent values
+of C, and choosing the value of C that minimizes training-set error. Explain whether or not it would be a good 
 idea and give a reason why or why not.","Not a good idea. Running trials to maximize performance on the training set will not
 give us an indication of whether this algorithm will produce answers that generalize to
 other data sets."
@@ -1090,8 +1092,15 @@ Fall 2018,8,e,4,Decision Trees,Text,"There are different strategies for pruning 
 a decision tree until there is one or a small number of elements in each leaf. Then, we 
 prune by deleting individual leaves of the tree until the score of the tree starts to get worse.
 The question is how to score each possible pruning of the tree.
- Here is a definition of the score: The score is the percentage correct of the tree, computed on the training set, minus aconstant C times the number of nodes in the tree.C is chosen in advance by running cross-validation trials of this algorithm (grow alarge tree then prune in order to maximize percent correct minus C times number ofnodes) for many di erent values of C, and choosing the value of C that minimizescross-validation error. Explain whether or not it would be a good 
-idea and give a reason why or why not.","A good idea when we don’t have enough data to hold out a validation set. ChoosingC by cross-validation will hopefully give us an e ective general way of penalizing forcomplexity of the tree (for this type of data)."
+ Here is a definition of the score: The score is the percentage correct of the tree, computed on the training set, minus a
+constant C times the number of nodes in the tree.
+C is chosen in advance by running cross-validation trials of this algorithm (grow a
+large tree then prune in order to maximize percent correct minus C times number of
+nodes) for many di erent values of C, and choosing the value of C that minimizes
+cross-validation error. Explain whether or not it would be a good 
+idea and give a reason why or why not.","A good idea when we don’t have enough data to hold out a validation set. Choosing
+C by cross-validation will hopefully give us an e ective general way of penalizing for
+complexity of the tree (for this type of data)."
 Fall 2018,9,a.i,1.1,MDPs,Text,"Sometimes we can make robust reinforcement-learning algorithms by reducing the problem to supervised learning. Assume:
 - The state space is $\mathbb{R}^{d}$, so in general the same state $s$ may not occur more than once in our data set.
 - The action space is $\{0,1\}$.
@@ -2001,7 +2010,7 @@ J(U, V)=\frac{1}{2} \sum_{(a, i) \epsilon D}\left(U^{(a)} \cdot V^{(i)}-Y_{a, i}
 $$
 where $D$ is the set of all user $a$ item $i$ rating pairs $(a, i)$. Here $U^{(a)}$ is the $a^{t h}$ row of $U$, and $V^{(i)}$ is the $i^{t h}$ row of $V$. Note that offsets are fixed at $b_{U}=0$ and $b_{V}=0$ in this problem.
 Mark all that are true for our U, V , and Y above:
-A. There are innitely many settings of U and V that minimize J.
+A. There are infnitely many settings of U and V that minimize J.
 B. For any constant (non-zero) V , J(U) has a unique global minimum.
 C. For any constant (non-zero) V , there exists a U such that J(U; V ) = 0.
 D. For any m x n matrix Y of rank 1, there exist matrices U and V of
@@ -2196,8 +2205,11 @@ H\left(R_{m}\right)=-\sum_{k} \hat{P}_{m k} \log _{2} \hat{P}_{m k}
 $$
 Here $\hat{P}_{m k}$ is the empirical probability, which is in this case the fraction of items in region $m$ that are of class $k$.
 Considering the entire data set, Paul finds that the best first split of these three is Split A, with $\bar{H}(A)=0.54$, compared to $\bar{H}(B)=0.92$ and $\bar{H}(C)=0.81$, resulting in a region $R_{A^{+}}$ with all positive examples, and a region $R_{A^{-}}$with mixed positive and negative examples. Given Split A, however, Paul is not sure which is the next split to include in his tree. Calculate the weighted average entropy of Split $\mathrm{B}$ for region $R_{A^{-}}, \bar{H}\left(B \mid R_{A^{-}}\right)$, versus Split $\mathrm{C}$ for the same region, $\bar{H}\left(C \mid R_{A^{-}}\right)$, and identify which of Split B or Split $\mathrm{C}$ Paul should choose for his second split. ",Split B
-Fall 2019,6,b,2,Decision Trees,Image,"Draw the decision tree boundaries represented by this decision tree (with two splits) on the data plot figure below.",Draw on image
-Fall 2019,6,c,1,Decision Trees,Image,"Draw the decision tree corresponding to this tree with two splits. Clearly label the test in each node, which case (yes or no) each branch corresponds to, and the output at a leaf node represented as a probability of having a positive label, +1.",Draw on image
+Fall 2019,6,b,2,Decision Trees,Image,"Draw the decision tree boundaries represented by this decision tree (with two splits) on 
+the data plot figure below.",Draw on image
+Fall 2019,6,c,1,Decision Trees,Image,"Draw the decision tree corresponding to this tree with two splits. Clearly label the test 
+in each node, which case (yes or no) each branch corresponds to, and the output at a leaf
+ node represented as a probability of having a positive label, +1.",Draw on image
 Fall 2019,6,d,1,Decision Trees,Text,"Consider the following 2D dataset in the (x,y) format: ((0,1), +1), ((1,1),+1), ((-1,-2),-1), ((0,-1),-1), ((1,-1),+1), ((2,-1),-1). Consider the following splits: Split A: x2 >= 0
 Split B: x1 >= 0:5
 Split C: x1 >=􀀀0:5
@@ -3306,7 +3318,25 @@ Spring 2022,3,b.iii,1.666666667,Classifiers,Text,"Consider the following data: P
 Spring 2022,3,c.i,2,Classifiers,Text,"Consider the following data: Positive = (-4, 4), (4, -4), Negative = (-1, 1), (1, -1). Clearly, the points are not linearly separable, so we will try three alternative approaches to solving the problem. Let $w=\left[\begin{array}{l}+1 \\ -1\end{array}\right]$ and $$ \begin{aligned} a_{1} &=\operatorname{sign}\left(w^{T} x+4\right) \\ a_{2} &=\operatorname{sign}\left(w^{T} x-4\right) \\ h\left(x ; v_{0}, v_{1}, v_{2}\right) &=\operatorname{sign}\left(v_{1} a_{1}+v_{2} a_{2}+v_{0}\right) \end{aligned} $$ where $$ \operatorname{sign}(x)= \begin{cases}+1 & \text { if } x>0 \\ -1 & \text { otherwise }\end{cases} $$ We'll define a new feature transformation $\phi$ that maps a point $x \in \mathbb{R}^{2}$ into a four-dimensional vector: $$ (K(x,(-4,4)), K(x,(-1,-1)), K(x,(1,1)), K(x,(4,-4))) $$ where $K$ is a function of two points: $K\left(x, x^{\prime}\right)=e^{-\left\|x-x^{\prime}\right\|^{2}}$. Intuitively, feature $i$ of $\phi(x)$ has value 1 if $x$ is equal to point $p_{i}$ and its value decreases as $x$ moves away from $p_{i}$. (c) We find a classifier in the transformed space with parameters $\theta=(1,-1,-1,1)$ $$ h(x ; \theta)=\operatorname{sign}\left(\theta^{T} \phi(x)\right) $$ What fraction of the training data does this classifier predict correctly?",100%
 Spring 2022,3,c.ii,2,Classifiers,Text,"Consider the following data: Positive = (-4, 4), (4, -4), Negative = (-1, 1), (1, -1). Clearly, the points are not linearly separable, so we will try three alternative approaches to solving the problem. Let $w=\left[\begin{array}{l}+1 \\ -1\end{array}\right]$ and $$ \begin{aligned} a_{1} &=\operatorname{sign}\left(w^{T} x+4\right) \\ a_{2} &=\operatorname{sign}\left(w^{T} x-4\right) \\ h\left(x ; v_{0}, v_{1}, v_{2}\right) &=\operatorname{sign}\left(v_{1} a_{1}+v_{2} a_{2}+v_{0}\right) \end{aligned} $$ where $$ \operatorname{sign}(x)= \begin{cases}+1 & \text { if } x>0 \\ -1 & \text { otherwise }\end{cases} $$ We'll define a new feature transformation $\phi$ that maps a point $x \in \mathbb{R}^{2}$ into a four-dimensional vector: $$ (K(x,(-4,4)), K(x,(-1,-1)), K(x,(1,1)), K(x,(4,-4))) $$ where $K$ is a function of two points: $K\left(x, x^{\prime}\right)=e^{-\left\|x-x^{\prime}\right\|^{2}}$. Intuitively, feature $i$ of $\phi(x)$ has value 1 if $x$ is equal to point $p_{i}$ and its value decreases as $x$ moves away from $p_{i}$. (c) We find a classifier in the transformed space with parameters $\theta=(1,-1,-1,1)$ $$ h(x ; \theta)=\operatorname{sign}\left(\theta^{T} \phi(x)\right) $$ What prediction does it make for point $(0,0)$?",-1
 Spring 2022,3,d,4,Classifiers,Image,We can classify the points correctly if $f$ (in both layers) is sigmoid. Provide the weights so this network will correctly classify the given points.,Image filling
-Spring 2022,4,a,1.5,Regression,Text,We can classify the points correctly if $f$ (in both layers) is sigmoid. Provide the weights so this network will correctly classify the given points.,The weights would not change
+Spring 2022,4,a,1.5,Regression,Text,"We're given a data set $D=\left\{\left(x^{(i)}, y^{(i)}\right)\right\}_{i=1}^{n}$, where $x^{(i)} \in R^{d}$ and $y^{(i)} \in R$. Let $X$ be a $d \times n$ matrix in which the $x^{(i)}$ are the columns and let $Y$ be a $1 \times n$ vector containing the values of $y^{(i)}$. Using the analytical regression (ordinary least-squares) formula, we can compute
+ $$
+ W_{o l s}=\left(X X^{T}\right)^{-1} X Y^{T}
+ $$
+ Using ridge regression, we can compute
+ $$
+ W_{\text {ridge }}=\left(X X^{T}+\lambda I\right)^{-1} X Y^{T}
+ $$
+ We decide to try to use these methods to initialize a single-unit 'neural network' with a linear activation function and no offset:
+ $$
+ h(x ; W)=W^{T} x .
+ $$
+ Assume that $X X^{T}$ is invertible and not equal to the identity matrix, and that neither $W_{o l s}$ nor $W_{\text {ridge }}$ is equal to $(0,0, \ldots, 0)$. Note also that we are not using an explicit offset/bias term.
+ If we initialized our unit with $W_{\text {ols }}$ and did batch gradient descent (summing the error over all the data points) with squared loss, no regularization, and a fixed small step size, which of the following would most typically happen.
+A. The weights would change substantially at the beginning, but then converge back to the values we initialized with.
+B. The weights would not change.
+C. The weights would make small oscillations around the initial weights.
+D. The weights would converge to a different value.
+E. Something else would happen.",B. The weights would not change
 Spring 2022,4,b,1.5,Regression,Text,"We're given a data set $D=\left\{\left(x^{(i)}, y^{(i)}\right)\right\}_{i=1}^{n}$, where $x^{(i)} \in R^{d}$ and $y^{(i)} \in R$. Let $X$ be a $d \times n$ matrix in which the $x^{(i)}$ are the columns and let $Y$ be a $1 \times n$ vector containing the values of $y^{(i)}$. Using the analytical regression (ordinary least-squares) formula, we can compute
  $$
  W_{o l s}=\left(X X^{T}\right)^{-1} X Y^{T}
@@ -3315,7 +3345,7 @@ Spring 2022,4,b,1.5,Regression,Text,"We're given a data set $D=\left\{\left(x^{(
  $$
  W_{\text {ridge }}=\left(X X^{T}+\lambda I\right)^{-1} X Y^{T}
  $$
- We decide to try to use these methods to initialize a single-unit """"""""neural network"""""""" with a linear activation function and no offset:
+ We decide to try to use these methods to initialize a single-unit 'neural network' with a linear activation function and no offset:
  $$
  h(x ; W)=W^{T} x .
  $$
@@ -3329,7 +3359,7 @@ Spring 2022,4,c.i,1,Regression,Text,"We're given a data set $D=\left\{\left(x^{(
  $$
  W_{\text {ridge }}=\left(X X^{T}+\lambda I\right)^{-1} X Y^{T}
  $$
- We decide to try to use these methods to initialize a single-unit """"neural network"""" with a linear activation function and no offset:
+ We decide to try to use these methods to initialize a single-unit 'neural network' with a linear activation function and no offset:
  $$
  h(x ; W)=W^{T} x .
  $$
@@ -3343,7 +3373,7 @@ Spring 2022,4,c.ii,1,Regression,Text,"We're given a data set $D=\left\{\left(x^{
  $$
  W_{\text {ridge }}=\left(X X^{T}+\lambda I\right)^{-1} X Y^{T}
  $$
- We decide to try to use these methods to initialize a single-unit """"""""neural network"""""""" with a linear activation function and no offset:
+ We decide to try to use these methods to initialize a single-unit 'neural network' with a linear activation function and no offset:
  $$
  h(x ; W)=W^{T} x .
  $$
@@ -3357,7 +3387,7 @@ Spring 2022,4,c.iii,1,Regression,Text,"We're given a data set $D=\left\{\left(x^
  $$
  W_{\text {ridge }}=\left(X X^{T}+\lambda I\right)^{-1} X Y^{T}
  $$
- We decide to try to use these methods to initialize a single-unit """"""""""""""""neural network"""""""""""""""" with a linear activation function and no offset:
+ We decide to try to use these methods to initialize a single-unit 'neural network' with a linear activation function and no offset:
  $$
  h(x ; W)=W^{T} x .
  $$
@@ -3371,7 +3401,7 @@ Spring 2022,4,d,2,Regression,Text,"We're given a data set $D=\left\{\left(x^{(i)
  $$
  W_{\text {ridge }}=\left(X X^{T}+\lambda I\right)^{-1} X Y^{T}
  $$
- We decide to try to use these methods to initialize a single-unit """"neural network"""" with a linear activation function and no offset:
+ We decide to try to use these methods to initialize a single-unit 'neural network' with a linear activation function and no offset:
  $$
  h(x ; W)=W^{T} x .
  $$
@@ -3385,7 +3415,7 @@ Spring 2022,4,e,2,Regression,Text,"We're given a data set $D=\left\{\left(x^{(i)
  $$
  W_{\text {ridge }}=\left(X X^{T}+\lambda I\right)^{-1} X Y^{T}
  $$
- We decide to try to use these methods to initialize a single-unit """"neural network"""" with a linear activation function and no offset:
+ We decide to try to use these methods to initialize a single-unit 'neural network' with a linear activation function and no offset:
  $$
  h(x ; W)=W^{T} x .
  $$
@@ -3399,7 +3429,7 @@ Spring 2022,4,f,2,Regression,Text,"We're given a data set $D=\left\{\left(x^{(i)
  $$
  W_{\text {ridge }}=\left(X X^{T}+\lambda I\right)^{-1} X Y^{T}
  $$
- We decide to try to use these methods to initialize a single-unit """"neural network"""" with a linear activation function and no offset:
+ We decide to try to use these methods to initialize a single-unit 'neural network' with a linear activation function and no offset:
  $$
  h(x ; W)=W^{T} x .
  $$
@@ -3413,7 +3443,7 @@ Spring 2022,4,g,2,Regression,Text,"We're given a data set $D=\left\{\left(x^{(i)
  $$
  W_{\text {ridge }}=\left(X X^{T}+\lambda I\right)^{-1} X Y^{T}
  $$
- We decide to try to use these methods to initialize a single-unit """"neural network"""" with a linear activation function and no offset:
+ We decide to try to use these methods to initialize a single-unit 'neural network' with a linear activation function and no offset:
  $$
  h(x ; W)=W^{T} x .
  $$
@@ -3427,7 +3457,7 @@ Spring 2022,4,h,2,Regression,Text,"We're given a data set $D=\left\{\left(x^{(i)
  $$
  W_{\text {ridge }}=\left(X X^{T}+\lambda I\right)^{-1} X Y^{T}
  $$
- We decide to try to use these methods to initialize a single-unit """"neural network"""" with a linear activation function and no offset:
+ We decide to try to use these methods to initialize a single-unit 'neural network' with a linear activation function and no offset:
  $$
  h(x ; W)=W^{T} x .
  $$
@@ -3440,7 +3470,7 @@ Spring 2022,4,i,1,Regression,Text,"We're given a data set $D=\left\{\left(x^{(i)
  $$
  W_{\text {ridge }}=\left(X X^{T}+\lambda I\right)^{-1} X Y^{T}
  $$
- We decide to try to use these methods to initialize a single-unit """"""""neural network"""""""" with a linear activation function and no offset:
+ We decide to try to use these methods to initialize a single-unit 'neural network' with a linear activation function and no offset:
  $$
  h(x ; W)=W^{T} x .
  $$
@@ -3455,7 +3485,7 @@ Spring 2022,4,j,1,Regression,Text,"We're given a data set $D=\left\{\left(x^{(i)
  $$
  W_{\text {ridge }}=\left(X X^{T}+\lambda I\right)^{-1} X Y^{T}
  $$
- We decide to try to use these methods to initialize a single-unit """"""""neural network"""""""" with a linear activation function and no offset:
+ We decide to try to use these methods to initialize a single-unit 'neural network' with a linear activation function and no offset:
  $$
  h(x ; W)=W^{T} x .
  $$
