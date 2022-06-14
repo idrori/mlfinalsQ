@@ -34,7 +34,6 @@ for final in finals:
         ind += 1
 
 #THIS ROUTINE GENERATES A NEW QUESTION FOR EACH TOPIC
-
 for topic in topics:
     print(f'\n\n\n------------{topic}--------------\n\n\n')
     valid_qs = []
