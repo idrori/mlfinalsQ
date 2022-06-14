@@ -81,7 +81,7 @@ A. The weights would change substantially at the beginning, but then converge ba
 B. The weights would not change.
 C. The weights would make small oscillations around the initial weights.
 D. The weights would converge to a different value.
-E. Something else would happen.",The weights would not change,,,
+E. Something else would happen.",B. The weights would not change,,,
 Spring 2022,4,b,1.5,Regression,Text,"We're given a data set $D=\left\{\left(x^{(i)}, y^{(i)}\right)\right\}_{i=1}^{n}$, where $x^{(i)} \in R^{d}$ and $y^{(i)} \in R$. Let $X$ be a $d \times n$ matrix in which the $x^{(i)}$ are the columns and let $Y$ be a $1 \times n$ vector containing the values of $y^{(i)}$. Using the analytical regression (ordinary least-squares) formula, we can compute
  $$
  W_{o l s}=\left(X X^{T}\right)^{-1} X Y^{T}
