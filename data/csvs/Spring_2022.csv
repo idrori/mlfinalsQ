@@ -63,7 +63,25 @@ Spring 2022,3,b.iii,1.666666667,Classifiers,Text,"Consider the following data: P
 Spring 2022,3,c.i,2,Classifiers,Text,"Consider the following data: Positive = (-4, 4), (4, -4), Negative = (-1, 1), (1, -1). Clearly, the points are not linearly separable, so we will try three alternative approaches to solving the problem. Let $w=\left[\begin{array}{l}+1 \\ -1\end{array}\right]$ and $$ \begin{aligned} a_{1} &=\operatorname{sign}\left(w^{T} x+4\right) \\ a_{2} &=\operatorname{sign}\left(w^{T} x-4\right) \\ h\left(x ; v_{0}, v_{1}, v_{2}\right) &=\operatorname{sign}\left(v_{1} a_{1}+v_{2} a_{2}+v_{0}\right) \end{aligned} $$ where $$ \operatorname{sign}(x)= \begin{cases}+1 & \text { if } x>0 \\ -1 & \text { otherwise }\end{cases} $$ We'll define a new feature transformation $\phi$ that maps a point $x \in \mathbb{R}^{2}$ into a four-dimensional vector: $$ (K(x,(-4,4)), K(x,(-1,-1)), K(x,(1,1)), K(x,(4,-4))) $$ where $K$ is a function of two points: $K\left(x, x^{\prime}\right)=e^{-\left\|x-x^{\prime}\right\|^{2}}$. Intuitively, feature $i$ of $\phi(x)$ has value 1 if $x$ is equal to point $p_{i}$ and its value decreases as $x$ moves away from $p_{i}$. (c) We find a classifier in the transformed space with parameters $\theta=(1,-1,-1,1)$ $$ h(x ; \theta)=\operatorname{sign}\left(\theta^{T} \phi(x)\right) $$ What fraction of the training data does this classifier predict correctly?",100%,,,
 Spring 2022,3,c.ii,2,Classifiers,Text,"Consider the following data: Positive = (-4, 4), (4, -4), Negative = (-1, 1), (1, -1). Clearly, the points are not linearly separable, so we will try three alternative approaches to solving the problem. Let $w=\left[\begin{array}{l}+1 \\ -1\end{array}\right]$ and $$ \begin{aligned} a_{1} &=\operatorname{sign}\left(w^{T} x+4\right) \\ a_{2} &=\operatorname{sign}\left(w^{T} x-4\right) \\ h\left(x ; v_{0}, v_{1}, v_{2}\right) &=\operatorname{sign}\left(v_{1} a_{1}+v_{2} a_{2}+v_{0}\right) \end{aligned} $$ where $$ \operatorname{sign}(x)= \begin{cases}+1 & \text { if } x>0 \\ -1 & \text { otherwise }\end{cases} $$ We'll define a new feature transformation $\phi$ that maps a point $x \in \mathbb{R}^{2}$ into a four-dimensional vector: $$ (K(x,(-4,4)), K(x,(-1,-1)), K(x,(1,1)), K(x,(4,-4))) $$ where $K$ is a function of two points: $K\left(x, x^{\prime}\right)=e^{-\left\|x-x^{\prime}\right\|^{2}}$. Intuitively, feature $i$ of $\phi(x)$ has value 1 if $x$ is equal to point $p_{i}$ and its value decreases as $x$ moves away from $p_{i}$. (c) We find a classifier in the transformed space with parameters $\theta=(1,-1,-1,1)$ $$ h(x ; \theta)=\operatorname{sign}\left(\theta^{T} \phi(x)\right) $$ What prediction does it make for point $(0,0)$?",-1,,,
 Spring 2022,3,d,4,Classifiers,Image,We can classify the points correctly if $f$ (in both layers) is sigmoid. Provide the weights so this network will correctly classify the given points.,Image filling,,,
-Spring 2022,4,a,1.5,Regression,Text,We can classify the points correctly if $f$ (in both layers) is sigmoid. Provide the weights so this network will correctly classify the given points.,The weights would not change,,,
+Spring 2022,4,a,1.5,Regression,Text,"We're given a data set $D=\left\{\left(x^{(i)}, y^{(i)}\right)\right\}_{i=1}^{n}$, where $x^{(i)} \in R^{d}$ and $y^{(i)} \in R$. Let $X$ be a $d \times n$ matrix in which the $x^{(i)}$ are the columns and let $Y$ be a $1 \times n$ vector containing the values of $y^{(i)}$. Using the analytical regression (ordinary least-squares) formula, we can compute
+ $$
+ W_{o l s}=\left(X X^{T}\right)^{-1} X Y^{T}
+ $$
+ Using ridge regression, we can compute
+ $$
+ W_{\text {ridge }}=\left(X X^{T}+\lambda I\right)^{-1} X Y^{T}
+ $$
+ We decide to try to use these methods to initialize a single-unit 'neural network' with a linear activation function and no offset:
+ $$
+ h(x ; W)=W^{T} x .
+ $$
+ Assume that $X X^{T}$ is invertible and not equal to the identity matrix, and that neither $W_{o l s}$ nor $W_{\text {ridge }}$ is equal to $(0,0, \ldots, 0)$. Note also that we are not using an explicit offset/bias term.
+ If we initialized our unit with $W_{\text {ols }}$ and did batch gradient descent (summing the error over all the data points) with squared loss, no regularization, and a fixed small step size, which of the following would most typically happen.
+A. The weights would change substantially at the beginning, but then converge back to the values we initialized with.
+B. The weights would not change.
+C. The weights would make small oscillations around the initial weights.
+D. The weights would converge to a different value.
+E. Something else would happen.",The weights would not change,,,
 Spring 2022,4,b,1.5,Regression,Text,"We're given a data set $D=\left\{\left(x^{(i)}, y^{(i)}\right)\right\}_{i=1}^{n}$, where $x^{(i)} \in R^{d}$ and $y^{(i)} \in R$. Let $X$ be a $d \times n$ matrix in which the $x^{(i)}$ are the columns and let $Y$ be a $1 \times n$ vector containing the values of $y^{(i)}$. Using the analytical regression (ordinary least-squares) formula, we can compute
  $$
  W_{o l s}=\left(X X^{T}\right)^{-1} X Y^{T}
