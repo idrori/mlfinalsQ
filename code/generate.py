@@ -14,7 +14,6 @@ engine_temperature = 0
 engine_topP = 0
 max_tokens = 1000
 gpt3_time_delay = 1
-
 k = 3
 
 #load all questions and their embeddings:
@@ -33,6 +32,8 @@ for final in finals:
         q_topic = sheet.loc[i, 'Topic']
         information.append((raw_question, embeddings[ind], q_topic, f'{sheet.loc[i, "Question Number"]}{sheet.loc[i, "Part"]}', final))
         ind += 1
+
+#THIS ROUTINE GENERATES A NEW QUESTION FOR EACH TOPIC
 
 for topic in topics:
     print(f'\n\n\n------------{topic}--------------\n\n\n')
