@@ -30,7 +30,7 @@ for final in finals:
             continue
         raw_question = sheet.loc[i, 'Question']
         q_topic = sheet.loc[i, 'Topic']
-        information.append((raw_question, embeddings[ind], q_topic, f'{sheet.loc[i, "Question Number"]}{sheet.loc[i, "Part"]}', final))
+        information.append((raw_question, embeddings[ind], q_topic, str(sheet.loc[i, "Question Number"])+str(sheet.loc[i, "Part"]), final))
         ind += 1
 
 #THIS ROUTINE GENERATES A NEW QUESTION FOR EACH TOPIC
