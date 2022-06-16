@@ -1,7 +1,7 @@
-Semester,Question Number,Part,Points,Topic,Type,Question,Solution,,,
-Spring 2022,1,a,2,Neural Networks,Text,"Consider the simplest of all neural networks, consisting of a single unit with a sigmoid activation function: $h(x;w = \sigma(w_0 + w_1x)$ where $\sigma(z) = (1 + exp(-z))^{-1}$ Let’s start with a classifier defined by $w_0 = 0$ and $w_1 = 1$. Which range of input values x are classified as positive? Which as negative?",Positive if x > 0; negative otherwise.,,,
-Spring 2022,1,b,2,Neural Networks,Text,"Consider the simplest of all neural networks, consisting of a single unit with a sigmoid activation function: $h(x;w = \sigma(w_0 + w_1x)$ where $\sigma(z) = (1 + exp(-z))^{-1}$ Let’s start with a classifier defined by $w_0 = 0$ and $w_1 = 2$. Which range of input values x are classified as positive? Which as negative?",Positive if x > 0; negative otherwise.,,,
-Spring 2022,1,c,2,Neural Networks,Text,"Consider the simplest of all neural networks, consisting of a single unit with a sigmoid activation function: $h(x;w = \sigma(w_0 + w_1x)$ where $\sigma(z) = (1 + exp(-z))^{-1}$ Let’s start with a classifier defined by $w_0 = -1$ and $w_1 = 1$. Which range of input values x are classified as positive? Which as negative?",Positive if x > 1; negative otherwise.,,,
+Semester,Question Number,Part,Points,Topic,Type,Question,Solution
+Spring 2022,1,a,2,Neural Networks,Text,"Consider the simplest of all neural networks, consisting of a single unit with a sigmoid activation function: $h(x;w = \sigma(w_0 + w_1x)$ where $\sigma(z) = (1 + exp(-z))^{-1}$ Let’s start with a classifier defined by $w_0 = 0$ and $w_1 = 1$. Which range of input values x are classified as positive? Which as negative?",Positive if x > 0; negative otherwise.
+Spring 2022,1,b,2,Neural Networks,Text,"Consider the simplest of all neural networks, consisting of a single unit with a sigmoid activation function: $h(x;w = \sigma(w_0 + w_1x)$ where $\sigma(z) = (1 + exp(-z))^{-1}$ Let’s start with a classifier defined by $w_0 = 0$ and $w_1 = 2$. Which range of input values x are classified as positive? Which as negative?",Positive if x > 0; negative otherwise.
+Spring 2022,1,c,2,Neural Networks,Text,"Consider the simplest of all neural networks, consisting of a single unit with a sigmoid activation function: $h(x;w = \sigma(w_0 + w_1x)$ where $\sigma(z) = (1 + exp(-z))^{-1}$ Let’s start with a classifier defined by $w_0 = -1$ and $w_1 = 1$. Which range of input values x are classified as positive? Which as negative?",Positive if x > 1; negative otherwise.
 Spring 2022,2,a,2,Neural Networks,Image,"A recent paper gives us reason to think that, rather than regularizing the weights used in a deep network that is used for classification, it is good to regularize the $z$ values, before the activation function is applied, in the last layer.
 
 Consider a neural network with one hidden layer and a single output unit where the activation function $f$ is a sigmoid, as shown below.
@@ -14,7 +14,7 @@ What is the partial derivative of this unusual regularization term with respect 
 $$
 \frac{\partial}{\partial w_{11}} \lambda(z)^{2}
 $$
-Write it in terms of $x, y, z_{1}, z_{2}, z, w$ and $v$ values. You can use $f^{\prime}$ for derivative of $f$.",$2 \lambda z v_{1} x_{1} f^{\prime}\left(z_{1}\right)$,,,
+Write it in terms of $x, y, z_{1}, z_{2}, z, w$ and $v$ values. You can use $f^{\prime}$ for derivative of $f$.",$2 \lambda z v_{1} x_{1} f^{\prime}\left(z_{1}\right)$
 Spring 2022,2,b,2,Neural Networks,Image,"A recent paper gives us reason to think that, rather than regularizing the weights used in a deep network that is used for classification, it is good to regularize the $z$ values, before the activation function is applied, in the last layer.
 
 Consider a neural network with one hidden layer and a single output unit where the activation function $f$ is a sigmoid, as shown below.
@@ -24,7 +24,7 @@ J(\theta, \lambda)=\sum_{i} \mathcal{L}_{n l l}\left(f\left(z^{(i)}\right), y^{(
 $$
 where $z^{(i)}$ is the value of the output unit on example $i$ before it goes into the activation function. 
  What is the derivative with respect to $w_{11}$ of the typical regularization term, which penalizes the squares of the weights? How do these two regularizers differ?
-",$2 \lambda w_{11}$. One depends on the input.,,,
+",$2 \lambda w_{11}$. One depends on the input.
 Spring 2022,2,c,2,Neural Networks,Image,"A recent paper gives us reason to think that, rather than regularizing the weights used in a deep network that is used for classification, it is good to regularize the $z$ values, before the activation function is applied, in the last layer.
 
 Consider a neural network with one hidden layer and a single output unit where the activation function $f$ is a sigmoid, as shown below.
@@ -33,7 +33,7 @@ $$
 J(\theta, \lambda)=\sum_{i} \mathcal{L}_{n l l}\left(f\left(z^{(i)}\right), y^{(i)}\right)+\lambda \sum_{i}\left(z^{(i)}\right)^{2}
 $$
 where $z^{(i)}$ is the value of the output unit on example $i$ before it goes into the activation function. 
- Describe a situation in which it is possible for $w_{11}$ to be extremely large, but for $z$ to have small magnitude.",Maybe $v_{1}$ is very small.,,,
+ Describe a situation in which it is possible for $w_{11}$ to be extremely large, but for $z$ to have small magnitude.",Maybe $v_{1}$ is very small.
 Spring 2022,2,d,2,Neural Networks,Image,"A recent paper gives us reason to think that, rather than regularizing the weights used in a deep network that is used for classification, it is good to regularize the $z$ values, before the activation function is applied, in the last layer.
 
 Consider a neural network with one hidden layer and a single output unit where the activation function $f$ is a sigmoid, as shown below.
@@ -42,7 +42,7 @@ $$
 J(\theta, \lambda)=\sum_{i} \mathcal{L}_{n l l}\left(f\left(z^{(i)}\right), y^{(i)}\right)+\lambda \sum_{i}\left(z^{(i)}\right)^{2}
 $$
 where $z^{(i)}$ is the value of the output unit on example $i$ before it goes into the activation function. 
-Would the DARC strategy of regularizing $z$ be good if we were, instead, doing regression and $f(x)=x$ ? Explain why or why not.","No, because we need the output to be able to attain its target value, which will be made impossible by penalizing the magnitude of the output.",,,
+Would the DARC strategy of regularizing $z$ be good if we were, instead, doing regression and $f(x)=x$ ? Explain why or why not.","No, because we need the output to be able to attain its target value, which will be made impossible by penalizing the magnitude of the output."
 Spring 2022,3,a,2,Classifiers,Image,"Consider the following data. Clearly, the points are not linearly separable, so we will try three alternative approaches to solving the problem.
 Approach 1: Nested linear classifiers
 Let $w=\left[\begin{array}{l}+1 \\ -1\end{array}\right]$ and
@@ -56,13 +56,13 @@ $$
 where
 $$
 \operatorname{sign}(x)= \begin{cases}+1 & \text { if } x>0 \\ -1 & \text { otherwise }\end{cases}
-$$ Draw the classifiers corresponding to $a_{1}$ and $a_{2}$ on the axes above. Label them clearly, including their normal vectors.",Image filling,,,
-Spring 2022,3,b.i,1.666666667,Classifiers,Text,"Consider the following data: Positive = (-4, 4), (4, -4), Negative = (-1, 1), (1, -1). Clearly, the points are not linearly separable, so we will try three alternative approaches to solving the problem. Let $w=\left[\begin{array}{l}+1 \\ -1\end{array}\right]$ and $$ \begin{aligned} a_{1} &=\operatorname{sign}\left(w^{T} x+4\right) \\ a_{2} &=\operatorname{sign}\left(w^{T} x-4\right) \\ h\left(x ; v_{0}, v_{1}, v_{2}\right) &=\operatorname{sign}\left(v_{1} a_{1}+v_{2} a_{2}+v_{0}\right) \end{aligned} $$ where $$ \operatorname{sign}(x)= \begin{cases}+1 & \text { if } x>0 \\ -1 & \text { otherwise }\end{cases} $$ Select values of the v1 so that the nested classifier correctly predicts the values in the data set.",-1,,,
-Spring 2022,3,b.ii,1.666666667,Classifiers,Text,"Consider the following data: Positive = (-4, 4), (4, -4), Negative = (-1, 1), (1, -1). Clearly, the points are not linearly separable, so we will try three alternative approaches to solving the problem. Let $w=\left[\begin{array}{l}+1 \\ -1\end{array}\right]$ and $$ \begin{aligned} a_{1} &=\operatorname{sign}\left(w^{T} x+4\right) \\ a_{2} &=\operatorname{sign}\left(w^{T} x-4\right) \\ h\left(x ; v_{0}, v_{1}, v_{2}\right) &=\operatorname{sign}\left(v_{1} a_{1}+v_{2} a_{2}+v_{0}\right) \end{aligned} $$ where $$ \operatorname{sign}(x)= \begin{cases}+1 & \text { if } x>0 \\ -1 & \text { otherwise }\end{cases} $$ Select values of the v2 so that the nested classifier correctly predicts the values in the data set.",1,,,
-Spring 2022,3,b.iii,1.666666667,Classifiers,Text,"Consider the following data: Positive = (-4, 4), (4, -4), Negative = (-1, 1), (1, -1). Clearly, the points are not linearly separable, so we will try three alternative approaches to solving the problem. Let $w=\left[\begin{array}{l}+1 \\ -1\end{array}\right]$ and $$ \begin{aligned} a_{1} &=\operatorname{sign}\left(w^{T} x+4\right) \\ a_{2} &=\operatorname{sign}\left(w^{T} x-4\right) \\ h\left(x ; v_{0}, v_{1}, v_{2}\right) &=\operatorname{sign}\left(v_{1} a_{1}+v_{2} a_{2}+v_{0}\right) \end{aligned} $$ where $$ \operatorname{sign}(x)= \begin{cases}+1 & \text { if } x>0 \\ -1 & \text { otherwise }\end{cases} $$ Select values of the v3 so that the nested classifier correctly predicts the values in the data set.",0.5,,,
-Spring 2022,3,c.i,2,Classifiers,Text,"Consider the following data: Positive = (-4, 4), (4, -4), Negative = (-1, 1), (1, -1). Clearly, the points are not linearly separable, so we will try three alternative approaches to solving the problem. Let $w=\left[\begin{array}{l}+1 \\ -1\end{array}\right]$ and $$ \begin{aligned} a_{1} &=\operatorname{sign}\left(w^{T} x+4\right) \\ a_{2} &=\operatorname{sign}\left(w^{T} x-4\right) \\ h\left(x ; v_{0}, v_{1}, v_{2}\right) &=\operatorname{sign}\left(v_{1} a_{1}+v_{2} a_{2}+v_{0}\right) \end{aligned} $$ where $$ \operatorname{sign}(x)= \begin{cases}+1 & \text { if } x>0 \\ -1 & \text { otherwise }\end{cases} $$ We'll define a new feature transformation $\phi$ that maps a point $x \in \mathbb{R}^{2}$ into a four-dimensional vector: $$ (K(x,(-4,4)), K(x,(-1,-1)), K(x,(1,1)), K(x,(4,-4))) $$ where $K$ is a function of two points: $K\left(x, x^{\prime}\right)=e^{-\left\|x-x^{\prime}\right\|^{2}}$. Intuitively, feature $i$ of $\phi(x)$ has value 1 if $x$ is equal to point $p_{i}$ and its value decreases as $x$ moves away from $p_{i}$. (c) We find a classifier in the transformed space with parameters $\theta=(1,-1,-1,1)$ $$ h(x ; \theta)=\operatorname{sign}\left(\theta^{T} \phi(x)\right) $$ What fraction of the training data does this classifier predict correctly?",100%,,,
-Spring 2022,3,c.ii,2,Classifiers,Text,"Consider the following data: Positive = (-4, 4), (4, -4), Negative = (-1, 1), (1, -1). Clearly, the points are not linearly separable, so we will try three alternative approaches to solving the problem. Let $w=\left[\begin{array}{l}+1 \\ -1\end{array}\right]$ and $$ \begin{aligned} a_{1} &=\operatorname{sign}\left(w^{T} x+4\right) \\ a_{2} &=\operatorname{sign}\left(w^{T} x-4\right) \\ h\left(x ; v_{0}, v_{1}, v_{2}\right) &=\operatorname{sign}\left(v_{1} a_{1}+v_{2} a_{2}+v_{0}\right) \end{aligned} $$ where $$ \operatorname{sign}(x)= \begin{cases}+1 & \text { if } x>0 \\ -1 & \text { otherwise }\end{cases} $$ We'll define a new feature transformation $\phi$ that maps a point $x \in \mathbb{R}^{2}$ into a four-dimensional vector: $$ (K(x,(-4,4)), K(x,(-1,-1)), K(x,(1,1)), K(x,(4,-4))) $$ where $K$ is a function of two points: $K\left(x, x^{\prime}\right)=e^{-\left\|x-x^{\prime}\right\|^{2}}$. Intuitively, feature $i$ of $\phi(x)$ has value 1 if $x$ is equal to point $p_{i}$ and its value decreases as $x$ moves away from $p_{i}$. (c) We find a classifier in the transformed space with parameters $\theta=(1,-1,-1,1)$ $$ h(x ; \theta)=\operatorname{sign}\left(\theta^{T} \phi(x)\right) $$ What prediction does it make for point $(0,0)$?",-1,,,
-Spring 2022,3,d,4,Classifiers,Image,We can classify the points correctly if $f$ (in both layers) is sigmoid. Provide the weights so this network will correctly classify the given points.,Image filling,,,
+$$ Draw the classifiers corresponding to $a_{1}$ and $a_{2}$ on the axes above. Label them clearly, including their normal vectors.",Image filling
+Spring 2022,3,b.i,1.666666667,Classifiers,Text,"Consider the following data: Positive = (-4, 4), (4, -4), Negative = (-1, 1), (1, -1). Clearly, the points are not linearly separable, so we will try three alternative approaches to solving the problem. Let $w=\left[\begin{array}{l}+1 \\ -1\end{array}\right]$ and $$ \begin{aligned} a_{1} &=\operatorname{sign}\left(w^{T} x+4\right) \\ a_{2} &=\operatorname{sign}\left(w^{T} x-4\right) \\ h\left(x ; v_{0}, v_{1}, v_{2}\right) &=\operatorname{sign}\left(v_{1} a_{1}+v_{2} a_{2}+v_{0}\right) \end{aligned} $$ where $$ \operatorname{sign}(x)= \begin{cases}+1 & \text { if } x>0 \\ -1 & \text { otherwise }\end{cases} $$ Select values of the v1 so that the nested classifier correctly predicts the values in the data set.",-1
+Spring 2022,3,b.ii,1.666666667,Classifiers,Text,"Consider the following data: Positive = (-4, 4), (4, -4), Negative = (-1, 1), (1, -1). Clearly, the points are not linearly separable, so we will try three alternative approaches to solving the problem. Let $w=\left[\begin{array}{l}+1 \\ -1\end{array}\right]$ and $$ \begin{aligned} a_{1} &=\operatorname{sign}\left(w^{T} x+4\right) \\ a_{2} &=\operatorname{sign}\left(w^{T} x-4\right) \\ h\left(x ; v_{0}, v_{1}, v_{2}\right) &=\operatorname{sign}\left(v_{1} a_{1}+v_{2} a_{2}+v_{0}\right) \end{aligned} $$ where $$ \operatorname{sign}(x)= \begin{cases}+1 & \text { if } x>0 \\ -1 & \text { otherwise }\end{cases} $$ Select values of the v2 so that the nested classifier correctly predicts the values in the data set.",1
+Spring 2022,3,b.iii,1.666666667,Classifiers,Text,"Consider the following data: Positive = (-4, 4), (4, -4), Negative = (-1, 1), (1, -1). Clearly, the points are not linearly separable, so we will try three alternative approaches to solving the problem. Let $w=\left[\begin{array}{l}+1 \\ -1\end{array}\right]$ and $$ \begin{aligned} a_{1} &=\operatorname{sign}\left(w^{T} x+4\right) \\ a_{2} &=\operatorname{sign}\left(w^{T} x-4\right) \\ h\left(x ; v_{0}, v_{1}, v_{2}\right) &=\operatorname{sign}\left(v_{1} a_{1}+v_{2} a_{2}+v_{0}\right) \end{aligned} $$ where $$ \operatorname{sign}(x)= \begin{cases}+1 & \text { if } x>0 \\ -1 & \text { otherwise }\end{cases} $$ Select values of the v3 so that the nested classifier correctly predicts the values in the data set.",0.5
+Spring 2022,3,c.i,2,Classifiers,Text,"Consider the following data: Positive = (-4, 4), (4, -4), Negative = (-1, 1), (1, -1). Clearly, the points are not linearly separable, so we will try three alternative approaches to solving the problem. Let $w=\left[\begin{array}{l}+1 \\ -1\end{array}\right]$ and $$ \begin{aligned} a_{1} &=\operatorname{sign}\left(w^{T} x+4\right) \\ a_{2} &=\operatorname{sign}\left(w^{T} x-4\right) \\ h\left(x ; v_{0}, v_{1}, v_{2}\right) &=\operatorname{sign}\left(v_{1} a_{1}+v_{2} a_{2}+v_{0}\right) \end{aligned} $$ where $$ \operatorname{sign}(x)= \begin{cases}+1 & \text { if } x>0 \\ -1 & \text { otherwise }\end{cases} $$ We'll define a new feature transformation $\phi$ that maps a point $x \in \mathbb{R}^{2}$ into a four-dimensional vector: $$ (K(x,(-4,4)), K(x,(-1,-1)), K(x,(1,1)), K(x,(4,-4))) $$ where $K$ is a function of two points: $K\left(x, x^{\prime}\right)=e^{-\left\|x-x^{\prime}\right\|^{2}}$. Intuitively, feature $i$ of $\phi(x)$ has value 1 if $x$ is equal to point $p_{i}$ and its value decreases as $x$ moves away from $p_{i}$. (c) We find a classifier in the transformed space with parameters $\theta=(1,-1,-1,1)$ $$ h(x ; \theta)=\operatorname{sign}\left(\theta^{T} \phi(x)\right) $$ What fraction of the training data does this classifier predict correctly?",100%
+Spring 2022,3,c.ii,2,Classifiers,Text,"Consider the following data: Positive = (-4, 4), (4, -4), Negative = (-1, 1), (1, -1). Clearly, the points are not linearly separable, so we will try three alternative approaches to solving the problem. Let $w=\left[\begin{array}{l}+1 \\ -1\end{array}\right]$ and $$ \begin{aligned} a_{1} &=\operatorname{sign}\left(w^{T} x+4\right) \\ a_{2} &=\operatorname{sign}\left(w^{T} x-4\right) \\ h\left(x ; v_{0}, v_{1}, v_{2}\right) &=\operatorname{sign}\left(v_{1} a_{1}+v_{2} a_{2}+v_{0}\right) \end{aligned} $$ where $$ \operatorname{sign}(x)= \begin{cases}+1 & \text { if } x>0 \\ -1 & \text { otherwise }\end{cases} $$ We'll define a new feature transformation $\phi$ that maps a point $x \in \mathbb{R}^{2}$ into a four-dimensional vector: $$ (K(x,(-4,4)), K(x,(-1,-1)), K(x,(1,1)), K(x,(4,-4))) $$ where $K$ is a function of two points: $K\left(x, x^{\prime}\right)=e^{-\left\|x-x^{\prime}\right\|^{2}}$. Intuitively, feature $i$ of $\phi(x)$ has value 1 if $x$ is equal to point $p_{i}$ and its value decreases as $x$ moves away from $p_{i}$. (c) We find a classifier in the transformed space with parameters $\theta=(1,-1,-1,1)$ $$ h(x ; \theta)=\operatorname{sign}\left(\theta^{T} \phi(x)\right) $$ What prediction does it make for point $(0,0)$?",-1
+Spring 2022,3,d,4,Classifiers,Image,We can classify the points correctly if $f$ (in both layers) is sigmoid. Provide the weights so this network will correctly classify the given points.,Image filling
 Spring 2022,4,a,1.5,Regression,Text,"We're given a data set $D=\left\{\left(x^{(i)}, y^{(i)}\right)\right\}_{i=1}^{n}$, where $x^{(i)} \in R^{d}$ and $y^{(i)} \in R$. Let $X$ be a $d \times n$ matrix in which the $x^{(i)}$ are the columns and let $Y$ be a $1 \times n$ vector containing the values of $y^{(i)}$. Using the analytical regression (ordinary least-squares) formula, we can compute
  $$
  W_{o l s}=\left(X X^{T}\right)^{-1} X Y^{T}
@@ -81,7 +81,7 @@ A. The weights would change substantially at the beginning, but then converge ba
 B. The weights would not change.
 C. The weights would make small oscillations around the initial weights.
 D. The weights would converge to a different value.
-E. Something else would happen.",B. The weights would not change,,,
+E. Something else would happen.",B. The weights would not change
 Spring 2022,4,b,1.5,Regression,Text,"We're given a data set $D=\left\{\left(x^{(i)}, y^{(i)}\right)\right\}_{i=1}^{n}$, where $x^{(i)} \in R^{d}$ and $y^{(i)} \in R$. Let $X$ be a $d \times n$ matrix in which the $x^{(i)}$ are the columns and let $Y$ be a $1 \times n$ vector containing the values of $y^{(i)}$. Using the analytical regression (ordinary least-squares) formula, we can compute
  $$
  W_{o l s}=\left(X X^{T}\right)^{-1} X Y^{T}
@@ -95,7 +95,7 @@ Spring 2022,4,b,1.5,Regression,Text,"We're given a data set $D=\left\{\left(x^{(
  h(x ; W)=W^{T} x .
  $$
  Assume that $X X^{T}$ is invertible and not equal to the identity matrix, and that neither $W_{o l s}$ nor $W_{\text {ridge }}$ is equal to $(0,0, \ldots, 0)$. Note also that we are not using an explicit offset/bias term.
- If we initialized our unit with $W_{\text {ols }}$ and did batch gradient descent (summing the error over all the data points) with squared loss, no regularization, and a fixed small step size, explain why the weights would not change.",These weights are an optimum of the objective and the gradient will be (nearly) zero.,,,
+ If we initialized our unit with $W_{\text {ols }}$ and did batch gradient descent (summing the error over all the data points) with squared loss, no regularization, and a fixed small step size, explain why the weights would not change.",These weights are an optimum of the objective and the gradient will be (nearly) zero.
 Spring 2022,4,c.i,1,Regression,Text,"We're given a data set $D=\left\{\left(x^{(i)}, y^{(i)}\right)\right\}_{i=1}^{n}$, where $x^{(i)} \in R^{d}$ and $y^{(i)} \in R$. Let $X$ be a $d \times n$ matrix in which the $x^{(i)}$ are the columns and let $Y$ be a $1 \times n$ vector containing the values of $y^{(i)}$. Using the analytical regression (ordinary least-squares) formula, we can compute
  $$
  W_{o l s}=\left(X X^{T}\right)^{-1} X Y^{T}
@@ -109,7 +109,7 @@ Spring 2022,4,c.i,1,Regression,Text,"We're given a data set $D=\left\{\left(x^{(
  h(x ; W)=W^{T} x .
  $$
  Assume that $X X^{T}$ is invertible and not equal to the identity matrix, and that neither $W_{o l s}$ nor $W_{\text {ridge }}$ is equal to $(0,0, \ldots, 0)$. Note also that we are not using an explicit offset/bias term. 
-If we initialized our unit with $W_{o l s}$ and did stochastic gradient descent (one data point at a time) with squared loss, no regularization, and a fixed small step size, many different things could happen. Explain briefly the circumstances in which the weights would not change.","If the OLS solution had 0 error on all training examples, then SGD will not result in any changes.",,,
+If we initialized our unit with $W_{o l s}$ and did stochastic gradient descent (one data point at a time) with squared loss, no regularization, and a fixed small step size, many different things could happen. Explain briefly the circumstances in which the weights would not change.","If the OLS solution had 0 error on all training examples, then SGD will not result in any changes."
 Spring 2022,4,c.ii,1,Regression,Text,"We're given a data set $D=\left\{\left(x^{(i)}, y^{(i)}\right)\right\}_{i=1}^{n}$, where $x^{(i)} \in R^{d}$ and $y^{(i)} \in R$. Let $X$ be a $d \times n$ matrix in which the $x^{(i)}$ are the columns and let $Y$ be a $1 \times n$ vector containing the values of $y^{(i)}$. Using the analytical regression (ordinary least-squares) formula, we can compute
  $$
  W_{o l s}=\left(X X^{T}\right)^{-1} X Y^{T}
@@ -123,7 +123,7 @@ Spring 2022,4,c.ii,1,Regression,Text,"We're given a data set $D=\left\{\left(x^{
  h(x ; W)=W^{T} x .
  $$
  Assume that $X X^{T}$ is invertible and not equal to the identity matrix, and that neither $W_{o l s}$ nor $W_{\text {ridge }}$ is equal to $(0,0, \ldots, 0)$. Note also that we are not using an explicit offset/bias term. 
-If we initialized our unit with $W_{o l s}$ and did stochastic gradient descent (one data point at a time) with squared loss, no regularization, and a fixed small step size, many different things could happen. Explain briefly the circumstances in which the weights would make small oscillations around the initial weights.","If there was error, and the gradients are not too big, then in expectation the steps should be small motions around the optimum.",,,
+If we initialized our unit with $W_{o l s}$ and did stochastic gradient descent (one data point at a time) with squared loss, no regularization, and a fixed small step size, many different things could happen. Explain briefly the circumstances in which the weights would make small oscillations around the initial weights.","If there was error, and the gradients are not too big, then in expectation the steps should be small motions around the optimum."
 Spring 2022,4,c.iii,1,Regression,Text,"We're given a data set $D=\left\{\left(x^{(i)}, y^{(i)}\right)\right\}_{i=1}^{n}$, where $x^{(i)} \in R^{d}$ and $y^{(i)} \in R$. Let $X$ be a $d \times n$ matrix in which the $x^{(i)}$ are the columns and let $Y$ be a $1 \times n$ vector containing the values of $y^{(i)}$. Using the analytical regression (ordinary least-squares) formula, we can compute
  $$
  W_{o l s}=\left(X X^{T}\right)^{-1} X Y^{T}
@@ -137,7 +137,7 @@ Spring 2022,4,c.iii,1,Regression,Text,"We're given a data set $D=\left\{\left(x^
  h(x ; W)=W^{T} x .
  $$
  Assume that $X X^{T}$ is invertible and not equal to the identity matrix, and that neither $W_{o l s}$ nor $W_{\text {ridge }}$ is equal to $(0,0, \ldots, 0)$. Note also that we are not using an explicit offset/bias term. 
-If we initialized our unit with $W_{o l s}$ and did stochastic gradient descent (one data point at a time) with squared loss, no regularization, and a fixed small step size, many different things could happen. Explain briefly the circumstances in which the weights would converge to a different value.",It’s possible that it will bounce out of the current optimum and end up in another one.,,,
+If we initialized our unit with $W_{o l s}$ and did stochastic gradient descent (one data point at a time) with squared loss, no regularization, and a fixed small step size, many different things could happen. Explain briefly the circumstances in which the weights would converge to a different value.",It’s possible that it will bounce out of the current optimum and end up in another one.
 Spring 2022,4,d,2,Regression,Text,"We're given a data set $D=\left\{\left(x^{(i)}, y^{(i)}\right)\right\}_{i=1}^{n}$, where $x^{(i)} \in R^{d}$ and $y^{(i)} \in R$. Let $X$ be a $d \times n$ matrix in which the $x^{(i)}$ are the columns and let $Y$ be a $1 \times n$ vector containing the values of $y^{(i)}$. Using the analytical regression (ordinary least-squares) formula, we can compute
  $$
  W_{o l s}=\left(X X^{T}\right)^{-1} X Y^{T}
@@ -151,7 +151,7 @@ Spring 2022,4,d,2,Regression,Text,"We're given a data set $D=\left\{\left(x^{(i)
  h(x ; W)=W^{T} x .
  $$
  Assume that $X X^{T}$ is invertible and not equal to the identity matrix, and that neither $W_{o l s}$ nor $W_{\text {ridge }}$ is equal to $(0,0, \ldots, 0)$. Note also that we are not using an explicit offset/bias term. 
-Consider a neural-network unit initialized with $W_{\text {ridge }}$. Provide an objective function $J(W)$ that depends on the data, such that batch gradient descent to minimize $J$ will have no effect on the weights.",$J(W)=\left(W^{T} X-Y\right)^{2}+\lambda\|W\|^{2}$,,,
+Consider a neural-network unit initialized with $W_{\text {ridge }}$. Provide an objective function $J(W)$ that depends on the data, such that batch gradient descent to minimize $J$ will have no effect on the weights.",$J(W)=\left(W^{T} X-Y\right)^{2}+\lambda\|W\|^{2}$
 Spring 2022,4,e,2,Regression,Text,"We're given a data set $D=\left\{\left(x^{(i)}, y^{(i)}\right)\right\}_{i=1}^{n}$, where $x^{(i)} \in R^{d}$ and $y^{(i)} \in R$. Let $X$ be a $d \times n$ matrix in which the $x^{(i)}$ are the columns and let $Y$ be a $1 \times n$ vector containing the values of $y^{(i)}$. Using the analytical regression (ordinary least-squares) formula, we can compute
  $$
  W_{o l s}=\left(X X^{T}\right)^{-1} X Y^{T}
@@ -165,7 +165,7 @@ Spring 2022,4,e,2,Regression,Text,"We're given a data set $D=\left\{\left(x^{(i)
  h(x ; W)=W^{T} x .
  $$
  Assume that $X X^{T}$ is invertible and not equal to the identity matrix, and that neither $W_{o l s}$ nor $W_{\text {ridge }}$ is equal to $(0,0, \ldots, 0)$. Note also that we are not using an explicit offset/bias term. 
-Rory has solved many problems from this particular domain before and the solution has typically been close to $W^{*}=(1, \ldots, 1)^{T}$. Define an objective function $J(W)$ that we could minimize in order to obtain good estimates for Rory's next problem, even with very little data.",$J(W)=\left(W^{T} X-Y\right)^{2}+\lambda\|W-\mathbf{1}\|^{2}$,,,
+Rory has solved many problems from this particular domain before and the solution has typically been close to $W^{*}=(1, \ldots, 1)^{T}$. Define an objective function $J(W)$ that we could minimize in order to obtain good estimates for Rory's next problem, even with very little data.",$J(W)=\left(W^{T} X-Y\right)^{2}+\lambda\|W-\mathbf{1}\|^{2}$
 Spring 2022,4,f,2,Regression,Text,"We're given a data set $D=\left\{\left(x^{(i)}, y^{(i)}\right)\right\}_{i=1}^{n}$, where $x^{(i)} \in R^{d}$ and $y^{(i)} \in R$. Let $X$ be a $d \times n$ matrix in which the $x^{(i)}$ are the columns and let $Y$ be a $1 \times n$ vector containing the values of $y^{(i)}$. Using the analytical regression (ordinary least-squares) formula, we can compute
  $$
  W_{o l s}=\left(X X^{T}\right)^{-1} X Y^{T}
@@ -179,7 +179,7 @@ Spring 2022,4,f,2,Regression,Text,"We're given a data set $D=\left\{\left(x^{(i)
  h(x ; W)=W^{T} x .
  $$
  Assume that $X X^{T}$ is invertible and not equal to the identity matrix, and that neither $W_{o l s}$ nor $W_{\text {ridge }}$ is equal to $(0,0, \ldots, 0)$. Note also that we are not using an explicit offset/bias term. 
-Ryo thinks they can get a better hypothesis by using knowledge about neural networks, and considers the hypothesis class $$ g=w_{a} \sigma\left(w_{b} x+w_{c}\right)+w_{d} $$ Assume that the inputs $x$ are 1-dimensional and recall $\sigma(z)=1 /\left(1+e^{-z}\right)$. Provide a data set with 3 points for which Ryo's hypothesis class can reach a lower MSE than the original OLS solution or argue that one does not exist. ","(0, 0), (1, 1), (2, 1)",,,
+Ryo thinks they can get a better hypothesis by using knowledge about neural networks, and considers the hypothesis class $$ g=w_{a} \sigma\left(w_{b} x+w_{c}\right)+w_{d} $$ Assume that the inputs $x$ are 1-dimensional and recall $\sigma(z)=1 /\left(1+e^{-z}\right)$. Provide a data set with 3 points for which Ryo's hypothesis class can reach a lower MSE than the original OLS solution or argue that one does not exist. ","(0, 0), (1, 1), (2, 1)"
 Spring 2022,4,g,2,Regression,Text,"We're given a data set $D=\left\{\left(x^{(i)}, y^{(i)}\right)\right\}_{i=1}^{n}$, where $x^{(i)} \in R^{d}$ and $y^{(i)} \in R$. Let $X$ be a $d \times n$ matrix in which the $x^{(i)}$ are the columns and let $Y$ be a $1 \times n$ vector containing the values of $y^{(i)}$. Using the analytical regression (ordinary least-squares) formula, we can compute
  $$
  W_{o l s}=\left(X X^{T}\right)^{-1} X Y^{T}
@@ -193,7 +193,7 @@ Spring 2022,4,g,2,Regression,Text,"We're given a data set $D=\left\{\left(x^{(i)
  h(x ; W)=W^{T} x .
  $$
  Assume that $X X^{T}$ is invertible and not equal to the identity matrix, and that neither $W_{o l s}$ nor $W_{\text {ridge }}$ is equal to $(0,0, \ldots, 0)$. Note also that we are not using an explicit offset/bias term. 
-Provide a data set with 3 points for which the original OLS hypothesis class can reach a substantially lower MSE than Ryo's hypothesis class or argue that one does not exist.",Does not exist: You can stretch out the sigmoid so that the linear part of it is pretty linear and goes wherever you want it to.,,,
+Provide a data set with 3 points for which the original OLS hypothesis class can reach a substantially lower MSE than Ryo's hypothesis class or argue that one does not exist.",Does not exist: You can stretch out the sigmoid so that the linear part of it is pretty linear and goes wherever you want it to.
 Spring 2022,4,h,2,Regression,Text,"We're given a data set $D=\left\{\left(x^{(i)}, y^{(i)}\right)\right\}_{i=1}^{n}$, where $x^{(i)} \in R^{d}$ and $y^{(i)} \in R$. Let $X$ be a $d \times n$ matrix in which the $x^{(i)}$ are the columns and let $Y$ be a $1 \times n$ vector containing the values of $y^{(i)}$. Using the analytical regression (ordinary least-squares) formula, we can compute
  $$
  W_{o l s}=\left(X X^{T}\right)^{-1} X Y^{T}
@@ -206,7 +206,7 @@ Spring 2022,4,h,2,Regression,Text,"We're given a data set $D=\left\{\left(x^{(i)
  $$
  h(x ; W)=W^{T} x .
  $$
- Assume that $X X^{T}$ is invertible and not equal to the identity matrix, and that neither $W_{o l s}$ nor $W_{\text {ridge }}$ is equal to $(0,0, \ldots, 0)$. Note also that we are not using an explicit offset/bias term. Ryu thinks getting initial parameters from Ryo's hypothesis might be a good way to initialize a two-layer neural network. Consider the case where we have a simple neural network with - Two units in the hidden layer - Sigmoid activation function in the hidden layer - Linear activation function on the output unit So, the hypothesis is: $$ g=w_{a} \sigma\left(w_{b} x+w_{c}\right)+w_{e} \sigma\left(w_{f} x+w_{g}\right)+w_{d} $$ If Ryu first trained Ryo's hypothesis to reach a local optimum using gradient descent to obtain $w_{a}, w_{b}, w_{c}, w_{d}$, then initialized the more complex network above using $w_{e}=w_{a}$, $w_{f}=w_{b}$, and $w_{g}=w_{c}$, with $w_{d}$ as before, and did batch gradient descent with squared loss and a fixed small step size, what would most typically happen",The weights would converge to a different value with the same loss,,,
+ Assume that $X X^{T}$ is invertible and not equal to the identity matrix, and that neither $W_{o l s}$ nor $W_{\text {ridge }}$ is equal to $(0,0, \ldots, 0)$. Note also that we are not using an explicit offset/bias term. Ryu thinks getting initial parameters from Ryo's hypothesis might be a good way to initialize a two-layer neural network. Consider the case where we have a simple neural network with - Two units in the hidden layer - Sigmoid activation function in the hidden layer - Linear activation function on the output unit So, the hypothesis is: $$ g=w_{a} \sigma\left(w_{b} x+w_{c}\right)+w_{e} \sigma\left(w_{f} x+w_{g}\right)+w_{d} $$ If Ryu first trained Ryo's hypothesis to reach a local optimum using gradient descent to obtain $w_{a}, w_{b}, w_{c}, w_{d}$, then initialized the more complex network above using $w_{e}=w_{a}$, $w_{f}=w_{b}$, and $w_{g}=w_{c}$, with $w_{d}$ as before, and did batch gradient descent with squared loss and a fixed small step size, what would most typically happen",The weights would converge to a different value with the same loss
 Spring 2022,4,i,1,Regression,Text,"We're given a data set $D=\left\{\left(x^{(i)}, y^{(i)}\right)\right\}_{i=1}^{n}$, where $x^{(i)} \in R^{d}$ and $y^{(i)} \in R$. Let $X$ be a $d \times n$ matrix in which the $x^{(i)}$ are the columns and let $Y$ be a $1 \times n$ vector containing the values of $y^{(i)}$. Using the analytical regression (ordinary least-squares) formula, we can compute
  $$
  W_{o l s}=\left(X X^{T}\right)^{-1} X Y^{T}
@@ -221,7 +221,7 @@ Spring 2022,4,i,1,Regression,Text,"We're given a data set $D=\left\{\left(x^{(i)
  $$
  Assume that $X X^{T}$ is invertible and not equal to the identity matrix, and that neither $W_{o l s}$ nor $W_{\text {ridge }}$ is equal to $(0,0, \ldots, 0)$. Note also that we are not using an explicit offset/bias term. Ryu thinks getting initial parameters from Ryo's hypothesis might be a good way to initialize a two-layer neural network. Consider the case where we have a simple neural network with - Two units in the hidden layer - Sigmoid activation function in the hidden layer - Linear activation function on the output unit So, the hypothesis is: $$ g=w_{a} \sigma\left(w_{b} x+w_{c}\right)+w_{e} \sigma\left(w_{f} x+w_{g}\right)+w_{d} $$ If Ryu first trained Ryo's hypothesis to reach a local optimum using gradient descent to obtain $w_{a}, w_{b}, w_{c}, w_{d}$, then initialized the more complex network above using $w_{e}=w_{a}$, $w_{f}=w_{b}$, and $w_{g}=w_{c}$, with $w_{d}$ as before, and did batch gradient descent with squared loss and a fixed small step size, explain why the weights would converge to a different value.","Because the two units are initialized exactly the same, the gradients for
 both of them will be the same. So, it is as if we had a single linear unit, ran it through
-a sigmoid, and then added an offset.",,,
+a sigmoid, and then added an offset."
 Spring 2022,4,j,1,Regression,Text,"We're given a data set $D=\left\{\left(x^{(i)}, y^{(i)}\right)\right\}_{i=1}^{n}$, where $x^{(i)} \in R^{d}$ and $y^{(i)} \in R$. Let $X$ be a $d \times n$ matrix in which the $x^{(i)}$ are the columns and let $Y$ be a $1 \times n$ vector containing the values of $y^{(i)}$. Using the analytical regression (ordinary least-squares) formula, we can compute
  $$
  W_{o l s}=\left(X X^{T}\right)^{-1} X Y^{T}
@@ -234,11 +234,11 @@ Spring 2022,4,j,1,Regression,Text,"We're given a data set $D=\left\{\left(x^{(i)
  $$
  h(x ; W)=W^{T} x .
  $$
- Assume that $X X^{T}$ is invertible and not equal to the identity matrix, and that neither $W_{o l s}$ nor $W_{\text {ridge }}$ is equal to $(0,0, \ldots, 0)$. Note also that we are not using an explicit offset/bias term. Ryu thinks getting initial parameters from Ryo's hypothesis might be a good way to initialize a two-layer neural network. Consider the case where we have a simple neural network with - Two units in the hidden layer - Sigmoid activation function in the hidden layer - Linear activation function on the output unit So, the hypothesis is: $$ g=w_{a} \sigma\left(w_{b} x+w_{c}\right)+w_{e} \sigma\left(w_{f} x+w_{g}\right)+w_{d} $$ If Ryu first trained Ryo's hypothesis to reach a local optimum using gradient descent to obtain $w_{a}, w_{b}, w_{c}, w_{d}$, then initialized the more complex network above setting w_e, w_f and w_g randomly would we expect a lower loss?","Yes, with more freedom now we would expect a lower loss",,,
-Spring 2022,5,a.i,1,Features,Text,"You are hired by an event-planning company to build some machine-learning predictors. One of them, for predicting the number of attendees of a concert, takes as input x, a vector of aspects of the event (day of the week, start time, city size, music genre (classical, folk, rock, pop, rap), number of attendees at last concert, if known). What would be a good encoding strategy for music genre? Choose between numeric, one hot, discretized numeric (meaning discretized into bins), other.",One Hot,,,
-Spring 2022,5,a.ii,1,Features,Text,"You are hired by an event-planning company to build some machine-learning predictors. One of them, for predicting the number of attendees of a concert, takes as input x, a vector of aspects of the event (day of the week, start time, city size, music genre (classical, folk, rock, pop, rap), number of attendees at last concert, if known). What would be a good encoding strategy for number of attendees at last concert? Choose between numeric, one hot, discretized numeric (meaning discretized into bins), other.",numeric,,,
-Spring 2022,5,a.iii,1,Features,Text,"You are hired by an event-planning company to build some machine-learning predictors. One of them, for predicting the number of attendees of a concert, takes as input x, a vector of aspects of the event (day of the week, start time, city size, music genre (classical, folk, rock, pop, rap), number of attendees at last concert, if known). What would be a good encoding strategy for start time? Choose between numeric, one hot, discretized numeric (meaning discretized into bins), other.",discretized numeric (or numeric),,,
-Spring 2022,5,b,2,Features,Text,"You are hired by an event-planning company to build some machine-learning predictors. One of them, for predicting the number of attendees of a concert, takes as input x, a vector of aspects of the event (day of the week, start time, city size, music genre (classical, folk, rock, pop, rap), number of attendees at last concert, if known). If you didn’t know anything more about this problem, what would be a reasonable loss function to use?",Squared Loss,,,
+ Assume that $X X^{T}$ is invertible and not equal to the identity matrix, and that neither $W_{o l s}$ nor $W_{\text {ridge }}$ is equal to $(0,0, \ldots, 0)$. Note also that we are not using an explicit offset/bias term. Ryu thinks getting initial parameters from Ryo's hypothesis might be a good way to initialize a two-layer neural network. Consider the case where we have a simple neural network with - Two units in the hidden layer - Sigmoid activation function in the hidden layer - Linear activation function on the output unit So, the hypothesis is: $$ g=w_{a} \sigma\left(w_{b} x+w_{c}\right)+w_{e} \sigma\left(w_{f} x+w_{g}\right)+w_{d} $$ If Ryu first trained Ryo's hypothesis to reach a local optimum using gradient descent to obtain $w_{a}, w_{b}, w_{c}, w_{d}$, then initialized the more complex network above setting w_e, w_f and w_g randomly would we expect a lower loss?","Yes, with more freedom now we would expect a lower loss"
+Spring 2022,5,a.i,1,Features,Text,"You are hired by an event-planning company to build some machine-learning predictors. One of them, for predicting the number of attendees of a concert, takes as input x, a vector of aspects of the event (day of the week, start time, city size, music genre (classical, folk, rock, pop, rap), number of attendees at last concert, if known). What would be a good encoding strategy for music genre? Choose between numeric, one hot, discretized numeric (meaning discretized into bins), other.",One Hot
+Spring 2022,5,a.ii,1,Features,Text,"You are hired by an event-planning company to build some machine-learning predictors. One of them, for predicting the number of attendees of a concert, takes as input x, a vector of aspects of the event (day of the week, start time, city size, music genre (classical, folk, rock, pop, rap), number of attendees at last concert, if known). What would be a good encoding strategy for number of attendees at last concert? Choose between numeric, one hot, discretized numeric (meaning discretized into bins), other.",numeric
+Spring 2022,5,a.iii,1,Features,Text,"You are hired by an event-planning company to build some machine-learning predictors. One of them, for predicting the number of attendees of a concert, takes as input x, a vector of aspects of the event (day of the week, start time, city size, music genre (classical, folk, rock, pop, rap), number of attendees at last concert, if known). What would be a good encoding strategy for start time? Choose between numeric, one hot, discretized numeric (meaning discretized into bins), other.",discretized numeric (or numeric)
+Spring 2022,5,b,2,Features,Text,"You are hired by an event-planning company to build some machine-learning predictors. One of them, for predicting the number of attendees of a concert, takes as input x, a vector of aspects of the event (day of the week, start time, city size, music genre (classical, folk, rock, pop, rap), number of attendees at last concert, if known). If you didn’t know anything more about this problem, what would be a reasonable loss function to use?",Squared Loss
 Spring 2022,5,c,3,Features,Text,"You are hired by an event-planning company to build some machine-learning predictors. One of them, for predicting the number of attendees of a concert, takes as input x, a vector of aspects of the event (day of the week, start time, city size, music genre (classical, folk, rock, pop, rap), number of attendees at last concert, if known). Cody decides to use a loss function of the following form
  $$
  \mathcal{L}_{\text {cody }}(g, a)= \begin{cases}\lambda(g-a)^{2} & \text { if } g>a \\ (g-a)^{2} & \text { otherwise }\end{cases}
@@ -247,7 +247,7 @@ Spring 2022,5,c,3,Features,Text,"You are hired by an event-planning company to b
  $$
  \mathcal{L}_{\text {cody }}(g, a)= \begin{cases}\lambda_1(g-a)^{2} & \text { if } g>a \\ \lambda_2(g-a)^{2} & \text { otherwise }\end{cases}
  $$
- where $g$ is the guessed value and $a$ is the actual value, and $\lambda$ is an adjustable parameter. Is Jody’s loss function actually able to capture a larger class of losses?",No,,,
+ where $g$ is the guessed value and $a$ is the actual value, and $\lambda$ is an adjustable parameter. Is Jody’s loss function actually able to capture a larger class of losses?",No
 Spring 2022,5,d,3,Features,Text,"Cody decides to use a loss function of the following form
  $$
  \mathcal{L}_{\text {cody }}(g, a)= \begin{cases}\lambda(g-a)^{2} & \text { if } g>a \\ (g-a)^{2} & \text { otherwise }\end{cases}
@@ -265,17 +265,17 @@ Spring 2022,5,d,3,Features,Text,"Cody decides to use a loss function of the foll
 -1 & \text { otherwise }
 \end{array}\right) x\right.
 \end{gathered}
-$$",,,
+$$"
 Spring 2022,5,e.i,1.5,Features,Text,"You are hired by an event-planning company to build some machine-learning predictors. One of them, for predicting the number of attendees of a concert, takes as input x, a vector of aspects of the event (day of the week, start time, city size, music genre (classical, folk, rock, pop, rap), number of attendees at last concert, if known). We talk to Bodie, who really knows the concert business and says a better model for the total loss is:
  $$
  \mathcal{L}_{\text {bodie }}(g, a)=\alpha g+\beta \max (0, a-g) .
  $$
- This loss has two terms. The first part of the loss comes from the cost of renting a venue: if we guess that there will be $g$ attendees, we have to rent a place with $g$ seats, and we assume that such a rental costs $\alpha$ per seat. The second part of the loss comes from the loss of potential ticket sales: if $a$ people really wanted to attend but we can only seat $g$, then we lose $\beta$ for each of the $g-a$ people we have to turn away. Note that it is safe to assume that $\alpha<\beta$ (otherwise, we should not bother holding the concert!). But Bodie isn't really sure how to set the $\alpha$ and $\beta$ parameters, so we still have a problem! However, they are able to find a set of data of the form $(s, p, l)$ where $s$ describes the number of seats in the venue rented, $p$ describes the actual number of people who attempted to attend (including the number of people who were turned away) and $l$ describes the actual loss value. (e) Bodie wants to use this data to estimate $\alpha$ and $\beta$ in $\mathcal{L}_{\text {bodie }}$ by finding values of these parameters that predict the loss the most accurately in the mean-squared-error sense. Describe how to use the $(s, p, l)$ data to formulate a linear regression problem that will recover $\operatorname{good}$ estimates of $\alpha$ and $\beta$. What are the inputs, $x$?","Vectors of $(s, \max (0, p-s))$",,,
+ This loss has two terms. The first part of the loss comes from the cost of renting a venue: if we guess that there will be $g$ attendees, we have to rent a place with $g$ seats, and we assume that such a rental costs $\alpha$ per seat. The second part of the loss comes from the loss of potential ticket sales: if $a$ people really wanted to attend but we can only seat $g$, then we lose $\beta$ for each of the $g-a$ people we have to turn away. Note that it is safe to assume that $\alpha<\beta$ (otherwise, we should not bother holding the concert!). But Bodie isn't really sure how to set the $\alpha$ and $\beta$ parameters, so we still have a problem! However, they are able to find a set of data of the form $(s, p, l)$ where $s$ describes the number of seats in the venue rented, $p$ describes the actual number of people who attempted to attend (including the number of people who were turned away) and $l$ describes the actual loss value. (e) Bodie wants to use this data to estimate $\alpha$ and $\beta$ in $\mathcal{L}_{\text {bodie }}$ by finding values of these parameters that predict the loss the most accurately in the mean-squared-error sense. Describe how to use the $(s, p, l)$ data to formulate a linear regression problem that will recover $\operatorname{good}$ estimates of $\alpha$ and $\beta$. What are the inputs, $x$?","Vectors of $(s, \max (0, p-s))$"
 Spring 2022,5,e.ii,1.5,Features,Text,"You are hired by an event-planning company to build some machine-learning predictors. One of them, for predicting the number of attendees of a concert, takes as input x, a vector of aspects of the event (day of the week, start time, city size, music genre (classical, folk, rock, pop, rap), number of attendees at last concert, if known). We talk to Bodie, who really knows the concert business and says a better model for the total loss is:
  $$
  \mathcal{L}_{\text {bodie }}(g, a)=\alpha g+\beta \max (0, a-g) .
  $$
- This loss has two terms. The first part of the loss comes from the cost of renting a venue: if we guess that there will be $g$ attendees, we have to rent a place with $g$ seats, and we assume that such a rental costs $\alpha$ per seat. The second part of the loss comes from the loss of potential ticket sales: if $a$ people really wanted to attend but we can only seat $g$, then we lose $\beta$ for each of the $g-a$ people we have to turn away. Note that it is safe to assume that $\alpha<\beta$ (otherwise, we should not bother holding the concert!). But Bodie isn't really sure how to set the $\alpha$ and $\beta$ parameters, so we still have a problem! However, they are able to find a set of data of the form $(s, p, l)$ where $s$ describes the number of seats in the venue rented, $p$ describes the actual number of people who attempted to attend (including the number of people who were turned away) and $l$ describes the actual loss value. (e) Bodie wants to use this data to estimate $\alpha$ and $\beta$ in $\mathcal{L}_{\text {bodie }}$ by finding values of these parameters that predict the loss the most accurately in the mean-squared-error sense. Describe how to use the $(s, p, l)$ data to formulate a linear regression problem that will recover $\operatorname{good}$ estimates of $\alpha$ and $\beta$. What are the target outputs, $y$?",l,,,
+ This loss has two terms. The first part of the loss comes from the cost of renting a venue: if we guess that there will be $g$ attendees, we have to rent a place with $g$ seats, and we assume that such a rental costs $\alpha$ per seat. The second part of the loss comes from the loss of potential ticket sales: if $a$ people really wanted to attend but we can only seat $g$, then we lose $\beta$ for each of the $g-a$ people we have to turn away. Note that it is safe to assume that $\alpha<\beta$ (otherwise, we should not bother holding the concert!). But Bodie isn't really sure how to set the $\alpha$ and $\beta$ parameters, so we still have a problem! However, they are able to find a set of data of the form $(s, p, l)$ where $s$ describes the number of seats in the venue rented, $p$ describes the actual number of people who attempted to attend (including the number of people who were turned away) and $l$ describes the actual loss value. (e) Bodie wants to use this data to estimate $\alpha$ and $\beta$ in $\mathcal{L}_{\text {bodie }}$ by finding values of these parameters that predict the loss the most accurately in the mean-squared-error sense. Describe how to use the $(s, p, l)$ data to formulate a linear regression problem that will recover $\operatorname{good}$ estimates of $\alpha$ and $\beta$. What are the target outputs, $y$?",l
 Spring 2022,5,f,4,Features,Image,"Given a true loss function $\mathcal{L}_{\text {true, which is not differentisble, how could you use it to find }}$ a good value of $\lambda$ so that you can use $\mathcal{L}_{\text {cody }}$ with that $\lambda$ to construct a good predictive hypothesis? Assume you have a dataset $\mathcal{D}$ and that you are given a set lambdas of plausible values for $\lambda$. Let's write out a strategy in very abstract pseudo-code, using the following basic procedures:
 - train(data, lossfn) : trains a regression model to minimize lossfn on data, returns parameters theta
 - subpart (data, $j, K$ ) : divides data into $K$ equal parts and returns the jth subpart
@@ -295,7 +295,7 @@ best_lambda $=$ lambda
 best_loss $=$ loss
 best_lambda
 return best_lambda
-",Image filling,,,
+",Image filling
 Spring 2022,6,a,2,MDPs,Image,"Consider the MDP shown above. It has states $S_{0}, \ldots, S_{6}$ and actions $A, B$. Each arrow is labeled with one or more actions, and a probability value: this means that if any of those actions is chosen from the state at the start of the arrow, then it will make a transition to the state at the end of the arrow with the associated probability.
 
 Rewards are associated with states, and independent, in this example, from the action that is taken in that state. Remember that with horizon $H=1$, the agent can collect the reward associated with the state it is in, and then terminates. 
@@ -308,62 +308,62 @@ Assuming the discount factor $\gamma=0.8$, what are the infinite-horizon values 
 &V_{\pi}\left(S_{0}\right)=0+0.8 \cdot V_{\pi}\left(S_{2}\right) \\
 &V_{\pi}\left(S_{2}\right)=1+0.8 \cdot\left(0.9 V_{\pi}\left(S_{2}\right)+0.1 V_{\pi}\left(S_{0}\right)\right)
 \end{aligned}
-$$",,,
+$$"
 Spring 2022,6,b,1.5,MDPs,Image,"Consider the MDP shown above. It has states $S_{0}, \ldots, S_{6}$ and actions $A, B$. Each arrow is labeled with one or more actions, and a probability value: this means that if any of those actions is chosen from the state at the start of the arrow, then it will make a transition to the state at the end of the arrow with the associated probability.
 
 Rewards are associated with states, and independent, in this example, from the action that is taken in that state. Remember that with horizon $H=1$, the agent can collect the reward associated with the state it is in, and then terminates. 
 What is the optimal value $V_{h-1}(s)=\max _{a} Q_{h-1}(s, a)$ for each state for horizon $H=1$ with no discounting?","i. $V_{h=1}\left(S_{0}\right)$ [1]
 ii. $V_{h-1}\left(S_{1}\right)$ 0
-iii. $V_{h=1}\left(S_{2}\right)$",,,
+iii. $V_{h=1}\left(S_{2}\right)$"
 Spring 2022,6,c,1.5,MDPs,Image,"Consider the MDP shown above. It has states $S_{0}, \ldots, S_{6}$ and actions $A, B$. Each arrow is labeled with one or more actions, and a probability value: this means that if any of those actions is chosen from the state at the start of the arrow, then it will make a transition to the state at the end of the arrow with the associated probability.
 
 Rewards are associated with states, and independent, in this example, from the action that is taken in that state. Remember that with horizon $H=1$, the agent can collect the reward associated with the state it is in, and then terminates. 
 What is the optimal action and value $V_{h-2}(s)$ for each state for horizon $H=2$ with no discounting? (If the actions are tied in value, list both).","i. $S_{0}: A:$ B $V_{h-2}:$
 ii. $S_{1}: A$ : B $V_{h-2}:$ 5
 iii. $S_{2}: A$ :
-A $V_{h-2}: \frac{1+.9}{\hline}$",,,
+A $V_{h-2}: \frac{1+.9}{\hline}$"
 Spring 2022,6,d,3,MDPs,Image,"Consider the MDP shown above. It has states $S_{0}, \ldots, S_{6}$ and actions $A, B$. Each arrow is labeled with one or more actions, and a probability value: this means that if any of those actions is chosen from the state at the start of the arrow, then it will make a transition to the state at the end of the arrow with the associated probability.
 
 Rewards are associated with states, and independent, in this example, from the action that is taken in that state. Remember that with horizon $H=1$, the agent can collect the reward associated with the state it is in, and then terminates. 
 What is the optimal action and value $V(s)$ for each state for horizon $H=3$ with no discounting? (If the actions are tied in value, list both).","i. $S_{0}: A$ : $\mathbf{A}$ $V_{h-3:}:$ 5
 ii. $S_{1}: A$ : B $V_{h-3}:$ 5
 iii. $S_{2}: A$ :
-A $V_{h-3:} 1+9 \cdot 1.9+1 \cdot 1$",,,
+A $V_{h-3:} 1+9 \cdot 1.9+1 \cdot 1$"
 Spring 2022,6,e,2,MDPs,Image,"Consider the MDP shown above. It has states $S_{0}, \ldots, S_{6}$ and actions $A, B$. Each arrow is labeled with one or more actions, and a probability value: this means that if any of those actions is chosen from the state at the start of the arrow, then it will make a transition to the state at the end of the arrow with the associated probability.
 
 Rewards are associated with states, and independent, in this example, from the action that is taken in that state. Remember that with horizon $H=1$, the agent can collect the reward associated with the state it is in, and then terminates. 
-If we increase the horizon beyond 3 , will the optimal action in state $S_{0}$ ever change? Explain.","Yes. With a longer horizon, it's worth taking action $\mathrm{B}$ in $S_{0}$ and going around and around that loop.",,,
+If we increase the horizon beyond 3 , will the optimal action in state $S_{0}$ ever change? Explain.","Yes. With a longer horizon, it's worth taking action $\mathrm{B}$ in $S_{0}$ and going around and around that loop."
 Spring 2022,7,a.i,0.4,Reinforcement Learning,Text,"Consider an MDP with four states, called $A, B, C$, and $D$, and with two actions called Move and Stay. The discount factor $\gamma=0.9$. Here is a reminder of the Q-learning update formula, based on experience tuple $\left(s, a, r, s^{\prime}\right)$ : $$ Q(s, a):=(1-\alpha) Q(s, a)+\alpha\left(r+\gamma \max _{a^{\prime}} Q\left(s^{\prime}, a^{\prime}\right)\right) $$ Let $\alpha=1$. Assume we see the following state-action-reward sequence: 
 A, Move, 0 
-Provide the q-learning value for Q(A, Move).",0,,,
+Provide the q-learning value for Q(A, Move).",0
 Spring 2022,7,a.ii,0.4,Reinforcement Learning,Text,"Consider an MDP with four states, called $A, B, C$, and $D$, and with two actions called Move and Stay. The discount factor $\gamma=0.9$. Here is a reminder of the Q-learning update formula, based on experience tuple $\left(s, a, r, s^{\prime}\right)$ : $$ Q(s, a):=(1-\alpha) Q(s, a)+\alpha\left(r+\gamma \max _{a^{\prime}} Q\left(s^{\prime}, a^{\prime}\right)\right) $$ Let $\alpha=1$. Assume we see the following state-action-reward sequence: 
 A, Move, 0 
 B, Move, 0 
-Provide the q-learning value for Q(B, Move).",0,,,
+Provide the q-learning value for Q(B, Move).",0
 Spring 2022,7,a.iii,0.4,Reinforcement Learning,Text,"Consider an MDP with four states, called $A, B, C$, and $D$, and with two actions called Move and Stay. The discount factor $\gamma=0.9$. Here is a reminder of the Q-learning update formula, based on experience tuple $\left(s, a, r, s^{\prime}\right)$ : $$ Q(s, a):=(1-\alpha) Q(s, a)+\alpha\left(r+\gamma \max _{a^{\prime}} Q\left(s^{\prime}, a^{\prime}\right)\right) $$ Let $\alpha=1$. Assume we see the following state-action-reward sequence: 
 A, Move, 0 
 B, Move, 0 
 C, Move, 1 
-With Q-values all starting at 0, we run the Q-learning algorithm on that state-action sequence. Provide the q-learning value for Q(C, Move)",1,,,
+With Q-values all starting at 0, we run the Q-learning algorithm on that state-action sequence. Provide the q-learning value for Q(C, Move)",1
 Spring 2022,7,a.iv,0.4,Reinforcement Learning,Text,"Consider an MDP with four states, called $A, B, C$, and $D$, and with two actions called Move and Stay. The discount factor $\gamma=0.9$. Here is a reminder of the Q-learning update formula, based on experience tuple $\left(s, a, r, s^{\prime}\right)$ : $$ Q(s, a):=(1-\alpha) Q(s, a)+\alpha\left(r+\gamma \max _{a^{\prime}} Q\left(s^{\prime}, a^{\prime}\right)\right) $$ Let $\alpha=1$. Assume we see the following state-action-reward sequence: 
 A, Move, 0 
 B, Move, 0 
 C, Move, 1 
 A, Move, 0 
-With Q-values all starting at 0, we run the Q-learning algorithm on that state-action sequence. Provide the q-learning value for Q(A, move).",0,,,
+With Q-values all starting at 0, we run the Q-learning algorithm on that state-action sequence. Provide the q-learning value for Q(A, move).",0
 Spring 2022,7,a.v,0.4,Reinforcement Learning,Text,"Consider an MDP with four states, called $A, B, C$, and $D$, and with two actions called Move and Stay. The discount factor $\gamma=0.9$. Here is a reminder of the Q-learning update formula, based on experience tuple $\left(s, a, r, s^{\prime}\right)$ : $$ Q(s, a):=(1-\alpha) Q(s, a)+\alpha\left(r+\gamma \max _{a^{\prime}} Q\left(s^{\prime}, a^{\prime}\right)\right) $$ Let $\alpha=1$. Assume we see the following state-action-reward sequence: 
 A, Move, 0 
 B, Move, 0 
 C, Move, 1 
 A, Move, 0 
 B, Move, 0. 
-With Q-values all starting at 0, we run the Q-learning algorithm on that state-action sequence. Provide the q-learning value for Q(b, move).",0.9,,,
+With Q-values all starting at 0, we run the Q-learning algorithm on that state-action sequence. Provide the q-learning value for Q(b, move).",0.9
 Spring 2022,7,b,2,Reinforcement Learning,Text,"Consider an MDP with four states, called $A, B, C$, and $D$, and with two actions called Move and Stay. The discount factor $\gamma=0.9$. Here is a reminder of the Q-learning update formula, based on experience tuple $\left(s, a, r, s^{\prime}\right)$ : $$ Q(s, a):=(1-\alpha) Q(s, a)+\alpha\left(r+\gamma \max _{a^{\prime}} Q\left(s^{\prime}, a^{\prime}\right)\right) $$ Let $\alpha=1$. Assume we see the following state-action-reward sequence: 
 A, Move, 0 
 B, Move, 0 
 C, Move, 1 
 A, Move, 0 
-B, Move, 0. With Q-values all starting at 0, we run the Q-learning algorithm on that state-action sequence. Characterize the weakness of Q-learning demonstrated by this example, which would be worse if there were a long sequence of states $B_{1}, \ldots, B_{100}$ between A and C. Very briefly describe a strategy for overcoming this weakness. ",It doesn't propagate the value all the way back the chain. Do the updates backward along the trajectory; or save your experience and replay it.,,,
+B, Move, 0. With Q-values all starting at 0, we run the Q-learning algorithm on that state-action sequence. Characterize the weakness of Q-learning demonstrated by this example, which would be worse if there were a long sequence of states $B_{1}, \ldots, B_{100}$ between A and C. Very briefly describe a strategy for overcoming this weakness. ",It doesn't propagate the value all the way back the chain. Do the updates backward along the trajectory; or save your experience and replay it.
 Spring 2022,7,c.i,1,Reinforcement Learning,Text,"Consider an MDP with four states, called $A, B, C$, and $D$, and with two actions called Move and Stay. The discount factor $\gamma=0.9$. Here is a reminder of the Q-learning update formula, based on experience tuple $\left(s, a, r, s^{\prime}\right)$ : $$ Q(s, a):=(1-\alpha) Q(s, a)+\alpha\left(r+\gamma \max _{a^{\prime}} Q\left(s^{\prime}, a^{\prime}\right)\right) $$ Let $\alpha=1$. Assume we see the following state-action-reward sequence: 
 A, Move, 0 
 B, Move, 0 
@@ -372,7 +372,7 @@ A, Move, 0
 B, Move, 0. 
 A, Move, 0
 B, Move, 0
-With Q-values all starting at 0, we run the Q-learning algorithm on that state-action sequence. Provide the q-learning value for Q(A, move).","Q(A, move) = .81",,,
+With Q-values all starting at 0, we run the Q-learning algorithm on that state-action sequence. Provide the q-learning value for Q(A, move).","Q(A, move) = .81"
 Spring 2022,7,c.ii,1,Reinforcement Learning,Text,"Consider an MDP with four states, called $A, B, C$, and $D$, and with two actions called Move and Stay. The discount factor $\gamma=0.9$. Here is a reminder of the Q-learning update formula, based on experience tuple $\left(s, a, r, s^{\prime}\right)$ : $$ Q(s, a):=(1-\alpha) Q(s, a)+\alpha\left(r+\gamma \max _{a^{\prime}} Q\left(s^{\prime}, a^{\prime}\right)\right) $$ Let $\alpha=1$. Assume we see the following state-action-reward sequence: 
 A, Move, 0 
 B, Move, 0 
@@ -381,7 +381,7 @@ A, Move, 0
 B, Move, 0. 
 A, Move, 0
 B, Move, 0
-With Q-values all starting at 0, we run the Q-learning algorithm on that state-action sequence. Provide the q-learning value for Q(B, move).","Q(B, move) = 0",,,
+With Q-values all starting at 0, we run the Q-learning algorithm on that state-action sequence. Provide the q-learning value for Q(B, move).","Q(B, move) = 0"
 Spring 2022,7,d,2,Reinforcement Learning,Text,"Consider an MDP with four states, called $A, B, C$, and $D$, and with two actions called Move and Stay. The discount factor $\gamma=0.9$. Here is a reminder of the Q-learning update formula, based on experience tuple $\left(s, a, r, s^{\prime}\right)$ : $$ Q(s, a):=(1-\alpha) Q(s, a)+\alpha\left(r+\gamma \max _{a^{\prime}} Q\left(s^{\prime}, a^{\prime}\right)\right) $$ Let $\alpha=1$. Assume we see the following state-action-reward sequence: 
 A, Move, 0 
 B, Move, 0 
@@ -390,11 +390,11 @@ A, Move, 0
 B, Move, 0. 
 A, Move, 0
 B, Move, 0
-With Q-values all starting at 0, we run the Q-learning algorithm on that state-action sequence. What problem with our algorithm is revealed by this example? Very briefly explain a small change to the method or parameters we are using that will solve this problem.",Use a smaller learning rate,,,
-Spring 2022,8,a,1,CNNs,Text,"Network A is a neural network with a single convolution of size 3. It has a single max pooling layer with size d so the output of the network it sigmoid (max(z1,..zd)). Network B is a neural network with a single convolution of size 3. It has a single min pooling layer with size d so the output of the network it sigmoid (min(z1,..zd)). For which network does a high output value correspond, qualitatively, to “every location in x corresponds to an instance of the desired pattern” choose between A or B or none.",B,,,
-Spring 2022,8,b,1,CNNs,Text,"Network A is a neural network with a single convolution of size 3. It has a single max pooling layer with size d so the output of the network it sigmoid (max(z1,..zd)). Network B is a neural network with a single convolution of size 3. It has a single min pooling layer with size d so the output of the network it sigmoid (min(z1,..zd)). For which network does a high output value correspond, qualitatively, to “at least half of the locations in x correspond to an instance of the desired pattern” choose between A or B or none.",None,,,
-Spring 2022,8,c,1,CNNs,Text,"Network A is a neural network with a single convolution of size 3. It has a single max pooling layer with size d so the output of the network it sigmoid (max(z1,..zd)). Network B is a neural network with a single convolution of size 3. It has a single min pooling layer with size d so the output of the network it sigmoid (min(z1,..zd)). For which network does a high output value correspond, qualitatively, to “there is at least one instance of the desired pattern in this image” choose between A or B or none.",A,,,
-Spring 2022,8,d,3,CNNs,Text,"Network A is a neural network with a single convolution of size 3. It has a single max pooling layer with size d so the output of the network it sigmoid (max(z1,..zd)). Network B is a neural network with a single convolution of size 3. It has a single min pooling layer with size d so the output of the network it sigmoid (min(z1,..zd)). What is $\partial g / \partial z_{i}$ for network A? Feel free to make use of the fact that $\partial \sigma(z) / \partial z=\sigma(z)(1-\sigma(z))$.","$\sigma\left(z_{i}\right)\left(1-\sigma\left(z_{i}\right)\right)$ if $z_{i}=\max \left(z_{1}, \ldots, z_{d}\right)$, and 0 otherwise.",,,
+With Q-values all starting at 0, we run the Q-learning algorithm on that state-action sequence. What problem with our algorithm is revealed by this example? Very briefly explain a small change to the method or parameters we are using that will solve this problem.",Use a smaller learning rate
+Spring 2022,8,a,1,CNNs,Text,"Network A is a neural network with a single convolution of size 3. It has a single max pooling layer with size d so the output of the network it sigmoid (max(z1,..zd)). Network B is a neural network with a single convolution of size 3. It has a single min pooling layer with size d so the output of the network it sigmoid (min(z1,..zd)). For which network does a high output value correspond, qualitatively, to “every location in x corresponds to an instance of the desired pattern” choose between A or B or none.",B
+Spring 2022,8,b,1,CNNs,Text,"Network A is a neural network with a single convolution of size 3. It has a single max pooling layer with size d so the output of the network it sigmoid (max(z1,..zd)). Network B is a neural network with a single convolution of size 3. It has a single min pooling layer with size d so the output of the network it sigmoid (min(z1,..zd)). For which network does a high output value correspond, qualitatively, to “at least half of the locations in x correspond to an instance of the desired pattern” choose between A or B or none.",None
+Spring 2022,8,c,1,CNNs,Text,"Network A is a neural network with a single convolution of size 3. It has a single max pooling layer with size d so the output of the network it sigmoid (max(z1,..zd)). Network B is a neural network with a single convolution of size 3. It has a single min pooling layer with size d so the output of the network it sigmoid (min(z1,..zd)). For which network does a high output value correspond, qualitatively, to “there is at least one instance of the desired pattern in this image” choose between A or B or none.",A
+Spring 2022,8,d,3,CNNs,Text,"Network A is a neural network with a single convolution of size 3. It has a single max pooling layer with size d so the output of the network it sigmoid (max(z1,..zd)). Network B is a neural network with a single convolution of size 3. It has a single min pooling layer with size d so the output of the network it sigmoid (min(z1,..zd)). What is $\partial g / \partial z_{i}$ for network A? Feel free to make use of the fact that $\partial \sigma(z) / \partial z=\sigma(z)(1-\sigma(z))$.","$\sigma\left(z_{i}\right)\left(1-\sigma\left(z_{i}\right)\right)$ if $z_{i}=\max \left(z_{1}, \ldots, z_{d}\right)$, and 0 otherwise."
 Spring 2022,8,e.i,1,CNNs,Text,"We are going to consider two different simple convolutional networks over one dimensional (vector) inputs. Each network has a single convolutional layer with a single filter of size 3 and stride 1 . Let $\left(z_{1}, \ldots, z_{d}\right)$ be the output of this convolutional layer, i.e., $\left(z_{1}, \ldots, z_{d}\right)$ represents the feature map constructed from the input vector $\left(x_{1}, \ldots, x_{d}\right)$. For simplicity, you can think of $z_{j}$ just as a linear map $z_{j}=\left[x_{j-1} ; x_{j} ; x_{j+1}\right]^{T} w$ where $w$ are the filter parameters. Our two networks differ in terms of how the feature map values are pooled to a single output value.
 
 Network A has a single max-pooling layer with input size $d$, so that the output of the network $\hat{y}=\sigma\left(\max \left(z_{1}, \ldots, z_{d}\right)\right)$ where $\sigma(\cdot)$ is the sigmoid function.
@@ -410,7 +410,7 @@ which is minimized when $\hat{y}$ matches the target $y$. We are interested in u
 - Which network (A, B, or it doesn't matter)
 - Target $y$ (1, 0, or it doesn't matter). 
 The behavior is: 
-After each step of gradient descent, the filter weights $w$ change so that their dot product with the values of one particular sub-region $\left[x_{j-1} ; x_{j} ; x_{j+1}\right]$ of the image increases.","A, 1",,,
+After each step of gradient descent, the filter weights $w$ change so that their dot product with the values of one particular sub-region $\left[x_{j-1} ; x_{j} ; x_{j+1}\right]$ of the image increases.","A, 1"
 Spring 2022,8,e.ii,1,CNNs,Text,"We are going to consider two different simple convolutional networks over one dimensional (vector) inputs. Each network has a single convolutional layer with a single filter of size 3 and stride 1 . Let $\left(z_{1}, \ldots, z_{d}\right)$ be the output of this convolutional layer, i.e., $\left(z_{1}, \ldots, z_{d}\right)$ represents the feature map constructed from the input vector $\left(x_{1}, \ldots, x_{d}\right)$. For simplicity, you can think of $z_{j}$ just as a linear map $z_{j}=\left[x_{j-1} ; x_{j} ; x_{j+1}\right]^{T} w$ where $w$ are the filter parameters. Our two networks differ in terms of how the feature map values are pooled to a single output value.
 
 Network A has a single max-pooling layer with input size $d$, so that the output of the network $\hat{y}=\sigma\left(\max \left(z_{1}, \ldots, z_{d}\right)\right)$ where $\sigma(\cdot)$ is the sigmoid function.
@@ -426,7 +426,7 @@ which is minimized when $\hat{y}$ matches the target $y$. We are interested in u
 - Which network (A, B, or it doesn't matter)
 - Target $y$ (1, 0, or it doesn't matter). 
 The behavior is: 
-After each step of gradient descent, the filter weights $w$ change so that their dot product with the values of one particular sub-region $\left[x_{j-1} ; x_{j} ; x_{j+1}\right]$ of the image decreases.","B, 0",,,
+After each step of gradient descent, the filter weights $w$ change so that their dot product with the values of one particular sub-region $\left[x_{j-1} ; x_{j} ; x_{j+1}\right]$ of the image decreases.","B, 0"
 Spring 2022,8,e.iii,1,CNNs,Text,"We are going to consider two different simple convolutional networks over one dimensional (vector) inputs. Each network has a single convolutional layer with a single filter of size 3 and stride 1 . Let $\left(z_{1}, \ldots, z_{d}\right)$ be the output of this convolutional layer, i.e., $\left(z_{1}, \ldots, z_{d}\right)$ represents the feature map constructed from the input vector $\left(x_{1}, \ldots, x_{d}\right)$. For simplicity, you can think of $z_{j}$ just as a linear map $z_{j}=\left[x_{j-1} ; x_{j} ; x_{j+1}\right]^{T} w$ where $w$ are the filter parameters. Our two networks differ in terms of how the feature map values are pooled to a single output value.
 
 Network A has a single max-pooling layer with input size $d$, so that the output of the network $\hat{y}=\sigma\left(\max \left(z_{1}, \ldots, z_{d}\right)\right)$ where $\sigma(\cdot)$ is the sigmoid function.
@@ -442,7 +442,7 @@ which is minimized when $\hat{y}$ matches the target $y$. We are interested in u
 - Which network (A, B, or it doesn't matter)
 - Target $y$ (1, 0, or it doesn't matter). 
 The behavior is:
-After each step of gradient descent, the filter weights $w$ change so that their dot product with the values of some image sub-region increases, but the specific region may change from one step to another.","B, 1",,,
+After each step of gradient descent, the filter weights $w$ change so that their dot product with the values of some image sub-region increases, but the specific region may change from one step to another.","B, 1"
 Spring 2022,8,e.iv,1,CNNs,Text,"We are going to consider two different simple convolutional networks over one dimensional (vector) inputs. Each network has a single convolutional layer with a single filter of size 3 and stride 1 . Let $\left(z_{1}, \ldots, z_{d}\right)$ be the output of this convolutional layer, i.e., $\left(z_{1}, \ldots, z_{d}\right)$ represents the feature map constructed from the input vector $\left(x_{1}, \ldots, x_{d}\right)$. For simplicity, you can think of $z_{j}$ just as a linear map $z_{j}=\left[x_{j-1} ; x_{j} ; x_{j+1}\right]^{T} w$ where $w$ are the filter parameters. Our two networks differ in terms of how the feature map values are pooled to a single output value.
 
 Network A has a single max-pooling layer with input size $d$, so that the output of the network $\hat{y}=\sigma\left(\max \left(z_{1}, \ldots, z_{d}\right)\right)$ where $\sigma(\cdot)$ is the sigmoid function.
@@ -458,7 +458,7 @@ which is minimized when $\hat{y}$ matches the target $y$. We are interested in u
 - Which network (A, B, or it doesn't matter)
 - Target $y$ (1, 0, or it doesn't matter). 
 The behavior is:
-After each step of gradient descent, the filter weights $w$ change so that their dot product with the values of some image sub-region decreases, but the specific region may change from one step to another.","A, 0",,,
+After each step of gradient descent, the filter weights $w$ change so that their dot product with the values of some image sub-region decreases, but the specific region may change from one step to another.","A, 0"
 Spring 2022,9,a,4,RNNs,Text,"Consider three RNN variants:
 1. The basic RNN architecture we studied was
 $$
@@ -485,7 +485,7 @@ $$
 $$ Lec Surer insists on understanding these models a bit better, and how they might relate.
 (a) Select the correct claim and answer the associated question.
 (1) Claim: The three models are all equivalent when $f(z)=z$. In this case, define $W^{s s x}$
-(2) Claim: The three models are not all equivalent when $f(z)=z$. In this case, assume $m=d=1$ and provide one setting of $W^{s s x}$ in Ranndy's model such that $W^{s s}$ and $W^{s x}$ cannot be chosen to make the basic and Orenn's models the same as Ranndy's.","Claim $1 W^{s s x}=h s t a c k\left(W^{s s}, W^{s x}\right)$",,,
+(2) Claim: The three models are not all equivalent when $f(z)=z$. In this case, assume $m=d=1$ and provide one setting of $W^{s s x}$ in Ranndy's model such that $W^{s s}$ and $W^{s x}$ cannot be chosen to make the basic and Orenn's models the same as Ranndy's.","Claim $1 W^{s s x}=h s t a c k\left(W^{s s}, W^{s x}\right)$"
 Spring 2022,9,b,6,RNNs,Image,"Here is Rina's model again:
 $$
 \begin{aligned}
@@ -503,4 +503,4 @@ W^{s s} & 0 \\
 \end{array}\right]
 $$
 iii. $W^{\prime}$
-Solution: hstack $(I(m) ; I(m))$",,,
+Solution: hstack $(I(m) ; I(m))$"
