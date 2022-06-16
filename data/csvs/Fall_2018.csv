@@ -279,7 +279,9 @@ a decision tree until there is one or a small number of elements in each leaf. T
 prune by deleting individual leaves of the tree until the score of the tree starts to get worse.
 The question is how to score each possible pruning of the tree.
  Here is a definition of the score: The score is the percentage correct of the tree, computed on the training set, minus a
-constant C times the number of nodes in the tree. C is chosen in advance by running this algorithm (grow a large tree then prune in orderto maximize percent correct minus C times number of nodes) for many di erent valuesof C, and choosing the value of C that minimizes training-set error. Explain whether or not it would be a good 
+constant C times the number of nodes in the tree. C is chosen in advance by running this algorithm (grow a large tree then prune in order
+to maximize percent correct minus C times number of nodes) for many di erent values
+of C, and choosing the value of C that minimizes training-set error. Explain whether or not it would be a good 
 idea and give a reason why or why not.","Not a good idea. Running trials to maximize performance on the training set will not
 give us an indication of whether this algorithm will produce answers that generalize to
 other data sets."
@@ -287,8 +289,15 @@ Fall 2018,8,e,4,Decision Trees,Text,"There are different strategies for pruning 
 a decision tree until there is one or a small number of elements in each leaf. Then, we 
 prune by deleting individual leaves of the tree until the score of the tree starts to get worse.
 The question is how to score each possible pruning of the tree.
- Here is a definition of the score: The score is the percentage correct of the tree, computed on the training set, minus aconstant C times the number of nodes in the tree.C is chosen in advance by running cross-validation trials of this algorithm (grow alarge tree then prune in order to maximize percent correct minus C times number ofnodes) for many di erent values of C, and choosing the value of C that minimizescross-validation error. Explain whether or not it would be a good 
-idea and give a reason why or why not.","A good idea when we don’t have enough data to hold out a validation set. ChoosingC by cross-validation will hopefully give us an e ective general way of penalizing forcomplexity of the tree (for this type of data)."
+ Here is a definition of the score: The score is the percentage correct of the tree, computed on the training set, minus a
+constant C times the number of nodes in the tree.
+C is chosen in advance by running cross-validation trials of this algorithm (grow a
+large tree then prune in order to maximize percent correct minus C times number of
+nodes) for many di erent values of C, and choosing the value of C that minimizes
+cross-validation error. Explain whether or not it would be a good 
+idea and give a reason why or why not.","A good idea when we don’t have enough data to hold out a validation set. Choosing
+C by cross-validation will hopefully give us an e ective general way of penalizing for
+complexity of the tree (for this type of data)."
 Fall 2018,9,a.i,1.1,MDPs,Text,"Sometimes we can make robust reinforcement-learning algorithms by reducing the problem to supervised learning. Assume:
 - The state space is $\mathbb{R}^{d}$, so in general the same state $s$ may not occur more than once in our data set.
 - The action space is $\{0,1\}$.
@@ -505,4 +514,3 @@ test error:
 With bigger $\lambda$ we quit caring about training error.
 test error: $\mathbf{C}$
 With small $\lambda$ we may overfit; with big $\lambda$ we may not fit well enough."
-Fall 2018,10,d,2,Loss Functions,Image,,
